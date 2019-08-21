@@ -24,5 +24,15 @@ namespace MI_HOPAC
         {
             InitializeComponent();
         }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
