@@ -22,6 +22,8 @@ C:\Users\Iván\source\repos\MI-HOPAC\MI-HOPAC\obj\Debug\IniciaSesion.g.cs
 C:\Users\Iván\source\repos\MI-HOPAC\MI-HOPAC\obj\Debug\IniciaSesion.baml
 C:\Users\Iván\source\repos\MI-HOPAC\MI-HOPAC\obj\Debug\Principal.g.cs
 C:\Users\Iván\source\repos\MI-HOPAC\MI-HOPAC\obj\Debug\Principal.baml
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\IniciaSesion.g.cs
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Principal.g.cs
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.exe.config
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.exe
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.pdb
@@ -30,15 +32,16 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MaterialD
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MaterialDesignColors.pdb
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csprojAssemblyReference.cache
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\IniciaSesion.g.cs
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Principal.g.cs
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MainMenu.g.cs
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Registro.g.cs
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\App.g.cs
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC_MarkupCompile.cache
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC_MarkupCompile.lref
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\App.baml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\IniciaSesion.baml
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MainMenu.baml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Principal.baml
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Registro.baml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.g.resources
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI_HOPAC.Properties.Resources.resources
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csproj.GenerateResource.cache
@@ -46,5 +49,3 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csproj.CopyComplete
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.exe
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.pdb
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Registro.g.cs
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Registro.baml
