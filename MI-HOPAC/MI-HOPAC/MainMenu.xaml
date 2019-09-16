@@ -6,19 +6,19 @@
         xmlns:local="clr-namespace:MI_HOPAC"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainMenu" Height="588" Width="987.5" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="MainMenu" Height="658" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
 
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -31,7 +31,7 @@
             <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    
+
     <Grid>
         <Grid Height="70" VerticalAlignment="Top" Background="#82c3ef">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Style="{StaticResource Fuente}">Bienvenido</TextBlock>
@@ -39,11 +39,11 @@
                 <TextBlock VerticalAlignment="Center">Opociones</TextBlock>
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignCentres" StaysOpen="False" >
                     <StackPanel Width="150">
-                        <Button Content="Account"></Button>
-                        <Button Content="Setting"></Button>
-                        <Button Content="Help"></Button>
+                        <Button Content="Cuenta"></Button>
+                        <Button Content="Configuraciones"></Button>
+                        <Button Content="Ayuda"></Button>
                         <Separator/>
-                        <Button Content="Logout" Click="LogOut"></Button>
+                        <Button Content="Cerrar Sesión" Click="LogOut"></Button>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
@@ -52,8 +52,14 @@
         <Grid x:Name="GridMenu" Width="50" HorizontalAlignment="Left" Background="#82c3ef">
             <StackPanel>
                 <Grid Height="150" Background="White">
+                    <Ellipse Width="100" Height="100" Margin="50,16,50,34" >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="resources/Pika.jpg" Stretch="Uniform"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" x:Name="profile_Name">Natalia Yañez</TextBlock>
                     <Button Width="60" x:Name="ButtonCloseMenu" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonCloseMenu_Click">
-                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF1B3861" Width="25" Height="25" Visibility="Collapsed"/>
+                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF1B3861" Width="25" Height="25"/>
                     </Button>
                     <Button Width="60" x:Name="ButtonOpenMenu" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Kind="Menu" Foreground="#FF1B3861" Width="25" Height="25"/>
@@ -62,42 +68,42 @@
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="Class" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Class" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Agenda" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    
+
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Expedientes" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    
+
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="Event" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Event" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0"  Text="Eventos" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    
+
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="InfoCircle" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="InfoCircle" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0"  Text="Notas informativas" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    
+
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="Textsms" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Textsms" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Foro privado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="3" Kind="ViewList" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="ViewList" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Inventario" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>

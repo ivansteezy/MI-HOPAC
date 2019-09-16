@@ -22,6 +22,9 @@ namespace MI_HOPAC
         public MainMenu()
         {
             InitializeComponent();
+            ButtonOpenMenu.Visibility = Visibility.Visible;
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            profile_Name.Visibility = Visibility.Collapsed;
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -35,12 +38,14 @@ namespace MI_HOPAC
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
             ButtonCloseMenu.Visibility = Visibility.Visible;
+            profile_Name.Visibility = Visibility.Visible;
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            profile_Name.Visibility = Visibility.Collapsed;
         }
     }
 }
