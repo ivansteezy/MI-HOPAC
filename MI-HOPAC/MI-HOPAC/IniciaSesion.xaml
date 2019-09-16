@@ -10,8 +10,6 @@
         <DropShadowEffect/>
     </Window.Effect>
 
-    
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="521*"/>

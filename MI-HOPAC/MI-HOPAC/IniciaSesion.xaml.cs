@@ -47,6 +47,9 @@ namespace MI_HOPAC
             if(ValidarInformacion())
             {
                 MessageBox.Show("Datos correctos!");
+                MainMenu main = new MainMenu();
+                main.Show();
+                this.Close();
             }
         }
 
