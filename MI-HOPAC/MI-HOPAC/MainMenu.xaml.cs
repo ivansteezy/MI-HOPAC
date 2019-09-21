@@ -25,6 +25,7 @@ namespace MI_HOPAC
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility = Visibility.Collapsed;
+            main_Frame.Content = new Dashboard();
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -46,6 +47,41 @@ namespace MI_HOPAC
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility = Visibility.Collapsed;
+        }
+
+        private void Side_Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(side_Menu.SelectedIndex)
+            {
+                case 0:
+                    main_Frame.Content = new Dashboard();
+                    title.Text = "Inicio";
+                    break;
+                case 1:
+                    main_Frame.Content = new Agenda();
+                    title.Text = "Calendario";
+                    break;
+                case 2:
+                    title.Text = "Expedientes";
+                    //TO DO: ver mas a detalle la paginacion de las carpetas de expedientes
+                    break;
+                case 3:
+                    main_Frame.Content = new Eventos();
+                    title.Text = "Eventos";
+                    break;
+                case 4:
+                    main_Frame.Content = new NotasInformativas();
+                    title.Text = "Notas informativas";
+                    break;
+                case 5:
+                    main_Frame.Content = new ForoPrivado();
+                    title.Text = "Foro privado";
+                    break;
+                case 6:
+                    main_Frame.Content = new Inventario();
+                    title.Text = "Inventario";
+                    break;
+            }
         }
     }
 }
