@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MI_HOPAC.MiHomeacupService;
 
 namespace MI_HOPAC
 {
@@ -26,6 +27,9 @@ namespace MI_HOPAC
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility = Visibility.Collapsed;
             main_Frame.Content = new Dashboard();
+
+            //var client = new MainWebServiceSoapClient();
+            //List<DoctoresModel> misDoctores = new List<DoctoresModel>(client.getDoctores(3));
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
