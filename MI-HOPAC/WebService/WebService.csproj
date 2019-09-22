@@ -100,7 +100,17 @@
     <Compile Include="Models\DiasModel.cs" />
     <Compile Include="Models\DoctoresModel.cs" />
     <Compile Include="Models\EventosModel.cs" />
-    <Compile Include="Models\ExpedienteAcupuntura.cs" />
+    <Compile Include="Models\ExpedienteAcupunturaModel.cs" />
+    <Compile Include="Models\ExpedienteHomeopatiaModel.cs" />
+    <Compile Include="Models\HorariosModel.cs" />
+    <Compile Include="Models\InventarioAcupunturaModel.cs" />
+    <Compile Include="Models\InventarioHomeopatiaModel.cs" />
+    <Compile Include="Models\NotasDigitalesModel.cs" />
+    <Compile Include="Models\NotasInformativasModel.cs" />
+    <Compile Include="Models\PacienteEventosModel.cs" />
+    <Compile Include="Models\PacienteModel.cs" />
+    <Compile Include="Models\RecetaInfoModel.cs" />
+    <Compile Include="Models\RecetasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
