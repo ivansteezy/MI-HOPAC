@@ -7,10 +7,10 @@ namespace WebService.Models
 {
     public class DoctoresModel
     {
-        public int m_Pk { set; get; }
-        public string m_Nombre { set; get; }
-        public int m_Cedula { set; get; }
-        public string m_Ubicacion { set; get; }
-        public string m_TipoDeMedicina { set; get; }
+        public int m_Pk                 { set; get; }
+        public string m_Nombre          { set; get; }
+        public int m_Cedula             { set; get; }
+        public string m_Ubicacion       { set; get; }
+        public string m_TipoDeMedicina  { set; get; }
     }
 }

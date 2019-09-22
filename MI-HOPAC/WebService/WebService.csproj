@@ -94,7 +94,13 @@
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\CitasModel.cs" />
+    <Compile Include="Models\CuentaDoctoresModel.cs" />
+    <Compile Include="Models\CuentaPacientesModel.cs" />
+    <Compile Include="Models\DiasModel.cs" />
     <Compile Include="Models\DoctoresModel.cs" />
+    <Compile Include="Models\EventosModel.cs" />
+    <Compile Include="Models\ExpedienteAcupuntura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
