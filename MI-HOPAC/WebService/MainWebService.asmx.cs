@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using WebService.Models;
 using WebService.Controllers;
+using WebService.Configurations;
 
 namespace WebService
 {
@@ -35,6 +36,13 @@ namespace WebService
         {
             var controlador = new DoctoresControllers();
             return controlador.QueryDoctores(pk);
+        }
+
+        [WebMethod]
+        public void Caller()
+        {
+            DatabaseOperation<NotasInformativasModel> db = new DatabaseOperation<NotasInformativasModel>();
+            List<NotasInformativasModel> notasList = db.Select("select * from notasinfo");
         }
     }
 }

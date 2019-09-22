@@ -8,6 +8,9 @@ namespace WebService.Configurations
 {
     public class Conexion
     {
+        /// <summary>
+        /// Cadena que represte la conexion a la base de datos.
+        /// </summary>
         protected string connectionString;
         public MySqlConnection objConexion;
 
