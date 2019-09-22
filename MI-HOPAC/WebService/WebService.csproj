@@ -90,7 +90,6 @@
   <ItemGroup>
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
-    <Compile Include="Configurations\IModel.cs" />
     <Compile Include="Controllers\DoctoresControllers.cs" />
     <Compile Include="MainWebService.asmx.cs">
       <DependentUpon>MainWebService.asmx</DependentUpon>
