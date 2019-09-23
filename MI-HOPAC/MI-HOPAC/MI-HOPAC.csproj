@@ -73,9 +73,14 @@
     <Compile Include="ForoPrivado.xaml.cs">
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InvA.cs" />
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InventarioA.xaml.cs">
+      <DependentUpon>InventarioA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InvH.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -114,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Inventario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InventarioA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
