@@ -10,7 +10,7 @@ using System.ComponentModel;
 namespace WebService.Configurations
 {
     /// <summary>
-    /// Clase template con la cual se pueden realziar las operaciones tipicas a una base de datos (Create, Read, Update, Delete).
+    /// Clase generica con la cual se pueden realziar las operaciones tipicas a una base de datos (Create, Read, Update, Delete).
     /// </summary>
     public class DatabaseOperation<T> : Conexion where T : new()
     {
@@ -38,16 +38,81 @@ namespace WebService.Configurations
                             T modeloGenerico = getObject();
 
                             //Si hay datos, para cada una de las propiedades del modelo
+                            int x = 0;
+
                             foreach (PropertyInfo prop in modeloGenerico.GetType().GetProperties())
                             {
                                 //Agregamos el los datos que se leeyeron de la base de datos
-                                //Casteado al tipo correspondiente de la propiedad de la clase generica
+                                object value = lector.GetValue(x);
+                                string typeName = prop.PropertyType.FullName;
+                                dynamic property = Convert.ChangeType(value, Type.GetType(typeName));
+                                //En property es el dato que debemos insertar en la current property
+
+                                var props = modeloGenerico.GetType().GetProperty(prop.Name);
+
+                                ///TODO: Settear la propiedad de el modelgenerico y posteriormente  
+                                ///hacer un .Add al la lisat de modelos genricos
+
+                                //El primer parametro debe de ser el atributo actual
+                                //prop.SetValue(props, property);
+                                x++;
                             }
                         }
                     }
                 }
             }
           return listaModeloGenerico;
+        }
+
+        public void Delete(string cmd)
+        {
+            try
+            {
+                using (MySqlConnection con = objConexion)
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        con.Open();
+                        comando.Connection = con;
+                        comando.CommandText = cmd;
+                        comando.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        public bool Insert()
+        {
+            ///TODO: ver la manera de deserealizar un modelo generico 
+            ///para insertar esos rows desearializados
+            return false;
+        }
+
+        public void Update(string cmd)
+        {
+            try
+            {
+                using (MySqlConnection con = objConexion)
+                {
+                    using (MySqlCommand comando = new MySqlCommand())
+                    {
+                        con.Open();
+                        comando.Connection = con;
+                        comando.CommandText = cmd;
+                        comando.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
 
         protected T getObject()
