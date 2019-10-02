@@ -18,50 +18,51 @@ namespace WebService.Configurations
         {
             //creamos una lista de Modelos genericos
             List<T> listaModeloGenerico = new List<T>();
-            
-            using (MySqlConnection con = objConexion)
+            try
             {
-                using (MySqlCommand cmd = new MySqlCommand())
+                using (MySqlConnection con = objConexion)
                 {
-                    con.Open();
-
-                    cmd.Connection = con;
-                    cmd.CommandText = query;
-
-                    //para cada propiedad del modelo genero asignarle lo que esta en la columna numero i
-                    using (MySqlDataReader lector = cmd.ExecuteReader())
+                    using (MySqlCommand cmd = new MySqlCommand())
                     {
-                        //Mientras haya datos en la tabla
-                        while (lector.Read())
+                        con.Open();
+
+                        cmd.Connection = con;
+                        cmd.CommandText = query;
+
+                        //para cada propiedad del modelo genero asignarle lo que esta en la columna numero i
+                        using (MySqlDataReader lector = cmd.ExecuteReader())
                         {
-                            //Instanciamos un objecto de tipo T
-                            T modeloGenerico = getObject();
-
-                            //Si hay datos, para cada una de las propiedades del modelo
-                            int x = 0;
-
-                            foreach (PropertyInfo prop in modeloGenerico.GetType().GetProperties())
+                            //Mientras haya datos en la tabla
+                            while (lector.Read())
                             {
-                                //Agregamos el los datos que se leeyeron de la base de datos
-                                object value = lector.GetValue(x);
-                                string typeName = prop.PropertyType.FullName;
-                                dynamic property = Convert.ChangeType(value, Type.GetType(typeName));
-                                //En property es el dato que debemos insertar en la current property
+                                //Instanciamos un objecto de tipo T
+                                T modeloGenerico = getObject();
 
-                                var props = modeloGenerico.GetType().GetProperty(prop.Name);
+                                //Si hay datos, para cada una de las propiedades del modelo
+                                int x = 0;
 
-                                ///TODO: Settear la propiedad de el modelgenerico y posteriormente  
-                                ///hacer un .Add al la lisat de modelos genricos
+                                foreach (PropertyInfo prop in modeloGenerico.GetType().GetProperties())
+                                {
+                                    //Agregamos el los datos que se leeyeron de la base de datos
+                                    object value = lector.GetValue(x++);
+                                    string typeName = prop.PropertyType.FullName;
+                                    dynamic property = Convert.ChangeType(value, Type.GetType(typeName));
 
-                                //El primer parametro debe de ser el atributo actual
-                                //prop.SetValue(props, property);
-                                x++;
+                                    modeloGenerico.GetType().GetProperty(prop.ToString().
+                                            Substring(prop.ToString().IndexOf(' ') + 1)).
+                                            SetValue(modeloGenerico, property, null);
+                                }
+                                listaModeloGenerico.Add(modeloGenerico);
                             }
                         }
                     }
                 }
             }
-          return listaModeloGenerico;
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            return listaModeloGenerico;
         }
 
         public void Delete(string cmd)

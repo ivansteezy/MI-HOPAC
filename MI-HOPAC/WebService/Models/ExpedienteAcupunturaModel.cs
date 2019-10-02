@@ -7,6 +7,7 @@ namespace WebService.Models
 {
     public class ExpedienteAcupunturaModel
     {
+        #region Propiedades
         public int m_IdExpedienteAcupuntura { set; get; }
         public string m_Nombre              { set; get; }
         public DateTime m_Fecha             { set; get; }
@@ -19,5 +20,6 @@ namespace WebService.Models
         public string m_Humectacion         { set; get; }
         public string m_PulsoD              { set; get; }
         public string m_PulsoI              { set; get; }
+        #endregion
     }
 }

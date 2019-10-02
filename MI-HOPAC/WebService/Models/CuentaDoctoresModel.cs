@@ -7,9 +7,11 @@ namespace WebService.Models
 {
     public class CuentaDoctoresModel
     {
+        #region Propiedades
         public int m_IdCuentaDoctores { get; set; }
         public string m_Correo        { set; get; }
         public string m_Password      { set; get; }
         public string m_FkDoctor      { set; get; }
+        #endregion
     }
 }

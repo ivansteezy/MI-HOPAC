@@ -41,8 +41,8 @@ namespace WebService
         [WebMethod]
         public void Caller()
         {
-            DatabaseOperation<NotasInformativasModel> db = new DatabaseOperation<NotasInformativasModel>();
-            List<NotasInformativasModel> notasList = db.Select("select * from notasinfo");
+            DatabaseOperation<DoctoresModel> db = new DatabaseOperation<DoctoresModel>();
+            List<DoctoresModel> notasList = db.Select("select * from doctores");
         }
     }
 }
