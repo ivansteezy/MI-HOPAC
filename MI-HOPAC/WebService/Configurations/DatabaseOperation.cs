@@ -12,8 +12,15 @@ namespace WebService.Configurations
     /// <summary>
     /// Clase generica con la cual se pueden realziar las operaciones tipicas a una base de datos (Create, Read, Update, Delete).
     /// </summary>
+    /// Nota mental: En el dado caso de que en el desarrollo se necesiten hacer queries mas custom, en lugar de enviar un simple string
+    /// podemos enviar un MySqlCommand y asi poder hacer Params.AddWithValue() y posteriormente setteando el CommandText desde el controlador.
     public class DatabaseOperation<T> : Conexion where T : new()
     {
+        /// <summary>
+        /// Metodo para realizar una consulta de tipo SELECT a la base de datos.
+        /// </summary>
+        /// <param name="query">Consulta a realizar, representada como un string.</param>
+        /// <returns>Un modelo de tipo T.</returns>
         public List<T> Select(string query)
         {
             //creamos una lista de Modelos genericos

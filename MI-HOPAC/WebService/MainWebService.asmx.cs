@@ -25,24 +25,38 @@ namespace WebService
         {
             return "Hola a todos";
         }
-
-        /// <summary>
-        /// Metodo que realzia una consulta a la tabla de doctores.
-        /// </summary>
-        /// <param name="pk">Primary key de la tabla doctores</param>
-        /// <returns>Una lista de DoctoresModel</returns>
+        
         [WebMethod]
-        public List<DoctoresModel> getDoctores(int pk)
-        {
-            var controlador = new DoctoresControllers();
-            return controlador.QueryDoctores(pk);
-        }
-
-        [WebMethod]
-        public void Caller()
+        public List<DoctoresModel> Caller()
         {
             DatabaseOperation<DoctoresModel> db = new DatabaseOperation<DoctoresModel>();
             List<DoctoresModel> notasList = db.Select("select * from doctores");
+            return notasList;
         }
+
+        #region Citas
+        [WebMethod]
+        public List<CitasModel> GetCitas(int pk)
+        {
+            var controlador = new CitasController();
+            return controlador.ConsultaCitas(pk);
+        }
+        #endregion
+
+        #region CuentaDoctores
+        [WebMethod]
+        public List<CuentaDoctoresModel> GetCuentaDoctores(int pk)
+        {
+            var controlador = new CuentaDoctoresController();
+            return controlador.ConsultaCuentaDoctores(pk);
+        }
+
+        [WebMethod]
+        public void DeleteDoctores(int pk)
+        {
+            var controlador = new CuentaDoctoresController();
+            controlador.EliminarCuentadoctores(pk);
+        }
+        #endregion
     }
 }

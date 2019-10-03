@@ -18,7 +18,7 @@ namespace WebService.Configurations
         {
             try
             {
-                connectionString = "datasource=den1.mysql1.gear.host;port=3306;username=natibase;pwd=natibase619!;database=natibase;";
+                connectionString = "datasource=den1.mysql4.gear.host;port=3306;username=homeacup;pwd=Proyecto1.;database=homeacup;";
                 objConexion = new MySqlConnection(connectionString);
             }
             catch (Exception ex)

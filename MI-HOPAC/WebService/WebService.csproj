@@ -90,7 +90,23 @@
   <ItemGroup>
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
+    <Compile Include="Controllers\CitasController.cs" />
+    <Compile Include="Controllers\CuentaDoctoresController.cs" />
+    <Compile Include="Controllers\CuentaPacientesController.cs" />
+    <Compile Include="Controllers\DiasController.cs" />
     <Compile Include="Controllers\DoctoresControllers.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\ExpedienteAcupunturaController.cs" />
+    <Compile Include="Controllers\ExpedienteHomeopatiaController.cs" />
+    <Compile Include="Controllers\HorariosController.cs" />
+    <Compile Include="Controllers\InventarioAcupunturaController.cs" />
+    <Compile Include="Controllers\InventarioHomeopatiaController.cs" />
+    <Compile Include="Controllers\NotasDigitalesController.cs" />
+    <Compile Include="Controllers\NotasInformativasController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\PacienteEventosController.cs" />
+    <Compile Include="Controllers\RecetaInfoController.cs" />
+    <Compile Include="Controllers\RecetasController.cs" />
     <Compile Include="MainWebService.asmx.cs">
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebService.Controllers
 {
-    public class InentarioAcupunturaController
+    public class InventarioAcupunturaController
     {
     }
 }
