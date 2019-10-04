@@ -101,17 +101,16 @@ namespace WebService.Configurations
             return false;
         }
 
-        public void Update(string cmd)
+        public void Update(MySqlCommand cmd)
         {
             try
             {
                 using (MySqlConnection con = objConexion)
                 {
-                    using (MySqlCommand comando = new MySqlCommand())
+                    using (MySqlCommand comando = cmd)
                     {
                         con.Open();
                         comando.Connection = con;
-                        comando.CommandText = cmd;
                         comando.ExecuteNonQuery();
                         con.Close();
                     }
@@ -120,6 +119,32 @@ namespace WebService.Configurations
             catch(Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        public bool Insert(MySqlCommand comando)
+        {
+            try
+            {
+                using (MySqlConnection con = objConexion)
+                {
+                    using (MySqlCommand cmd = comando)
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        if(cmd.ExecuteNonQuery() != 1)
+                        {
+                            Console.WriteLine("No se inserto fila correctamente.");
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
             }
         }
 

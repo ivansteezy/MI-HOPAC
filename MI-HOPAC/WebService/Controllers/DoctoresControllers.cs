@@ -8,36 +8,16 @@ using WebService.Models;
 
 namespace WebService.Controllers
 {
-    public class DoctoresControllers : Conexion
+    public class DoctoresControllers : DatabaseOperation<DoctoresModel>
     {
-        public List<DoctoresModel> QueryDoctores(int id)
+        public List<DoctoresModel> ConsultaDoctores(int primaryKey)
         {
-            var result = new List<DoctoresModel>();
-            using (MySqlConnection con = objConexion)
-            {
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    con.Open();
-                    cmd.Connection = con;
-                    cmd.CommandText = @"select * from doctores where idDoctores = @pk";
-                    cmd.Parameters.AddWithValue("@pk", id);
+            return Select("select * from doctores where idDoctores = " + primaryKey.ToString());
+        }
 
-                    using (MySqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            DoctoresModel modeloDoctores = new DoctoresModel();
-                            modeloDoctores.m_Pk = lector.GetInt32(0);
-                            modeloDoctores.m_Nombre = lector.GetString(1);
-                            modeloDoctores.m_Cedula = lector.GetInt32(2);
-                            modeloDoctores.m_Ubicacion = lector.GetString(3);
-                            modeloDoctores.m_TipoDeMedicina = lector.GetString(4);
-                            result.Add(modeloDoctores);
-                        }
-                    }
-                }
-            }
-            return result;
+        public void EliminarDoctores(int primaryKey)
+        {
+            Delete("delete from doctores where idDoctores = " + primaryKey.ToString());
         }
     }
 }

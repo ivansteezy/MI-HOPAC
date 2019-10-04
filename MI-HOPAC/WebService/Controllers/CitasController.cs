@@ -8,14 +8,16 @@ using MySql.Data.MySqlClient;
 
 namespace WebService.Controllers
 {
-    public class CitasController
+    public class CitasController : DatabaseOperation<CitasModel>
     {
         public List<CitasModel> ConsultaCitas(int primaryKey)
         {
-            DatabaseOperation<CitasModel> db = new DatabaseOperation<CitasModel>();
-            var result = new List<CitasModel>();
-            result = db.Select("select * from Citas where idCitas = " + primaryKey.ToString());
-            return result;
+            return Select("select * from Citas where idCitas = " + primaryKey.ToString());
+        }
+
+        public void EliminarCitas(int primaryKey)
+        {
+            Delete("delete from Citas where idCitas = " + primaryKey.ToString());
         }
     }
 }
