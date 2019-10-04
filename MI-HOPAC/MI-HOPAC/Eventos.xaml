@@ -9,6 +9,10 @@
       Title="Eventos">
 
     <Grid Background="White">
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Eventos</TextBlock>
+        
+        <ScrollViewer Background="Red">
+            
+        </ScrollViewer>
+        
     </Grid>
 </Page>

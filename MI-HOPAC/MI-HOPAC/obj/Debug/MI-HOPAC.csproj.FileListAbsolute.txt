@@ -62,6 +62,7 @@ C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csp
 C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csproj.CopyComplete
 C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.exe
 C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.pdb
+<<<<<<< HEAD
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.exe.config
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.exe
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\MI-HOPAC.pdb
@@ -102,3 +103,7 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csproj.CopyComplete
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.exe
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.pdb
+=======
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\InventarioA.g.cs
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\InventarioA.baml
+>>>>>>> Develop

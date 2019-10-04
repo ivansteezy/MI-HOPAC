@@ -20,6 +20,9 @@ namespace MI_HOPAC
     /// </summary>
     public partial class MainMenu : Window
     {
+        bool Con = true;
+        int Tipo = 2; //De la Base de Datos
+
         public MainMenu()
         {
             InitializeComponent();
@@ -27,9 +30,10 @@ namespace MI_HOPAC
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility = Visibility.Collapsed;
             main_Frame.Content = new Dashboard();
-
-            //var client = new MainWebServiceSoapClient();
-            //List<DoctoresModel> misDoctores = new List<DoctoresModel>(client.getDoctores(3));
+            if(Tipo == 0)
+                MenuH.Visibility = Visibility.Collapsed;
+            else if (Tipo == 1)
+                MenuA.Visibility = Visibility.Collapsed;
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -83,6 +87,10 @@ namespace MI_HOPAC
                     break;
                 case 6:
                     main_Frame.Content = new Inventario();
+                    title.Text = "Inventario";
+                    break;
+                case 7:
+                    main_Frame.Content = new InventarioA();
                     title.Text = "Inventario";
                     break;
             }
