@@ -9,10 +9,10 @@
       Title="Eventos">
 
     <Grid Background="White">
-        
-        <ScrollViewer Background="Red">
-            
-        </ScrollViewer>
-        
+        <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden"></Frame>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Click="Button_Click" VerticalAlignment="Bottom" Margin="10">Nuevo evento</Button>
+            <Button Click="Button_Click_1" VerticalAlignment="Bottom" Margin="10">Ver todos los eventos</Button>
+        </StackPanel>
     </Grid>
 </Page>
