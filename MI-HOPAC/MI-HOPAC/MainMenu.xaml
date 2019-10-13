@@ -43,7 +43,7 @@
             </Grid.RowDefinitions>
 
             <Grid Height="70" VerticalAlignment="Top" Background="#82c3ef" Grid.Row="0">
-                <TextBlock x:Name="title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Style="{StaticResource Fuente}" Text="Bienvenido"></TextBlock>
+                <TextBlock x:Name="title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Style="{StaticResource Font}">Bienvenido</TextBlock>
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
                     <TextBlock VerticalAlignment="Center">Opociones</TextBlock>
                     <materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignCentres" StaysOpen="False" >

@@ -31,46 +31,36 @@ namespace MI_HOPAC
 
         private void Boton_Click(object sender, RoutedEventArgs e)
         {
-            ///TODO Ver que generar en el qr, si en base a nombres o a pk para que la aplicacion pueda hacer la consulta.
-            //Esto ya inserta en la base de datos
-            string guia = txt_GuiaEvento.Text;
-            string nombre = txt_Nombre.Text;
-            string ubicacion = txt_Ubicacion.Text;
-            string hora = txt_HoraEvento.SelectedTime.ToString().Substring(txt_HoraEvento.SelectedTime.ToString().IndexOf(' ') + 1);
-            string fecha = txt_FechaEvento.SelectedDate.ToString().Substring(0, txt_FechaEvento.SelectedDate.ToString().IndexOf(' '));
-
-            var date = DateTime.Parse(fecha + " " + hora);
-
-            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
-            client.InsertEventos(nombre, date, ubicacion, guia, 1);
-            
-            var consulta = client.GetEventos(4).ToArray<EventosModel>();    //Esto generara el qr para el campo con la primary key 4
-            GenerarQR(consulta);
-        }
-
-        BitmapImage BitmapToImageSource(Bitmap bitmap)
-        {
-            using (MemoryStream memory = new MemoryStream())
+            //Verificamos que los datos esten completos
+            if (ValidarInfo())
             {
-                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
-                memory.Position = 0;
-                BitmapImage bitmapimage = new BitmapImage();
-                bitmapimage.BeginInit();
-                bitmapimage.StreamSource = memory;
-                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapimage.EndInit();
+                string guia = txt_GuiaEvento.Text;
+                string nombre = txt_Nombre.Text;
+                string ubicacion = txt_Ubicacion.Text;
+                string hora = txt_HoraEvento.SelectedTime.ToString().Substring(txt_HoraEvento.SelectedTime.ToString().IndexOf(' ') + 1);
+                string fecha = txt_FechaEvento.SelectedDate.ToString().Substring(0, txt_FechaEvento.SelectedDate.ToString().IndexOf(' '));
 
-                return bitmapimage;
+                var date = DateTime.Parse(fecha + " " + hora);
+
+                MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+                client.InsertEventos(nombre, date, ubicacion, guia, 1); //Los insertamos a la base de datos
+                var modelo = client.GetEventosByName(nombre).ToArray(); //Hacemos una consulta de lo que acabamos de insertar
+
+                QR.Source = Foundation.EventosSection.GenerarQR(modelo.First()); //Generamos el QR
             }
+            else
+                MessageBox.Show("Debes completar todos los campos!");
         }
 
-        public void GenerarQR(EventosModel[] model)
-        {   
-            QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(model.First().m_Nombre, QRCodeGenerator.ECCLevel.Q);
-            QRCode code = new QRCode(data);
-            ImageSource img = BitmapToImageSource(code.GetGraphic(5));
-            QR.Source = img;
+        //Funcion para lavidar que los datos esten completos
+        public bool ValidarInfo()
+        {
+            if (string.IsNullOrEmpty(txt_GuiaEvento.Text) || string.IsNullOrEmpty(txt_Nombre.Text)     ||
+                string.IsNullOrEmpty(txt_Ubicacion.Text)  || string.IsNullOrEmpty(txt_HoraEvento.Text) ||
+                string.IsNullOrEmpty(txt_FechaEvento.Text))
+                return false;
+            else
+                return true;
         }
     }
 }

@@ -17,9 +17,10 @@
             <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="White"></SolidColorBrush>
 
             <!--Fonts-->
-            <Style x:Key="Fuente">
-                <Setter Property="TextElement.FontFamily" Value="/resources/#Quicksand-Light"></Setter>
+            <Style x:Key="Font">
+                <Setter Property="TextElement.FontFamily" Value="Fonts/fuente.ttf"></Setter>
             </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

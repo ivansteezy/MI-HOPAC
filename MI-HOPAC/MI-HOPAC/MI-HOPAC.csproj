@@ -105,9 +105,13 @@
     <Compile Include="Eventos.xaml.cs">
       <DependentUpon>Eventos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EventosViewer.xaml.cs">
+      <DependentUpon>EventosViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ForoPrivado.xaml.cs">
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Foundation\EventosSection.cs" />
     <Compile Include="InvA.cs" />
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
@@ -137,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Eventos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventosViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +248,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetDoctoresResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -249,12 +260,12 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Resource Include="Fonts\fuente.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="resources\Quicksand-Light.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -265,9 +276,7 @@
   <ItemGroup>
     <Resource Include="resources\close.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ambos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="resources\Pika.jpg" />
   </ItemGroup>

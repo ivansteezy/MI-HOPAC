@@ -623,6 +623,13 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEventos", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosResponse> GetEventosAsync(MI_HOPAC.MiHomeacupService.GetEventosRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento name del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEventosByName", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.GetEventosByNameResponse GetEventosByName(MI_HOPAC.MiHomeacupService.GetEventosByNameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEventosByName", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosByNameResponse> GetEventosByNameAsync(MI_HOPAC.MiHomeacupService.GetEventosByNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteEventos", ReplyAction="*")]
         void DeleteEventos(int pk);
         
@@ -1004,17 +1011,10 @@ namespace MI_HOPAC.MiHomeacupService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute()]
     public partial class GetEventosRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int pk;
-        
         public GetEventosRequestBody() {
-        }
-        
-        public GetEventosRequestBody(int pk) {
-            this.pk = pk;
         }
     }
     
@@ -1049,6 +1049,74 @@ namespace MI_HOPAC.MiHomeacupService {
         
         public GetEventosResponseBody(MI_HOPAC.MiHomeacupService.EventosModel[] GetEventosResult) {
             this.GetEventosResult = GetEventosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEventosByNameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEventosByName", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetEventosByNameRequestBody Body;
+        
+        public GetEventosByNameRequest() {
+        }
+        
+        public GetEventosByNameRequest(MI_HOPAC.MiHomeacupService.GetEventosByNameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEventosByNameRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        public GetEventosByNameRequestBody() {
+        }
+        
+        public GetEventosByNameRequestBody(string name) {
+            this.name = name;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEventosByNameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEventosByNameResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetEventosByNameResponseBody Body;
+        
+        public GetEventosByNameResponse() {
+        }
+        
+        public GetEventosByNameResponse(MI_HOPAC.MiHomeacupService.GetEventosByNameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEventosByNameResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventosByNameResult;
+        
+        public GetEventosByNameResponseBody() {
+        }
+        
+        public GetEventosByNameResponseBody(MI_HOPAC.MiHomeacupService.EventosModel[] GetEventosByNameResult) {
+            this.GetEventosByNameResult = GetEventosByNameResult;
         }
     }
     
@@ -1375,10 +1443,9 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetEventos(request);
         }
         
-        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventos(int pk) {
+        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventos() {
             MI_HOPAC.MiHomeacupService.GetEventosRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosRequestBody();
-            inValue.Body.pk = pk;
             MI_HOPAC.MiHomeacupService.GetEventosResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventos(inValue);
             return retVal.Body.GetEventosResult;
         }
@@ -1388,11 +1455,35 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetEventosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosResponse> GetEventosAsync(int pk) {
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosResponse> GetEventosAsync() {
             MI_HOPAC.MiHomeacupService.GetEventosRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosRequestBody();
-            inValue.Body.pk = pk;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.GetEventosByNameResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetEventosByName(MI_HOPAC.MiHomeacupService.GetEventosByNameRequest request) {
+            return base.Channel.GetEventosByName(request);
+        }
+        
+        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventosByName(string name) {
+            MI_HOPAC.MiHomeacupService.GetEventosByNameRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosByNameRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosByNameRequestBody();
+            inValue.Body.name = name;
+            MI_HOPAC.MiHomeacupService.GetEventosByNameResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventosByName(inValue);
+            return retVal.Body.GetEventosByNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosByNameResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetEventosByNameAsync(MI_HOPAC.MiHomeacupService.GetEventosByNameRequest request) {
+            return base.Channel.GetEventosByNameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosByNameResponse> GetEventosByNameAsync(string name) {
+            MI_HOPAC.MiHomeacupService.GetEventosByNameRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosByNameRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosByNameRequestBody();
+            inValue.Body.name = name;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventosByNameAsync(inValue);
         }
         
         public void DeleteEventos(int pk) {

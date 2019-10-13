@@ -10,9 +10,14 @@ namespace WebService.Controllers
 {
     public class EventosController : DatabaseOperation<EventosModel>
     {
-        public List<EventosModel> ConsultaEvento(int primaryKey)
+        public List<EventosModel> ConsultaEvento()
         {
-            return Select("select * from eventos where idEventos = " + primaryKey.ToString());
+            return Select("select * from eventos");
+        }
+
+        public List<EventosModel> ConsultaEvento(string name)
+        {
+            return Select("select * from eventos where Nombre = '" + name + "'");
         }
 
         public void EliminarEvento(int primaryKey)

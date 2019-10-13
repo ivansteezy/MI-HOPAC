@@ -94,10 +94,17 @@ namespace WebService
 
         #region Eventos
         [WebMethod]
-        public List<EventosModel> GetEventos(int pk)
+        public List<EventosModel> GetEventos()
         {
             var controlador = new EventosController();
-            return controlador.ConsultaEvento(pk);
+            return controlador.ConsultaEvento();
+        }
+
+        [WebMethod]
+        public List<EventosModel> GetEventosByName(string name)
+        {
+            var controlador = new EventosController();
+            return controlador.ConsultaEvento(name);
         }
 
         [WebMethod]

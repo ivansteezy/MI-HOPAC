@@ -3,16 +3,69 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:MI_HOPAC"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Eventos">
 
     <Grid Background="White">
-        <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden"></Frame>
-        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition  Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0">
+            <ItemsControl x:Name="sectionEventos" ItemsSource="{Binding EventosSection}" Margin="20">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Width="250" Height="200" Margin="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock x:Name="nombre_Evento" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding nombreEvento}"/>
+                                    <TextBlock x:Name="hora_Evento" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding horaEvento}"/>
+                                    <TextBlock x:Name="fecha_Evento" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding fechaEvento}"/>
+                                    <TextBlock x:Name="guia_Evento" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding guiaEvento}"/>
+                                    <TextBlock x:Name="ubicacion_Evento" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ubicacionEvento}"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <Image x:Name="QRimage" Width="100" Height="100" Source="{Binding qrSource}"/>
+                                </Grid>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Frame x:Name="main_Frame" Grid.Row="0" NavigationUIVisibility="Hidden"></Frame>
+
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
             <Button Click="Button_Click" VerticalAlignment="Bottom" Margin="10">Nuevo evento</Button>
             <Button Click="Button_Click_1" VerticalAlignment="Bottom" Margin="10">Ver todos los eventos</Button>
         </StackPanel>
+
+        
     </Grid>
 </Page>
