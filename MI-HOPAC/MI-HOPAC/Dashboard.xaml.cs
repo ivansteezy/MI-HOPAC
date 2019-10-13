@@ -23,6 +23,44 @@ namespace MI_HOPAC
         public Dashboard()
         {
             InitializeComponent();
+
+            List<Nota> notas = GetNotas();
+
+            if (notas.Count > 0)
+            {
+                ListViewNotas.ItemsSource = notas;              
+            }
+
+            var Lista = ListViewNotas;
+            
+            
+        }
+
+        private List<Nota> GetNotas()
+        {
+
+            return new List<Nota>()
+            {
+                new Nota("laskdjalksdjlañskdjlaskd", "Red", 1),
+                new Nota("hsdfdsfgsdfg", "Blue", 2),
+                new Nota("fshjfgjhdfgn", "Green", 3),
+                new Nota("asdfsbrfsdfv", "Purple", 4),
+                new Nota("jrtyjfhjfgnwfgwef", "White", 5),
+                new Nota("zxczdagadg", "Orange", 6),
+                new Nota("adfafoiaeufhyoaduifhoadfuih", "Yellow", 7),              
+        };
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            var y = ((MI_HOPAC.Nota)((System.Windows.FrameworkElement)sender).DataContext).Id;
+
+            MessageBox.Show(y.ToString());
+
+            
+
         }
     }
 }

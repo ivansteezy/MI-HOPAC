@@ -94,13 +94,6 @@ namespace WebService.Configurations
             }
         }
 
-        public bool Insert()
-        {
-            ///TODO: ver la manera de deserealizar un modelo generico 
-            ///para insertar esos rows desearializados
-            return false;
-        }
-
         public void Update(MySqlCommand cmd)
         {
             try

@@ -4,11 +4,49 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MI_HOPAC"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Dashboard">
 
     <Grid Background="White">
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Dashboard</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition  Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0">
+            <StackPanel>
+                <TextBlock>Notas</TextBlock>
+
+                <StackPanel Margin="20 0">
+                    <ItemsControl x:Name="ListViewNotas" ItemsSource="{Binding Nota}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="10" Width="100" Height="100" x:Name="Carlos">
+                                    <StackPanel x:Name="Hola" Background="{Binding Color}">
+                                        <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen ="False" Padding="0" Margin="0" >
+                                            <StackPanel>
+                                                <Button Content="Color" Click="Button_Click"></Button>
+                                                <Button Content="Eliminar"></Button>
+                                            </StackPanel>
+                                        </materialDesign:PopupBox>
+                                        <TextBlock x:Name = "Crayola" Text="{Binding Texto}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        
+        
+        
     </Grid>
 </Page>
