@@ -29,7 +29,7 @@ namespace MI_HOPAC
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility = Visibility.Collapsed;
-            main_Frame.Content = new Dashboard();
+            main_Frame.Content = new NotasBoton();
             if(Tipo == 0)
                 MenuH.Visibility = Visibility.Collapsed;
             else if (Tipo == 1)
@@ -62,7 +62,7 @@ namespace MI_HOPAC
             switch(side_Menu.SelectedIndex)
             {
                 case 0:
-                    main_Frame.Content = new Dashboard();
+                    main_Frame.Content = new NotasBoton();
                     title.Text = "Inicio";
                     break;
                 case 1:

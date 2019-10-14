@@ -12,38 +12,35 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition  Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
         <ScrollViewer Grid.Row="0">
-            <StackPanel>
-                <TextBlock>Notas</TextBlock>
-
-                <StackPanel Margin="20 0">
-                    <ItemsControl x:Name="ListViewNotas" ItemsSource="{Binding Nota}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Margin="10" Width="100" Height="100" x:Name="Carlos">
-                                    <StackPanel x:Name="Hola" Background="{Binding Color}">
-                                        <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen ="False" Padding="0" Margin="0" >
-                                            <StackPanel>
-                                                <Button Content="Color" Click="Button_Click"></Button>
-                                                <Button Content="Eliminar"></Button>
-                                            </StackPanel>
-                                        </materialDesign:PopupBox>
-                                        <TextBlock x:Name = "Crayola" Text="{Binding Texto}"></TextBlock>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
+            <StackPanel Margin="20 0">
+                <ItemsControl x:Name="ListViewNotas" ItemsSource="{Binding Nota}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <materialDesign:Card Margin="10" Width="200" Height="200">
+                                <StackPanel Background="{Binding Color}">
+                                    <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen ="False" Padding="0" Margin="0" >
+                                        <StackPanel>
+                                            <Button Content="Color" Click="Button_Click"></Button>
+                                            <Button Content="Eliminar"></Button>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                    <TextBlock Text="{Binding Texto}" Margin="20, 0"></TextBlock>
+                                </StackPanel>
+                            </materialDesign:Card>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    
                     </ItemsControl>
                 </StackPanel>
-            </StackPanel>
         </ScrollViewer>
         
         

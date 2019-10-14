@@ -92,6 +92,12 @@
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Nota.cs" />
+    <Compile Include="NotasBoton.xaml.cs">
+      <DependentUpon>NotasBoton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotasDigNueva.xaml.cs">
+      <DependentUpon>NotasDigNueva.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NotasInformativas.xaml.cs">
       <DependentUpon>NotasInformativas.xaml</DependentUpon>
     </Compile>
@@ -137,6 +143,14 @@
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="NotasBoton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotasDigNueva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NotasInformativas.xaml">
       <SubType>Designer</SubType>
