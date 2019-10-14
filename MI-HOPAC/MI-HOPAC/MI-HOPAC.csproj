@@ -111,12 +111,8 @@
     <Compile Include="ForoPrivado.xaml.cs">
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Foundation\EventosSection.cs" />
-    <Compile Include="InvA.cs" />
-=======
     <Compile Include="Modelos\InvA.cs" />
->>>>>>> Develop
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
