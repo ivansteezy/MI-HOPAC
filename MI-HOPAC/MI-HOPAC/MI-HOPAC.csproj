@@ -111,17 +111,28 @@
     <Compile Include="ForoPrivado.xaml.cs">
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Foundation\EventosSection.cs" />
     <Compile Include="InvA.cs" />
+=======
+    <Compile Include="Modelos\InvA.cs" />
+>>>>>>> Develop
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
     <Compile Include="InventarioA.xaml.cs">
       <DependentUpon>InventarioA.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InvH.cs" />
+    <Compile Include="Modelos\InvH.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Nota.cs" />
+    <Compile Include="NotasBoton.xaml.cs">
+      <DependentUpon>NotasBoton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotasDigNueva.xaml.cs">
+      <DependentUpon>NotasDigNueva.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotasInformativas.xaml.cs">
       <DependentUpon>NotasInformativas.xaml</DependentUpon>
@@ -175,6 +186,14 @@
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="NotasBoton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotasDigNueva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NotasInformativas.xaml">
       <SubType>Designer</SubType>

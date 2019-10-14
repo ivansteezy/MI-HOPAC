@@ -128,5 +128,41 @@ namespace WebService
             controlador.ActualizarEvento(pk, nombre);
         }
         #endregion
+
+        #region NotasDigitales
+
+        [WebMethod]
+        public List<NotasDigitalesModel> GetNotasDig(int fk)
+        {
+            var controlador = new NotasDigitalesController();
+            return controlador.ConsultaNotasDig(fk);
+        }
+
+        [WebMethod]
+        public void DeleteNotaDig(int pk)
+        {
+            var controlador = new NotasDigitalesController();
+            controlador.EliminarNotaDig(pk);
+        }
+
+        [WebMethod]
+        public void InsertNotaDig(string texto, string color, int fkDoctor)
+        {
+            var controlador = new NotasDigitalesController();
+            controlador.InsertarNotaDig(texto, color, fkDoctor);
+        }
+
+        
+        [WebMethod]
+        public void UpdateNotaDig(int pk, string color)
+        {
+            var controlador = new NotasDigitalesController();
+            controlador.ActualizarEvento(pk, color);
+        }
+        
+
+        #endregion
+
+
     }
 }
