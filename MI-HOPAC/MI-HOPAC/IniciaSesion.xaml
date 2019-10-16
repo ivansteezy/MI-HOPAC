@@ -35,7 +35,7 @@
             </Image.Style>
         </Image>
 
-        <TextBlock Margin="0 40 0 0" Style="{StaticResource Fuente}" FontSize="29" Foreground="White" TextAlignment="Center" Grid.RowSpan="2">Iniciar sesión</TextBlock>
+        <TextBlock Margin="0 40 0 0" Style="{StaticResource Font}" FontSize="29" Foreground="White" TextAlignment="Center" Grid.RowSpan="2">Iniciar sesión</TextBlock>
         <materialDesign:Card Padding="32" Margin="50,120,50,0" Height="357">
             <StackPanel Margin="0 10 0 0">
                 <StackPanel Orientation="Horizontal">

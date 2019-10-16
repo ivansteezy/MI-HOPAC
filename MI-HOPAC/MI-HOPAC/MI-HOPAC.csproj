@@ -102,6 +102,9 @@
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InformacionPerfil.xaml.cs">
+      <DependentUpon>InformacionPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Eventos.xaml.cs">
       <DependentUpon>Eventos.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InformacionPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
