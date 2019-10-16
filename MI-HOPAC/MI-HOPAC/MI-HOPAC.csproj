@@ -112,18 +112,18 @@
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\EventosSection.cs" />
-    <Compile Include="Modelos\InvA.cs" />
+    <Compile Include="Foundation\InventarioAcupunturaSection.cs" />
     <Compile Include="Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
     <Compile Include="InventarioA.xaml.cs">
       <DependentUpon>InventarioA.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\InvH.cs" />
+    <Compile Include="Foundation\InventarioHomeopatiaSection.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\Nota.cs" />
+    <Compile Include="Foundation\NotaSection.cs" />
     <Compile Include="NotasBoton.xaml.cs">
       <DependentUpon>NotasBoton.xaml</DependentUpon>
     </Compile>

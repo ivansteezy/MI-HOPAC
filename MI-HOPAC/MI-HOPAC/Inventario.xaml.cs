@@ -21,7 +21,7 @@ namespace MI_HOPAC
     public partial class Inventario : Page
     {
 
-        public List<InvH> ElInventarioH { get; set; }
+        public List<InventarioHomeopatiaSection> ElInventarioH { get; set; }
 
         public Inventario()
         {
@@ -29,11 +29,11 @@ namespace MI_HOPAC
 
           
 
-            ElInventarioH = new List<InvH>();
+            ElInventarioH = new List<InventarioHomeopatiaSection>();
 
-            InvH Cosa = new InvH();
-            InvH Cosa2 = new InvH();
-            InvH Cosa3 = new InvH();
+            InventarioHomeopatiaSection Cosa  = new InventarioHomeopatiaSection();
+            InventarioHomeopatiaSection Cosa2 = new InventarioHomeopatiaSection();
+            InventarioHomeopatiaSection Cosa3 = new InventarioHomeopatiaSection();
 
             Cosa.Nombre = "Hola";
             Cosa.Potencia = "20";

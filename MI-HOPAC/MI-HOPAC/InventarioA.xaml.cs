@@ -21,14 +21,14 @@ namespace MI_HOPAC
     public partial class InventarioA : Page
     {
 
-        public List<InvA> elInvent { get; set; }
+        public List<InventarioAcupunturaSection> elInvent { get; set; }
         public InventarioA()
         {
             InitializeComponent();
 
-            elInvent = new List<InvA>();
+            elInvent = new List<InventarioAcupunturaSection>();
 
-            InvA Ejem = new InvA();
+            InventarioAcupunturaSection Ejem = new InventarioAcupunturaSection();
             Ejem.Nombre = "Navajas";
             Ejem.Cantidad = 7;
 
