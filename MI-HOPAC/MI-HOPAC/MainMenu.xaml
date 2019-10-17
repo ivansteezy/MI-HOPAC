@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MI_HOPAC"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainMenu" Height="658" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="MainMenu" Height="700" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
 
     <!--Minimizar y maximizar el menu-->
     <Window.Resources>
@@ -74,7 +74,7 @@
                 <Grid Height="150" Background="White">
                     <Ellipse Width="100" Height="100" Margin="50,16,50,34" >
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="resources/Pika.jpg" Stretch="Uniform"/>
+                            <ImageBrush ImageSource="Resources/ProfilePhoto.png" Stretch="Uniform"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" x:Name="profile_Name">Natalia Yañez</TextBlock>
@@ -139,7 +139,6 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="Injection" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Inventario" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

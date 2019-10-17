@@ -293,14 +293,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\back.jpg" />
+    <Resource Include="Resources\back.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\close.png" />
+    <Resource Include="Resources\close.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="resources\Pika.jpg" />
+    <Resource Include="Resources\ProfilePhoto.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
