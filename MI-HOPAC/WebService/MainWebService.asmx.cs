@@ -154,13 +154,13 @@ namespace WebService
 
         
         [WebMethod]
-        public void UpdateNotaDig(int pk, string color)
+        public void UpdateNotaDig(int pk, string texto, string color)
         {
             var controlador = new NotasDigitalesController();
-            controlador.ActualizarEvento(pk, color);
+            controlador.ActualizarEvento(pk, texto, color);
         }
         
-
+        //
         #endregion
 
 

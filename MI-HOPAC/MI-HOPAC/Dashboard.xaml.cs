@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MI_HOPAC.MiHomeacupService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,12 @@ namespace MI_HOPAC
         {
             InitializeComponent();
 
-
             Imprimir();
+        }
 
+
+        private void Imprimir()
+        {
             List<NotaSection> notas = GetNotas();
 
             if (notas.Count > 0)
@@ -35,28 +39,43 @@ namespace MI_HOPAC
             }
         }
 
-        private void Imprimir()
-        {
-
-            
-
-        }
-
         private List<NotaSection> GetNotas()
         {
 
-            return new List<NotaSection>()
-            {
-                new NotaSection("laskdjalksdjlañskdjlaskd", "#ff9aa2", 1),
-                new NotaSection("hsdfdsfgsdfg", "#ffdac1", 2),
-                new NotaSection("fshjfgjhdfgn", "#f7f7b7", 3),
-                new NotaSection("asdfsbrfsdfv", "#e2f0cb", 4),
-                new NotaSection("jrtyjfhjfgnwfgwef", "#b5ead7", 5),
-                new NotaSection("zxczdagadg", "#c7ceea", 6),         
-        };
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+            //Consultamos las notas
+            var result = client.GetNotasDig(UserControl.Fk);
+            List<NotaSection> notes = new List<NotaSection>();
+
+            //Para cada nota de la base de datos, lo pasasmos a una lista para imprimr.
+            foreach (MiHomeacupService.NotasDigitalesModel i in result)
+             {
+                if (i.m_Color == "1")
+                    i.m_Color = "#ff9aa2";
+                else if(i.m_Color == "2")
+                    i.m_Color = "#ffdac1";
+                else if (i.m_Color == "3")
+                    i.m_Color = "#f7f7b7";
+                else if (i.m_Color == "4")
+                    i.m_Color = "#e2f0cb";
+                else if (i.m_Color == "5")
+                    i.m_Color = "#b5ead7";
+                else if (i.m_Color == "6")
+                    i.m_Color = "#c7ceea";
+                    
+
+                var section = new NotaSection(i.m_IdNota, i.m_Text, i.m_Color);
+                 //Lo aniadimos a la lista
+                 notes.Add(section);
+             }
+
+            //Retornamos la lista con las notas para imprimir
+            return notes;      
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Color(object sender, RoutedEventArgs e)
         {
 
 
@@ -64,31 +83,66 @@ namespace MI_HOPAC
 
             var color = ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color;
 
+            var texto = ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Texto;
 
+            //MessageBox.Show(((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color);
 
-            if(color == "#ff9aa2")  
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#ffdac1";        
-            else if(color == "#ffdac1")
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#f7f7b7";
-            else if (color == "#f7f7b7")
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#e2f0cb";
-            else if (color == "#e2f0cb")
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#b5ead7";
-            else if (color == "#b5ead7")
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#c7ceea";
-            else if (color == "#c7ceea")
-                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#ff9aa2";
+            if (color == "#FFFF9AA2")  
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFFFDAC1";        
+            else if(color == "#FFFFDAC1")
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFF7F7B7";
+            else if (color == "#FFF7F7B7")
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFE2F0CB";
+            else if (color == "#FFE2F0CB")
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFB5EAD7";
+            else if (color == "#FFB5EAD7")
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFC7CEEA";
+            else if (color == "#FFC7CEEA")
+                ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color = "#FFFF9AA2";
 
 
             ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Change = 1;
 
+
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+            client.UpdateNotaDig(pk, texto, ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color);
 
             ListViewNotas.Items.Refresh();
 
 
         }
 
+        private void Botton_Modificar(object sender, RoutedEventArgs e)
+        {
+            var pk = ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Id;
 
+            var color = ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Color;
+
+            var texto = ((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Texto;
+
+            var vista = new NotasDigNueva(pk, texto, color);
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
+
+        }
+
+
+        private void Botton_Eliminar(object sender, RoutedEventArgs e)
+        {
+
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+            client.DeleteNotaDig(((MI_HOPAC.NotaSection)((System.Windows.FrameworkElement)sender).DataContext).Id);
+
+
+
+            Imprimir();
+
+        }
 
     }
+
+
 }

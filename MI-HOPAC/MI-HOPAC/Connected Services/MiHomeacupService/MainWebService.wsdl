@@ -239,6 +239,67 @@
       <s:element name="UpdateEventosResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetNotasDig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotasDigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNotasDigResult" type="tns:ArrayOfNotasDigitalesModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNotasDigitalesModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotasDigitalesModel" nillable="true" type="tns:NotasDigitalesModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotasDigitalesModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdNota" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Color" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctor" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteNotaDig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNotaDigResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertNotaDig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNotaDigResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateNotaDig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNotaDigResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetCitasSoapIn">
@@ -319,6 +380,30 @@
   <wsdl:message name="UpdateEventosSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateEventosResponse" />
   </wsdl:message>
+  <wsdl:message name="GetNotasDigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotasDig" />
+  </wsdl:message>
+  <wsdl:message name="GetNotasDigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotasDigResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNotaDigSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteNotaDig" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNotaDigSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteNotaDigResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNotaDigSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNotaDig" />
+  </wsdl:message>
+  <wsdl:message name="InsertNotaDigSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNotaDigResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNotaDigSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNotaDig" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNotaDigSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNotaDigResponse" />
+  </wsdl:message>
   <wsdl:portType name="MainWebServiceSoap">
     <wsdl:operation name="GetCitas">
       <wsdl:input message="tns:GetCitasSoapIn" />
@@ -371,6 +456,22 @@
     <wsdl:operation name="UpdateEventos">
       <wsdl:input message="tns:UpdateEventosSoapIn" />
       <wsdl:output message="tns:UpdateEventosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotasDig">
+      <wsdl:input message="tns:GetNotasDigSoapIn" />
+      <wsdl:output message="tns:GetNotasDigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaDig">
+      <wsdl:input message="tns:DeleteNotaDigSoapIn" />
+      <wsdl:output message="tns:DeleteNotaDigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaDig">
+      <wsdl:input message="tns:InsertNotaDigSoapIn" />
+      <wsdl:output message="tns:InsertNotaDigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaDig">
+      <wsdl:input message="tns:UpdateNotaDigSoapIn" />
+      <wsdl:output message="tns:UpdateNotaDigSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MainWebServiceSoap" type="tns:MainWebServiceSoap">
@@ -492,6 +593,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetNotasDig">
+      <soap:operation soapAction="http://tempuri.org/GetNotasDig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaDig">
+      <soap:operation soapAction="http://tempuri.org/DeleteNotaDig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaDig">
+      <soap:operation soapAction="http://tempuri.org/InsertNotaDig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaDig">
+      <soap:operation soapAction="http://tempuri.org/UpdateNotaDig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MainWebServiceSoap12" type="tns:MainWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -605,6 +742,42 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateEventos">
       <soap12:operation soapAction="http://tempuri.org/UpdateEventos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotasDig">
+      <soap12:operation soapAction="http://tempuri.org/GetNotasDig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaDig">
+      <soap12:operation soapAction="http://tempuri.org/DeleteNotaDig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaDig">
+      <soap12:operation soapAction="http://tempuri.org/InsertNotaDig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaDig">
+      <soap12:operation soapAction="http://tempuri.org/UpdateNotaDig" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

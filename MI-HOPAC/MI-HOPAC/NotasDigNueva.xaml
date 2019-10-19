@@ -22,16 +22,16 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Background="CadetBlue" Click="Button_Click" Grid.Row="0" Margin="20">Cambiar Color</Button>
+            <Button Background="CadetBlue" Click="Button_Color" Grid.Row="0" Margin="20">Cambiar Color</Button>
 
-            <Button Background="SkyBlue" Click="Button_Click_1" Grid.Row="1" Margin="20">Guardar</Button>
+            <Button Background="SkyBlue" Click="Button_Guardar" Grid.Row="1" Margin="20">Guardar</Button>
 
         </Grid>
 
 
 
-        <materialDesign:Card Height="400" Width="400" Margin="20" Grid.Column="0" x:Name="Nota" VerticalAlignment="Center"  HorizontalAlignment="Center">
-            <RichTextBox Margin="10" x:Name="Texto"  VerticalAlignment="Top"  VerticalContentAlignment="Stretch"  HorizontalContentAlignment="Stretch" ></RichTextBox>
+        <materialDesign:Card  x:Name="Nota" Height="400" Width="400" Margin="20" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Center">
+            <RichTextBox Margin="10" x:Name="Texto"  VerticalAlignment="Top"  VerticalContentAlignment="Stretch"  HorizontalContentAlignment="Stretch" FontSize="20" ></RichTextBox>
         </materialDesign:Card>
 
 
