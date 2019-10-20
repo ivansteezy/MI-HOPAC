@@ -45,32 +45,45 @@ namespace MI_HOPAC
                 MessageBox.Show("Complete los datos!");
         }
 
-        private void SaveImage()
-        {
-            //Realizar esta tarea en un Thread que no sea de la UI
-        }
-
-        private void OpenImage()
+        private OpenFileDialog OpenImage()
         {
             OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Selecciona una nueva imagen de perfil.";
+            op.Title = "Selecciona una nueva imagen";
 
             op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
                         "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                         "Portable Network Graphic (*.png)|*.png";
 
-            if (op.ShowDialog() == true)
+            return op;  
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = OpenImage();
+
+            if (dialog.ShowDialog() == true)
             {
-                string path = op.FileName;
+                string path = dialog.FileName;
 
-                var bitmap = new Bitmap(path);
-                System.Drawing.Image img = bitmap;
+                //Esto debera actualizarse de manera asincrona
+                ProfilePhoto.ImageSource = OperacionesAsincronas.UpdateProfileImage(path);
+            }
+        }
 
-                //Cambiar a directiorio relativo
-                img.Save("C:/Users/Iván/Documents/Mi-Hopac/Mi-Hopac/MI-HOPAC/MI-HOPAC/Resources/ProfilePhoto.png", ImageFormat.Png);
+        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
+        {
+            var dialog = OpenImage();
 
-                var bitmapImage = new BitmapImage(new Uri(path));
-                ProfilePhoto.ImageSource = bitmapImage;
+            if (dialog.ShowDialog() == true)
+            {
+                string path = dialog.FileName;
+                var imgbrsh = new ImageBrush();
+
+                //Esto debera actualizarse de manera asincrona
+                imgbrsh.ImageSource = OperacionesAsincronas.UpdateBackgroundImage(path);
+
+                var app = Application.Current as App;
+                app.Resources["Fondo"] = imgbrsh;
             }
         }
 
@@ -90,11 +103,6 @@ namespace MI_HOPAC
             MainMenu main = (MainMenu)Window.GetWindow(this);
             var dash = new Dashboard();
             main.main_Frame.Navigate(dash);
-        }
-
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            OpenImage();
         }
 
         public bool ValidarDatos()

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MI_HOPAC"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="{StaticResource Fondo}"
         mc:Ignorable="d"
-        Title="MainMenu" Height="700" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="MainMenu" Height="680" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
 
     <!--Minimizar y maximizar el menu-->
     <Window.Resources>
@@ -62,7 +63,7 @@
                     <RowDefinition Height="474*"/>
                     <RowDefinition Height="83*"/>
                 </Grid.RowDefinitions>
-                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2"></Frame>
+                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Opacity=".9"></Frame>
                 <!--Frame-->
             </Grid>
         </Grid>

@@ -103,6 +103,7 @@
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\InformacionAdicional.cs" />
+    <Compile Include="Foundation\OperacionesAsincronas.cs" />
     <Compile Include="InformacionPerfil.xaml.cs">
       <DependentUpon>InformacionPerfil.xaml</DependentUpon>
     </Compile>

@@ -47,10 +47,9 @@
                     <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center"></materialDesign:PackIcon>
                     <PasswordBox Width="200" Margin="10 0 0 20" x:Name="txt_Contrasena" materialDesign:HintAssist.Hint="Contraseña" materialDesign:HintAssist.IsFloating="True"></PasswordBox>
                 </StackPanel>
-                
+
                 <TextBlock Margin="0 10 0 0" TextAlignment="Right"><Hyperlink Click="Hyperlink_Click" FontSize="12" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Crea una cuenta</Hyperlink></TextBlock>
-                <TextBlock Margin="0 0 0 30" TextAlignment="Right"><Hyperlink FontSize="12" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">¿Has olvidado tu contraseña?</Hyperlink></TextBlock>
-                <Button Click="Button_Click" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="0 55 0 0" Width="120">Login</Button>
+                <Button Click="Button_Click" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="0 65 0 0" Width="120">Login</Button>
             </StackPanel>
         </materialDesign:Card>
     </Grid>
