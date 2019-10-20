@@ -1,4 +1,5 @@
 ﻿using MI_HOPAC.Foundation;
+using MI_HOPAC.MiHomeacupService;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,30 @@ namespace MI_HOPAC
     /// </summary>
     public partial class InformacionPerfil : Page
     {
+        string ubicacion;
         public InformacionPerfil()
         {
             InitializeComponent();
         }
 
+        public InformacionPerfil(string ubicacionUrl)
+        {
+            InitializeComponent();
+            ubicacion = ubicacionUrl;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenImage();
+            SaveData(txtCedula.Text, ubicacion);
+        }
+
+        private void SaveImage()
+        {
+            //Realizar esta tarea en un Thread que no sea de la UI
+        }
+
+        private void OpenImage()
         {
             OpenFileDialog op = new OpenFileDialog();
             op.Title = "Selecciona una nueva imagen de perfil.";
@@ -38,7 +57,7 @@ namespace MI_HOPAC
                         "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                         "Portable Network Graphic (*.png)|*.png";
 
-            if(op.ShowDialog() == true)
+            if (op.ShowDialog() == true)
             {
                 string path = op.FileName;
 
@@ -53,9 +72,17 @@ namespace MI_HOPAC
             }
         }
 
-        void SaveImage()
+        private void UbicacionButton_Click(object sender, RoutedEventArgs e)
         {
-            //Realizar esta tarea en un Thread que no sea de la UI
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+            var ub = new Ubicacion();
+            main.main_Frame.Navigate(ub);
         }
+
+        private void SaveData(string ubicacion, string cedula)
+        {
+            //TODO: Actualizar cedula y ubicacion
+        }
+
     }
 }

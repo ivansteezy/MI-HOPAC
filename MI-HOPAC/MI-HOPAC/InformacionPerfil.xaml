@@ -13,34 +13,35 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
-                <Ellipse Width="250" Height="250" HorizontalAlignment="Center" Grid.Column="0">
-                    <Ellipse.Fill>
-                        <ImageBrush x:Name="ProfilePhoto" ImageSource="Resources/ProfilePhoto.png" Stretch="Uniform"/>
-                    </Ellipse.Fill>
-                </Ellipse>
+                <StackPanel VerticalAlignment="Center">
+                    <Ellipse Width="250" Height="250" HorizontalAlignment="Center" Grid.Column="0">
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="ProfilePhoto" ImageSource="Resources/ProfilePhoto.png" Stretch="Uniform"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock VerticalAlignment="Center" Margin="20" TextAlignment="Center"><Hyperlink Click="Button_Click" FontSize="18" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Actualizar foto de perfil</Hyperlink></TextBlock>
+                </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                    <TextBox Width="350" materialDesign:HintAssist.Hint="Correo" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
-                    <TextBox Width="350" materialDesign:HintAssist.Hint="Correo" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
-                    <TextBox Width="350" materialDesign:HintAssist.Hint="Correo" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
-                    <TextBox Width="350" materialDesign:HintAssist.Hint="Correo" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
+                    <TextBox x:Name="txtCedula" Width="350" materialDesign:HintAssist.Hint="Cedula" FontSize="20" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
+                    <Button x:Name="UbicacionButton" Margin="0 60 0 0" Click="UbicacionButton_Click">Agregar ubicacion</Button>
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Row="1">
-                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Click="Button_Click">Actualizar perfil</Button>           
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Click="Button_Click">Actualizar perfil</Button>
+                </StackPanel>
             </Grid>
         </Grid>
-        
     </Grid>
 </Page>
