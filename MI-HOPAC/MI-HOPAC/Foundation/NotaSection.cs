@@ -14,7 +14,7 @@ namespace MI_HOPAC
         public int    Id    { get; set; }
         public int Change   { get; set; }
 
-        public NotaSection(string texto, string color, int id)
+        public NotaSection(int id, string texto, string color)
         {
             Texto = texto;
             Color = color;

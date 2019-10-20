@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using MI_HOPAC.MiHomeacupService;
 
 namespace MI_HOPAC
 {
@@ -41,7 +42,25 @@ namespace MI_HOPAC
         {
             if(ValidarInformacion())
             {
-                MessageBox.Show("Datos correctos!");
+                int med = 0;
+
+                if (radHomeopatia.IsChecked == true)
+                    med = 0;
+                else if (radAcupuntura.IsChecked == true)
+                    med = 1;
+                else if (radAmbos.IsChecked == true)
+                    med = 2;
+
+                MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+                var Res = client.InsertCuentaDoctores(txtNombre.Text, txtApellido.Text, txtCorreo.Text, txtContrasena.Password,med);
+
+                UserControl.Fk = Res;
+                UserControl.Medicina = med;
+
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
+                this.Close();
+
             }
         }
 
@@ -75,6 +94,9 @@ namespace MI_HOPAC
             }
             else return true;
         }
+
+
+
 
         
     }

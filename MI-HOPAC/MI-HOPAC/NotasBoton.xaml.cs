@@ -31,5 +31,7 @@ namespace MI_HOPAC
         {
             Frame.Content = new NotasDigNueva();
         }
+
+
     }
 }

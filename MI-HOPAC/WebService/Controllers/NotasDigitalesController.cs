@@ -21,12 +21,13 @@ namespace WebService.Controllers
             Delete("delete from notasdig where idNota = " + primaryKey.ToString());
         }
 
-        public void ActualizarEvento(int primaryKey, string color)
+        public void ActualizarEvento(int primaryKey, string texto, string color)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"update notasdig set Color = @color 
+            cmd.CommandText = @"update notasdig set Texto = @texto, Color = @color 
                                 where idNota = @primaryKey";
 
+            cmd.Parameters.Add(new MySqlParameter("@texto", texto));
             cmd.Parameters.Add(new MySqlParameter("@color", color));
             cmd.Parameters.Add(new MySqlParameter("@primaryKey", primaryKey));
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MI_HOPAC.MiHomeacupService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,7 @@ namespace MI_HOPAC
     /// </summary>
     public partial class NotasDigNueva : Page
     {
-        enum colores
-        {
-            //#ff9aa2, perp,asdas,gasdad
-            
-        };
+        int id = 0;
 
         public NotasDigNueva()
         {
@@ -38,7 +35,23 @@ namespace MI_HOPAC
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public NotasDigNueva(int pk, string texto, string color)
+        {
+            InitializeComponent();
+
+            var converter = new System.Windows.Media.BrushConverter();
+
+            var brush1 = (Brush)converter.ConvertFromString(color);
+
+            Nota.Background = brush1;
+
+            Texto.AppendText(texto);
+
+            id = pk;
+
+        }
+
+        private void Button_Color(object sender, RoutedEventArgs e)
         {
 
             var converter = new System.Windows.Media.BrushConverter();
@@ -64,10 +77,45 @@ namespace MI_HOPAC
             else if (Nota.Background.ToString() == brush6.ToString())
                 Nota.Background = brush1;
 
+            
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Guardar(object sender, RoutedEventArgs e)
         {
+
+            string textonota = new TextRange(Texto.Document.ContentStart, Texto.Document.ContentEnd).Text;
+
+            if(textonota == "" || textonota == " ")
+            {
+                MessageBox.Show("Inserte su texto porfavor");
+            }
+            else
+            {
+                MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+
+                if (id == 0)
+                {
+                    //insertar                  
+                    client.InsertNotaDig(textonota, Nota.Background.ToString(), UserControl.Fk);
+
+                }
+                else
+                {
+                    //Actualizar
+                    client.UpdateNotaDig(id, textonota, Nota.Background.ToString());
+
+                }
+
+
+                //Regresar a la Vista Inicial
+                var vista = new NotasBoton();
+
+                MainMenu main = (MainMenu)Window.GetWindow(this);
+
+                main.main_Frame.Navigate(vista);
+
+            }   
 
         }
     }

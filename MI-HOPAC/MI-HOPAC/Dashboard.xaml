@@ -23,8 +23,9 @@
                                 <StackPanel Background="{Binding Color}">
                                     <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen ="False" Padding="0" Margin="0" >
                                         <StackPanel>
-                                            <Button Content="Color" Click="Button_Click"></Button>
-                                            <Button Content="Eliminar"></Button>
+                                            <Button Content="Color" Click="Button_Color"></Button>
+                                            <Button Content="Modificar" Click="Botton_Modificar"></Button>
+                                            <Button Content="Eliminar" Click="Botton_Eliminar"></Button>
                                         </StackPanel>
                                     </materialDesign:PopupBox>
                                     <TextBlock Text="{Binding Texto}" Margin="20, 0"></TextBlock>

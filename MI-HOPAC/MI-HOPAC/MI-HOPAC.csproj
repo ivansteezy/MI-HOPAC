@@ -143,9 +143,13 @@
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Ubicacion.xaml.cs">
       <DependentUpon>Ubicacion.xaml</DependentUpon>
     </Compile>
+=======
+    <Compile Include="UserControl.cs" />
+>>>>>>> TerminarNotas
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -284,13 +288,28 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertEventosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Resource Include="Fonts\fuente.ttf" />
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

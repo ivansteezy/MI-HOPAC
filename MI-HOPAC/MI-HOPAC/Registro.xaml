@@ -36,7 +36,7 @@
             </Image.Style>
         </Image>
 
-        <TextBlock Margin="0 40 0 0" Style="{StaticResource Fuente}" FontSize="29" Foreground="White" TextAlignment="Center" Grid.RowSpan="2">Homeacup</TextBlock>
+        <TextBlock Margin="0 40 0 0"  FontSize="29" Foreground="White" TextAlignment="Center" Grid.RowSpan="2">Homeacup</TextBlock>
         <materialDesign:Card Padding="32" Margin="50,120,50,0" Height="357">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -87,11 +87,11 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock VerticalAlignment="Center" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource Fuente}" FontSize="20" Foreground="Black" TextAlignment="Center">Medicina</TextBlock>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="0" HorizontalAlignment="Center"  FontSize="20" Foreground="Black" TextAlignment="Center">Medicina</TextBlock>
                     <StackPanel Grid.Row="1" HorizontalAlignment="Center">
-                        <RadioButton x:Name="radHomeopatia" IsChecked="True" Margin="10" VerticalAlignment="Center" Grid.Row="1" Style="{StaticResource Fuente}">Homeopatía</RadioButton>
-                        <RadioButton x:Name="radAcupuntura" Margin="10" VerticalAlignment="Center" Grid.Row="2" Style="{StaticResource Fuente}">Acupuntura</RadioButton>
-                        <RadioButton x:Name="radAmbos" Margin="10" VerticalAlignment="Center" Grid.Row="3" Style="{StaticResource Fuente}">Ambos</RadioButton>
+                        <RadioButton x:Name="radHomeopatia" IsChecked="True" Margin="10" VerticalAlignment="Center" Grid.Row="1" >Homeopatía</RadioButton>
+                        <RadioButton x:Name="radAcupuntura" Margin="10" VerticalAlignment="Center" Grid.Row="2" >Acupuntura</RadioButton>
+                        <RadioButton x:Name="radAmbos" Margin="10" VerticalAlignment="Center" Grid.Row="3">Ambos</RadioButton>
                     </StackPanel>
                     <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Margin="10" TextAlignment="Right"><Hyperlink Click="Button_Click" FontSize="12" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">¿Ya tienes una cuenta?</Hyperlink></TextBlock>
                     <Button Click="Button_Click_1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" Width="170" Grid.Row="3">Registrar</Button>
