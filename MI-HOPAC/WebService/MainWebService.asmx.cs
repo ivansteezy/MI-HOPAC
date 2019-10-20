@@ -38,10 +38,17 @@ namespace WebService
 
         #region CuentaDoctores
         [WebMethod]
-        public List<CuentaDoctoresModel> GetCuentaDoctores(int pk)
+        public List<CuentaDoctoresModel> GetCuentaDoctores(string correo, string contrasena)
         {
             var controlador = new CuentaDoctoresController();
-            return controlador.ConsultaCuentaDoctores(pk);
+            return controlador.ConsultaCuentaDoctores(correo, contrasena);
+        }
+
+        [WebMethod]
+        public List<CuentaDoctoresModel> GetCuentaDoctoresById(int pk)
+        {
+            var controlador = new CuentaDoctoresController();
+            return controlador.ConsultaCuentaDoctoresById(pk);
         }
 
         [WebMethod]
@@ -49,6 +56,14 @@ namespace WebService
         {
             var controlador = new CuentaDoctoresController();
             controlador.EliminarCuentadoctores(pk);
+        }
+
+        [WebMethod]
+        public int InsertCuentaDoctores(string nombre, string appellidos, string Correo, string Contrasena, int Medicina)
+        {
+            var controlador = new CuentaDoctoresController();
+            var res = controlador.InsertaCuentaDoctor(nombre, appellidos, Correo, Contrasena, Medicina);
+            return res;
         }
         #endregion
 
@@ -85,19 +100,28 @@ namespace WebService
             return controlador.ConsultaDoctores(pk);
         }
 
+        [WebMethod]
         public void DeleteDoctores(int pk)
         {
             var controlador = new DoctoresControllers();
             controlador.EliminarDoctores(pk);
         }
+
+        [WebMethod]
+        public void UpdateDoctres(int pk, string ubicacion = "", long cedula = 0)
+        {
+            var controlador = new DoctoresControllers();
+            controlador.ActualizarDoctores(pk, ubicacion, cedula);
+        }
+
         #endregion
 
         #region Eventos
         [WebMethod]
-        public List<EventosModel> GetEventos()
+        public List<EventosModel> GetEventos(int pk)
         {
             var controlador = new EventosController();
-            return controlador.ConsultaEvento();
+            return controlador.ConsultaEvento(pk);
         }
 
         [WebMethod]
@@ -130,7 +154,6 @@ namespace WebService
         #endregion
 
         #region NotasDigitales
-
         [WebMethod]
         public List<NotasDigitalesModel> GetNotasDig(int fk)
         {
@@ -154,15 +177,12 @@ namespace WebService
 
         
         [WebMethod]
-        public void UpdateNotaDig(int pk, string color)
+        public void UpdateNotaDig(int pk, string texto, string color)
         {
             var controlador = new NotasDigitalesController();
-            controlador.ActualizarEvento(pk, color);
+            controlador.ActualizarEvento(pk, texto, color);
         }
-        
-
         #endregion
-
 
     }
 }

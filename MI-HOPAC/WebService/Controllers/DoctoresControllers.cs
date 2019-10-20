@@ -19,5 +19,20 @@ namespace WebService.Controllers
         {
             Delete("delete from doctores where idDoctores = " + primaryKey.ToString());
         }
+
+        public void ActualizarDoctores(int primaryKey, string ubicacion = "", long cedula = 0)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            cmd.CommandText = @"update doctores set Cedula = @cedula,
+                                       Ubicacion = @ubicacion
+                                       where idDoctores = @primaryKey";
+
+            cmd.Parameters.Add(new MySqlParameter("@cedula", cedula));
+            cmd.Parameters.Add(new MySqlParameter("@ubicacion", ubicacion));
+            cmd.Parameters.Add(new MySqlParameter("@primaryKey", primaryKey));
+
+            Update(cmd);
+        }
     }
 }

@@ -95,5 +95,12 @@ namespace MI_HOPAC
                     break;
             }
         }
+
+        private void Boton_Cuenta_Click(object sender, RoutedEventArgs e)
+        {
+            //Cargar la pagina de configuracion de perfil
+            main_Frame.Content = new InformacionPerfil();
+            title.Text = "Editar perfil";
+        }
     }
 }

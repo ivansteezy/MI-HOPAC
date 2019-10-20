@@ -102,6 +102,11 @@
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Foundation\InformacionAdicional.cs" />
+    <Compile Include="Foundation\OperacionesAsincronas.cs" />
+    <Compile Include="InformacionPerfil.xaml.cs">
+      <DependentUpon>InformacionPerfil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Eventos.xaml.cs">
       <DependentUpon>Eventos.xaml</DependentUpon>
     </Compile>
@@ -139,11 +144,19 @@
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ubicacion.xaml.cs">
+      <DependentUpon>Ubicacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Foundation\UserControl.cs" />
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InformacionPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ubicacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Principal.xaml.cs">
@@ -251,6 +268,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCitasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCuentaDoctoresByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -269,13 +289,31 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertEventosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateDoctresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Resource Include="Fonts\fuente.ttf" />
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -286,14 +324,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\back.jpg" />
+    <Resource Include="Resources\back.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\close.png" />
+    <Resource Include="Resources\close.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="resources\Pika.jpg" />
+    <Resource Include="Resources\ProfilePhoto.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

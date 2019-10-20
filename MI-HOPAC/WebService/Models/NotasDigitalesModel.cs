@@ -9,8 +9,8 @@ namespace WebService.Models
     {
         #region Propiedades
         public int m_IdNota   { set; get; }
-        public string Text    { set; get; }
-        public string Color { set; get; }
+        public string m_Text    { set; get; }
+        public string m_Color { set; get; }
         public int m_FkDoctor { set; get; }
         #endregion
     }

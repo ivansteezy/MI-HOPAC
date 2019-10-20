@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MI_HOPAC
 {
@@ -30,5 +31,4 @@ namespace MI_HOPAC
         app.ChangeTheme(new Uri("New Uri here"));
         */
     }
-    
 }

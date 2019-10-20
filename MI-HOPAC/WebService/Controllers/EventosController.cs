@@ -20,6 +20,13 @@ namespace WebService.Controllers
             return Select("select * from eventos where Nombre = '" + name + "'");
         }
 
+
+        public List<EventosModel> ConsultaEvento(int pk)
+        {
+            return Select("select * from eventos where fkDoctor = " + pk.ToString());
+        }
+
+
         public void EliminarEvento(int primaryKey)
         {
             Delete("delete from eventos where idEventos = " + primaryKey.ToString());
