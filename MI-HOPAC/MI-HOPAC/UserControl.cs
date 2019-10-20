@@ -9,6 +9,7 @@ namespace MI_HOPAC
     class UserControl
     {
         public static int Fk = 1;
+        public static int Medicina = 0;
 
     }
 }

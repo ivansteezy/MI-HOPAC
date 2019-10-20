@@ -119,6 +119,8 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string m_PasswordField;
         
+        private int m_MedicinaField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string m_FkDoctorField;
         
@@ -171,7 +173,20 @@ namespace MI_HOPAC.MiHomeacupService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int m_Medicina {
+            get {
+                return this.m_MedicinaField;
+            }
+            set {
+                if ((this.m_MedicinaField.Equals(value) != true)) {
+                    this.m_MedicinaField = value;
+                    this.RaisePropertyChanged("m_Medicina");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string m_FkDoctor {
             get {
                 return this.m_FkDoctorField;
@@ -359,13 +374,13 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string m_NombreField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_ApellidosField;
+        
         private int m_CedulaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string m_UbicacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string m_TipoDeMedicinaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -403,7 +418,20 @@ namespace MI_HOPAC.MiHomeacupService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string m_Apellidos {
+            get {
+                return this.m_ApellidosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_ApellidosField, value) != true)) {
+                    this.m_ApellidosField = value;
+                    this.RaisePropertyChanged("m_Apellidos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
         public int m_Cedula {
             get {
                 return this.m_CedulaField;
@@ -416,7 +444,7 @@ namespace MI_HOPAC.MiHomeacupService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string m_Ubicacion {
             get {
                 return this.m_UbicacionField;
@@ -425,19 +453,6 @@ namespace MI_HOPAC.MiHomeacupService {
                 if ((object.ReferenceEquals(this.m_UbicacionField, value) != true)) {
                     this.m_UbicacionField = value;
                     this.RaisePropertyChanged("m_Ubicacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string m_TipoDeMedicina {
-            get {
-                return this.m_TipoDeMedicinaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_TipoDeMedicinaField, value) != true)) {
-                    this.m_TipoDeMedicinaField = value;
-                    this.RaisePropertyChanged("m_TipoDeMedicina");
                 }
             }
         }
@@ -667,7 +682,7 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteCitas", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteCitasAsync(int pk);
         
-        // CODEGEN: Generating message contract since element name GetCuentaDoctoresResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name correo from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCuentaDoctores", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse GetCuentaDoctores(MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequest request);
         
@@ -679,6 +694,13 @@ namespace MI_HOPAC.MiHomeacupService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteCuentaDoctores", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteCuentaDoctoresAsync(int pk);
+        
+        // CODEGEN: Generating message contract since element name nombre from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertCuentaDoctores", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse InsertCuentaDoctores(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertCuentaDoctores", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse> InsertCuentaDoctoresAsync(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest request);
         
         // CODEGEN: Generating message contract since element name GetCuentaPacientesResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetCuentaPacientes", ReplyAction="*")]
@@ -860,14 +882,18 @@ namespace MI_HOPAC.MiHomeacupService {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class GetCuentaDoctoresRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int pk;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string correo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contrasena;
         
         public GetCuentaDoctoresRequestBody() {
         }
         
-        public GetCuentaDoctoresRequestBody(int pk) {
-            this.pk = pk;
+        public GetCuentaDoctoresRequestBody(string correo, string contrasena) {
+            this.correo = correo;
+            this.contrasena = contrasena;
         }
     }
     
@@ -902,6 +928,90 @@ namespace MI_HOPAC.MiHomeacupService {
         
         public GetCuentaDoctoresResponseBody(MI_HOPAC.MiHomeacupService.CuentaDoctoresModel[] GetCuentaDoctoresResult) {
             this.GetCuentaDoctoresResult = GetCuentaDoctoresResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertCuentaDoctoresRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCuentaDoctores", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequestBody Body;
+        
+        public InsertCuentaDoctoresRequest() {
+        }
+        
+        public InsertCuentaDoctoresRequest(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertCuentaDoctoresRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string appellidos;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Correo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Contrasena;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int Medicina;
+        
+        public InsertCuentaDoctoresRequestBody() {
+        }
+        
+        public InsertCuentaDoctoresRequestBody(string nombre, string appellidos, string Correo, string Contrasena, int Medicina) {
+            this.nombre = nombre;
+            this.appellidos = appellidos;
+            this.Correo = Correo;
+            this.Contrasena = Contrasena;
+            this.Medicina = Medicina;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertCuentaDoctoresResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCuentaDoctoresResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponseBody Body;
+        
+        public InsertCuentaDoctoresResponse() {
+        }
+        
+        public InsertCuentaDoctoresResponse(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertCuentaDoctoresResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int InsertCuentaDoctoresResult;
+        
+        public InsertCuentaDoctoresResponseBody() {
+        }
+        
+        public InsertCuentaDoctoresResponseBody(int InsertCuentaDoctoresResult) {
+            this.InsertCuentaDoctoresResult = InsertCuentaDoctoresResult;
         }
     }
     
@@ -1129,10 +1239,17 @@ namespace MI_HOPAC.MiHomeacupService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class GetEventosRequestBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pk;
+        
         public GetEventosRequestBody() {
+        }
+        
+        public GetEventosRequestBody(int pk) {
+            this.pk = pk;
         }
     }
     
@@ -1651,10 +1768,11 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetCuentaDoctores(request);
         }
         
-        public MI_HOPAC.MiHomeacupService.CuentaDoctoresModel[] GetCuentaDoctores(int pk) {
+        public MI_HOPAC.MiHomeacupService.CuentaDoctoresModel[] GetCuentaDoctores(string correo, string contrasena) {
             MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequest inValue = new MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequestBody();
-            inValue.Body.pk = pk;
+            inValue.Body.correo = correo;
+            inValue.Body.contrasena = contrasena;
             MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetCuentaDoctores(inValue);
             return retVal.Body.GetCuentaDoctoresResult;
         }
@@ -1664,10 +1782,11 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetCuentaDoctoresAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse> GetCuentaDoctoresAsync(int pk) {
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse> GetCuentaDoctoresAsync(string correo, string contrasena) {
             MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequest inValue = new MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetCuentaDoctoresRequestBody();
-            inValue.Body.pk = pk;
+            inValue.Body.correo = correo;
+            inValue.Body.contrasena = contrasena;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetCuentaDoctoresAsync(inValue);
         }
         
@@ -1677,6 +1796,39 @@ namespace MI_HOPAC.MiHomeacupService {
         
         public System.Threading.Tasks.Task DeleteCuentaDoctoresAsync(int pk) {
             return base.Channel.DeleteCuentaDoctoresAsync(pk);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertCuentaDoctores(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest request) {
+            return base.Channel.InsertCuentaDoctores(request);
+        }
+        
+        public int InsertCuentaDoctores(string nombre, string appellidos, string Correo, string Contrasena, int Medicina) {
+            MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest inValue = new MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.appellidos = appellidos;
+            inValue.Body.Correo = Correo;
+            inValue.Body.Contrasena = Contrasena;
+            inValue.Body.Medicina = Medicina;
+            MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertCuentaDoctores(inValue);
+            return retVal.Body.InsertCuentaDoctoresResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertCuentaDoctoresAsync(MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest request) {
+            return base.Channel.InsertCuentaDoctoresAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse> InsertCuentaDoctoresAsync(string nombre, string appellidos, string Correo, string Contrasena, int Medicina) {
+            MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest inValue = new MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.appellidos = appellidos;
+            inValue.Body.Correo = Correo;
+            inValue.Body.Contrasena = Contrasena;
+            inValue.Body.Medicina = Medicina;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertCuentaDoctoresAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1767,9 +1919,10 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetEventos(request);
         }
         
-        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventos() {
+        public MI_HOPAC.MiHomeacupService.EventosModel[] GetEventos(int pk) {
             MI_HOPAC.MiHomeacupService.GetEventosRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosRequestBody();
+            inValue.Body.pk = pk;
             MI_HOPAC.MiHomeacupService.GetEventosResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventos(inValue);
             return retVal.Body.GetEventosResult;
         }
@@ -1779,9 +1932,10 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetEventosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosResponse> GetEventosAsync() {
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetEventosResponse> GetEventosAsync(int pk) {
             MI_HOPAC.MiHomeacupService.GetEventosRequest inValue = new MI_HOPAC.MiHomeacupService.GetEventosRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetEventosRequestBody();
+            inValue.Body.pk = pk;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetEventosAsync(inValue);
         }
         

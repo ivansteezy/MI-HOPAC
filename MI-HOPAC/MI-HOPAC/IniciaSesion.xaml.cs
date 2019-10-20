@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using MI_HOPAC.MiHomeacupService;
+
 
 namespace MI_HOPAC
 {
@@ -25,6 +27,7 @@ namespace MI_HOPAC
         {
             InitializeComponent();
         }
+
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
@@ -46,10 +49,23 @@ namespace MI_HOPAC
         {
             if(ValidarInformacion())
             {
-                MessageBox.Show("Datos correctos!");
-                MainMenu main = new MainMenu();
-                main.Show();
-                this.Close();
+                MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+                var Res = client.GetCuentaDoctores(txt_Usuario.Text, txt_Contrasena.Password);
+
+                if(Res.Length > 0)
+                {
+                    UserControl.Fk = Res.ElementAt(0).m_IdCuentaDoctores;
+                    UserControl.Medicina = Res.ElementAt(0).m_Medicina;
+
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Correo o Contraseña erronea");
+                }
             }
         }
 
