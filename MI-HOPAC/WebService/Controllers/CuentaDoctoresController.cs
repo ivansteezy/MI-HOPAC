@@ -16,6 +16,10 @@ namespace WebService.Controllers
             return Select("select * from cuenta_doctores where correo = '" + correo + "' AND contrasena = '" + contrasena + "'");
         }
 
+        public List<CuentaDoctoresModel> ConsultaCuentaDoctoresById(int primaryKey)
+        {
+            return Select("select * from cuenta_doctores where idCuenta_Doctores = " + primaryKey.ToString());
+        }
 
         public void EliminarCuentadoctores(int primaryKey)
         {
@@ -27,7 +31,6 @@ namespace WebService.Controllers
         {
             try
             {
-
                 objConexion.Open();
 
                 MySqlCommand cmd = new MySqlCommand();
@@ -57,25 +60,9 @@ namespace WebService.Controllers
 
                 cmd.ExecuteNonQuery();
 
-                /*cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new MySqlParameter("nom", nombre));
-                cmd.Parameters.Add(new MySqlParameter("appe", appellidos));
-                cmd.Parameters.Add(new MySqlParameter("Cor", Correo));
-                cmd.Parameters.Add(new MySqlParameter("Contra", Contrasena));
-                cmd.Parameters.Add(new MySqlParameter("Medi", Medicina));
-                cmd.Parameters.Add(new MySqlParameter("LastID", x));
-
-
-               
-
-                var res = cmd.ExecuteScalar();
-                */
                 objConexion.Close();
 
                 return int.Parse(cmd.Parameters["@LastID"].Value.ToString());
-
-
             }
             catch (Exception ex)
             {

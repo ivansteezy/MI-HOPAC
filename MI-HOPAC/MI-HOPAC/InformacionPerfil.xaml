@@ -28,7 +28,7 @@
                             <ImageBrush x:Name="ProfilePhoto" ImageSource="Resources/ProfilePhoto.png" Stretch="Uniform"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <TextBlock VerticalAlignment="Center" Margin="20" TextAlignment="Center"><Hyperlink Click="Button_Click" FontSize="18" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Actualizar foto de perfil</Hyperlink></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="20" TextAlignment="Center"><Hyperlink Click="Hyperlink_Click" FontSize="18" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Actualizar foto de perfil</Hyperlink></TextBlock>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">

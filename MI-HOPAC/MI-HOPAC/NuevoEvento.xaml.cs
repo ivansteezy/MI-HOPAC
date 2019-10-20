@@ -43,7 +43,7 @@ namespace MI_HOPAC
                 var date = DateTime.Parse(fecha + " " + hora);
 
                 MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
-                client.InsertEventos(nombre, date, ubicacion, guia, UserControl.Fk); //Los insertamos a la base de datos
+                client.InsertEventos(nombre, date, ubicacion, guia, UserControl.Pk); //Los insertamos a la base de datos
                 var modelo = client.GetEventosByName(nombre).ToArray(); //Hacemos una consulta de lo que acabamos de insertar
 
                 QR.Source = Foundation.EventosSection.GenerarQR(modelo.First()); //Generamos el QR

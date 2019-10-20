@@ -143,13 +143,10 @@
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Ubicacion.xaml.cs">
       <DependentUpon>Ubicacion.xaml</DependentUpon>
     </Compile>
-=======
-    <Compile Include="UserControl.cs" />
->>>>>>> TerminarNotas
+    <Compile Include="Foundation\UserControl.cs" />
     <Page Include="Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -270,6 +267,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCitasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCuentaDoctoresByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCuentaDoctoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -301,6 +301,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateDoctresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateEventosResponse.datasource">

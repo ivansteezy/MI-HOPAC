@@ -97,7 +97,7 @@ namespace MI_HOPAC
                 if (id == 0)
                 {
                     //insertar                  
-                    client.InsertNotaDig(textonota, Nota.Background.ToString(), UserControl.Fk);
+                    client.InsertNotaDig(textonota, Nota.Background.ToString(), UserControl.Pk);
 
                 }
                 else

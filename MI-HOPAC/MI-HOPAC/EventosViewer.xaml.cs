@@ -32,7 +32,7 @@ namespace MI_HOPAC
         {
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
             //Consultamos todos los eventos
-            var result = client.GetEventos(UserControl.Fk).ToArray<EventosModel>();
+            var result = client.GetEventos(UserControl.Pk).ToArray<EventosModel>();
             List<Foundation.EventosSection> eventos = new List<Foundation.EventosSection>();
 
             //Para cada evento de la base de datos, crearemos una instacioa de un EventosSection.

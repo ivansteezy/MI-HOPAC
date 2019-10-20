@@ -54,8 +54,9 @@ namespace MI_HOPAC
                 MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
                 var Res = client.InsertCuentaDoctores(txtNombre.Text, txtApellido.Text, txtCorreo.Text, txtContrasena.Password,med);
 
-                UserControl.Fk = Res;
+                UserControl.Pk = Res;
                 UserControl.Medicina = med;
+                UserControl.Fk = client.GetCuentaDoctoresById(UserControl.Pk).ElementAt(0).m_FkDoctor;
 
                 MainMenu mainMenu = new MainMenu();
                 mainMenu.Show();
@@ -94,10 +95,6 @@ namespace MI_HOPAC
             }
             else return true;
         }
-
-
-
-
         
     }
 }

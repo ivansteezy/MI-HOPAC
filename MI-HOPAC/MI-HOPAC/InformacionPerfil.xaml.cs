@@ -39,8 +39,10 @@ namespace MI_HOPAC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenImage();
-            SaveData(txtCedula.Text, ubicacion);
+            if (!ValidarDatos())
+                SaveData(Int64.Parse(txtCedula.Text), ubicacion);
+            else
+                MessageBox.Show("Complete los datos!");
         }
 
         private void SaveImage()
@@ -79,10 +81,25 @@ namespace MI_HOPAC
             main.main_Frame.Navigate(ub);
         }
 
-        private void SaveData(string ubicacion, string cedula)
+        private void SaveData(long cedula, string ubicacion)
         {
-            //TODO: Actualizar cedula y ubicacion
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+            client.UpdateDoctres(UserControl.Fk, ubicacion, cedula);
+            MessageBox.Show("Actualizados los datos");
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+            var dash = new Dashboard();
+            main.main_Frame.Navigate(dash);
         }
 
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            OpenImage();
+        }
+
+        public bool ValidarDatos()
+        {
+            return string.IsNullOrEmpty(txtCedula.Text);
+        }
     }
 }

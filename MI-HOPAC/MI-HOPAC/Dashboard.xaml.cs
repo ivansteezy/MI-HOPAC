@@ -45,7 +45,7 @@ namespace MI_HOPAC
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
             //Consultamos las notas
-            var result = client.GetNotasDig(UserControl.Fk);
+            var result = client.GetNotasDig(UserControl.Pk);
             List<NotaSection> notes = new List<NotaSection>();
 
             //Para cada nota de la base de datos, lo pasasmos a una lista para imprimr.

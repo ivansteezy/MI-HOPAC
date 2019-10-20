@@ -55,8 +55,9 @@ namespace MI_HOPAC
 
                 if(Res.Length > 0)
                 {
-                    UserControl.Fk = Res.ElementAt(0).m_IdCuentaDoctores;
+                    UserControl.Pk = Res.ElementAt(0).m_IdCuentaDoctores;
                     UserControl.Medicina = Res.ElementAt(0).m_Medicina;
+                    UserControl.Fk = Res.ElementAt(0).m_FkDoctor;
 
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();

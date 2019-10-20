@@ -45,6 +45,13 @@ namespace WebService
         }
 
         [WebMethod]
+        public List<CuentaDoctoresModel> GetCuentaDoctoresById(int pk)
+        {
+            var controlador = new CuentaDoctoresController();
+            return controlador.ConsultaCuentaDoctoresById(pk);
+        }
+
+        [WebMethod]
         public void DeleteCuentaDoctores(int pk)
         {
             var controlador = new CuentaDoctoresController();
@@ -93,11 +100,20 @@ namespace WebService
             return controlador.ConsultaDoctores(pk);
         }
 
+        [WebMethod]
         public void DeleteDoctores(int pk)
         {
             var controlador = new DoctoresControllers();
             controlador.EliminarDoctores(pk);
         }
+
+        [WebMethod]
+        public void UpdateDoctres(int pk, string ubicacion = "", long cedula = 0)
+        {
+            var controlador = new DoctoresControllers();
+            controlador.ActualizarDoctores(pk, ubicacion, cedula);
+        }
+
         #endregion
 
         #region Eventos
@@ -138,7 +154,6 @@ namespace WebService
         #endregion
 
         #region NotasDigitales
-
         [WebMethod]
         public List<NotasDigitalesModel> GetNotasDig(int fk)
         {
@@ -167,8 +182,6 @@ namespace WebService
             var controlador = new NotasDigitalesController();
             controlador.ActualizarEvento(pk, texto, color);
         }
-        
-        //
         #endregion
 
     }
