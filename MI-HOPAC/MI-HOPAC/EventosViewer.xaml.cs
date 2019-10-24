@@ -47,5 +47,33 @@ namespace MI_HOPAC
             sectionEventos.ItemsSource = eventos;
         }
 
+        private void PackIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //Obtenemos el data context (todas las propiedades de cada evento)
+            var src = (MaterialDesignThemes.Wpf.PackIcon)e.Source;
+            var datactx = src.DataContext;
+            var data = (EventosSection)datactx;
+
+            //Guardamos el qr
+            var qr = data.qrSource;
+
+            PrintDialog pDialog = new PrintDialog();
+            pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+            pDialog.UserPageRangeEnabled = true;
+
+            // Mostramos el dialogo de imprimir
+            Nullable<Boolean> print = pDialog.ShowDialog();
+            if (print == true)
+            {
+                var dv = new DrawingVisual();
+                using (var dc = dv.RenderOpen())
+                {
+                    //Generamos un visual del Qr
+                    dc.DrawImage(qr, new Rect(200, 200, (qr.Width) * 3, (qr.Height) * 3));
+                }
+                //Lo imprimimos
+                pDialog.PrintVisual(dv, "QR de Evento.");
+            }
+        }
     }
 }
