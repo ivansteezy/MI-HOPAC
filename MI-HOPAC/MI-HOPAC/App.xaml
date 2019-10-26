@@ -17,7 +17,7 @@
             <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="White"></SolidColorBrush>
 
             <!--Background-->
-            <ImageBrush x:Key="Fondo" x:Name="background" ImageSource="Resources\back.jpg"/>
+            <ImageBrush x:Key="Fondo" x:Name="background" ImageSource="Resources\back.jpg" Opacity="2.0"/>
             
             <!--Fonts-->
             <Style x:Key="Font">

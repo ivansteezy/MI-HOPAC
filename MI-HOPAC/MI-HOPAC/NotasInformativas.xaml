@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:MI_HOPAC"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="NotasInformativas">
+      Title="NotasInformativas" 
+      Background="Transparent">
 
-    <Grid Background="White">
+    <Grid>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Notas informativas</TextBlock>
     </Grid>
 </Page>

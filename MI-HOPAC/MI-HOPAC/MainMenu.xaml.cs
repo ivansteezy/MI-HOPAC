@@ -26,14 +26,23 @@ namespace MI_HOPAC
         public MainMenu()
         {
             InitializeComponent();
-            ButtonOpenMenu.Visibility = Visibility.Visible;
+            Consolidate();
+        }
+
+        private void Consolidate()
+        {
+            ButtonOpenMenu.Visibility  = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
-            profile_Name.Visibility = Visibility.Collapsed;
-            main_Frame.Content = new NotasBoton();
-            if(Tipo == 0)
-                MenuH.Visibility = Visibility.Collapsed;
+            profile_Name.Visibility    = Visibility.Collapsed;
+            main_Frame.Content         = new NotasBoton();
+        }
+
+        private void DoctorMode()
+        {
+            if (Tipo == 0)
+                InventarioHomeopatia.Visibility = Visibility.Collapsed;
             else if (Tipo == 1)
-                MenuA.Visibility = Visibility.Collapsed;
+                InventarioAcupuntura.Visibility = Visibility.Collapsed;
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -45,53 +54,53 @@ namespace MI_HOPAC
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility  = Visibility.Collapsed;
             ButtonCloseMenu.Visibility = Visibility.Visible;
-            profile_Name.Visibility = Visibility.Visible;
+            profile_Name.Visibility    = Visibility.Visible;
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-            ButtonOpenMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility  = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
-            profile_Name.Visibility = Visibility.Collapsed;
+            profile_Name.Visibility    = Visibility.Collapsed;
         }
 
         private void Side_Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch(side_Menu.SelectedIndex)
             {
-                case 0:
+                case (int)Pagina.Inicio:
                     main_Frame.Content = new NotasBoton();
                     title.Text = "Inicio";
                     break;
-                case 1:
+                case (int)Pagina.Calendario:
                     main_Frame.Content = new Agenda();
                     title.Text = "Calendario";
                     break;
-                case 2:
+                case (int)Pagina.Expedientes:
                     title.Text = "Expedientes";
                     //TO DO: ver mas a detalle la paginacion de las carpetas de expedientes
                     break;
-                case 3:
+                case (int)Pagina.Eventos:
                     main_Frame.Content = new Eventos();
                     title.Text = "Eventos";
                     break;
-                case 4:
+                case (int)Pagina.NotasInformativas:
                     main_Frame.Content = new NotasInformativas();
                     title.Text = "Notas informativas";
                     break;
-                case 5:
+                case (int)Pagina.ForoPrivado:
                     main_Frame.Content = new ForoPrivado();
                     title.Text = "Foro privado";
                     break;
-                case 6:
+                case (int)Pagina.InventarioHomeopatico:
                     main_Frame.Content = new Inventario();
-                    title.Text = "Inventario";
+                    title.Text = "Inventario Homeopatico";
                     break;
-                case 7:
+                case (int)Pagina.InventarioAcupuntura:
                     main_Frame.Content = new InventarioA();
-                    title.Text = "Inventario";
+                    title.Text = "Inventario Acupuntura";
                     break;
             }
         }
@@ -101,6 +110,18 @@ namespace MI_HOPAC
             //Cargar la pagina de configuracion de perfil
             main_Frame.Content = new InformacionPerfil();
             title.Text = "Editar perfil";
+        }
+
+        enum Pagina
+        {
+            Inicio                = 0x0000,
+            Calendario            = 0x0001,
+            Expedientes           = 0x0002,
+            Eventos               = 0x0003,
+            NotasInformativas     = 0x0004,
+            ForoPrivado           = 0x0005,
+            InventarioHomeopatico = 0x0006,
+            InventarioAcupuntura  = 0x0007
         }
     }
 }

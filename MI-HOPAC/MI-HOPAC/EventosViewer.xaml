@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Eventos">
 
-    <Grid Background="White">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition  Height="50"></RowDefinition>
@@ -17,7 +17,7 @@
     
         <!--Con este ScrollViewer se mostraran cada uno de los eventos, esta es la plantilla de la MaterialDesignCard-->
         <ScrollViewer Grid.Row="0">
-            <ItemsControl x:Name="sectionEventos" ItemsSource="{Binding EventosSection}" Margin="20">
+            <ItemsControl x:Name="sectionEventos" ItemsSource="{Binding EventosSection}" Margin="20" Background="Transparent">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <materialDesign:Card Width="250" Height="200" Margin="10">  <!--Plantilla de la card-->

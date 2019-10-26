@@ -63,8 +63,10 @@
                     <RowDefinition Height="474*"/>
                     <RowDefinition Height="83*"/>
                 </Grid.RowDefinitions>
-                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Opacity=".9"></Frame>
+
                 <!--Frame-->
+                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Background="Transparent" />
+                
             </Grid>
         </Grid>
 
@@ -129,14 +131,14 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="60" x:Name="MenuH">
+                    <ListViewItem Height="60" x:Name="InventarioHomeopatia">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="MedicalBag" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Foro privado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="60" x:Name="MenuA">
+                    <ListViewItem Height="60" x:Name="InventarioAcupuntura">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="Injection" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Inventario" VerticalAlignment="Center" HorizontalAlignment="Center"/>

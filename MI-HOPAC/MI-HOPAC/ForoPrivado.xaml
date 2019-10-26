@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:MI_HOPAC"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ForoPrivado">
+      Title="ForoPrivado"
+      Background="Transparent">
 
-    <Grid Background="White">
+    <Grid>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Foro privado</TextBlock>
     </Grid>
 </Page>

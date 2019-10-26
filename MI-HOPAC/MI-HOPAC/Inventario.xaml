@@ -8,14 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Inventario">
 
-    <Grid Background="White">
-
-        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32">Homeopatico</TextBlock>
-
-        <DataGrid x:Name="InveGrid" Margin="15,50,15,40" ItemsSource="{Binding ElInventarioH}" ColumnWidth="*" FontSize="25"></DataGrid>
-
+    <Grid>
+        <DataGrid x:Name="InveGrid" Margin="15,50,15,40" ItemsSource="{Binding ElInventarioH}" ColumnWidth="*" FontSize="25" Background="Transparent"></DataGrid>
+        
         <Grid  Grid.Row="1" VerticalAlignment="Bottom" Margin="5">
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
