@@ -77,7 +77,7 @@
                 <Grid Height="150" Background="White">
                     <Ellipse Width="100" Height="100" Margin="50,16,50,34" >
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="Resources/ProfilePhoto.png" Stretch="Uniform"/>
+                            <ImageBrush ImageSource="../Resources/ProfilePhoto.png" Stretch="Uniform"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" x:Name="profile_Name">Natalia Yañez</TextBlock>
