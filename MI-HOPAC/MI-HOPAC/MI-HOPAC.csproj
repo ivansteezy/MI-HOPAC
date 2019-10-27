@@ -257,9 +257,6 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.CuentaPacientesModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.DiasModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -324,6 +321,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Resource Include="Fonts\fuente.ttf" />
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateInventarioHomeopatiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -5,5 +5,6 @@
         public string Nombre   { get; set; }
         public string Potencia { get; set; }
         public int    Cantidad { get; set; }
+        public int    id       { get; set; }
     }
 }

@@ -192,10 +192,10 @@ namespace WebService
         }
 
         [WebMethod]
-        public void DeleteInventarioHomeopatia(string name, int pk)
+        public void DeleteInventarioHomeopatia(int pk)
         {
             var controlador = new InventarioHomeopatiaController();
-            controlador.EliminarInventarioHomeopatia(name, pk);
+            controlador.EliminarInventarioHomeopatia(pk);
         }
 
         [WebMethod]
@@ -203,6 +203,13 @@ namespace WebService
         {
             var controlador = new InventarioHomeopatiaController();
             controlador.InsertarInvetarioHomeopatia(nombre, potencia, cantidad, fkDoctor);
+        }
+
+        [WebMethod]
+        public void UpdateInventarioHomeopatia(string nombre, int potencia, int cantidad, int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.ActualizarInventarioHomeopatia(nombre, potencia, cantidad, pk);
         }
         #endregion
 

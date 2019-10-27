@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="Mod" Grid.Column="0" Background="CadetBlue" Margin="15,0,15,0" Click="Mod_Click">Modifcar</Button>
-            <Button x:Name="Agr" Grid.Column="1" Background="CadetBlue" Margin="15,0,15,0" Click="Agr_Click">Agreagar</Button>
+            <Button x:Name="Agr" Grid.Column="1" Background="CadetBlue" Margin="15,0,15,0" Click="Agr_Click">Agregar</Button>
             <Button x:Name="Eli" Grid.Column="2" Background="CadetBlue" Margin="15,0,15,0" Click="Eli_Click">Eliminar</Button>
 
         </Grid>

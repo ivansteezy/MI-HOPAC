@@ -55,8 +55,8 @@ namespace MI_HOPAC.Views
                 return true;
         }
         
-        public string Nombre   { get { return txtNombre.Text; } }
-        public int    Cantidad { get { return Int32.Parse(txtCantidad.Text); } }
-        public int    Potencia { get { return Int32.Parse(txtPotencia.Text); } }
+        public string    Nombre   { get { return txtNombre.Text;   } set { txtNombre.Text = value; } }
+        public string    Cantidad { get { return txtCantidad.Text; } set { txtCantidad.Text = value; } }
+        public string    Potencia { get { return txtPotencia.Text; } set { txtPotencia.Text = value; } }
     }
 }

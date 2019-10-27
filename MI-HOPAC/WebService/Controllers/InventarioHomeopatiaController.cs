@@ -15,9 +15,9 @@ namespace WebService.Controllers
             return Select("select * from invhomeopatia where fkDoctor = " + pk.ToString());
         }
 
-        public void EliminarInventarioHomeopatia(string nombre, int pk)
+        public void EliminarInventarioHomeopatia(int pk)
         {
-            Delete("delete from invhomeopatia where fkDoctor = " + pk.ToString() + " and Nombre = '" + nombre + "'");
+            Delete("delete from invhomeopatia where idInvHom = " + pk.ToString());
         }
 
         public void InsertarInvetarioHomeopatia(string nombre, int potencia, int cantidad, int fkDoctor)
@@ -32,6 +32,18 @@ namespace WebService.Controllers
             cmd.Parameters.Add(new MySqlParameter("@fkDoctor", fkDoctor));
 
             Insert(cmd);
+        }
+
+        public void ActualizarInventarioHomeopatia(string nombre, int potencia, int cantidad, int pk)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = @"update invhomeopatia set Nombre = @nombre, Potencia = @potencia, Cantidad = @cantidad where idInvHom = " + pk.ToString();
+
+            cmd.Parameters.Add(new MySqlParameter("@nombre", nombre));
+            cmd.Parameters.Add(new MySqlParameter("@potencia", potencia));
+            cmd.Parameters.Add(new MySqlParameter("@cantidad", cantidad));
+
+            Update(cmd);
         }
     }
 }
