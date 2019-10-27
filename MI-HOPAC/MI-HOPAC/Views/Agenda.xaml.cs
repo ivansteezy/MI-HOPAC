@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MI_HOPAC
+namespace MI_HOPAC.Views
 {
     /// <summary>
     /// Lógica de interacción para Agenda.xaml
@@ -23,6 +23,11 @@ namespace MI_HOPAC
         public Agenda()
         {
             InitializeComponent();
+        }
+
+        public void Consolidate()
+        {
+
         }
     }
 }

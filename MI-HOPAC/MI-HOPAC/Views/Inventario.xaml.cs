@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MI_HOPAC.MiHomeacupService;
 
-namespace MI_HOPAC
+namespace MI_HOPAC.Views
 {
     /// <summary>
     /// Lógica de interacción para Inventario.xaml
@@ -21,56 +22,57 @@ namespace MI_HOPAC
     public partial class Inventario : Page
     {
 
-        public List<InventarioHomeopatiaSection> ElInventarioH { get; set; }
-
+        public List<InventarioHomeopatiaSection> DataInventarioHomeopatia { get; set; }
         public Inventario()
         {
             InitializeComponent();
-
-          
-
-            ElInventarioH = new List<InventarioHomeopatiaSection>();
-
-            InventarioHomeopatiaSection Cosa  = new InventarioHomeopatiaSection();
-            InventarioHomeopatiaSection Cosa2 = new InventarioHomeopatiaSection();
-            InventarioHomeopatiaSection Cosa3 = new InventarioHomeopatiaSection();
-
-            Cosa.Nombre = "Hola";
-            Cosa.Potencia = "20";
-            Cosa.Cantidad = 23;
-
-            ElInventarioH.Add(Cosa);
-
-            Cosa2.Nombre = "asda";
-            Cosa2.Potencia = "87";
-            Cosa2.Cantidad = 15;
-
-            ElInventarioH.Add(Cosa2);
-
-            Cosa3.Nombre = "hjyj";
-            Cosa3.Potencia = "74";
-            Cosa3.Cantidad = 35;
-
-            ElInventarioH.Add(Cosa3);
-
-            DataContext = this;                    
-
+            Consolidate();
         }
 
         private void Mod_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void Agr_Click(object sender, RoutedEventArgs e)
         {
-
+            //Insertar nombre, potencia y cantidad
+            var inputDialog = new InventarioHomeopatiaDialog();
+            if(inputDialog.ShowDialog() == true)
+            {
+                var client = new MainWebServiceSoapClient();
+                client.InsertInventarioHomeopatia(inputDialog.Nombre, inputDialog.Potencia, inputDialog.Cantidad, UserControl.Fk);
+            }
+            GridInventario.ItemsSource = null;
+            Consolidate();
         }
 
         private void Eli_Click(object sender, RoutedEventArgs e)
         {
-
+            var selected = (InventarioHomeopatiaSection)GridInventario.SelectedItem;
+            var client = new MainWebServiceSoapClient();
+            client.DeleteInventarioHomeopatia(selected.Nombre, UserControl.Fk);
+            GridInventario.ItemsSource = null;
+            Consolidate();
         }
 
+        private void Consolidate()
+        {
+            DataInventarioHomeopatia = new List<InventarioHomeopatiaSection>();
+
+            var client = new MainWebServiceSoapClient();
+            var result = client.GetInventarioHomeopatia(UserControl.Fk).ToList<InventarioHomeopatiaModel>();
+
+            foreach(var item in result)
+            {
+                var inventarioRow = new InventarioHomeopatiaSection();
+                inventarioRow.Nombre   = item.m_Nombre;
+                inventarioRow.Potencia = item.m_Potencia.ToString();
+                inventarioRow.Cantidad = item.m_Cantidad;
+                DataInventarioHomeopatia.Add(inventarioRow);
+            }
+            DataContext = this;
+            GridInventario.ItemsSource = DataInventarioHomeopatia;
+        }
     }
 }

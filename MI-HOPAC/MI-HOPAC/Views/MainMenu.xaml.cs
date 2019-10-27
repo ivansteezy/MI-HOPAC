@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MI_HOPAC.MiHomeacupService;
 
-namespace MI_HOPAC
+namespace MI_HOPAC.Views
 {
     /// <summary>
     /// Lógica de interacción para MainMenu.xaml

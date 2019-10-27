@@ -174,13 +174,35 @@ namespace WebService
             var controlador = new NotasDigitalesController();
             controlador.InsertarNotaDig(texto, color, fkDoctor);
         }
-
         
         [WebMethod]
         public void UpdateNotaDig(int pk, string texto, string color)
         {
             var controlador = new NotasDigitalesController();
             controlador.ActualizarEvento(pk, texto, color);
+        }
+        #endregion
+
+        #region Inventario Homeopatia
+        [WebMethod]
+        public List<InventarioHomeopatiaModel> GetInventarioHomeopatia(int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            return controlador.ConsultaInventarioHomeopatia(pk);
+        }
+
+        [WebMethod]
+        public void DeleteInventarioHomeopatia(string name, int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.EliminarInventarioHomeopatia(name, pk);
+        }
+
+        [WebMethod]
+        public void InsertInventarioHomeopatia(string nombre, int potencia, int cantidad, int fkDoctor)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.InsertarInvetarioHomeopatia(nombre, potencia, cantidad, fkDoctor);
         }
         #endregion
 

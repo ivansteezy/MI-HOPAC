@@ -1,4 +1,4 @@
-﻿<Window x:Class="MI_HOPAC.MainWindow"    
+﻿<Window x:Class="MI_HOPAC.Views.MainWindow"    
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,7 +23,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Image MouseDown="Image_MouseDown" Source="resources/close.png" Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+        <Image MouseDown="Image_MouseDown" Source="../resources/close.png" Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>

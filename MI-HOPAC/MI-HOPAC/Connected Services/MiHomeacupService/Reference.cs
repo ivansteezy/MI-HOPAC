@@ -664,6 +664,111 @@ namespace MI_HOPAC.MiHomeacupService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventarioHomeopatiaModel", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class InventarioHomeopatiaModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int m_IdInventarioHomeopatiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_NombreField;
+        
+        private double m_PotenciaField;
+        
+        private int m_CantidadField;
+        
+        private int m_FkDoctorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int m_IdInventarioHomeopatia {
+            get {
+                return this.m_IdInventarioHomeopatiaField;
+            }
+            set {
+                if ((this.m_IdInventarioHomeopatiaField.Equals(value) != true)) {
+                    this.m_IdInventarioHomeopatiaField = value;
+                    this.RaisePropertyChanged("m_IdInventarioHomeopatia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string m_Nombre {
+            get {
+                return this.m_NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_NombreField, value) != true)) {
+                    this.m_NombreField = value;
+                    this.RaisePropertyChanged("m_Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public double m_Potencia {
+            get {
+                return this.m_PotenciaField;
+            }
+            set {
+                if ((this.m_PotenciaField.Equals(value) != true)) {
+                    this.m_PotenciaField = value;
+                    this.RaisePropertyChanged("m_Potencia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int m_Cantidad {
+            get {
+                return this.m_CantidadField;
+            }
+            set {
+                if ((this.m_CantidadField.Equals(value) != true)) {
+                    this.m_CantidadField = value;
+                    this.RaisePropertyChanged("m_Cantidad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int m_FkDoctor {
+            get {
+                return this.m_FkDoctorField;
+            }
+            set {
+                if ((this.m_FkDoctorField.Equals(value) != true)) {
+                    this.m_FkDoctorField = value;
+                    this.RaisePropertyChanged("m_FkDoctor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MiHomeacupService.MainWebServiceSoap")]
     public interface MainWebServiceSoap {
@@ -808,6 +913,27 @@ namespace MI_HOPAC.MiHomeacupService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateNotaDig", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse> UpdateNotaDigAsync(MI_HOPAC.MiHomeacupService.UpdateNotaDigRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetInventarioHomeopatiaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetInventarioHomeopatia", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse GetInventarioHomeopatia(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetInventarioHomeopatia", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse> GetInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento name del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteInventarioHomeopatia", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse DeleteInventarioHomeopatia(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteInventarioHomeopatia", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse> DeleteInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertInventarioHomeopatia", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse InsertInventarioHomeopatia(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertInventarioHomeopatia", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse> InsertInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1859,6 +1985,212 @@ namespace MI_HOPAC.MiHomeacupService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetInventarioHomeopatiaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetInventarioHomeopatia", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequestBody Body;
+        
+        public GetInventarioHomeopatiaRequest() {
+        }
+        
+        public GetInventarioHomeopatiaRequest(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetInventarioHomeopatiaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pk;
+        
+        public GetInventarioHomeopatiaRequestBody() {
+        }
+        
+        public GetInventarioHomeopatiaRequestBody(int pk) {
+            this.pk = pk;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetInventarioHomeopatiaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetInventarioHomeopatiaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponseBody Body;
+        
+        public GetInventarioHomeopatiaResponse() {
+        }
+        
+        public GetInventarioHomeopatiaResponse(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetInventarioHomeopatiaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel[] GetInventarioHomeopatiaResult;
+        
+        public GetInventarioHomeopatiaResponseBody() {
+        }
+        
+        public GetInventarioHomeopatiaResponseBody(MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel[] GetInventarioHomeopatiaResult) {
+            this.GetInventarioHomeopatiaResult = GetInventarioHomeopatiaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteInventarioHomeopatiaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteInventarioHomeopatia", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequestBody Body;
+        
+        public DeleteInventarioHomeopatiaRequest() {
+        }
+        
+        public DeleteInventarioHomeopatiaRequest(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteInventarioHomeopatiaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int pk;
+        
+        public DeleteInventarioHomeopatiaRequestBody() {
+        }
+        
+        public DeleteInventarioHomeopatiaRequestBody(string name, int pk) {
+            this.name = name;
+            this.pk = pk;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteInventarioHomeopatiaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteInventarioHomeopatiaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponseBody Body;
+        
+        public DeleteInventarioHomeopatiaResponse() {
+        }
+        
+        public DeleteInventarioHomeopatiaResponse(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteInventarioHomeopatiaResponseBody {
+        
+        public DeleteInventarioHomeopatiaResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertInventarioHomeopatiaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertInventarioHomeopatia", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequestBody Body;
+        
+        public InsertInventarioHomeopatiaRequest() {
+        }
+        
+        public InsertInventarioHomeopatiaRequest(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertInventarioHomeopatiaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int potencia;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int cantidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int fkDoctor;
+        
+        public InsertInventarioHomeopatiaRequestBody() {
+        }
+        
+        public InsertInventarioHomeopatiaRequestBody(string nombre, int potencia, int cantidad, int fkDoctor) {
+            this.nombre = nombre;
+            this.potencia = potencia;
+            this.cantidad = cantidad;
+            this.fkDoctor = fkDoctor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertInventarioHomeopatiaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertInventarioHomeopatiaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponseBody Body;
+        
+        public InsertInventarioHomeopatiaResponse() {
+        }
+        
+        public InsertInventarioHomeopatiaResponse(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertInventarioHomeopatiaResponseBody {
+        
+        public InsertInventarioHomeopatiaResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MainWebServiceSoapChannel : MI_HOPAC.MiHomeacupService.MainWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -2334,6 +2666,87 @@ namespace MI_HOPAC.MiHomeacupService {
             inValue.Body.texto = texto;
             inValue.Body.color = color;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateNotaDigAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetInventarioHomeopatia(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest request) {
+            return base.Channel.GetInventarioHomeopatia(request);
+        }
+        
+        public MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel[] GetInventarioHomeopatia(int pk) {
+            MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequestBody();
+            inValue.Body.pk = pk;
+            MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetInventarioHomeopatia(inValue);
+            return retVal.Body.GetInventarioHomeopatiaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest request) {
+            return base.Channel.GetInventarioHomeopatiaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse> GetInventarioHomeopatiaAsync(int pk) {
+            MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaRequestBody();
+            inValue.Body.pk = pk;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetInventarioHomeopatiaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.DeleteInventarioHomeopatia(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest request) {
+            return base.Channel.DeleteInventarioHomeopatia(request);
+        }
+        
+        public void DeleteInventarioHomeopatia(string name, int pk) {
+            MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.pk = pk;
+            MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).DeleteInventarioHomeopatia(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.DeleteInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest request) {
+            return base.Channel.DeleteInventarioHomeopatiaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaResponse> DeleteInventarioHomeopatiaAsync(string name, int pk) {
+            MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.DeleteInventarioHomeopatiaRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.pk = pk;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).DeleteInventarioHomeopatiaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertInventarioHomeopatia(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest request) {
+            return base.Channel.InsertInventarioHomeopatia(request);
+        }
+        
+        public void InsertInventarioHomeopatia(string nombre, int potencia, int cantidad, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.potencia = potencia;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.fkDoctor = fkDoctor;
+            MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertInventarioHomeopatia(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest request) {
+            return base.Channel.InsertInventarioHomeopatiaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse> InsertInventarioHomeopatiaAsync(string nombre, int potencia, int cantidad, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest inValue = new MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.potencia = potencia;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.fkDoctor = fkDoctor;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertInventarioHomeopatiaAsync(inValue);
         }
     }
 }
