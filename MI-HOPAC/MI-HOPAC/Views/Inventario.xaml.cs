@@ -31,13 +31,13 @@ namespace MI_HOPAC.Views
 
         private void Mod_Click(object sender, RoutedEventArgs e)
         {
-           
+            var inputDialog = new InventarioHomeopatiaDialog("Actualice los datos del inventario.");
+            //TODO
         }
 
         private void Agr_Click(object sender, RoutedEventArgs e)
         {
-            //Insertar nombre, potencia y cantidad
-            var inputDialog = new InventarioHomeopatiaDialog();
+            var inputDialog = new InventarioHomeopatiaDialog("Ingrese los datos del inventario.");
             if(inputDialog.ShowDialog() == true)
             {
                 var client = new MainWebServiceSoapClient();

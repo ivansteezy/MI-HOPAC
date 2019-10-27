@@ -19,9 +19,19 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class InventarioHomeopatiaDialog : Window
     {
-        public InventarioHomeopatiaDialog()
+        public InventarioHomeopatiaDialog(string message)
         {
             InitializeComponent();
+            Message.Text = message;
+        }
+
+        public InventarioHomeopatiaDialog(string message, string mensaje, string nombre, int cantidad, int potencia)
+        {
+            InitializeComponent();
+            Message.Text = message;
+            txtNombre.Text = nombre;
+            txtCantidad.Text = cantidad.ToString();
+            txtPotencia.Text = potencia.ToString();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
