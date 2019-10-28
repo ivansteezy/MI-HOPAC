@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-17-838083219
+18-981938491
 
-30902941919
+32-88852538
 27-1016937511
-Agenda.xaml;Dashboard.xaml;InformacionPerfil.xaml;Eventos.xaml;EventosViewer.xaml;ForoPrivado.xaml;IniciaSesion.xaml;Inventario.xaml;InventarioA.xaml;MainMenu.xaml;NotasBoton.xaml;NotasDigNueva.xaml;NotasInformativas.xaml;NuevoEvento.xaml;Principal.xaml;Registro.xaml;Ubicacion.xaml;
+Views\Agenda.xaml;Views\Dashboard.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInformativas.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;
 
 True
 

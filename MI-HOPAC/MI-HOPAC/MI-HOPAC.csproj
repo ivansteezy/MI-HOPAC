@@ -91,7 +91,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Agenda.xaml.cs">
+    <Compile Include="Foundation\Citas.cs" />
+    <Compile Include="Views\Agenda.xaml.cs">
       <DependentUpon>Agenda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\MiHomeacupService\Reference.cs">
@@ -99,80 +100,86 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.xaml.cs">
+    <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\InformacionAdicional.cs" />
     <Compile Include="Foundation\OperacionesAsincronas.cs" />
-    <Compile Include="InformacionPerfil.xaml.cs">
+    <Compile Include="Views\InformacionPerfil.xaml.cs">
       <DependentUpon>InformacionPerfil.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Eventos.xaml.cs">
+    <Compile Include="Views\Eventos.xaml.cs">
       <DependentUpon>Eventos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EventosViewer.xaml.cs">
+    <Compile Include="Views\EventosViewer.xaml.cs">
       <DependentUpon>EventosViewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ForoPrivado.xaml.cs">
+    <Compile Include="Views\ForoPrivado.xaml.cs">
       <DependentUpon>ForoPrivado.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\EventosSection.cs" />
     <Compile Include="Foundation\InventarioAcupunturaSection.cs" />
-    <Compile Include="Inventario.xaml.cs">
+    <Compile Include="Views\Inventario.xaml.cs">
       <DependentUpon>Inventario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InventarioA.xaml.cs">
+    <Compile Include="Views\InventarioA.xaml.cs">
       <DependentUpon>InventarioA.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\InventarioHomeopatiaSection.cs" />
-    <Compile Include="MainMenu.xaml.cs">
+    <Compile Include="Views\InventarioAcupunturaDialog.xaml.cs">
+      <DependentUpon>InventarioAcupunturaDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventarioHomeopatiaDialog.xaml.cs">
+      <DependentUpon>InventarioHomeopatiaDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\NotaSection.cs" />
-    <Compile Include="NotasBoton.xaml.cs">
+    <Compile Include="Views\NotasBoton.xaml.cs">
       <DependentUpon>NotasBoton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NotasDigNueva.xaml.cs">
+    <Compile Include="Views\NotasDigNueva.xaml.cs">
       <DependentUpon>NotasDigNueva.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NotasInformativas.xaml.cs">
+    <Compile Include="Views\NotasInformativas.xaml.cs">
       <DependentUpon>NotasInformativas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NuevoEvento.xaml.cs">
+    <Compile Include="Views\NuevoEvento.xaml.cs">
       <DependentUpon>NuevoEvento.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Registro.xaml.cs">
+    <Compile Include="Views\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ubicacion.xaml.cs">
+    <Compile Include="Views\Ubicacion.xaml.cs">
       <DependentUpon>Ubicacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\UserControl.cs" />
-    <Page Include="Agenda.xaml">
+    <Page Include="Views\Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dashboard.xaml">
+    <Page Include="Views\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InformacionPerfil.xaml">
+    <Page Include="Views\InformacionPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Eventos.xaml">
+    <Page Include="Views\Eventos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EventosViewer.xaml">
+    <Page Include="Views\EventosViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ForoPrivado.xaml">
+    <Page Include="Views\ForoPrivado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IniciaSesion.xaml">
+    <Page Include="Views\IniciaSesion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -180,55 +187,56 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IniciaSesion.xaml.cs">
+    <Compile Include="Views\IniciaSesion.xaml.cs">
       <DependentUpon>IniciaSesion.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Inventario.xaml">
+    <Page Include="Views\Inventario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InventarioA.xaml">
+    <Page Include="Views\InventarioA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainMenu.xaml">
+    <Page Include="Views\InventarioAcupunturaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventarioHomeopatiaDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="NotasBoton.xaml">
+    <Page Include="Views\NotasBoton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NotasDigNueva.xaml">
+    <Page Include="Views\NotasDigNueva.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NotasInformativas.xaml">
+    <Page Include="Views\NotasInformativas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NuevoEvento.xaml">
+    <Page Include="Views\NuevoEvento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Principal.xaml">
+    <Page Include="Views\Registro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Registro.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ubicacion.xaml">
+    <Page Include="Views\Ubicacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Principal.xaml.cs">
-      <DependentUpon>Principal.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -289,6 +297,12 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -298,7 +312,19 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
@@ -311,6 +337,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Resource Include="Fonts\fuente.ttf" />
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateInventarioHomeopatiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -352,6 +384,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />

@@ -19,7 +19,6 @@ namespace WebService
     // [System.Web.Script.Services.ScriptService]
     public class MainWebService : System.Web.Services.WebService
     {
-
         #region Citas
         [WebMethod]
         public List<CitasModel> GetCitas(int pk)
@@ -174,7 +173,6 @@ namespace WebService
             var controlador = new NotasDigitalesController();
             controlador.InsertarNotaDig(texto, color, fkDoctor);
         }
-
         
         [WebMethod]
         public void UpdateNotaDig(int pk, string texto, string color)
@@ -184,5 +182,64 @@ namespace WebService
         }
         #endregion
 
+        #region Inventario Homeopatia
+        [WebMethod]
+        public List<InventarioHomeopatiaModel> GetInventarioHomeopatia(int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            return controlador.ConsultaInventarioHomeopatia(pk);
+        }
+
+        [WebMethod]
+        public void DeleteInventarioHomeopatia(int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.EliminarInventarioHomeopatia(pk);
+        }
+
+        [WebMethod]
+        public void InsertInventarioHomeopatia(string nombre, int potencia, int cantidad, int fkDoctor)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.InsertarInvetarioHomeopatia(nombre, potencia, cantidad, fkDoctor);
+        }
+
+        [WebMethod]
+        public void UpdateInventarioHomeopatia(string nombre, int potencia, int cantidad, int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.ActualizarInventarioHomeopatia(nombre, potencia, cantidad, pk);
+        }
+        #endregion
+
+        #region Inventario Acupuntura
+        [WebMethod]
+        public List<InventarioAcupunturaModel> GetInventarioAcupuntura(int pk)
+        {
+            var controlador = new InventarioAcupunturaController();
+            return controlador.ConsultaInventarioAcupuntura(pk);
+        }
+
+        [WebMethod]
+        public void DeleteInventarioAcupuntura(int pk)
+        {
+            var controlador = new InventarioAcupunturaController();
+            controlador.EliminarInventarioAcupuntura(pk);
+        }
+
+        [WebMethod]
+        public void InsertInventarioAcupuntura(string nombre, int cantidad, int fkDoctor)
+        {
+            var controlador = new InventarioAcupunturaController();
+            controlador.InsertarInvetarioAcupuntura(nombre, cantidad, fkDoctor);
+        }
+
+        [WebMethod]
+        public void UpdateInventarioAcupuntura(string nombre, int cantidad, int pk)
+        {
+            var controlador = new InventarioAcupunturaController();
+            controlador.ActualizarInventarioAcupuntura(nombre, cantidad, pk);
+        }
+        #endregion
     }
 }
