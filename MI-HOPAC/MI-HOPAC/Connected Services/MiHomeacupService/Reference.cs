@@ -769,6 +769,96 @@ namespace MI_HOPAC.MiHomeacupService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventarioAcupunturaModel", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class InventarioAcupunturaModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int m_IdInventarioAcupunturaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string m_NombreField;
+        
+        private int m_CantidadField;
+        
+        private int m_FkDoctorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int m_IdInventarioAcupuntura {
+            get {
+                return this.m_IdInventarioAcupunturaField;
+            }
+            set {
+                if ((this.m_IdInventarioAcupunturaField.Equals(value) != true)) {
+                    this.m_IdInventarioAcupunturaField = value;
+                    this.RaisePropertyChanged("m_IdInventarioAcupuntura");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string m_Nombre {
+            get {
+                return this.m_NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.m_NombreField, value) != true)) {
+                    this.m_NombreField = value;
+                    this.RaisePropertyChanged("m_Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int m_Cantidad {
+            get {
+                return this.m_CantidadField;
+            }
+            set {
+                if ((this.m_CantidadField.Equals(value) != true)) {
+                    this.m_CantidadField = value;
+                    this.RaisePropertyChanged("m_Cantidad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int m_FkDoctor {
+            get {
+                return this.m_FkDoctorField;
+            }
+            set {
+                if ((this.m_FkDoctorField.Equals(value) != true)) {
+                    this.m_FkDoctorField = value;
+                    this.RaisePropertyChanged("m_FkDoctor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MiHomeacupService.MainWebServiceSoap")]
     public interface MainWebServiceSoap {
@@ -940,6 +1030,33 @@ namespace MI_HOPAC.MiHomeacupService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateInventarioHomeopatia", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateInventarioHomeopatiaResponse> UpdateInventarioHomeopatiaAsync(MI_HOPAC.MiHomeacupService.UpdateInventarioHomeopatiaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetInventarioAcupunturaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetInventarioAcupuntura", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse GetInventarioAcupuntura(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetInventarioAcupuntura", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse> GetInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteInventarioAcupuntura", ReplyAction="*")]
+        void DeleteInventarioAcupuntura(int pk);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteInventarioAcupuntura", ReplyAction="*")]
+        System.Threading.Tasks.Task DeleteInventarioAcupunturaAsync(int pk);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertInventarioAcupuntura", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse InsertInventarioAcupuntura(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertInventarioAcupuntura", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse> InsertInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateInventarioAcupuntura", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse UpdateInventarioAcupuntura(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateInventarioAcupuntura", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse> UpdateInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2205,6 +2322,212 @@ namespace MI_HOPAC.MiHomeacupService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetInventarioAcupunturaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetInventarioAcupuntura", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequestBody Body;
+        
+        public GetInventarioAcupunturaRequest() {
+        }
+        
+        public GetInventarioAcupunturaRequest(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetInventarioAcupunturaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int pk;
+        
+        public GetInventarioAcupunturaRequestBody() {
+        }
+        
+        public GetInventarioAcupunturaRequestBody(int pk) {
+            this.pk = pk;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetInventarioAcupunturaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetInventarioAcupunturaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponseBody Body;
+        
+        public GetInventarioAcupunturaResponse() {
+        }
+        
+        public GetInventarioAcupunturaResponse(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetInventarioAcupunturaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel[] GetInventarioAcupunturaResult;
+        
+        public GetInventarioAcupunturaResponseBody() {
+        }
+        
+        public GetInventarioAcupunturaResponseBody(MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel[] GetInventarioAcupunturaResult) {
+            this.GetInventarioAcupunturaResult = GetInventarioAcupunturaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertInventarioAcupunturaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertInventarioAcupuntura", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequestBody Body;
+        
+        public InsertInventarioAcupunturaRequest() {
+        }
+        
+        public InsertInventarioAcupunturaRequest(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertInventarioAcupunturaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int cantidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int fkDoctor;
+        
+        public InsertInventarioAcupunturaRequestBody() {
+        }
+        
+        public InsertInventarioAcupunturaRequestBody(string nombre, int cantidad, int fkDoctor) {
+            this.nombre = nombre;
+            this.cantidad = cantidad;
+            this.fkDoctor = fkDoctor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertInventarioAcupunturaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertInventarioAcupunturaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponseBody Body;
+        
+        public InsertInventarioAcupunturaResponse() {
+        }
+        
+        public InsertInventarioAcupunturaResponse(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertInventarioAcupunturaResponseBody {
+        
+        public InsertInventarioAcupunturaResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateInventarioAcupunturaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateInventarioAcupuntura", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequestBody Body;
+        
+        public UpdateInventarioAcupunturaRequest() {
+        }
+        
+        public UpdateInventarioAcupunturaRequest(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateInventarioAcupunturaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int cantidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int pk;
+        
+        public UpdateInventarioAcupunturaRequestBody() {
+        }
+        
+        public UpdateInventarioAcupunturaRequestBody(string nombre, int cantidad, int pk) {
+            this.nombre = nombre;
+            this.cantidad = cantidad;
+            this.pk = pk;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateInventarioAcupunturaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateInventarioAcupunturaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponseBody Body;
+        
+        public UpdateInventarioAcupunturaResponse() {
+        }
+        
+        public UpdateInventarioAcupunturaResponse(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class UpdateInventarioAcupunturaResponseBody {
+        
+        public UpdateInventarioAcupunturaResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MainWebServiceSoapChannel : MI_HOPAC.MiHomeacupService.MainWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -2773,6 +3096,95 @@ namespace MI_HOPAC.MiHomeacupService {
             inValue.Body.cantidad = cantidad;
             inValue.Body.pk = pk;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateInventarioHomeopatiaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetInventarioAcupuntura(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest request) {
+            return base.Channel.GetInventarioAcupuntura(request);
+        }
+        
+        public MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel[] GetInventarioAcupuntura(int pk) {
+            MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequestBody();
+            inValue.Body.pk = pk;
+            MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetInventarioAcupuntura(inValue);
+            return retVal.Body.GetInventarioAcupunturaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.GetInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest request) {
+            return base.Channel.GetInventarioAcupunturaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse> GetInventarioAcupunturaAsync(int pk) {
+            MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaRequestBody();
+            inValue.Body.pk = pk;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetInventarioAcupunturaAsync(inValue);
+        }
+        
+        public void DeleteInventarioAcupuntura(int pk) {
+            base.Channel.DeleteInventarioAcupuntura(pk);
+        }
+        
+        public System.Threading.Tasks.Task DeleteInventarioAcupunturaAsync(int pk) {
+            return base.Channel.DeleteInventarioAcupunturaAsync(pk);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertInventarioAcupuntura(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest request) {
+            return base.Channel.InsertInventarioAcupuntura(request);
+        }
+        
+        public void InsertInventarioAcupuntura(string nombre, int cantidad, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.fkDoctor = fkDoctor;
+            MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertInventarioAcupuntura(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest request) {
+            return base.Channel.InsertInventarioAcupunturaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse> InsertInventarioAcupunturaAsync(string nombre, int cantidad, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.fkDoctor = fkDoctor;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertInventarioAcupunturaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.UpdateInventarioAcupuntura(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest request) {
+            return base.Channel.UpdateInventarioAcupuntura(request);
+        }
+        
+        public void UpdateInventarioAcupuntura(string nombre, int cantidad, int pk) {
+            MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.pk = pk;
+            MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateInventarioAcupuntura(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.UpdateInventarioAcupunturaAsync(MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest request) {
+            return base.Channel.UpdateInventarioAcupunturaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse> UpdateInventarioAcupunturaAsync(string nombre, int cantidad, int pk) {
+            MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest inValue = new MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaRequestBody();
+            inValue.Body.nombre = nombre;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.pk = pk;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateInventarioAcupunturaAsync(inValue);
         }
     }
 }

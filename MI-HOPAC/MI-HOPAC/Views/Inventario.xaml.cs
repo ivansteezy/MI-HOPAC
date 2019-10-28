@@ -61,7 +61,7 @@ namespace MI_HOPAC.Views
 
             if (inputDialog.ShowDialog() == true)
             {    
-                client.InsertInventarioHomeopatia(inputDialog.Nombre, Int32.Parse(inputDialog.Potencia), Int32.Parse(inputDialog.Cantidad), UserControl.Fk);
+                client.InsertInventarioHomeopatia(inputDialog.Nombre, Int32.Parse(inputDialog.Potencia), Int32.Parse(inputDialog.Cantidad), UserControl.Pk);
             }
             GridInventario.ItemsSource = null;
             Consolidate();
@@ -78,7 +78,6 @@ namespace MI_HOPAC.Views
             }
             else
             {
-                var res = client.GetInventarioHomeopatia(UserControl.Fk).ToList<InventarioHomeopatiaModel>();
                 client.DeleteInventarioHomeopatia(selected.id);
                 GridInventario.ItemsSource = null;
                 Consolidate();
@@ -88,10 +87,9 @@ namespace MI_HOPAC.Views
         private void Consolidate()
         {
             DataInventarioHomeopatia = new List<InventarioHomeopatiaSection>();
-            GridInventario.AutoGenerateColumns = true;
 
             var client = new MainWebServiceSoapClient();
-            var result = client.GetInventarioHomeopatia(UserControl.Fk).ToList<InventarioHomeopatiaModel>();
+            var result = client.GetInventarioHomeopatia(UserControl.Pk).ToList<InventarioHomeopatiaModel>();
 
             foreach(var item in result)
             {

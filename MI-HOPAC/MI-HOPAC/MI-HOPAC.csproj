@@ -126,6 +126,9 @@
       <DependentUpon>InventarioA.xaml</DependentUpon>
     </Compile>
     <Compile Include="Foundation\InventarioHomeopatiaSection.cs" />
+    <Compile Include="Views\InventarioAcupunturaDialog.xaml.cs">
+      <DependentUpon>InventarioAcupunturaDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InventarioHomeopatiaDialog.xaml.cs">
       <DependentUpon>InventarioHomeopatiaDialog.xaml</DependentUpon>
     </Compile>
@@ -193,6 +196,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\InventarioA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventarioAcupunturaDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,6 +297,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetInventarioHomeopatiaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -302,10 +312,16 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertInventarioHomeopatiaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel.datasource">
@@ -321,6 +337,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <Resource Include="Fonts\fuente.ttf" />
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateInventarioAcupunturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateInventarioHomeopatiaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -9,7 +9,15 @@
       Title="Inventario">
 
     <Grid>
-        <DataGrid x:Name="GridInventario" Focusable="True" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" Margin="15,50,15,40" ItemsSource="{Binding DataInventarioHomeopatia}" ColumnWidth="*" FontSize="25" Background="Transparent"></DataGrid>
+        <DataGrid x:Name="GridInventario" Focusable="True" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                  Margin="15,50,15,40" ItemsSource="{Binding DataInventarioHomeopatia}" ColumnWidth="*" FontSize="20"
+                  Background="Transparent" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Potencia" Binding="{Binding Potencia}"/>
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <Grid  Grid.Row="1" VerticalAlignment="Bottom" Margin="5">
             <Grid.ColumnDefinitions>
@@ -21,9 +29,6 @@
             <Button x:Name="Mod" Grid.Column="0" Background="CadetBlue" Margin="15,0,15,0" Click="Mod_Click">Modifcar</Button>
             <Button x:Name="Agr" Grid.Column="1" Background="CadetBlue" Margin="15,0,15,0" Click="Agr_Click">Agregar</Button>
             <Button x:Name="Eli" Grid.Column="2" Background="CadetBlue" Margin="15,0,15,0" Click="Eli_Click">Eliminar</Button>
-
         </Grid>
-
     </Grid>
-
 </Page>

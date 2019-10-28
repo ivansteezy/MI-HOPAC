@@ -20,9 +20,6 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class MainMenu : Window
     {
-        bool Con = true;
-        int Tipo = 2; //De la Base de Datos
-
         public MainMenu()
         {
             InitializeComponent();
@@ -39,9 +36,9 @@ namespace MI_HOPAC.Views
 
         private void DoctorMode()
         {
-            if (Tipo == 0)
+            if (UserControl.Medicina == 0)
                 InventarioHomeopatia.Visibility = Visibility.Collapsed;
-            else if (Tipo == 1)
+            else if (UserControl.Medicina == 1)
                 InventarioAcupuntura.Visibility = Visibility.Collapsed;
         }
 
@@ -80,7 +77,6 @@ namespace MI_HOPAC.Views
                     break;
                 case (int)Pagina.Expedientes:
                     title.Text = "Expedientes";
-                    //TO DO: ver mas a detalle la paginacion de las carpetas de expedientes
                     break;
                 case (int)Pagina.Eventos:
                     main_Frame.Content = new Eventos();
