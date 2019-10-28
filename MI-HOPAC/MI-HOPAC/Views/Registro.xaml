@@ -24,7 +24,7 @@
         </Grid.Background>
 
         
-        <Image MouseDown="Image_MouseDown" Source="resources/close.png" Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+        <Image MouseDown="Image_MouseDown" Source="../Resources/close.png" Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
