@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using MI_HOPAC.MiHomeacupService;
+using System.Net.Mail;
+using System.Net;
 
 namespace MI_HOPAC.Views
 {
@@ -21,6 +23,9 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class Registro : Window
     {
+        static Random ran = new Random();
+        int randomNumber = ran.Next(1000, 9999);
+
         public Registro()
         {
             InitializeComponent();
@@ -58,10 +63,7 @@ namespace MI_HOPAC.Views
                 UserControl.Medicina = med;
                 UserControl.Fk = client.GetCuentaDoctoresById(UserControl.Pk).ElementAt(0).m_FkDoctor;
 
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.Show();
-                this.Close();
-
+                EnviarCorreo(txtCorreo.Text);
             }
         }
 
@@ -95,6 +97,55 @@ namespace MI_HOPAC.Views
             }
             else return true;
         }
-        
+
+        public void EnviarCorreo(string destinatario)
+        {
+            try
+            {
+                var fromAddress = new MailAddress("homeacup@gmail.com", "Servicio Homeacup");
+                var toAddress = new MailAddress(destinatario, txtNombre.Text);
+                const string fromPassword = "Proyecto1";
+                const string subject = "Verificacion de cuenta.";
+                string body =
+                @"¡Hola! para continuar con el proceso de registro de tu cuenta, ingresa el siguiente codigo en tu aplicación." + 
+                "\nCódigo: " + randomNumber + "\nSi usted no solicito el registro a esta cuneta, haga caso omiso.";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = true,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+                };
+
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            AbrirDialogo();
+        }
+
+        public void AbrirDialogo()
+        {
+            var inputDialog = new VerificacionDialog(randomNumber);
+
+            if(inputDialog.ShowDialog() == true)
+            {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
+                this.Close();
+            }
+        }
     }
 }
