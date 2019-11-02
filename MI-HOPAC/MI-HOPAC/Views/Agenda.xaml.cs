@@ -29,5 +29,11 @@ namespace MI_HOPAC.Views
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NuevaCitaDialog dlg = new NuevaCitaDialog();
+            dlg.ShowDialog();
+        }
     }
 }

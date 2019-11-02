@@ -145,6 +145,9 @@
     <Compile Include="Views\NotasInformativas.xaml.cs">
       <DependentUpon>NotasInformativas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NuevaCitaDialog.xaml.cs">
+      <DependentUpon>NuevaCitaDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NuevoEvento.xaml.cs">
       <DependentUpon>NuevoEvento.xaml</DependentUpon>
     </Compile>
@@ -223,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NotasInformativas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NuevaCitaDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
