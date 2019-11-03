@@ -92,6 +92,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Foundation\Citas.cs" />
+    <Compile Include="Foundation\CitaSection.cs" />
     <Compile Include="Views\Agenda.xaml.cs">
       <DependentUpon>Agenda.xaml</DependentUpon>
     </Compile>
@@ -320,6 +321,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetPacientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -342,6 +346,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.PacienteModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateDoctresResponse.datasource">

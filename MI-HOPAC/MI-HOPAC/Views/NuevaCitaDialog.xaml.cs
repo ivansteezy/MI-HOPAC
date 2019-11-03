@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MI_HOPAC.MiHomeacupService;
 
 namespace MI_HOPAC.Views
 {
@@ -19,10 +20,12 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class NuevaCitaDialog : Window
     {
-        
+        static MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+        List<PacienteModel> lista = client.GetPacientes(UserControl.Pk).ToList();
         public NuevaCitaDialog()
         {
             InitializeComponent();
+            FillComboBox();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -33,20 +36,11 @@ namespace MI_HOPAC.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (ValidarDatos())
+            {
                 this.DialogResult = true;
+            }
             else
                 MessageBox.Show("Completa todos los campos!");
-        }
-
-        public string Paciente{ get { return txt_Paciente.Text; } }
-        public DateTime Fecha
-        {
-            get
-            {
-                return new DateTime(txt_FechaCita.SelectedDate.Value.Year, txt_FechaCita.SelectedDate.Value.Month,
-                                    txt_FechaCita.SelectedDate.Value.Day, txt_HoraCita.SelectedTime.Value.Hour,
-                                    txt_HoraCita.SelectedTime.Value.Minute, txt_HoraCita.SelectedTime.Value.Second);
-            }
         }
 
         public bool ValidarDatos()
@@ -58,5 +52,37 @@ namespace MI_HOPAC.Views
             else
                 return true;
         }
+
+        private void FillComboBox()
+        {
+            
+
+            foreach (var item in lista)
+            {
+                txt_Paciente.Items.Add(item.m_Nombre.ToString());
+            }
+        }
+
+        public int idPaciente
+        {
+            get
+            {
+                var result = from c in lista
+                             where c.m_Nombre == txt_Paciente.SelectedItem.ToString()
+                             select c.m_IdPaciente;
+
+                return result.First();
+            }
+        }
+        public DateTime Fecha
+        {
+            get
+            {
+                return new DateTime(txt_FechaCita.SelectedDate.Value.Year, txt_FechaCita.SelectedDate.Value.Month,
+                                    txt_FechaCita.SelectedDate.Value.Day, txt_HoraCita.SelectedTime.Value.Hour,
+                                    txt_HoraCita.SelectedTime.Value.Minute, txt_HoraCita.SelectedTime.Value.Second);
+            }
+        }
+
     }
 }

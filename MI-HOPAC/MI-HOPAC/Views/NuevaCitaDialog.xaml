@@ -44,7 +44,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
                     <materialDesign:TimePicker Margin="10" x:Name="txt_HoraCita" FontSize="20" materialDesign:HintAssist.Hint="Hora de la cita" materialDesign:HintAssist.IsFloating="True"></materialDesign:TimePicker>
                     <DatePicker Margin="10" x:Name="txt_FechaCita" FontSize="20" materialDesign:HintAssist.Hint="Fecha de la cita"></DatePicker>
-                    <TextBox Margin="10" x:Name="txt_Paciente" FontSize="20" materialDesign:HintAssist.Hint="Paciente" materialDesign:HintAssist.IsFloating="True"></TextBox>
+                    <ComboBox x:Name="txt_Paciente" Margin="10" FontSize="20" materialDesign:HintAssist.Hint="Paciente"></ComboBox>
                 </StackPanel>
 
                 <Button Grid.Row="2" Click="Button_Click" HorizontalAlignment="Right" Margin="0 0 20 0" VerticalAlignment="Center" Content="Agregar" />
