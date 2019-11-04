@@ -349,7 +349,6 @@ namespace WebService
 
         #endregion
 
-
         #region Pacietnes
 
         [WebMethod]
@@ -362,12 +361,5 @@ namespace WebService
 
 
         #endregion
-
-
-
-
-
-
-
     }
 }
