@@ -360,6 +360,69 @@
       <s:element name="UpdateNotaDigResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetNotasInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotasInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNotasInfoResult" type="tns:ArrayOfNotasInformativasModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNotasInformativasModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotasInformativasModel" nillable="true" type="tns:NotasInformativasModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotasInformativasModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdNotas" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Link" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctor" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteNotaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNotaInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertNotaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="titulo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="link" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNotaInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateNotaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="titulo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNotaInfoResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="GetInventarioHomeopatia">
         <s:complexType>
           <s:sequence>
@@ -485,6 +548,112 @@
       <s:element name="UpdateInventarioAcupunturaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetForoPrivado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetForoPrivadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetForoPrivadoResult" type="tns:ArrayOfForoPrivadoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfForoPrivadoModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ForoPrivadoModel" nillable="true" type="tns:ForoPrivadoModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ForoPrivadoModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdCForoPrivado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteForoPrivado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteForoPrivadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertForoPrivado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertForoPrivadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="JsonInsertCuentaPacientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JsonInsertCuentaPacientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonInsertCuentaPacientesResult" type="tns:CuentaPacientesModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JsonGetCuentaPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JsonGetCuentaPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonGetCuentaPacienteResult" type="tns:CuentaPacientesModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JsonGetPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="JsonGetPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonGetPacienteResult" type="tns:PacienteModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PacienteModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdPaciente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorHomeopatia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorAcupuntura" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetCitasSoapIn">
@@ -613,6 +782,30 @@
   <wsdl:message name="UpdateNotaDigSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateNotaDigResponse" />
   </wsdl:message>
+  <wsdl:message name="GetNotasInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotasInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNotasInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotasInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNotaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteNotaInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNotaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteNotaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNotaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNotaInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertNotaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNotaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNotaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNotaInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNotaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNotaInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetInventarioHomeopatiaSoapIn">
     <wsdl:part name="parameters" element="tns:GetInventarioHomeopatia" />
   </wsdl:message>
@@ -660,6 +853,42 @@
   </wsdl:message>
   <wsdl:message name="UpdateInventarioAcupunturaSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateInventarioAcupunturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetForoPrivado" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetForoPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteForoPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteForoPrivado" />
+  </wsdl:message>
+  <wsdl:message name="DeleteForoPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteForoPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertForoPrivado" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertForoPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="JsonInsertCuentaPacientesSoapIn">
+    <wsdl:part name="parameters" element="tns:JsonInsertCuentaPacientes" />
+  </wsdl:message>
+  <wsdl:message name="JsonInsertCuentaPacientesSoapOut">
+    <wsdl:part name="parameters" element="tns:JsonInsertCuentaPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="JsonGetCuentaPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:JsonGetCuentaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="JsonGetCuentaPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:JsonGetCuentaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="JsonGetPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:JsonGetPaciente" />
+  </wsdl:message>
+  <wsdl:message name="JsonGetPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:JsonGetPacienteResponse" />
   </wsdl:message>
   <wsdl:portType name="MainWebServiceSoap">
     <wsdl:operation name="GetCitas">
@@ -746,6 +975,22 @@
       <wsdl:input message="tns:UpdateNotaDigSoapIn" />
       <wsdl:output message="tns:UpdateNotaDigSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetNotasInfo">
+      <wsdl:input message="tns:GetNotasInfoSoapIn" />
+      <wsdl:output message="tns:GetNotasInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaInfo">
+      <wsdl:input message="tns:DeleteNotaInfoSoapIn" />
+      <wsdl:output message="tns:DeleteNotaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaInfo">
+      <wsdl:input message="tns:InsertNotaInfoSoapIn" />
+      <wsdl:output message="tns:InsertNotaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaInfo">
+      <wsdl:input message="tns:UpdateNotaInfoSoapIn" />
+      <wsdl:output message="tns:UpdateNotaInfoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetInventarioHomeopatia">
       <wsdl:input message="tns:GetInventarioHomeopatiaSoapIn" />
       <wsdl:output message="tns:GetInventarioHomeopatiaSoapOut" />
@@ -777,6 +1022,30 @@
     <wsdl:operation name="UpdateInventarioAcupuntura">
       <wsdl:input message="tns:UpdateInventarioAcupunturaSoapIn" />
       <wsdl:output message="tns:UpdateInventarioAcupunturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivado">
+      <wsdl:input message="tns:GetForoPrivadoSoapIn" />
+      <wsdl:output message="tns:GetForoPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForoPrivado">
+      <wsdl:input message="tns:DeleteForoPrivadoSoapIn" />
+      <wsdl:output message="tns:DeleteForoPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <wsdl:input message="tns:InsertForoPrivadoSoapIn" />
+      <wsdl:output message="tns:InsertForoPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JsonInsertCuentaPacientes">
+      <wsdl:input message="tns:JsonInsertCuentaPacientesSoapIn" />
+      <wsdl:output message="tns:JsonInsertCuentaPacientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetCuentaPaciente">
+      <wsdl:input message="tns:JsonGetCuentaPacienteSoapIn" />
+      <wsdl:output message="tns:JsonGetCuentaPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetPaciente">
+      <wsdl:input message="tns:JsonGetPacienteSoapIn" />
+      <wsdl:output message="tns:JsonGetPacienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MainWebServiceSoap" type="tns:MainWebServiceSoap">
@@ -970,6 +1239,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetNotasInfo">
+      <soap:operation soapAction="http://tempuri.org/GetNotasInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteNotaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertNotaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateNotaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetInventarioHomeopatia">
       <soap:operation soapAction="http://tempuri.org/GetInventarioHomeopatia" style="document" />
       <wsdl:input>
@@ -1035,6 +1340,60 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateInventarioAcupuntura">
       <soap:operation soapAction="http://tempuri.org/UpdateInventarioAcupuntura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivado">
+      <soap:operation soapAction="http://tempuri.org/GetForoPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForoPrivado">
+      <soap:operation soapAction="http://tempuri.org/DeleteForoPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <soap:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonInsertCuentaPacientes">
+      <soap:operation soapAction="http://tempuri.org/JsonInsertCuentaPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetCuentaPaciente">
+      <soap:operation soapAction="http://tempuri.org/JsonGetCuentaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetPaciente">
+      <soap:operation soapAction="http://tempuri.org/JsonGetPaciente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1234,6 +1593,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetNotasInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetNotasInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteNotaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertNotaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateNotaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetInventarioHomeopatia">
       <soap12:operation soapAction="http://tempuri.org/GetInventarioHomeopatia" style="document" />
       <wsdl:input>
@@ -1299,6 +1694,60 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateInventarioAcupuntura">
       <soap12:operation soapAction="http://tempuri.org/UpdateInventarioAcupuntura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivado">
+      <soap12:operation soapAction="http://tempuri.org/GetForoPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForoPrivado">
+      <soap12:operation soapAction="http://tempuri.org/DeleteForoPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <soap12:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonInsertCuentaPacientes">
+      <soap12:operation soapAction="http://tempuri.org/JsonInsertCuentaPacientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetCuentaPaciente">
+      <soap12:operation soapAction="http://tempuri.org/JsonGetCuentaPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JsonGetPaciente">
+      <soap12:operation soapAction="http://tempuri.org/JsonGetPaciente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

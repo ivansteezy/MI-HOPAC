@@ -12,6 +12,7 @@ namespace WebService.Models
         public int m_IdNotas   { set; get; }
         public string m_Titulo { set; get; }
         public string m_Texto  { set; get; }
+        public string m_Link { set; get; }
         public int m_FkDoctor  { set; get; }
         #endregion
     }

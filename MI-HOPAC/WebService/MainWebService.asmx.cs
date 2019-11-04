@@ -178,7 +178,37 @@ namespace WebService
         public void UpdateNotaDig(int pk, string texto, string color)
         {
             var controlador = new NotasDigitalesController();
-            controlador.ActualizarEvento(pk, texto, color);
+            controlador.ActualizarNota(pk, texto, color);
+        }
+        #endregion
+
+        #region NotasInformativas
+        [WebMethod]
+        public List<NotasInformativasModel> GetNotasInfo(int fk)
+        {
+            var controlador = new NotasInformativasController();
+            return controlador.ConsultaNotasInfo(fk);
+        }
+
+        [WebMethod]
+        public void DeleteNotaInfo(int pk)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.EliminarNotaInfo(pk);
+        }
+
+        [WebMethod]
+        public void InsertNotaInfo(string titulo, string texto, string link, int fkDoctor)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.InsertarNotaInfo(titulo, texto, link, fkDoctor);
+        }
+
+        [WebMethod]
+        public void UpdateNotaInfo(int pk, string titulo, string texto)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.ActualizarNotaInfo(pk, titulo, texto);
         }
         #endregion
 
@@ -213,6 +243,7 @@ namespace WebService
         #endregion
 
         #region Inventario Acupuntura
+
         [WebMethod]
         public List<InventarioAcupunturaModel> GetInventarioAcupuntura(int pk)
         {
@@ -241,5 +272,83 @@ namespace WebService
             controlador.ActualizarInventarioAcupuntura(nombre, cantidad, pk);
         }
         #endregion
+
+        #region ForoPrivado
+
+        [WebMethod]
+        public List<ForoPrivadoModel> GetForoPrivado(int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            return controlador.ConsultaForo(pk);
+        }
+
+        [WebMethod]
+        public void DeleteForoPrivado(int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.EliminarForo(pk);
+        }
+
+        [WebMethod]
+        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
+        }
+
+        /*[WebMethod]
+        public void UpdateForoPrivado(string nombre, int cantidad, int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.ActualizarForo(nombre, cantidad, pk);
+        }
+        */
+
+        #endregion
+
+
+        //---------------- Movil -------------------------
+
+        #region CuentaPacientes
+
+        [WebMethod]
+        public CuentaPacientesModel InsertCuentaPacientes(string nombre, string appellidos, string Correo, string Contrasena)
+        {
+            var controlador = new CuentaPacientesController();
+            CuentaPacientesModel modelo = new CuentaPacientesModel();
+            modelo.m_IdCuenta = controlador.InsertaCuentaPaciente(nombre, appellidos, Correo, Contrasena);
+            return modelo;
+        }
+
+
+        [WebMethod]
+        public CuentaPacientesModel GetCuentaPaciente(string correo, string contrasena)
+        {
+            var controlador = new CuentaPacientesController();
+            return controlador.ConsultaCuentaPaciente(correo, contrasena);
+        }
+
+        #endregion
+
+
+        #region Pacietnes
+
+        [WebMethod]
+        public PacienteModel GetPaciente(int pk)
+        {
+            var controlador = new PacienteController();
+            return controlador.ConsultaCuentaPacientes(pk);
+
+        }
+
+
+        #endregion
+
+
+
+
+
+
+
     }
 }

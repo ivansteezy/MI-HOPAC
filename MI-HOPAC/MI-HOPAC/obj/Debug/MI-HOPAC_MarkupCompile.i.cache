@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
 MI_HOPAC
 none
 false
 DEBUG;TRACE
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-192114389374
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
+22-668818564
 
-33-1505675671
-27-1016937511
-Views\Agenda.xaml;Views\Dashboard.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInformativas.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+38-761916121
+271454023034
+Views\Agenda.xaml;Views\Dashboard.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 False
 

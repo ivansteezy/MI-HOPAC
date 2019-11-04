@@ -83,7 +83,7 @@ namespace MI_HOPAC.Views
                     title.Text = "Eventos";
                     break;
                 case (int)Pagina.NotasInformativas:
-                    main_Frame.Content = new NotasInformativas();
+                    main_Frame.Content = new NotasInfoBoton();
                     title.Text = "Notas informativas";
                     break;
                 case (int)Pagina.ForoPrivado:

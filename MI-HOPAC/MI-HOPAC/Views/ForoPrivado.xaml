@@ -4,12 +4,75 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MI_HOPAC"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ForoPrivado"
       Background="Transparent">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Foro privado</TextBlock>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="20 0">
+                <ItemsControl x:Name="ListViewForo" ItemsSource="{Binding Publicacion}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <materialDesign:Card Margin="10" Width="700" Height="250" Background="Wheat" HorizontalAlignment="Center">
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="1" Text="{Binding Fecha}" Margin="20" FontSize="15" Foreground="Black"></TextBlock>
+                                    </Grid>
+
+                                    <TextBlock Grid.Row="1" Text="{Binding Texto}" Margin="20" FontSize="20" Foreground="Black"></TextBlock>
+
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" Text="{Binding Nombre}" TextAlignment="Left" Margin="20" FontSize="15" Foreground="Black"></TextBlock>
+                                        <Button Grid.Column="2" Margin="10" Background="Coral" Foreground="Black" >Ir a Publicacion</Button>
+
+                                    </Grid>
+                                </Grid>
+                            </materialDesign:Card>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+
     </Grid>
+    
+    
 </Page>

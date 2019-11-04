@@ -92,6 +92,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Foundation\Citas.cs" />
+    <Compile Include="Foundation\Foro.cs" />
+    <Compile Include="Foundation\NotaInfo.cs" />
     <Compile Include="Views\Agenda.xaml.cs">
       <DependentUpon>Agenda.xaml</DependentUpon>
     </Compile>
@@ -141,6 +143,15 @@
     </Compile>
     <Compile Include="Views\NotasDigNueva.xaml.cs">
       <DependentUpon>NotasDigNueva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotasInfoBoton.xaml.cs">
+      <DependentUpon>NotasInfoBoton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotasInfoDialog.xaml.cs">
+      <DependentUpon>NotasInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotasInfoNueva.xaml.cs">
+      <DependentUpon>NotasInfoNueva.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NotasInformativas.xaml.cs">
       <DependentUpon>NotasInformativas.xaml</DependentUpon>
@@ -222,6 +233,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NotasInfoBoton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NotasInfoDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NotasInfoNueva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NotasInformativas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -280,6 +303,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.EventosModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.ForoPrivadoModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetCitasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -304,6 +330,9 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetEventosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetForoPrivadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetInventarioAcupunturaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -313,10 +342,16 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.GetNotasInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertCuentaDoctoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertEventosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertForoPrivadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertInventarioAcupunturaResponse.datasource">
@@ -328,13 +363,31 @@
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaDigResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InsertNotaInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioAcupunturaModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.InventarioHomeopatiaModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.JsonGetCuentaPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.JsonGetPacienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.JsonInsertCuentaPacientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasDigitalesModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.NotasInformativasModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.PacienteModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateDoctresResponse.datasource">
@@ -351,6 +404,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaDigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MiHomeacupService\MI_HOPAC.MiHomeacupService.UpdateNotaInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
