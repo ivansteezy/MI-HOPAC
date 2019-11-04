@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:MI_HOPAC"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EditalPerfil">
+      Title="EditalPerfil" Background="White">
 
     <Grid>
         <Grid>
@@ -34,6 +34,7 @@
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
                     <TextBox x:Name="txtCedula" Width="350" materialDesign:HintAssist.Hint="Cedula" FontSize="20" materialDesign:HintAssist.IsFloating="True" Margin="10"></TextBox>
                     <Button x:Name="UbicacionButton" Margin="0 60 0 0" Click="UbicacionButton_Click">Agregar ubicacion</Button>
+                    <Button x:Name="HorarioButton" Margin="0 30 0 0" Click="HorarioButton_Click">Agregar horario</Button>
                 </StackPanel>
 
                 <TextBlock VerticalAlignment="Bottom" TextAlignment="Right" Grid.Column="1" Margin="20"><Hyperlink Click="Hyperlink_Click_1" FontSize="15" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Actualizar foto de fondo</Hyperlink></TextBlock>

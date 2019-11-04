@@ -1,0 +1,113 @@
+﻿<Window x:Class="MI_HOPAC.Views.HorarioDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MI_HOPAC.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="InventarioAcupunturaDialog" Height="400" Width="550" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#82c3ef" Offset="0.5" />
+                <GradientStop Color="#6a8e9e" Offset="0.5" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Image MouseDown="Image_MouseDown" Source="../resources/close.png" Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value=".5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+
+        <materialDesign:Card Height="350" Width="450" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Text="Marque los dias y horas que trabaja a la semana" />
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0.25*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Lunes" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Martes" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Miércoles" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Jueves" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Viernes" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Sabado" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Domingo" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                    <CheckBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="lunes"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="martes" />
+                    <CheckBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="miercoles" />
+                    <CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="jueves" />
+                    <CheckBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="viernes" />
+                    <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="sabado" />
+                    <CheckBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="domingo" />
+
+                    <materialDesign:TimePicker Grid.Row="0" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioLunes" IsEnabled="{Binding ElementName=lunes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioMartes" IsEnabled="{Binding ElementName=martes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="2" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioMiercoles" IsEnabled="{Binding ElementName=miercoles, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="3" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioJueves" IsEnabled="{Binding ElementName=jueves, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="4" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioViernes" IsEnabled="{Binding ElementName=viernes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="5" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioSabado" IsEnabled="{Binding ElementName=sabado, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="6" Grid.Column="2" materialDesign:HintAssist.Hint="Hora inicio" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InicioDomingo" IsEnabled="{Binding ElementName=domingo, Path=IsChecked}"/>
+
+                    <materialDesign:TimePicker Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalLunes" IsEnabled="{Binding ElementName=lunes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="1" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalMartes" IsEnabled="{Binding ElementName=martes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="2" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalMiercoles" IsEnabled="{Binding ElementName=miercoles, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="3" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalJueves" IsEnabled="{Binding ElementName=jueves, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="4" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalViernes" IsEnabled="{Binding ElementName=viernes, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="5" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalSabado" IsEnabled="{Binding ElementName=sabado, Path=IsChecked}"/>
+                    <materialDesign:TimePicker Grid.Row="6" Grid.Column="3" materialDesign:HintAssist.Hint="Hora final" SelectedTime="{x:Null}"
+                    materialDesign:HintAssist.IsFloating="True"  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FinalDomingo" IsEnabled="{Binding ElementName=domingo, Path=IsChecked}"/>
+                </Grid>
+
+                <Button Grid.Row="2" Click="Button_Click" HorizontalAlignment="Right" Margin="0 0 20 0" VerticalAlignment="Center" Content="Agregar" />
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>
