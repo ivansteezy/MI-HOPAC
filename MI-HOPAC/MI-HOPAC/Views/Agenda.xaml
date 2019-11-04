@@ -16,16 +16,24 @@
         </Grid.ColumnDefinitions>
         
         <Viewbox HorizontalAlignment="Left" Margin="0 0 0 0" Grid.Column="0">
-            <Calendar VerticalAlignment="Center" HorizontalAlignment="Left"></Calendar>
+            <Calendar x:Name="Calendario" VerticalAlignment="Center" HorizontalAlignment="Left"></Calendar>
         </Viewbox>
 
-        <ListView Grid.Column="1" x:Name="ListaCitas">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Paciente" Width="200" DisplayMemberBinding="{Binding Paciente}"/>
-                    <GridViewColumn Header="Hora" Width="200" DisplayMemberBinding="{Binding Hora}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="ListaCitas" Grid.Row="0" ItemsSource="{Binding DataCitas}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Paciente" Width="200" DisplayMemberBinding="{Binding Paciente}"/>
+                        <GridViewColumn Header="Fecha" Width="200" DisplayMemberBinding="{Binding Fecha}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button Grid.Row="1" HorizontalAlignment="Center" Click="Button_Click" Content="Agregar una cita" />
+        </Grid>
     </Grid>
 </Page>

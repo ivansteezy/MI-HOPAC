@@ -10,5 +10,21 @@ namespace WebService.Controllers
 {
     public class PacienteController : DatabaseOperation<PacienteModel>
     {
+<<<<<<< HEAD
+
+        public PacienteModel ConsultaCuentaPacientes(int primaryKey)
+        {
+            var res = Select("select * from paciente where idPaciente = " + primaryKey.ToString());
+            return res.First();
+        }
+
+
+=======
+        public List<PacienteModel> ConsultaPacientes(int fk)
+        {
+            return Select("select * from paciente where fkDoctorH = " + fk.ToString() + " or fkDoctorA = " + fk.ToString()); 
+        }
+>>>>>>> Agenda
     }
+
 }

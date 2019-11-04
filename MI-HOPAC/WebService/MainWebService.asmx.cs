@@ -19,22 +19,6 @@ namespace WebService
     // [System.Web.Script.Services.ScriptService]
     public class MainWebService : System.Web.Services.WebService
     {
-        #region Citas
-        [WebMethod]
-        public List<CitasModel> GetCitas(int pk)
-        {
-            var controlador = new CitasController();
-            return controlador.ConsultaCitas(pk);
-        }
-
-        [WebMethod]
-        public void DeleteCitas(int pk)
-        {
-            var controlador = new CitasController();
-            controlador.EliminarCitas(pk);
-        }
-        #endregion
-
         #region CuentaDoctores
         [WebMethod]
         public List<CuentaDoctoresModel> GetCuentaDoctores(string correo, string contrasena)
@@ -79,6 +63,15 @@ namespace WebService
         {
             var controlador = new CuentaPacientesController();
             controlador.EliminarCuentaPacientes(pk);
+        }
+        #endregion
+
+        #region Pacientes
+        [WebMethod]
+        public List<PacienteModel> GetPacientes(int fk)
+        {
+            var controlador = new PacienteController();
+            return controlador.ConsultaPacientes(fk);
         }
         #endregion
 
@@ -178,7 +171,37 @@ namespace WebService
         public void UpdateNotaDig(int pk, string texto, string color)
         {
             var controlador = new NotasDigitalesController();
-            controlador.ActualizarEvento(pk, texto, color);
+            controlador.ActualizarNota(pk, texto, color);
+        }
+        #endregion
+
+        #region NotasInformativas
+        [WebMethod]
+        public List<NotasInformativasModel> GetNotasInfo(int fk)
+        {
+            var controlador = new NotasInformativasController();
+            return controlador.ConsultaNotasInfo(fk);
+        }
+
+        [WebMethod]
+        public void DeleteNotaInfo(int pk)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.EliminarNotaInfo(pk);
+        }
+
+        [WebMethod]
+        public void InsertNotaInfo(string titulo, string texto, string link, int fkDoctor)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.InsertarNotaInfo(titulo, texto, link, fkDoctor);
+        }
+
+        [WebMethod]
+        public void UpdateNotaInfo(int pk, string titulo, string texto)
+        {
+            var controlador = new NotasInformativasController();
+            controlador.ActualizarNotaInfo(pk, titulo, texto);
         }
         #endregion
 
@@ -213,6 +236,7 @@ namespace WebService
         #endregion
 
         #region Inventario Acupuntura
+
         [WebMethod]
         public List<InventarioAcupunturaModel> GetInventarioAcupuntura(int pk)
         {
@@ -241,5 +265,110 @@ namespace WebService
             controlador.ActualizarInventarioAcupuntura(nombre, cantidad, pk);
         }
         #endregion
+
+<<<<<<< HEAD
+        #region ForoPrivado
+
+        [WebMethod]
+        public List<ForoPrivadoModel> GetForoPrivado(int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            return controlador.ConsultaForo(pk);
+        }
+
+        [WebMethod]
+        public void DeleteForoPrivado(int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.EliminarForo(pk);
+        }
+
+        [WebMethod]
+        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
+        }
+
+        /*[WebMethod]
+        public void UpdateForoPrivado(string nombre, int cantidad, int pk)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.ActualizarForo(nombre, cantidad, pk);
+        }
+        */
+
+        #endregion
+
+
+        //---------------- Movil -------------------------
+
+        #region CuentaPacientes
+
+        [WebMethod]
+        public CuentaPacientesModel InsertCuentaPacientes(string nombre, string appellidos, string Correo, string Contrasena)
+        {
+            var controlador = new CuentaPacientesController();
+            CuentaPacientesModel modelo = new CuentaPacientesModel();
+            modelo.m_IdCuenta = controlador.InsertaCuentaPaciente(nombre, appellidos, Correo, Contrasena);
+            return modelo;
+        }
+
+
+        [WebMethod]
+        public CuentaPacientesModel GetCuentaPaciente(string correo, string contrasena)
+        {
+            var controlador = new CuentaPacientesController();
+            return controlador.ConsultaCuentaPaciente(correo, contrasena);
+=======
+        #region Citas
+        [WebMethod]
+        public List<CitasModel> GetCitas(int fkDoctor)
+        {
+            var controlador = new CitasController();
+            return controlador.ConsultaCitas(fkDoctor);
+        }
+
+        [WebMethod]
+        public void InsertCita(DateTime fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            controlador.InsertarCita(fecha, fkPaciente, fkDoctor);
+>>>>>>> Agenda
+        }
+
+        #endregion
+
+<<<<<<< HEAD
+
+        #region Pacietnes
+
+        [WebMethod]
+        public PacienteModel GetPaciente(int pk)
+        {
+            var controlador = new PacienteController();
+            return controlador.ConsultaCuentaPacientes(pk);
+
+        }
+
+
+        #endregion
+
+
+
+
+
+
+
+=======
+        #region Horarios
+        [WebMethod]
+        public void InsertarHorarios(string horaInicio, string horaFinal, int fkDia, int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            controlador.InsertarHorarios(horaInicio, horaFinal, fkDia, fkDoctor);
+        }
+        #endregion
+>>>>>>> Agenda
     }
 }

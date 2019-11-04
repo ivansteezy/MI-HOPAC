@@ -29,7 +29,7 @@
                                             <Button Content="Eliminar" Click="Botton_Eliminar"></Button>
                                         </StackPanel>
                                     </materialDesign:PopupBox>
-                                    <TextBlock Text="{Binding Texto}" Margin="20, 0"></TextBlock>
+                                    <TextBox Text="{Binding Texto}" Margin="20, 0" IsReadOnly="True"  TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" BorderThickness="0"></TextBox>
                                 </StackPanel>
                             </materialDesign:Card>
                         </DataTemplate>
