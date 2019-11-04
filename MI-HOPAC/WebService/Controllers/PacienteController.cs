@@ -10,6 +10,10 @@ namespace WebService.Controllers
 {
     public class PacienteController : DatabaseOperation<PacienteModel>
     {
+        public List<PacienteModel> ConsultaPacientes(int fk)
+        {
+            return Select("select * from paciente where fkDoctorH = " + fk.ToString() + " or fkDoctorA = " + fk.ToString()); 
+        }
 
         public PacienteModel ConsultaCuentaPacientes(int primaryKey)
         {

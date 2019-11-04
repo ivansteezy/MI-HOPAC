@@ -19,22 +19,6 @@ namespace WebService
     // [System.Web.Script.Services.ScriptService]
     public class MainWebService : System.Web.Services.WebService
     {
-        #region Citas
-        [WebMethod]
-        public List<CitasModel> GetCitas(int pk)
-        {
-            var controlador = new CitasController();
-            return controlador.ConsultaCitas(pk);
-        }
-
-        [WebMethod]
-        public void DeleteCitas(int pk)
-        {
-            var controlador = new CitasController();
-            controlador.EliminarCitas(pk);
-        }
-        #endregion
-
         #region CuentaDoctores
         [WebMethod]
         public List<CuentaDoctoresModel> GetCuentaDoctores(string correo, string contrasena)
@@ -79,6 +63,15 @@ namespace WebService
         {
             var controlador = new CuentaPacientesController();
             controlador.EliminarCuentaPacientes(pk);
+        }
+        #endregion
+
+        #region Pacientes
+        [WebMethod]
+        public List<PacienteModel> GetPacientes(int fk)
+        {
+            var controlador = new PacienteController();
+            return controlador.ConsultaPacientes(fk);
         }
         #endregion
 
@@ -270,6 +263,32 @@ namespace WebService
         {
             var controlador = new InventarioAcupunturaController();
             controlador.ActualizarInventarioAcupuntura(nombre, cantidad, pk);
+        }
+        #endregion
+
+        #region Citas
+        [WebMethod]
+        public List<CitasModel> GetCitas(int fkDoctor)
+        {
+            var controlador = new CitasController();
+            return controlador.ConsultaCitas(fkDoctor);
+        }
+
+        [WebMethod]
+        public void InsertCita(DateTime fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            controlador.InsertarCita(fecha, fkPaciente, fkDoctor);
+        }
+
+        #endregion
+
+        #region Horarios
+        [WebMethod]
+        public void InsertarHorarios(string horaInicio, string horaFinal, int fkDia, int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            controlador.InsertarHorarios(horaInicio, horaFinal, fkDia, fkDoctor);
         }
         #endregion
 
