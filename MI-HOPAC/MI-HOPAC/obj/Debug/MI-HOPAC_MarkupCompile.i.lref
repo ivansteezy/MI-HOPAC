@@ -2,6 +2,7 @@
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Agenda.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Dashboard.xaml;;
+FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\HorarioDialog.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\InformacionPerfil.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Eventos.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\EventosViewer.xaml;;
@@ -18,6 +19,7 @@ FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NotasInfoBoton.
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NotasInfoDialog.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NotasInfoNueva.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NotasInformativas.xaml;;
+FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NuevaCitaDialog.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\NuevoEvento.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Registro.xaml;;
 FC:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Ubicacion.xaml;;
