@@ -26,7 +26,9 @@ namespace MI_HOPAC.Views
         public Agenda()
         {
             InitializeComponent();
+            
             Consolidate();
+
         }
 
         public void Consolidate()

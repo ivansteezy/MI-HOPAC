@@ -109,5 +109,40 @@ namespace MI_HOPAC.Views
         {
             return string.IsNullOrEmpty(txtCedula.Text);
         }
+
+        private void HorarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new HorarioDialog();
+            var tuplelist = new TupleList<DateTime?, DateTime?, int, int>();
+
+            var client = new MainWebServiceSoapClient();
+
+            if (dlg.ShowDialog() == true)
+            {
+                var diasLaborales = dlg.MapaDias;
+                var res = diasLaborales.Where(pair => pair.Value == true).Select(pair => pair.Key);
+                
+                foreach(var item in res)
+                {
+                    var horaInicio = dlg.MapaHoraInicio.Where(pair => pair.Key == item).Select(pair => pair.Value).First();
+                    var horaFinal = dlg.MapaHoraFinal.Where(pair => pair.Key == item).Select(pair => pair.Value).First();
+                    tuplelist.Add(horaInicio, horaFinal, item, UserControl.Pk);
+                }
+
+                foreach(var item in tuplelist)
+                {
+                    client.InsertarHorarios(item.Item1.Value.TimeOfDay.ToString(), item.Item2.Value.TimeOfDay.ToString(), item.Item3, item.Item4);
+                }
+                MessageBox.Show("Datos insertados correctamente!");
+            }   
+        }
+    }
+
+    public class TupleList<T1, T2, T3, T4> : List<Tuple<T1, T2, T3, T4>>
+    {
+        public void Add(T1 horaInicio, T2 horaFinal, T3 dia, T4 pkDoctor)
+        {
+            Add(new Tuple<T1, T2, T3, T4>(horaInicio, horaFinal, dia, pkDoctor));
+        }
     }
 }

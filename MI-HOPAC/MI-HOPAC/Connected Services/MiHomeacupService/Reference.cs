@@ -1185,6 +1185,13 @@ namespace MI_HOPAC.MiHomeacupService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertCita", ReplyAction="*")]
         System.Threading.Tasks.Task InsertCitaAsync(System.DateTime fecha, int fkPaciente, int fkDoctor);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento horaInicio del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorarios", ReplyAction="*")]
+        MI_HOPAC.MiHomeacupService.InsertarHorariosResponse InsertarHorarios(MI_HOPAC.MiHomeacupService.InsertarHorariosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorarios", ReplyAction="*")]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertarHorariosResponse> InsertarHorariosAsync(MI_HOPAC.MiHomeacupService.InsertarHorariosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2724,6 +2731,79 @@ namespace MI_HOPAC.MiHomeacupService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarHorariosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarHorarios", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertarHorariosRequestBody Body;
+        
+        public InsertarHorariosRequest() {
+        }
+        
+        public InsertarHorariosRequest(MI_HOPAC.MiHomeacupService.InsertarHorariosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertarHorariosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string horaInicio;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string horaFinal;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int fkDia;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int fkDoctor;
+        
+        public InsertarHorariosRequestBody() {
+        }
+        
+        public InsertarHorariosRequestBody(string horaInicio, string horaFinal, int fkDia, int fkDoctor) {
+            this.horaInicio = horaInicio;
+            this.horaFinal = horaFinal;
+            this.fkDia = fkDia;
+            this.fkDoctor = fkDoctor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarHorariosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarHorariosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public MI_HOPAC.MiHomeacupService.InsertarHorariosResponseBody Body;
+        
+        public InsertarHorariosResponse() {
+        }
+        
+        public InsertarHorariosResponse(MI_HOPAC.MiHomeacupService.InsertarHorariosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertarHorariosResponseBody {
+        
+        public InsertarHorariosResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MainWebServiceSoapChannel : MI_HOPAC.MiHomeacupService.MainWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -3406,6 +3486,36 @@ namespace MI_HOPAC.MiHomeacupService {
         
         public System.Threading.Tasks.Task InsertCitaAsync(System.DateTime fecha, int fkPaciente, int fkDoctor) {
             return base.Channel.InsertCitaAsync(fecha, fkPaciente, fkDoctor);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MI_HOPAC.MiHomeacupService.InsertarHorariosResponse MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertarHorarios(MI_HOPAC.MiHomeacupService.InsertarHorariosRequest request) {
+            return base.Channel.InsertarHorarios(request);
+        }
+        
+        public void InsertarHorarios(string horaInicio, string horaFinal, int fkDia, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertarHorariosRequest inValue = new MI_HOPAC.MiHomeacupService.InsertarHorariosRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertarHorariosRequestBody();
+            inValue.Body.horaInicio = horaInicio;
+            inValue.Body.horaFinal = horaFinal;
+            inValue.Body.fkDia = fkDia;
+            inValue.Body.fkDoctor = fkDoctor;
+            MI_HOPAC.MiHomeacupService.InsertarHorariosResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertarHorarios(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertarHorariosResponse> MI_HOPAC.MiHomeacupService.MainWebServiceSoap.InsertarHorariosAsync(MI_HOPAC.MiHomeacupService.InsertarHorariosRequest request) {
+            return base.Channel.InsertarHorariosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertarHorariosResponse> InsertarHorariosAsync(string horaInicio, string horaFinal, int fkDia, int fkDoctor) {
+            MI_HOPAC.MiHomeacupService.InsertarHorariosRequest inValue = new MI_HOPAC.MiHomeacupService.InsertarHorariosRequest();
+            inValue.Body = new MI_HOPAC.MiHomeacupService.InsertarHorariosRequestBody();
+            inValue.Body.horaInicio = horaInicio;
+            inValue.Body.horaFinal = horaFinal;
+            inValue.Body.fkDia = fkDia;
+            inValue.Body.fkDoctor = fkDoctor;
+            return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertarHorariosAsync(inValue);
         }
     }
 }

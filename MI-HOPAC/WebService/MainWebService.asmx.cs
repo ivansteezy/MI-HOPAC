@@ -251,5 +251,14 @@ namespace WebService
         }
 
         #endregion
+
+        #region Horarios
+        [WebMethod]
+        public void InsertarHorarios(string horaInicio, string horaFinal, int fkDia, int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            controlador.InsertarHorarios(horaInicio, horaFinal, fkDia, fkDoctor);
+        }
+        #endregion
     }
 }
