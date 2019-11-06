@@ -21,6 +21,7 @@ namespace WebService.Controllers
                             " ORDER BY ForoPrivado.idForoPrivado DESC");
         }
 
+        
 
         public void EliminarForo(int primaryKey)
         {

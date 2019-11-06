@@ -15,6 +15,27 @@ namespace WebService.Controllers
             return Select("select * from doctores where idDoctores = " + primaryKey.ToString());
         }
 
+        public DoctoresModel ConsultaDoctoresMovil(int primaryKey)
+        {
+            var res = Select(@"SELECT doctores.idDoctores, doctores.Nombre, doctores.Apellidos, doctores.Cedula, doctores.Ubicacion
+                                FROM doctores
+                                LEFT JOIN cuenta_doctores
+                                ON cuenta_doctores.fkDoctor = doctores.idDoctores
+                                WHERE cuenta_doctores.FkDoctor = " + primaryKey.ToString());
+            return res.First();
+        }
+
+        public DoctoresModel ConsultaDoctoresMovil2(int primaryKey)
+        {
+            var res = Select(@"SELECT doctores.idDoctores, doctores.Nombre, doctores.Apellidos, doctores.Cedula, doctores.Ubicacion
+                                FROM doctores
+                                LEFT JOIN cuenta_doctores
+                                ON cuenta_doctores.fkDoctor = doctores.idDoctores
+                                WHERE cuenta_doctores.FkDoctor = " + primaryKey.ToString());
+               return res.First();
+        }
+
+
         public void EliminarDoctores(int primaryKey)
         {
             Delete("delete from doctores where idDoctores = " + primaryKey.ToString());

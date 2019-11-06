@@ -166,7 +166,7 @@ namespace WebService
             var controlador = new NotasDigitalesController();
             controlador.InsertarNotaDig(texto, color, fkDoctor);
         }
-        
+
         [WebMethod]
         public void UpdateNotaDig(int pk, string texto, string color)
         {
@@ -308,12 +308,6 @@ namespace WebService
             controlador.EliminarForo(pk);
         }
 
-        [WebMethod]
-        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
-        {
-            var controlador = new ForoPrivadoController();
-            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
-        }
 
         /*[WebMethod]
         public void UpdateForoPrivado(string nombre, int cantidad, int pk)
@@ -361,5 +355,86 @@ namespace WebService
 
 
         #endregion
+
+        #region Doctores
+
+        [WebMethod]
+        public DoctoresModel MovilGetDoctores(int pk)
+        {
+            var controlador = new DoctoresControllers();
+            return controlador.ConsultaDoctoresMovil(pk);
+        }
+
+        #endregion
+
+        #region ForoPrivado
+
+        [WebMethod]
+        public List<ForoPrivadoPacienteModel> GetForoPrivadoPaciente(int pkPac, int pkDoc)
+        {
+            var controlador = new ForoPrivadoPacienteController();
+            return controlador.ConsultaForoPaciente(pkPac, pkDoc);
+        }
+
+
+        [WebMethod]
+        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
+        }
+
+
+        #endregion
+
+        #region ComentariosPrivado
+
+        [WebMethod]
+        public List<ComentariosPrivadoModel> GetComentariosPrivado(int fkForo)
+        {
+            var controlador = new ComentariosPrivadoController();
+            return controlador.ConsltaComentariosPrivado(fkForo);
+        }
+
+
+        [WebMethod]
+        public void InsertComentariosPrivado(string texto, string fecha, int TipodeCuenta, int fkForo)
+        {
+            var controlador = new ComentariosPrivadoController();
+            controlador.InsertarComentario(texto, fecha, TipodeCuenta, fkForo);
+        }
+
+
+        #endregion
+
+        #region PacienteEventos
+
+        // Retorna una lista de eventos asi que se usa EventosModel
+        [WebMethod]
+        public List<EventosModel> GetPacienteEventos(int pk)
+        {
+            var controlador = new EventosController();
+            return controlador.ConsultaPacienteEventos(pk);
+        }
+
+
+        [WebMethod]
+        public void InsertPacienteEventos(int fkPaciente, int fkEvento)
+        {
+            var controlador = new PacienteEventosController();
+            controlador.InsertarPacienteEvento(fkPaciente, fkEvento);
+        }
+
+
+        [WebMethod]
+        public void AsistenciaPacienteEventos(int fkPaciente, int fkEvento, int asistencia)
+        {
+            var controlador = new PacienteEventosController();
+            controlador.ActualizarAsistencia(fkPaciente, fkEvento, asistencia);
+
+        }
+
+        #endregion
+
     }
 }
