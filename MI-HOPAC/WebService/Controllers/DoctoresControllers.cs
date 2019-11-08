@@ -21,18 +21,8 @@ namespace WebService.Controllers
                                 FROM doctores
                                 LEFT JOIN cuenta_doctores
                                 ON cuenta_doctores.fkDoctor = doctores.idDoctores
-                                WHERE cuenta_doctores.FkDoctor = " + primaryKey.ToString());
+                                WHERE cuenta_doctores.idCuenta_Doctores = " + primaryKey.ToString());
             return res.First();
-        }
-
-        public DoctoresModel ConsultaDoctoresMovil2(int primaryKey)
-        {
-            var res = Select(@"SELECT doctores.idDoctores, doctores.Nombre, doctores.Apellidos, doctores.Cedula, doctores.Ubicacion
-                                FROM doctores
-                                LEFT JOIN cuenta_doctores
-                                ON cuenta_doctores.fkDoctor = doctores.idDoctores
-                                WHERE cuenta_doctores.FkDoctor = " + primaryKey.ToString());
-               return res.First();
         }
 
 

@@ -436,5 +436,43 @@ namespace WebService
 
         #endregion
 
+        #region ForoPublico
+
+        [WebMethod]
+        public List<ForoPublicoModel> GetForoPublico()
+        {
+            var controlador = new ForoPublicoController();
+            return controlador.ConsultaForoPublico();
+        }
+
+
+        [WebMethod]
+        public void InsertForoPublico(string texto, string fecha, int fkPaciente)
+        {
+            var controlador = new ForoPublicoController();
+            controlador.InsertaForoPublico(texto, fecha, fkPaciente);
+        }
+
+        #endregion
+
+        #region ComentariosPublico
+
+        [WebMethod]
+        public List<ComentariosPublicoModel> GetComentariosPublico(int fkForo)
+        {
+            var controlador = new ComentariosPublicoController();
+            return controlador.ConsltaComentariosPublico(fkForo);
+        }
+
+
+        [WebMethod]
+        public void InsertComentariosPublico(string texto, string fecha, int fkpaciente, int fkForo)
+        {
+            var controlador = new ComentariosPublicoController();
+            controlador.InsertarComentarioPublico(texto, fecha, fkpaciente, fkForo);
+        }
+
+        #endregion
+
     }
 }
