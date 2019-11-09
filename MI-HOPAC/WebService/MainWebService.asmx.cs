@@ -439,7 +439,7 @@ namespace WebService
         #region ForoPublico
 
         [WebMethod]
-        public List<ForoPublicoModel> GetForoPublico()
+        public List<ForoPublicoModel> GetForoPublico(string texto)
         {
             var controlador = new ForoPublicoController();
             return controlador.ConsultaForoPublico();
