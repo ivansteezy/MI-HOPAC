@@ -55,7 +55,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <TextBlock Grid.Column="0" Text="{Binding Nombre}" TextAlignment="Left" Margin="20" FontSize="15" Foreground="Black"></TextBlock>
-                                        <Button Grid.Column="2" Margin="10" Background="Coral" Foreground="Black" >Ir a Publicacion</Button>
+                                        <Button Grid.Column="2" Margin="10" Background="Coral" Foreground="Black" Click="Button_Click" >Ir a Publicacion</Button>
 
                                     </Grid>
                                 </Grid>

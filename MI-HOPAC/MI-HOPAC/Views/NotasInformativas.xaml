@@ -20,7 +20,7 @@
                 <ItemsControl x:Name="ListViewNotas" ItemsSource="{Binding Nota}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <materialDesign:Card Margin="10" Width="200" Height="300">
+                            <materialDesign:Card Margin="10" Width="200" Height="300"> 
                                 <StackPanel Background="BlanchedAlmond">
                                     <materialDesign:PopupBox HorizontalAlignment="Right" StaysOpen ="False" Padding="0" Margin="0" >
                                         <StackPanel Margin="10">

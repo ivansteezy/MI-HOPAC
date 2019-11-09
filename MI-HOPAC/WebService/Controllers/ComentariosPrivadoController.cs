@@ -27,7 +27,7 @@ namespace WebService.Controllers
 
         public List<ComentariosPrivadoModel> ConsltaComentariosPrivado(int fkForo)
         {
-            return Select("SELECT * from comentariosprivado WHERE fkForo = " + fkForo.ToString());
+            return Select("SELECT * from comentariosprivado WHERE fkForo = " + fkForo.ToString() + " ORDER BY idComentariosPrivado DESC");
         }
 
 
