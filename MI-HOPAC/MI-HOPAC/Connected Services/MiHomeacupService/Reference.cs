@@ -2058,13 +2058,6 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteForoPrivado", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteForoPrivadoAsync(int pk);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPrivado", ReplyAction="*")]
-        MI_HOPAC.MiHomeacupService.InsertForoPrivadoResponse InsertForoPrivado(MI_HOPAC.MiHomeacupService.InsertForoPrivadoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPrivado", ReplyAction="*")]
-        System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertForoPrivadoResponse> InsertForoPrivadoAsync(MI_HOPAC.MiHomeacupService.InsertForoPrivadoRequest request);
-        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertCuentaPacientes", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.InsertCuentaPacientesResponse InsertCuentaPacientes(MI_HOPAC.MiHomeacupService.InsertCuentaPacientesRequest request);
@@ -2086,42 +2079,42 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPaciente", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetPacienteResponse> GetPacienteAsync(MI_HOPAC.MiHomeacupService.GetPacienteRequest request);
         
-        // CODEGEN: Generating message contract since element name MovilGetDoctoresResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento MovilGetDoctoresResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MovilGetDoctores", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.MovilGetDoctoresResponse MovilGetDoctores(MI_HOPAC.MiHomeacupService.MovilGetDoctoresRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MovilGetDoctores", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.MovilGetDoctoresResponse> MovilGetDoctoresAsync(MI_HOPAC.MiHomeacupService.MovilGetDoctoresRequest request);
         
-        // CODEGEN: Generating message contract since element name GetForoPrivadoPacienteResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetForoPrivadoPacienteResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetForoPrivadoPaciente", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetForoPrivadoPacienteResponse GetForoPrivadoPaciente(MI_HOPAC.MiHomeacupService.GetForoPrivadoPacienteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetForoPrivadoPaciente", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetForoPrivadoPacienteResponse> GetForoPrivadoPacienteAsync(MI_HOPAC.MiHomeacupService.GetForoPrivadoPacienteRequest request);
         
-        // CODEGEN: Generating message contract since element name texto from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPrivado", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.InsertForoPrivadoResponse InsertForoPrivado(MI_HOPAC.MiHomeacupService.InsertForoPrivadoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPrivado", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertForoPrivadoResponse> InsertForoPrivadoAsync(MI_HOPAC.MiHomeacupService.InsertForoPrivadoRequest request);
         
-        // CODEGEN: Generating message contract since element name GetComentariosPrivadoResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetComentariosPrivadoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetComentariosPrivado", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetComentariosPrivadoResponse GetComentariosPrivado(MI_HOPAC.MiHomeacupService.GetComentariosPrivadoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetComentariosPrivado", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetComentariosPrivadoResponse> GetComentariosPrivadoAsync(MI_HOPAC.MiHomeacupService.GetComentariosPrivadoRequest request);
         
-        // CODEGEN: Generating message contract since element name texto from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertComentariosPrivado", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.InsertComentariosPrivadoResponse InsertComentariosPrivado(MI_HOPAC.MiHomeacupService.InsertComentariosPrivadoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertComentariosPrivado", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertComentariosPrivadoResponse> InsertComentariosPrivadoAsync(MI_HOPAC.MiHomeacupService.InsertComentariosPrivadoRequest request);
         
-        // CODEGEN: Generating message contract since element name GetPacienteEventosResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetPacienteEventosResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPacienteEventos", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetPacienteEventosResponse GetPacienteEventos(MI_HOPAC.MiHomeacupService.GetPacienteEventosRequest request);
         
@@ -2140,28 +2133,28 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistenciaPacienteEventos", ReplyAction="*")]
         System.Threading.Tasks.Task AsistenciaPacienteEventosAsync(int fkPaciente, int fkEvento, int asistencia);
         
-        // CODEGEN: Generating message contract since element name texto from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetForoPublico", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetForoPublicoResponse GetForoPublico(MI_HOPAC.MiHomeacupService.GetForoPublicoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetForoPublico", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetForoPublicoResponse> GetForoPublicoAsync(MI_HOPAC.MiHomeacupService.GetForoPublicoRequest request);
         
-        // CODEGEN: Generating message contract since element name texto from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPublico", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.InsertForoPublicoResponse InsertForoPublico(MI_HOPAC.MiHomeacupService.InsertForoPublicoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertForoPublico", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertForoPublicoResponse> InsertForoPublicoAsync(MI_HOPAC.MiHomeacupService.InsertForoPublicoRequest request);
         
-        // CODEGEN: Generating message contract since element name GetComentariosPublicoResult from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetComentariosPublicoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetComentariosPublico", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.GetComentariosPublicoResponse GetComentariosPublico(MI_HOPAC.MiHomeacupService.GetComentariosPublicoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetComentariosPublico", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetComentariosPublicoResponse> GetComentariosPublicoAsync(MI_HOPAC.MiHomeacupService.GetComentariosPublicoRequest request);
         
-        // CODEGEN: Generating message contract since element name texto from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento texto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertComentariosPublico", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.InsertComentariosPublicoResponse InsertComentariosPublico(MI_HOPAC.MiHomeacupService.InsertComentariosPublicoRequest request);
         
