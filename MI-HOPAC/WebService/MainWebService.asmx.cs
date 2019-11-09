@@ -299,6 +299,13 @@ namespace WebService
         }
 
         [WebMethod]
+        public void LimpiarHorario(int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            controlador.EliminarHorarios(fkDoctor);
+        }
+
+        [WebMethod]
         public List<HorariosModel> DoctorDisponible(int fkDoctor, DateTime fecha)
         {
             var controlador = new HorariosController();

@@ -129,6 +129,9 @@ namespace MI_HOPAC.Views
                     tuplelist.Add(horaInicio, horaFinal, item, UserControl.Pk);
                 }
 
+                //Eliminamos todos los dias antes insertar los nuevos
+                client.LimpiarHorario(UserControl.Pk);
+
                 foreach(var item in tuplelist)
                 {
                     client.InsertarHorarios(item.Item1.Value.TimeOfDay.ToString(), item.Item2.Value.TimeOfDay.ToString(), item.Item3, item.Item4);

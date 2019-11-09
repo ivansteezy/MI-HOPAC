@@ -1606,6 +1606,12 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertarHorarios", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.InsertarHorariosResponse> InsertarHorariosAsync(MI_HOPAC.MiHomeacupService.InsertarHorariosRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LimpiarHorario", ReplyAction="*")]
+        void LimpiarHorario(int fkDoctor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LimpiarHorario", ReplyAction="*")]
+        System.Threading.Tasks.Task LimpiarHorarioAsync(int fkDoctor);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento DoctorDisponibleResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DoctorDisponible", ReplyAction="*")]
         MI_HOPAC.MiHomeacupService.DoctorDisponibleResponse DoctorDisponible(MI_HOPAC.MiHomeacupService.DoctorDisponibleRequest request);
@@ -4810,6 +4816,14 @@ namespace MI_HOPAC.MiHomeacupService {
             inValue.Body.fkDia = fkDia;
             inValue.Body.fkDoctor = fkDoctor;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).InsertarHorariosAsync(inValue);
+        }
+        
+        public void LimpiarHorario(int fkDoctor) {
+            base.Channel.LimpiarHorario(fkDoctor);
+        }
+        
+        public System.Threading.Tasks.Task LimpiarHorarioAsync(int fkDoctor) {
+            return base.Channel.LimpiarHorarioAsync(fkDoctor);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

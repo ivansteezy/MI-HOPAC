@@ -27,5 +27,10 @@ namespace WebService.Controllers
             return Select("select * from horario where  fkDoctor = " + fkDoctor.ToString() +
                    " and ('" + fecha.ToString("HH:mm:ss") + "' between horai and SUBTIME(horaf, '1:00')) and (fkDia = "+ (int)fecha.DayOfWeek +")");
         }
+
+        public void EliminarHorarios(int fkDoctor)
+        {
+            Delete("delete from Horario where fkDoctor = " + fkDoctor.ToString());
+        }
     }
 }

@@ -12,7 +12,10 @@ namespace WebService.Controllers
     {
         public List<CitasModel> CitasDisponibles(DateTime fechaCita, int fkDoctor)
         {
-            return Select("select * from citas where (fecha between DATE_SUB('" + fechaCita.ToString() + @"', INTERVAL 60 MINUTE) and '"+fechaCita.ToString()+ @"') or (fecha between '" + fechaCita.ToString() + @"' and DATE_ADD('2019-11-06 07:36:00', INTERVAL 60 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
+            return Select("select * from citas where (fecha between DATE_SUB('" + fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
+                          @"', INTERVAL 60 MINUTE) and '"+fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"') or (fecha between '" + 
+                          fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"' and DATE_ADD('"+ fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
+                          "', INTERVAL 60 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
         }
 
         //TODO

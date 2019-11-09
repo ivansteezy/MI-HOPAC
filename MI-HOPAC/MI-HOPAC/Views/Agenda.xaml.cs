@@ -26,13 +26,12 @@ namespace MI_HOPAC.Views
         public Agenda()
         {
             InitializeComponent();
-            
             Consolidate();
-
         }
 
         public void Consolidate()
         {
+            //Llenamos el listview con las citas
             DataCitas = new List<CitaSection>();
 
             var client = new MainWebServiceSoapClient();
@@ -57,21 +56,13 @@ namespace MI_HOPAC.Views
             
             if (dlg.ShowDialog() == true)
             {
-                if (ValidarDisponibilidadDoctor(dlg.Fecha)) //Working
-                {
-                    if (ValidarExistencia(dlg.Fecha))   //Verify this
-                    {
+                if (ValidarDisponibilidadDoctor(dlg.Fecha))
+                    if (ValidarExistencia(dlg.Fecha))
                         client.InsertCita(dlg.Fecha, dlg.idPaciente, UserControl.Pk);
-                    }
                     else
-                    {                        
                         MessageBox.Show("Este horario ya es ocupado por otra cita!");
-                    }
-                }
                 else
-                {
                     MessageBox.Show("Tu doctor no puede atenderte en este horario.");
-                }
             }
 
             ListaCitas.ItemsSource = null;
@@ -83,17 +74,15 @@ namespace MI_HOPAC.Views
             var client = new MainWebServiceSoapClient();
             var list = client.CitasDisponibilidad(fechaCita, UserControl.Pk).ToList();
 
-            if (list.Count > 0)
-                return false;
-            else
-                return true;
+            return !(list.Count > 0);   //Si la lista contiene alguna cita, entonces no se podra agendar
         }
 
         public bool ValidarDisponibilidadDoctor(DateTime fecha)
         {
             var client = new MainWebServiceSoapClient();
             var list = client.DoctorDisponible(UserControl.Pk, fecha).ToList();
-            return !(list.Count == 0);      
+
+            return !(list.Count == 0);  //Si la lista no esta vacia el doctor esta disponible    
         }
     }
 }

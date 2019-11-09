@@ -618,6 +618,16 @@
       <s:element name="InsertarHorariosResponse">
         <s:complexType />
       </s:element>
+      <s:element name="LimpiarHorario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LimpiarHorarioResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="DoctorDisponible">
         <s:complexType>
           <s:sequence>
@@ -962,6 +972,12 @@
   <wsdl:message name="InsertarHorariosSoapOut">
     <wsdl:part name="parameters" element="tns:InsertarHorariosResponse" />
   </wsdl:message>
+  <wsdl:message name="LimpiarHorarioSoapIn">
+    <wsdl:part name="parameters" element="tns:LimpiarHorario" />
+  </wsdl:message>
+  <wsdl:message name="LimpiarHorarioSoapOut">
+    <wsdl:part name="parameters" element="tns:LimpiarHorarioResponse" />
+  </wsdl:message>
   <wsdl:message name="DoctorDisponibleSoapIn">
     <wsdl:part name="parameters" element="tns:DoctorDisponible" />
   </wsdl:message>
@@ -1148,6 +1164,10 @@
     <wsdl:operation name="InsertarHorarios">
       <wsdl:input message="tns:InsertarHorariosSoapIn" />
       <wsdl:output message="tns:InsertarHorariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LimpiarHorario">
+      <wsdl:input message="tns:LimpiarHorarioSoapIn" />
+      <wsdl:output message="tns:LimpiarHorarioSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DoctorDisponible">
       <wsdl:input message="tns:DoctorDisponibleSoapIn" />
@@ -1497,6 +1517,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarHorarios">
       <soap:operation soapAction="http://tempuri.org/InsertarHorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LimpiarHorario">
+      <soap:operation soapAction="http://tempuri.org/LimpiarHorario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1887,6 +1916,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarHorarios">
       <soap12:operation soapAction="http://tempuri.org/InsertarHorarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LimpiarHorario">
+      <soap12:operation soapAction="http://tempuri.org/LimpiarHorario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
