@@ -329,12 +329,6 @@ namespace WebService
             controlador.EliminarForo(pk);
         }
 
-        [WebMethod]
-        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
-        {
-            var controlador = new ForoPrivadoController();
-            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
-        }
 
         /*[WebMethod]
         public void UpdateForoPrivado(string nombre, int cantidad, int pk)
@@ -382,5 +376,124 @@ namespace WebService
 
 
         #endregion
+
+        #region Doctores
+
+        [WebMethod]
+        public DoctoresModel MovilGetDoctores(int pk)
+        {
+            var controlador = new DoctoresControllers();
+            return controlador.ConsultaDoctoresMovil(pk);
+        }
+
+        #endregion
+
+        #region ForoPrivado
+
+        [WebMethod]
+        public List<ForoPrivadoPacienteModel> GetForoPrivadoPaciente(int pkPac, int pkDoc)
+        {
+            var controlador = new ForoPrivadoPacienteController();
+            return controlador.ConsultaForoPaciente(pkPac, pkDoc);
+        }
+
+
+        [WebMethod]
+        public void InsertForoPrivado(string texto, string fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new ForoPrivadoController();
+            controlador.InsertarForo(texto, fecha, fkPaciente, fkDoctor);
+        }
+
+
+        #endregion
+
+        #region ComentariosPrivado
+
+        [WebMethod]
+        public List<ComentariosPrivadoModel> GetComentariosPrivado(int fkForo)
+        {
+            var controlador = new ComentariosPrivadoController();
+            return controlador.ConsltaComentariosPrivado(fkForo);
+        }
+
+
+        [WebMethod]
+        public void InsertComentariosPrivado(string texto, string fecha, int TipodeCuenta, int fkForo)
+        {
+            var controlador = new ComentariosPrivadoController();
+            controlador.InsertarComentario(texto, fecha, TipodeCuenta, fkForo);
+        }
+
+
+        #endregion
+
+        #region PacienteEventos
+
+        // Retorna una lista de eventos asi que se usa EventosModel
+        [WebMethod]
+        public List<EventosModel> GetPacienteEventos(int pk)
+        {
+            var controlador = new EventosController();
+            return controlador.ConsultaPacienteEventos(pk);
+        }
+
+
+        [WebMethod]
+        public void InsertPacienteEventos(int fkPaciente, int fkEvento)
+        {
+            var controlador = new PacienteEventosController();
+            controlador.InsertarPacienteEvento(fkPaciente, fkEvento);
+        }
+
+
+        [WebMethod]
+        public void AsistenciaPacienteEventos(int fkPaciente, int fkEvento, int asistencia)
+        {
+            var controlador = new PacienteEventosController();
+            controlador.ActualizarAsistencia(fkPaciente, fkEvento, asistencia);
+
+        }
+
+        #endregion
+
+        #region ForoPublico
+
+        [WebMethod]
+        public List<ForoPublicoModel> GetForoPublico(string texto)
+        {
+            var controlador = new ForoPublicoController();
+            return controlador.ConsultaForoPublico();
+        }
+
+
+        [WebMethod]
+        public void InsertForoPublico(string texto, string fecha, int fkPaciente)
+        {
+            var controlador = new ForoPublicoController();
+            controlador.InsertaForoPublico(texto, fecha, fkPaciente);
+        }
+
+        #endregion
+
+        #region ComentariosPublico
+
+        [WebMethod]
+        public List<ComentariosPublicoModel> GetComentariosPublico(int fkForo)
+        {
+            var controlador = new ComentariosPublicoController();
+            return controlador.ConsltaComentariosPublico(fkForo);
+        }
+
+
+        [WebMethod]
+        public void InsertComentariosPublico(string texto, string fecha, int fkpaciente, int fkForo)
+        {
+            var controlador = new ComentariosPublicoController();
+            controlador.InsertarComentarioPublico(texto, fecha, fkpaciente, fkForo);
+        }
+
+        #endregion
+
     }
 }

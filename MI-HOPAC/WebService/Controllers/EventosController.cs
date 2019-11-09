@@ -26,6 +26,16 @@ namespace WebService.Controllers
             return Select("select * from eventos where fkDoctor = " + pk.ToString());
         }
 
+        // Retorna una lista de eventos asi que se usa EventosModel
+        public List<EventosModel> ConsultaPacienteEventos(int pk)
+        {
+            return Select(@"SELECT eventos.*
+                            FROM eventos
+                            LEFT JOIN pacienteeventos
+                            ON eventos.idEventos = pacienteeventos.fkEvento
+                            WHERE pacienteeventos.fkPaciente = " + pk.ToString());
+        }
+
 
         public void EliminarEvento(int primaryKey)
         {

@@ -44,11 +44,11 @@ namespace MI_HOPAC.Views
 
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
-            //Consultamos las notas
+            //Consultamos las publicaciones
             var result = client.GetForoPrivado(UserControl.Pk);
             List<Foro> publicaciones = new List<Foro>();
 
-            //Para cada nota de la base de datos, lo pasasmos a una lista para imprimr.
+            //Para cada publicacione de la base de datos, lo pasasmos a una lista para imprimr.
             foreach (MiHomeacupService.ForoPrivadoModel i in result)
             {
                 string nombre = i.m_Nombre + i.m_Apellidos;
@@ -57,11 +57,24 @@ namespace MI_HOPAC.Views
                 publicaciones.Add(publicacion);
             }
 
-            //Retornamos la lista con las notas para imprimir
+            //Retornamos la lista con las publicaciones para imprimir
             return publicaciones;
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var nombre = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Nombre;
+            var id = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Id;
+            var fecha = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Fecha;
+            var texto = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Texto;
 
+            var vista = new ComentariosPrivado(id, nombre, texto, fecha);
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
+
+        }
     }
 }

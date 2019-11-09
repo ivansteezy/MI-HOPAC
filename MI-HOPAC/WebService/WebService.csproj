@@ -92,6 +92,8 @@
     <Compile Include="Configurations\DatabaseOperation.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\CitasPacientesController.cs" />
+    <Compile Include="Controllers\ComentariosPrivadoController.cs" />
+    <Compile Include="Controllers\ComentariosPublicoController.cs" />
     <Compile Include="Controllers\CuentaDoctoresController.cs" />
     <Compile Include="Controllers\CuentaPacientesController.cs" />
     <Compile Include="Controllers\DiasController.cs" />
@@ -100,6 +102,8 @@
     <Compile Include="Controllers\ExpedienteAcupunturaController.cs" />
     <Compile Include="Controllers\ExpedienteHomeopatiaController.cs" />
     <Compile Include="Controllers\ForoPrivadoController.cs" />
+    <Compile Include="Controllers\ForoPrivadoPacienteController.cs" />
+    <Compile Include="Controllers\ForoPublicoController.cs" />
     <Compile Include="Controllers\HorariosController.cs" />
     <Compile Include="Controllers\InventarioAcupunturaController.cs" />
     <Compile Include="Controllers\InventarioHomeopatiaController.cs" />
@@ -115,6 +119,8 @@
     </Compile>
     <Compile Include="Models\CitasModel.cs" />
     <Compile Include="Models\CitasPacientesModel.cs" />
+    <Compile Include="Models\ComentariosPrivadoModel.cs" />
+    <Compile Include="Models\ComentariosPublicoModel.cs" />
     <Compile Include="Models\CuentaDoctoresModel.cs" />
     <Compile Include="Models\CuentaPacientesModel.cs" />
     <Compile Include="Models\DiasModel.cs" />
@@ -123,6 +129,8 @@
     <Compile Include="Models\ExpedienteAcupunturaModel.cs" />
     <Compile Include="Models\ExpedienteHomeopatiaModel.cs" />
     <Compile Include="Models\ForoPrivadoModel.cs" />
+    <Compile Include="Models\ForoPrivadoPacienteModel.cs" />
+    <Compile Include="Models\ForoPublicoModel.cs" />
     <Compile Include="Models\HorariosModel.cs" />
     <Compile Include="Models\InventarioAcupunturaModel.cs" />
     <Compile Include="Models\InventarioHomeopatiaModel.cs" />
@@ -136,7 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\homeacupservice - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\homeacupservice - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\natiservice - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\natiservice - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\natiservice - FTP2.pubxml" />
     <None Include="Properties\PublishProfiles\natiservice - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
