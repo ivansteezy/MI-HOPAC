@@ -10,9 +10,9 @@ namespace WebService.Controllers
 {
     public class CitasController : DatabaseOperation<CitasModel>
     {
-        public List<CitasModel> ConsultaCitas(int fkDoctor)
+        public List<CitasModel> CitasDisponibles(DateTime fechaCita, int fkDoctor)
         {
-            return Select("select * from Citas where fkDoctor = " + fkDoctor.ToString());
+            return Select("select * from citas where (fecha between DATE_SUB('" + fechaCita.ToString() + @"', INTERVAL 60 MINUTE) and '"+fechaCita.ToString()+ @"') or (fecha between '" + fechaCita.ToString() + @"' and DATE_ADD('2019-11-06 07:36:00', INTERVAL 60 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
         }
 
         //TODO

@@ -26,8 +26,7 @@ namespace MI_HOPAC.Foundation
         public ImageSource qrSource   { get; set; }
         #endregion
 
-        public EventosSection(string _nombreEvento, string _horaEvento, string _fechaEvento,
-                       string _guiaEvento, string _ubicacionEvento, ImageSource _qrSource) => 
+        public EventosSection(string _nombreEvento, string _horaEvento, string _fechaEvento,string _guiaEvento, string _ubicacionEvento, ImageSource _qrSource) => 
                        (nombreEvento, horaEvento, fechaEvento, guiaEvento, ubicacionEvento, qrSource) = 
                        (_nombreEvento, _horaEvento, _fechaEvento, _guiaEvento, _ubicacionEvento, _qrSource);
 

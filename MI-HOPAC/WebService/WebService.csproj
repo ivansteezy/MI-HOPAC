@@ -91,6 +91,7 @@
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
     <Compile Include="Controllers\CitasController.cs" />
+    <Compile Include="Controllers\CitasPacientesController.cs" />
     <Compile Include="Controllers\CuentaDoctoresController.cs" />
     <Compile Include="Controllers\CuentaPacientesController.cs" />
     <Compile Include="Controllers\DiasController.cs" />
@@ -113,6 +114,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\CitasModel.cs" />
+    <Compile Include="Models\CitasPacientesModel.cs" />
     <Compile Include="Models\CuentaDoctoresModel.cs" />
     <Compile Include="Models\CuentaPacientesModel.cs" />
     <Compile Include="Models\DiasModel.cs" />

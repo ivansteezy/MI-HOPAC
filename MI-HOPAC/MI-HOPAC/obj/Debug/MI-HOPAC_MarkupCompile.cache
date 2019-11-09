@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-24-2078402844
+25-1721349504
 
-40-725486041
+41561296874
 27-1016937511
-Views\Agenda.xaml;Views\Dashboard.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+Views\Agenda.xaml;Views\Dashboard.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 False
 

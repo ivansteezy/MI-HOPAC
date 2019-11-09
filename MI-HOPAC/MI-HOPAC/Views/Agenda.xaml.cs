@@ -36,20 +36,16 @@ namespace MI_HOPAC.Views
             DataCitas = new List<CitaSection>();
 
             var client = new MainWebServiceSoapClient();
-            var result = client.GetCitas(UserControl.Pk).ToList();
-            var pacientes = client.GetPacientes(UserControl.Pk);
+            var citas = client.GetCitas(UserControl.Pk).ToList();
 
-            foreach(var item in result)
+            foreach(var cita in citas)
             {
-                var paciente = from c in pacientes
-                               where c.m_IdPaciente == item.m_FkPaciente
-                               select c.m_Nombre;
-
-                var citasRow = new CitaSection();
-                citasRow.Paciente = paciente.First();
-                citasRow.Fecha = item.m_Fecha.ToString();
-                DataCitas.Add(citasRow);
+                var row = new CitaSection();
+                row.Fecha = cita.m_Fecha.ToString();
+                row.Paciente = cita.m_Nombre;
+                DataCitas.Add(row);
             }
+
             DataContext = this;
             ListaCitas.ItemsSource = DataCitas;
         }
@@ -61,11 +57,43 @@ namespace MI_HOPAC.Views
             
             if (dlg.ShowDialog() == true)
             {
-                client.InsertCita(dlg.Fecha, dlg.idPaciente, UserControl.Pk);
+                if (ValidarDisponibilidadDoctor(dlg.Fecha)) //Working
+                {
+                    if (ValidarExistencia(dlg.Fecha))   //Verify this
+                    {
+                        client.InsertCita(dlg.Fecha, dlg.idPaciente, UserControl.Pk);
+                    }
+                    else
+                    {                        
+                        MessageBox.Show("Este horario ya es ocupado por otra cita!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tu doctor no puede atenderte en este horario.");
+                }
             }
 
             ListaCitas.ItemsSource = null;
             Consolidate();
+        }
+
+        private bool ValidarExistencia(DateTime fechaCita)
+        {
+            var client = new MainWebServiceSoapClient();
+            var list = client.CitasDisponibilidad(fechaCita, UserControl.Pk).ToList();
+
+            if (list.Count > 0)
+                return false;
+            else
+                return true;
+        }
+
+        public bool ValidarDisponibilidadDoctor(DateTime fecha)
+        {
+            var client = new MainWebServiceSoapClient();
+            var list = client.DoctorDisponible(UserControl.Pk, fecha).ToList();
+            return !(list.Count == 0);      
         }
     }
 }

@@ -21,5 +21,11 @@ namespace WebService.Controllers
 
             Insert(cmd);
         }
+
+        public List<HorariosModel> HorarioDisponible(int fkDoctor, DateTime fecha)
+        {
+            return Select("select * from horario where  fkDoctor = " + fkDoctor.ToString() +
+                   " and ('" + fecha.ToString("HH:mm:ss") + "' between horai and SUBTIME(horaf, '1:00')) and (fkDia = "+ (int)fecha.DayOfWeek +")");
+        }
     }
 }

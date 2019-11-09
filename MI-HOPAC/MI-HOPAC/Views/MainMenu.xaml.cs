@@ -98,6 +98,10 @@ namespace MI_HOPAC.Views
                     main_Frame.Content = new InventarioA();
                     title.Text = "Inventario Acupuntura";
                     break;
+                case (int)Pagina.Notificacion:
+                    main_Frame.Content = new Notificaciones();
+                    title.Text = "Notificaciones";
+                    break;
             }
         }
 
@@ -117,7 +121,8 @@ namespace MI_HOPAC.Views
             NotasInformativas     = 0x0004,
             ForoPrivado           = 0x0005,
             InventarioHomeopatico = 0x0006,
-            InventarioAcupuntura  = 0x0007
+            InventarioAcupuntura  = 0x0007,
+            Notificacion          = 0x0008,
         }
     }
 }

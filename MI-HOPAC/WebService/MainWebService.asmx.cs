@@ -166,7 +166,7 @@ namespace WebService
             var controlador = new NotasDigitalesController();
             controlador.InsertarNotaDig(texto, color, fkDoctor);
         }
-        
+
         [WebMethod]
         public void UpdateNotaDig(int pk, string texto, string color)
         {
@@ -268,9 +268,9 @@ namespace WebService
 
         #region Citas
         [WebMethod]
-        public List<CitasModel> GetCitas(int fkDoctor)
+        public List<CitasPacientesModel> GetCitas(int fkDoctor)
         {
-            var controlador = new CitasController();
+            var controlador = new CitasPacientesController();
             return controlador.ConsultaCitas(fkDoctor);
         }
 
@@ -281,6 +281,13 @@ namespace WebService
             controlador.InsertarCita(fecha, fkPaciente, fkDoctor);
         }
 
+        [WebMethod]
+        public List<CitasModel>CitasDisponibilidad(DateTime fechaCita, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            return controlador.CitasDisponibles(fechaCita, fkDoctor);
+        }
+
         #endregion
 
         #region Horarios
@@ -289,6 +296,13 @@ namespace WebService
         {
             var controlador = new HorariosController();
             controlador.InsertarHorarios(horaInicio, horaFinal, fkDia, fkDoctor);
+        }
+
+        [WebMethod]
+        public List<HorariosModel> DoctorDisponible(int fkDoctor, DateTime fecha)
+        {
+            var controlador = new HorariosController();
+            return controlador.HorarioDisponible(fkDoctor, fecha);
         }
         #endregion
 
