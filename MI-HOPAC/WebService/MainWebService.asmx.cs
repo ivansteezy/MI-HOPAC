@@ -330,13 +330,24 @@ namespace WebService
         }
 
 
-        /*[WebMethod]
-        public void UpdateForoPrivado(string nombre, int cantidad, int pk)
+        #endregion
+
+        #region Expedientes Homeopaticos
+
+        [WebMethod]
+        public List<ExpedienteHomeopatiaModel> GetExpedientesHom(int fkDoctor)
         {
-            var controlador = new ForoPrivadoController();
-            controlador.ActualizarForo(nombre, cantidad, pk);
+            var controlador = new ExpedienteHomeopatiaController();
+            return controlador.ConsultaInventarioAcupuntura(fkDoctor);
         }
-        */
+
+
+        [WebMethod]
+        public void InsertExpedientesHom(ExpedienteHomeopatiaModel Expediente)
+        {
+            var controlador = new ExpedienteHomeopatiaController();
+            controlador.InsertarExpedienteHom(Expediente);
+        }
 
         #endregion
 
@@ -494,6 +505,27 @@ namespace WebService
         }
 
         #endregion
+
+        #region Citas
+
+        [WebMethod]
+        public List<CitasMovilModel> GetCitasPaciente(int fkPaciente)
+        {
+            var controlador = new CitasMovilController();
+            return controlador.ConsultaCitasPaciente(fkPaciente);
+        }
+
+        public void CancelarCitasPaciente(int idCita)
+        {
+            var controlador = new CitasMovilController();
+            controlador.EliminarCitaPaciente(idCita);
+        }
+
+
+
+        #endregion
+
+
 
     }
 }

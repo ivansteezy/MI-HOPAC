@@ -20,7 +20,7 @@ namespace WebService.Models
         public string m_Humectacion         { set; get; }
         public string m_PulsoD              { set; get; }
         public string m_PulsoI              { set; get; }
-
+        public string m_fkDoctor { set; get; }
         #endregion
     }
 }

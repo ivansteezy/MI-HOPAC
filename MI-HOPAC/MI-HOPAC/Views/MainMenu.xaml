@@ -105,13 +105,6 @@
 
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="5" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Margin="20 0 0 0" Text="Expedientes" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </ListViewItem>
-
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="Event" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0"  Text="Eventos" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
@@ -145,12 +138,30 @@
                         </StackPanel>
                     </ListViewItem>
 
+                    <ListViewItem Height="60" x:Name="ExpediendesAcupuntura">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="5" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Expediendes Acupuntura" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+
+                    <ListViewItem Height="60" x:Name="ExpediendesHomeopatia">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="5" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Expediendes Homeopatia" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+
                     <ListViewItem Height="60" x:Name="Notificaciones">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="InfoCircle" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Notificaciones" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
+                    
+
                 </ListView>
             </StackPanel>
         </Grid>

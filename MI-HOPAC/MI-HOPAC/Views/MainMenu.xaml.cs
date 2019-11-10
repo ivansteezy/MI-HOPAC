@@ -24,6 +24,7 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             Consolidate();
+            DoctorMode();
         }
 
         private void Consolidate()
@@ -37,9 +38,9 @@ namespace MI_HOPAC.Views
         private void DoctorMode()
         {
             if (UserControl.Medicina == 0)
-                InventarioHomeopatia.Visibility = Visibility.Collapsed;
-            else if (UserControl.Medicina == 1)
                 InventarioAcupuntura.Visibility = Visibility.Collapsed;
+            else if (UserControl.Medicina == 1)
+                InventarioHomeopatia.Visibility = Visibility.Collapsed;
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
@@ -75,9 +76,6 @@ namespace MI_HOPAC.Views
                     main_Frame.Content = new Agenda();
                     title.Text = "Calendario";
                     break;
-                case (int)Pagina.Expedientes:
-                    title.Text = "Expedientes";
-                    break;
                 case (int)Pagina.Eventos:
                     main_Frame.Content = new Eventos();
                     title.Text = "Eventos";
@@ -102,6 +100,14 @@ namespace MI_HOPAC.Views
                     main_Frame.Content = new Notificaciones();
                     title.Text = "Notificaciones";
                     break;
+                case (int)Pagina.ExpedientesHom:
+                    main_Frame.Content = new Notificaciones();
+                    title.Text = "Expediendes Homeopaticos";
+                    break;
+                case (int)Pagina.ExpedientesAcu:
+                    main_Frame.Content = new Notificaciones();
+                    title.Text = "Expediendes Acupuntura";
+                    break;
             }
         }
 
@@ -116,13 +122,14 @@ namespace MI_HOPAC.Views
         {
             Inicio                = 0x0000,
             Calendario            = 0x0001,
-            Expedientes           = 0x0002,
-            Eventos               = 0x0003,
-            NotasInformativas     = 0x0004,
-            ForoPrivado           = 0x0005,
-            InventarioHomeopatico = 0x0006,
-            InventarioAcupuntura  = 0x0007,
-            Notificacion          = 0x0008,
+            Eventos               = 0x0002,
+            NotasInformativas     = 0x0003,
+            ForoPrivado           = 0x0004,
+            InventarioHomeopatico = 0x0005,
+            InventarioAcupuntura  = 0x0006,
+            Notificacion          = 0x0007,
+            ExpedientesHom        = 0x0008,
+            ExpedientesAcu        = 0x0009,
         }
     }
 }

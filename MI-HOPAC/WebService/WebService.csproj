@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
+    <Compile Include="Controllers\CitasMovilController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\CitasPacientesController.cs" />
     <Compile Include="Controllers\ComentariosPrivadoController.cs" />
@@ -117,6 +118,7 @@
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\CitasMovilModel.cs" />
     <Compile Include="Models\CitasModel.cs" />
     <Compile Include="Models\CitasPacientesModel.cs" />
     <Compile Include="Models\ComentariosPrivadoModel.cs" />

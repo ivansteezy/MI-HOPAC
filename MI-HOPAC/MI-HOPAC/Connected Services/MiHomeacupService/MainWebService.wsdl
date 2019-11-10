@@ -695,6 +695,80 @@
       <s:element name="DeleteForoPrivadoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetExpedientesHom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpedientesHomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpedientesHomResult" type="tns:ArrayOfExpedienteHomeopatiaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExpedienteHomeopatiaModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExpedienteHomeopatiaModel" nillable="true" type="tns:ExpedienteHomeopatiaModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExpedienteHomeopatiaModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdExpHom" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Edad" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Sexo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_EstadoCivil" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Ocupacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Domicilio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Movil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_CiudadOrigen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_CiudadReside" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Religion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Escolaridad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_AntHeredo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_AntPersonales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_TA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_FC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_FR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Temp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Peso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Talla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Menarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_G" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_A" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_P" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Ritmo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Dismenorrea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_F" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_D" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_C2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_FPP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_FUM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_FUP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_IVSA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Menopausia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Metodo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Estudios" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Motivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_fkDoctor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertExpedientesHom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Expediente" type="tns:ExpedienteHomeopatiaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertExpedientesHomResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="InsertCuentaPacientes">
         <s:complexType>
           <s:sequence>
@@ -956,6 +1030,34 @@
       <s:element name="InsertComentariosPublicoResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetCitasPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCitasPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCitasPacienteResult" type="tns:ArrayOfCitasMovilModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCitasMovilModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CitasMovilModel" nillable="true" type="tns:CitasMovilModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CitasMovilModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdCitas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Apellido" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_fkDoctor" type="s:int" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetCuentaDoctoresSoapIn">
@@ -1198,6 +1300,18 @@
   <wsdl:message name="DeleteForoPrivadoSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteForoPrivadoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetExpedientesHomSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpedientesHom" />
+  </wsdl:message>
+  <wsdl:message name="GetExpedientesHomSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpedientesHomResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertExpedientesHomSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertExpedientesHom" />
+  </wsdl:message>
+  <wsdl:message name="InsertExpedientesHomSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertExpedientesHomResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertCuentaPacientesSoapIn">
     <wsdl:part name="parameters" element="tns:InsertCuentaPacientes" />
   </wsdl:message>
@@ -1287,6 +1401,12 @@
   </wsdl:message>
   <wsdl:message name="InsertComentariosPublicoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertComentariosPublicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitasPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCitasPaciente" />
+  </wsdl:message>
+  <wsdl:message name="GetCitasPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCitasPacienteResponse" />
   </wsdl:message>
   <wsdl:portType name="MainWebServiceSoap">
     <wsdl:operation name="GetCuentaDoctores">
@@ -1449,6 +1569,14 @@
       <wsdl:input message="tns:DeleteForoPrivadoSoapIn" />
       <wsdl:output message="tns:DeleteForoPrivadoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetExpedientesHom">
+      <wsdl:input message="tns:GetExpedientesHomSoapIn" />
+      <wsdl:output message="tns:GetExpedientesHomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertExpedientesHom">
+      <wsdl:input message="tns:InsertExpedientesHomSoapIn" />
+      <wsdl:output message="tns:InsertExpedientesHomSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertCuentaPacientes">
       <wsdl:input message="tns:InsertCuentaPacientesSoapIn" />
       <wsdl:output message="tns:InsertCuentaPacientesSoapOut" />
@@ -1508,6 +1636,10 @@
     <wsdl:operation name="InsertComentariosPublico">
       <wsdl:input message="tns:InsertComentariosPublicoSoapIn" />
       <wsdl:output message="tns:InsertComentariosPublicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCitasPaciente">
+      <wsdl:input message="tns:GetCitasPacienteSoapIn" />
+      <wsdl:output message="tns:GetCitasPacienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MainWebServiceSoap" type="tns:MainWebServiceSoap">
@@ -1872,6 +2004,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetExpedientesHom">
+      <soap:operation soapAction="http://tempuri.org/GetExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertExpedientesHom">
+      <soap:operation soapAction="http://tempuri.org/InsertExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCuentaPacientes">
       <soap:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
       <wsdl:input>
@@ -2000,6 +2150,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertComentariosPublico">
       <soap:operation soapAction="http://tempuri.org/InsertComentariosPublico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitasPaciente">
+      <soap:operation soapAction="http://tempuri.org/GetCitasPaciente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2370,6 +2529,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetExpedientesHom">
+      <soap12:operation soapAction="http://tempuri.org/GetExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertExpedientesHom">
+      <soap12:operation soapAction="http://tempuri.org/InsertExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCuentaPacientes">
       <soap12:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
       <wsdl:input>
@@ -2498,6 +2675,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertComentariosPublico">
       <soap12:operation soapAction="http://tempuri.org/InsertComentariosPublico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitasPaciente">
+      <soap12:operation soapAction="http://tempuri.org/GetCitasPaciente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
