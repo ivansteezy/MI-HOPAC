@@ -66,7 +66,7 @@ namespace MI_HOPAC.Views
     
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            //Ir a pagina donde se presenta la opcion de crear nuevo expediente
 
 
         }

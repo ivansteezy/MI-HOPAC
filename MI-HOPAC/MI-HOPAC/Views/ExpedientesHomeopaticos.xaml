@@ -10,7 +10,6 @@
       Title="ExpedientesHomeopaticos">
 
     <Grid>
-        
         <ScrollViewer Grid.Row="0" Background="Transparent">
             <StackPanel Margin="20 0">
                 <ItemsControl x:Name="ListViewNotas" ItemsSource="{Binding Expedientes}">
@@ -34,7 +33,5 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-
-
     </Grid>
 </Page>

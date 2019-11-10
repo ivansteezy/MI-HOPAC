@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-30-1262613176
+31-1264751021
 
-49-698323581
+501836251083
 27-1016937511
-Views\Agenda.xaml;Views\AntecedentesExpedientes.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\FormularioExpedientesHomeopatico2.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+Views\Agenda.xaml;Views\AntecedentesExpedientes.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\FormularioExpedientesHomeopatico2.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
-True
+False
 

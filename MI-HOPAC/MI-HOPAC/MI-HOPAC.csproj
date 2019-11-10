@@ -201,6 +201,9 @@
     <Compile Include="Views\NuevoEvento.xaml.cs">
       <DependentUpon>NuevoEvento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainExpedientes.xaml.cs">
+      <DependentUpon>MainExpedientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
@@ -324,6 +327,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NuevoEvento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainExpedientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -101,11 +101,11 @@ namespace MI_HOPAC.Views
                     title.Text = "Notificaciones";
                     break;
                 case (int)Pagina.ExpedientesHom:
-                    main_Frame.Content = new Notificaciones();
+                    main_Frame.Content = new MainExpedientes();
                     title.Text = "Expediendes Homeopaticos";
                     break;
                 case (int)Pagina.ExpedientesAcu:
-                    main_Frame.Content = new Notificaciones();
+                    main_Frame.Content = new Notificaciones();  //TODO
                     title.Text = "Expediendes Acupuntura";
                     break;
             }
