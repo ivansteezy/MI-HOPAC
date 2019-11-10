@@ -10,19 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-<<<<<<< HEAD
-27-1788246029
+30-1262613176
 
-45-1267142953
+48629359642
 27-1016937511
-Views\Agenda.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
-=======
-29-313523908
-
-46-1358090180
-27-1016937511
-Views\Agenda.xaml;Views\AntecedentesExpedientes.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\FormularioExpedientesHomeopatico2.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
->>>>>>> FormulariosExpedientes
+Views\Agenda.xaml;Views\AntecedentesExpedientes.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\FormularioExpedientesHomeopatico2.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 False
 

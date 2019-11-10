@@ -18,7 +18,7 @@ namespace WebService.Controllers
         public void InsertarExpedienteHom(ExpedienteHomeopatiaModel expediente)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"insert into invacupuntura()  
+            cmd.CommandText = @"insert into Exphomeopatia()  
                                 values(Null, @Nombre, @Edad, @Sexo, @EstadoCivil, @Ocupacion, @Domicilio, @Correo, @Telefono, @Movil, @CiudadOrigen,
                                        @CiudadReside, @Religion, @Escolaridad, @AntHeredo, @AntPersonales, @TA, @FC, @FR, @Temp, 
                                        @Peso, @Talla, @Menarca, @G, @A, @P, @C, @Ritmo, @Dismenorrea, @F, @D, @C2, @FPP, @FUM, @FUP,
