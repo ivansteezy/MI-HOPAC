@@ -198,10 +198,10 @@ namespace WebService
         }
 
         [WebMethod]
-        public void UpdateNotaInfo(int pk, string titulo, string texto)
+        public void UpdateNotaInfo(int pk, string titulo, string texto, string link)
         {
             var controlador = new NotasInformativasController();
-            controlador.ActualizarNotaInfo(pk, titulo, texto);
+            controlador.ActualizarNotaInfo(pk, titulo, texto, link);
         }
         #endregion
 
@@ -490,12 +490,11 @@ namespace WebService
         #region ComentariosPublico
 
         [WebMethod]
-        public List<ComentariosPublicoModel> GetComentariosPublico(int fkForo)
+        public List<ForoPublicoModel> GetComentariosPublico(int fkForo)
         {
-            var controlador = new ComentariosPublicoController();
+            var controlador = new ForoPublicoController();
             return controlador.ConsltaComentariosPublico(fkForo);
         }
-
 
         [WebMethod]
         public void InsertComentariosPublico(string texto, string fecha, int fkpaciente, int fkForo)

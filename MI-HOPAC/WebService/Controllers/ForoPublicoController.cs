@@ -22,6 +22,15 @@ namespace WebService.Controllers
         }
 
 
+        public List<ForoPublicoModel> ConsltaComentariosPublico(int fkForo)
+        {
+            return Select(@"SELECT comentariospublico.idComentariosPublico, comentariospublico.Texto, comentariospublico.Fecha, paciente.Nombre, paciente.Apellidos
+                            FROM comentariospublico
+                            LEFT JOIN Paciente
+                            ON comentariospublico.FkPaciente = paciente.Idpaciente  WHERE comentariospublico.fkForo = " + fkForo.ToString());
+        }
+
+
         public void InsertaForoPublico(string texto, string fecha, int fkPaciente)
         {
 

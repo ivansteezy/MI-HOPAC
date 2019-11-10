@@ -2361,112 +2361,6 @@ namespace MI_HOPAC.MiHomeacupService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ComentariosPublicoModel", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class ComentariosPublicoModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int m_IdComentariosPublicoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string m_TextoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string m_FechaField;
-        
-        private int m_fkPacienteField;
-        
-        private int m_FkForoField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int m_IdComentariosPublico {
-            get {
-                return this.m_IdComentariosPublicoField;
-            }
-            set {
-                if ((this.m_IdComentariosPublicoField.Equals(value) != true)) {
-                    this.m_IdComentariosPublicoField = value;
-                    this.RaisePropertyChanged("m_IdComentariosPublico");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string m_Texto {
-            get {
-                return this.m_TextoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_TextoField, value) != true)) {
-                    this.m_TextoField = value;
-                    this.RaisePropertyChanged("m_Texto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string m_Fecha {
-            get {
-                return this.m_FechaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.m_FechaField, value) != true)) {
-                    this.m_FechaField = value;
-                    this.RaisePropertyChanged("m_Fecha");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int m_fkPaciente {
-            get {
-                return this.m_fkPacienteField;
-            }
-            set {
-                if ((this.m_fkPacienteField.Equals(value) != true)) {
-                    this.m_fkPacienteField = value;
-                    this.RaisePropertyChanged("m_fkPaciente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int m_FkForo {
-            get {
-                return this.m_FkForoField;
-            }
-            set {
-                if ((this.m_FkForoField.Equals(value) != true)) {
-                    this.m_FkForoField = value;
-                    this.RaisePropertyChanged("m_FkForo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CitasMovilModel", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class CitasMovilModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4191,13 +4085,17 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string texto;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string link;
+        
         public UpdateNotaInfoRequestBody() {
         }
         
-        public UpdateNotaInfoRequestBody(int pk, string titulo, string texto) {
+        public UpdateNotaInfoRequestBody(int pk, string titulo, string texto, string link) {
             this.pk = pk;
             this.titulo = titulo;
             this.texto = texto;
+            this.link = link;
         }
     }
     
@@ -5967,12 +5865,12 @@ namespace MI_HOPAC.MiHomeacupService {
     public partial class GetComentariosPublicoResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public MI_HOPAC.MiHomeacupService.ComentariosPublicoModel[] GetComentariosPublicoResult;
+        public MI_HOPAC.MiHomeacupService.ForoPublicoModel[] GetComentariosPublicoResult;
         
         public GetComentariosPublicoResponseBody() {
         }
         
-        public GetComentariosPublicoResponseBody(MI_HOPAC.MiHomeacupService.ComentariosPublicoModel[] GetComentariosPublicoResult) {
+        public GetComentariosPublicoResponseBody(MI_HOPAC.MiHomeacupService.ForoPublicoModel[] GetComentariosPublicoResult) {
             this.GetComentariosPublicoResult = GetComentariosPublicoResult;
         }
     }
@@ -6655,12 +6553,13 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.UpdateNotaInfo(request);
         }
         
-        public void UpdateNotaInfo(int pk, string titulo, string texto) {
+        public void UpdateNotaInfo(int pk, string titulo, string texto, string link) {
             MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequest inValue = new MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequestBody();
             inValue.Body.pk = pk;
             inValue.Body.titulo = titulo;
             inValue.Body.texto = texto;
+            inValue.Body.link = link;
             MI_HOPAC.MiHomeacupService.UpdateNotaInfoResponse retVal = ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateNotaInfo(inValue);
         }
         
@@ -6669,12 +6568,13 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.UpdateNotaInfoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateNotaInfoResponse> UpdateNotaInfoAsync(int pk, string titulo, string texto) {
+        public System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.UpdateNotaInfoResponse> UpdateNotaInfoAsync(int pk, string titulo, string texto, string link) {
             MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequest inValue = new MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.UpdateNotaInfoRequestBody();
             inValue.Body.pk = pk;
             inValue.Body.titulo = titulo;
             inValue.Body.texto = texto;
+            inValue.Body.link = link;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).UpdateNotaInfoAsync(inValue);
         }
         
@@ -7386,7 +7286,7 @@ namespace MI_HOPAC.MiHomeacupService {
             return base.Channel.GetComentariosPublico(request);
         }
         
-        public MI_HOPAC.MiHomeacupService.ComentariosPublicoModel[] GetComentariosPublico(int fkForo) {
+        public MI_HOPAC.MiHomeacupService.ForoPublicoModel[] GetComentariosPublico(int fkForo) {
             MI_HOPAC.MiHomeacupService.GetComentariosPublicoRequest inValue = new MI_HOPAC.MiHomeacupService.GetComentariosPublicoRequest();
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetComentariosPublicoRequestBody();
             inValue.Body.fkForo = fkForo;

@@ -19,12 +19,12 @@ namespace WebService.Controllers
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = @"insert into invacupuntura()  
-                                values(@Nombre, @Edad, @Sexo, @EstadoCivil, @Ocupacion, @Domicilio, @Correo, @Telefono, @Movil, @CiudadOrigen,
+                                values(Null, @Nombre, @Edad, @Sexo, @EstadoCivil, @Ocupacion, @Domicilio, @Correo, @Telefono, @Movil, @CiudadOrigen,
                                        @CiudadReside, @Religion, @Escolaridad, @AntHeredo, @AntPersonales, @TA, @FC, @FR, @Temp, 
                                        @Peso, @Talla, @Menarca, @G, @A, @P, @C, @Ritmo, @Dismenorrea, @F, @D, @C2, @FPP, @FUM, @FUP,
                                        @IVSA, @Menopausia, @Metodo, @Estudios, @Motivo, @fkDoctor)";
 
-            cmd.Parameters.Add(new MySqlParameter("@nombre", expediente.m_Nombre));
+            cmd.Parameters.Add(new MySqlParameter("@Nombre", expediente.m_Nombre));
             cmd.Parameters.Add(new MySqlParameter("@Edad", expediente.m_Edad));
             cmd.Parameters.Add(new MySqlParameter("@Sexo", expediente.m_Sexo));
             cmd.Parameters.Add(new MySqlParameter("@EstadoCivil", expediente.m_EstadoCivil));

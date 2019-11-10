@@ -35,13 +35,15 @@ namespace MI_HOPAC.Views
 
         }
 
-        public NotasInfoNueva(int pk, string titulo, string texto)
+        public NotasInfoNueva(int pk, string titulo, string texto, string link)
         {
             InitializeComponent();
 
             Titulo.AppendText(titulo);
 
             Texto.AppendText(texto);
+
+            Link.AppendText(link);
 
             id = pk;
 
@@ -52,6 +54,7 @@ namespace MI_HOPAC.Views
         {
             string titulonota = new TextRange(Titulo.Document.ContentStart, Titulo.Document.ContentEnd).Text;
             string textonota = new TextRange(Texto.Document.ContentStart, Texto.Document.ContentEnd).Text;
+            string linknota = new TextRange(Link.Document.ContentStart, Link.Document.ContentEnd).Text;
 
             if (textonota == "" || textonota == " " || titulonota == "" || titulonota == " ")
             {
@@ -71,7 +74,7 @@ namespace MI_HOPAC.Views
                 else
                 {
                     //Actualizar
-                    client.UpdateNotaInfo(id, titulonota, textonota);
+                    client.UpdateNotaInfo(id, titulonota, textonota, linknota);
 
                 }
 

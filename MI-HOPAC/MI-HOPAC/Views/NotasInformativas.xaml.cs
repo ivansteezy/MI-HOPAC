@@ -14,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MI_HOPAC.Foundation;
 
 namespace MI_HOPAC.Views
 {
@@ -70,7 +69,9 @@ namespace MI_HOPAC.Views
 
             var texto = ((MI_HOPAC.Foundation.NotaInfo)((System.Windows.FrameworkElement)sender).DataContext).Texto;
 
-            var vista = new NotasInfoNueva(pk, titulo, texto);
+            var link = ((MI_HOPAC.Foundation.NotaInfo)((System.Windows.FrameworkElement)sender).DataContext).Link;
+
+            var vista = new NotasInfoNueva(pk, titulo, texto, link);
 
             MainMenu main = (MainMenu)Window.GetWindow(this);
 
@@ -91,8 +92,15 @@ namespace MI_HOPAC.Views
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            var ellink = ((MI_HOPAC.Foundation.NotaInfo)((System.Windows.FrameworkContentElement)sender).DataContext).Link;
-            System.Diagnostics.Process.Start(ellink);
+            try
+            {
+                var ellink = ((MI_HOPAC.Foundation.NotaInfo)((System.Windows.FrameworkContentElement)sender).DataContext).Link;
+                System.Diagnostics.Process.Start(ellink);
+            }
+            catch
+            {
+                MessageBox.Show("No hay link");
+            }
         }
     }
 

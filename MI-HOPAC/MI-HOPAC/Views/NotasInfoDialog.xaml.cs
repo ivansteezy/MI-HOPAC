@@ -34,7 +34,7 @@ namespace MI_HOPAC.Views
                 string link = new TextRange(Link.Document.ContentStart, Link.Document.ContentEnd).Text;
 
                 MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
-                client.InsertNotaInfo(titulo, texto, link, UserControl.Pk);
+                client.InsertNotaInfo(titulo.Trim(), texto.Trim(), link, UserControl.Pk);
 
                 this.DialogResult = true;
             }

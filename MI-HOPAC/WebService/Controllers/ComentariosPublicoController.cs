@@ -25,11 +25,5 @@ namespace WebService.Controllers
         }
 
 
-        public List<ComentariosPublicoModel> ConsltaComentariosPublico(int fkForo)
-        {
-            return Select("SELECT * from comentariospublico WHERE fkForo = " + fkForo.ToString());
-        }
-
-
     }
 }

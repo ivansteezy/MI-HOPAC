@@ -49,7 +49,7 @@ namespace MI_HOPAC.Views
 
             List<ExpedienteHom> expedientes = new List<ExpedienteHom>();
 
-            //Para cada nota de la base de datos, lo pasasmos a una lista para imprimr.
+            //Para cada expedientes de la base de datos, lo pasasmos a una lista para imprimr.
             foreach (MiHomeacupService.ExpedienteHomeopatiaModel i in result)
             {
 
