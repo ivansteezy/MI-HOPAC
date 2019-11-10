@@ -64,17 +64,14 @@ namespace MI_HOPAC.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var nombre = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Nombre;
-            var id = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Id;
-            var fecha = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Fecha;
-            var texto = ((MI_HOPAC.Foundation.Foro)((System.Windows.FrameworkElement)sender).DataContext).Texto;
+            var nombre = ((Foro)((Hyperlink)sender).DataContext).Nombre;
+            var id     = ((Foro)((Hyperlink)sender).DataContext).Id;
+            var fecha  = ((Foro)((Hyperlink)sender).DataContext).Fecha;
+            var texto  = ((Foro)((Hyperlink)sender).DataContext).Texto;
 
             var vista = new ComentariosPrivado(id, nombre, texto, fecha);
-
             MainMenu main = (MainMenu)Window.GetWindow(this);
-
             main.main_Frame.Navigate(vista);
-
         }
     }
 }

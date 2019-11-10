@@ -1,9 +1,15 @@
 ﻿
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml;;
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Agenda.xaml;;
+FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\AntecedentesExpedientes.xaml;;
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\ComentariosPrivado.xaml;;
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Dashboard.xaml;;
+<<<<<<< HEAD
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\ExpedientesHomeopaticos.xaml;;
+=======
+FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\FormularioExpedienteHomeopatico.xaml;;
+FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\FormularioExpedientesHomeopatico2.xaml;;
+>>>>>>> FormulariosExpedientes
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\HorarioDialog.xaml;;
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\InformacionPerfil.xaml;;
 FC:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\Views\Eventos.xaml;;

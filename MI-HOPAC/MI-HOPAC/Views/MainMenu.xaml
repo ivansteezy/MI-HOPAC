@@ -65,7 +65,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Frame-->
-                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Background="Transparent" />
+                <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Background="Transparent" Margin="10"/>
                 
             </Grid>
         </Grid>
