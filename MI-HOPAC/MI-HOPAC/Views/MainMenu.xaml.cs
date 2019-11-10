@@ -77,6 +77,7 @@ namespace MI_HOPAC.Views
                     break;
                 case (int)Pagina.Expedientes:
                     title.Text = "Expedientes";
+                    main_Frame.Content = new FormularioExpedientesHomeopatico2();
                     break;
                 case (int)Pagina.Eventos:
                     main_Frame.Content = new Eventos();

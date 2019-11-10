@@ -11,68 +11,54 @@
       Background="Transparent">
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <ScrollViewer Grid.Row="0" Grid.Column="1" Background="Transparent" VerticalScrollBarVisibility="Hidden">
-            <StackPanel Margin="20 0">
-                <ItemsControl x:Name="ListViewForo" ItemsSource="{Binding Publicacion}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            
-                            <materialDesign:Card Margin="10" Width="700" Height="250" Background="Wheat" HorizontalAlignment="Center">
-                                <Grid>
+            <ItemsControl x:Name="ListViewForo" ItemsSource="{Binding Publicacion}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Background="White" Width="700" Margin="20" Height="250" HorizontalAlignment="Stretch" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="10*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
 
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                    </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="4*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
+                                <!-- Fecha de la publicacion -->
+                                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0 0 20 0" FontSize="18" VerticalAlignment="Center" Text="{Binding Fecha}"/>
 
-                                        <TextBlock Grid.Column="1" Text="{Binding Fecha}" Margin="20" FontSize="15" Foreground="Black"></TextBlock>
-                                    </Grid>
+                                <!-- Contenido de la publicacion -->
+                                <TextBox Grid.Row="1" Grid.Column="0" FontSize="25" Text="{Binding Texto}" IsReadOnly="True"  TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15 20 0 0"/>
 
-                                    <TextBlock Grid.Row="1" Text="{Binding Texto}" Margin="20" FontSize="20" Foreground="Black"></TextBlock>
+                                    <!-- Nombre del autor/paciende de la publicacion -->
+                                <TextBlock Text="{Binding Nombre}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0" />
 
-                                    <Grid Grid.Row="2">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
+                                <!-- Link ver toda la publicacion -->
+                                <TextBlock Grid.Row="2" Margin="0 0 10 0" TextAlignment="Right"><Hyperlink Click="Button_Click" FontSize="15" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Ver publicacion completa</Hyperlink></TextBlock>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
 
-                                        <TextBlock Grid.Column="0" Text="{Binding Nombre}" TextAlignment="Left" Margin="20" FontSize="15" Foreground="Black"></TextBlock>
-                                        <Button Grid.Column="2" Margin="10" Background="Coral" Foreground="Black" Click="Button_Click" >Ir a Publicacion</Button>
-
-                                    </Grid>
-                                </Grid>
-                            </materialDesign:Card>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-
-                </ItemsControl>
-            </StackPanel>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </ScrollViewer>
-
     </Grid>
-    
-    
 </Page>

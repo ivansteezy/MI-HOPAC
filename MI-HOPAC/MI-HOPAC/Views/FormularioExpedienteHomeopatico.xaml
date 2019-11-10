@@ -1,0 +1,126 @@
+﻿<Page x:Class="MI_HOPAC.Views.FormularioExpedienteHomeopatico"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:MI_HOPAC"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Eventos"
+      Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.8*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="txtNombre" Margin="10" Grid.Row="0" materialDesign:HintAssist.Hint="Nombre" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Text="Estado civil" FontSize="20" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <RadioButton Content="Casado(a)" x:Name="chkCasado" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <RadioButton Content="Soltero(a)" x:Name="chkSoltero" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <RadioButton Content="Viudo(a)" x:Name="chkViudo" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <RadioButton Content="Divorciado(a)" x:Name="chkDivorciado" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+
+                <TextBox x:Name="txtDomicilio" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Domicilio" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.75*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtEdad" Grid.Row="0" materialDesign:HintAssist.Hint="Nacimiento" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="15" materialDesign:HintAssist.IsFloating="True" />
+
+                    <Grid Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Margin="6">
+                            <TextBlock Text="Sexo" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Margin="5 -4 0 0"/>
+                            <RadioButton Content="Hombre" x:Name="ckHombre" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <RadioButton Content="Mujer" x:Name="chkMujer" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <TextBox x:Name="txtOcupacion" Margin="10" Grid.Row="1" materialDesign:HintAssist.Hint="Ocupacion" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox x:Name="txtCorreo" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Correo-e" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="txtCiudadDeOrigen" Margin="10" Grid.Row="0" materialDesign:HintAssist.Hint="Ciudad de origen" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox x:Name="txtCiudadReside" Margin="10" Grid.Row="1" materialDesign:HintAssist.Hint="Ciudad en que reside" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox x:Name="txtEscolaridad" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Escolaridad" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBox x:Name="txtFijo" Margin="5" Grid.Row="0" materialDesign:HintAssist.Hint="Fijo" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                        <TextBox x:Name="txtMovil" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Movil" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                    </Grid>
+
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Telefono" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                    </Grid>
+                </Grid>
+
+                <TextBox x:Name="txtReligion" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Religión" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
