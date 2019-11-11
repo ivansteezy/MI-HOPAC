@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
+    <Compile Include="Controllers\CitasHomeopaticoController.cs" />
     <Compile Include="Controllers\CitasMovilController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\CitasPacientesController.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Controllers\DiasController.cs" />
     <Compile Include="Controllers\DoctoresControllers.cs" />
     <Compile Include="Controllers\EventosController.cs" />
+    <Compile Include="Controllers\CitasAcupunturaController.cs" />
     <Compile Include="Controllers\ExpedienteAcupunturaController.cs" />
     <Compile Include="Controllers\ExpedienteHomeopatiaController.cs" />
     <Compile Include="Controllers\ForoPrivadoController.cs" />
@@ -118,6 +120,7 @@
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\CitasHomeopaticoModel.cs" />
     <Compile Include="Models\CitasMovilModel.cs" />
     <Compile Include="Models\CitasModel.cs" />
     <Compile Include="Models\CitasPacientesModel.cs" />
@@ -128,6 +131,7 @@
     <Compile Include="Models\DiasModel.cs" />
     <Compile Include="Models\DoctoresModel.cs" />
     <Compile Include="Models\EventosModel.cs" />
+    <Compile Include="Models\CitasAcupunturaModel.cs" />
     <Compile Include="Models\ExpedienteAcupunturaModel.cs" />
     <Compile Include="Models\ExpedienteHomeopatiaModel.cs" />
     <Compile Include="Models\ForoPrivadoModel.cs" />

@@ -48,7 +48,7 @@ namespace WebService.Models
         public string m_Metodo        { set; get; }
         public string m_Estudios      { set; get; }
         public string m_Motivo        { set; get; }
-        public string m_fkDoctor { set; get; }
+        public string m_fkDoctor      { set; get; }
         #endregion
     }
 }
