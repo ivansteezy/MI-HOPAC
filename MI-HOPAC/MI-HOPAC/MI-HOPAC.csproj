@@ -121,6 +121,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Views\CitasAcupuntura.xaml.cs">
+      <DependentUpon>CitasAcupuntura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CitasHomeopatia.xaml.cs">
+      <DependentUpon>CitasHomeopatia.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComentariosPrivado.xaml.cs">
       <DependentUpon>ComentariosPrivado.xaml</DependentUpon>
     </Compile>
@@ -219,6 +225,14 @@
       <DependentUpon>VerificacionDialog.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Agenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CitasAcupuntura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CitasHomeopatia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
