@@ -28,6 +28,7 @@ namespace MI_HOPAC.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            BotonNuevo.Visibility = Visibility.Hidden;
             expedientes_Frame.Content = new FormularioExpedienteHomeopatico();
         }
     }

@@ -11,13 +11,12 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition  Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Frame x:Name="expedientes_Frame" Grid.Row="0" NavigationUIVisibility="Hidden"></Frame>
 
         <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1">
-            <Button Click="Button_Click" VerticalAlignment="Bottom" Margin="10">Nuevo Expediente</Button>
+            <Button Click="Button_Click" x:Name="BotonNuevo" VerticalAlignment="Bottom" Margin="10">Nuevo Expediente</Button>
         </StackPanel>
     </Grid>
 </Page>

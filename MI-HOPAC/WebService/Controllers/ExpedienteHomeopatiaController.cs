@@ -10,7 +10,7 @@ namespace WebService.Controllers
 {
     public class ExpedienteHomeopatiaController : DatabaseOperation<ExpedienteHomeopatiaModel>
     {
-        public List<ExpedienteHomeopatiaModel> ConsultaInventarioAcupuntura(int pk)
+        public List<ExpedienteHomeopatiaModel> ConsultaExpedienteHomeopatia(int pk)
         {
             return Select("select * from Exphomeopatia where fkDoctor = " + pk.ToString());
         }

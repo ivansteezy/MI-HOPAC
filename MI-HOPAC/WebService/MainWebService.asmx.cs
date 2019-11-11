@@ -338,7 +338,7 @@ namespace WebService
         public List<ExpedienteHomeopatiaModel> GetExpedientesHom(int fkDoctor)
         {
             var controlador = new ExpedienteHomeopatiaController();
-            return controlador.ConsultaInventarioAcupuntura(fkDoctor);
+            return controlador.ConsultaExpedienteHomeopatia(fkDoctor);
         }
 
 

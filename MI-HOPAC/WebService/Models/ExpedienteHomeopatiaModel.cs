@@ -8,7 +8,7 @@ namespace WebService.Models
     public class ExpedienteHomeopatiaModel
     {
         #region Propiedades
-        public int m_IdExpHom           { set; get; }
+        public int m_IdExpHom         { set; get; }
         public string m_Nombre        { set; get; }
         public DateTime m_Edad        { set; get; }
         public int m_Sexo             { set; get; }
@@ -48,7 +48,7 @@ namespace WebService.Models
         public string m_Metodo        { set; get; }
         public string m_Estudios      { set; get; }
         public string m_Motivo        { set; get; }
-        public string m_fkDoctor { set; get; }
+        public string m_fkDoctor      { set; get; }
         #endregion
     }
 }
