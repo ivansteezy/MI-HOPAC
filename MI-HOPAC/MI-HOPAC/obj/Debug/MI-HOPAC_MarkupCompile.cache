@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
 MI_HOPAC
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
 29-448419294
 
 471384719227
 27-1016937511
 Views\Agenda.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+=======
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
+31-1264751021
+
+49-1131032990
+271454023034
+Views\Agenda.xaml;Views\AntecedentesExpedientes.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\FormularioExpedientesHomeopatico2.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+>>>>>>> ServiciosExpedientes
 
 False
 

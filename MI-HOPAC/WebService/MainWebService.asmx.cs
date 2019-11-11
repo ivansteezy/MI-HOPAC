@@ -351,6 +351,110 @@ namespace WebService
 
         #endregion
 
+        #region Citas Acupuntura
+
+        [WebMethod]
+        public void InsertarCitaAcupuntura(CitasAcupunturaModel Cita)
+        {
+            var controlador = new CitasAcupunturaController();
+            controlador.InsertarExpedientesAcu(Cita);
+        }
+
+
+        [WebMethod]
+        public List<CitasAcupunturaModel> GetCitasAcupunturabyPaciente(int fkPaciente)
+        {
+            var controlador = new CitasAcupunturaController();
+            return controlador.ConsultaCitasAcupuntura(fkPaciente);
+        }
+
+
+        [WebMethod]
+        public List<CitasAcupunturaModel> GetCitasAcupunturabyID(int id)
+        {
+            var controlador = new CitasAcupunturaController();
+            return controlador.ConsultaCitasAcupuntura(id);
+        }
+
+        #endregion
+
+        #region Expedientes Acupuntura
+
+        [WebMethod]
+        public int CrearExpedientesAcu(string nombre, int fkDoctor)
+        {
+            var controlador = new ExpedienteAcupunturaController();
+            return controlador.CrearExpedientesAcu(nombre, fkDoctor);
+        }
+
+
+        [WebMethod]
+        public List<ExpedienteAcupunturaModel> GetExpedienteAcupuntura(int fkDoctor)
+        {
+            var controlador = new ExpedienteAcupunturaController();
+            return controlador.ConsultaExpedienteAcupuntura(fkDoctor);
+        }
+
+
+        #endregion
+
+        #region Citas Hemeopaticos
+
+        [WebMethod]
+        public void InsertCitaHomeopactica(string sintomas, string reper, string fecha, int fkPaciente)
+        {
+            var controlador = new CitasHomeopaticoController();
+            controlador.InsertCitaHomeopactica(sintomas, reper, fecha, fkPaciente);
+        }
+
+
+        [WebMethod]
+        public List<CitasHomeopaticoModel> GetCitasHomeipatica(int fkPaciente)
+        {
+            var controlador = new CitasHomeopaticoController();
+            return controlador.ConsultaCitasHomeopatica(fkPaciente);
+        }
+
+        #endregion
+
+        #region Recetas
+
+        [WebMethod]
+        public void InsertRecetas(string Nombre, string FechaCreacion, int fkDoctor)
+        {
+            var controlador = new RecetasController();
+            controlador.InsertarRecetas(Nombre, FechaCreacion, fkDoctor);
+        }
+
+
+        [WebMethod]
+        public List<RecetasModel> GetRecetas(int FkDoctor)
+        {
+            var controlador = new RecetasController();
+            return controlador.ConsultaReceta(FkDoctor);
+        }
+
+        #endregion
+
+        #region RecetasInfo
+
+        [WebMethod]
+        public void InsertRecetasInfo(string Nombre, string FechaCreacion, int fkDoctor)
+        {
+            var controlador = new RecetasController();
+            controlador.InsertarRecetas(Nombre, FechaCreacion, fkDoctor);
+        }
+
+
+        [WebMethod]
+        public List<RecetasModel> GetRecetasInfo(int FKReceta)
+        {
+            var controlador = new RecetasController();
+            return controlador.ConsultaReceta(FKReceta);
+        }
+
+        #endregion
+
 
         //---------------- Movil -------------------------
 

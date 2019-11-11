@@ -10,5 +10,10 @@ namespace WebService.Controllers
 {
     public class RecetaInfoController : DatabaseOperation<RecetaInfoModel>
     {
+
+
+
+
+
     }
 }

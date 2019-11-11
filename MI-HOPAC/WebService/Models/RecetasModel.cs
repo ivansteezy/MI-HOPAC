@@ -11,7 +11,8 @@ namespace WebService.Models
         public int m_IdReceta           { set; get; }
         public string m_Nombre          { set; get; }
         public DateTime m_FechaCreacion { set; get; }
-        public int m_Clave              { set; get; }
+        public int m_fkDoctor              { set; get; }
+
         #endregion
     }
 }
