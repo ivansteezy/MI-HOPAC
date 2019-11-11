@@ -1,0 +1,83 @@
+﻿<Page x:Class="MI_HOPAC.Views.FormularioAcupuntura"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MI_HOPAC.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      Title="FormularioAcupuntura">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Margin="5" x:Name="txtNombre" Grid.Row="0" materialDesign:HintAssist.Hint="Nombre" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtFecha" Grid.Row="1" materialDesign:HintAssist.Hint="Fecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtShen" Grid.Row="2" materialDesign:HintAssist.Hint="Shen" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtColor" Grid.Row="3" materialDesign:HintAssist.Hint="Color" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtTonicidad" Grid.Row="4" materialDesign:HintAssist.Hint="Tonicidad" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtLongitud" Grid.Row="5" materialDesign:HintAssist.Hint="Longitud" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtGrietas" Grid.Row="6" materialDesign:HintAssist.Hint="Grietas" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtSaburra" Grid.Row="7" materialDesign:HintAssist.Hint="Saburra" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtHumectacion" Grid.Row="8" materialDesign:HintAssist.Hint="Humectacion de la lengua" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="../Resources/helper.png" Margin="10"/>
+                <Image Grid.Column="1" Source="../Resources/helper1.png" Margin="10"/>
+
+            </Grid>
+        </Grid>
+        <materialDesign:ColorZone Grid.Row="1" Background="#82c3ef">
+            <TextBlock Text="Puslo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+        </materialDesign:ColorZone>
+        
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox Margin="5" x:Name="txtManoDerecha" Grid.Row="0" materialDesign:HintAssist.Hint="Mano derecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtManoIzquierda" Grid.Row="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+            </Grid>
+
+            <Image Grid.Column="1" Source="../Resources/helper2.png"/>
+        </Grid>
+    </Grid>
+</Page>

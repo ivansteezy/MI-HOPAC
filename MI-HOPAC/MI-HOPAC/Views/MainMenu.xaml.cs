@@ -105,7 +105,7 @@ namespace MI_HOPAC.Views
                     title.Text = "Expediendes Homeopaticos";
                     break;
                 case (int)Pagina.ExpedientesAcu:
-                    main_Frame.Content = new Notificaciones();  //TODO
+                    main_Frame.Content = new FormularioAcupuntura(); 
                     title.Text = "Expediendes Acupuntura";
                     break;
             }
