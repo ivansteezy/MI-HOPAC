@@ -46,10 +46,8 @@ namespace MI_HOPAC.Views
 
             //Retornamos la lista con las publicaciones para imprimir
             Medicina.ItemsSource = medicinas;
-            cbotest.ItemsSource = ListData;
-            cbotest.DisplayMemberPath = "Value";
-            cbotest.SelectedValuePath = "Id";
-
+            Medicina.DisplayMemberPath = "Nombre";
+            Medicina.SelectedValuePath = "IdInventarioHomeopatia";
         }
     }
 }
