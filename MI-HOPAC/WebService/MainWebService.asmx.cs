@@ -439,21 +439,22 @@ namespace WebService
         #region RecetasInfo
 
         [WebMethod]
-        public void InsertRecetasInfo(string Nombre, string FechaCreacion, int fkDoctor)
+        public void InsertRecetasInfo(List<RecetaInfoModel> receta)
         {
-            var controlador = new RecetasController();
-            controlador.InsertarRecetas(Nombre, FechaCreacion, fkDoctor);
+            var controlador = new RecetaInfoController();
+            controlador.InsertarRecetaInfo(receta);
         }
 
 
         [WebMethod]
-        public List<RecetasModel> GetRecetasInfo(int FKReceta)
+        public List<RecetaInfoModel> GetRecetasInfo(int FKReceta)
         {
-            var controlador = new RecetasController();
+            var controlador = new RecetaInfoController();
             return controlador.ConsultaReceta(FKReceta);
         }
 
         #endregion
+
 
 
         //---------------- Movil -------------------------
@@ -545,11 +546,10 @@ namespace WebService
 
         #region PacienteEventos
 
-        // Retorna una lista de eventos asi que se usa EventosModel
         [WebMethod]
-        public List<EventosModel> GetPacienteEventos(int pk)
+        public List<PacienteEventosModel> GetPacienteEventos(int pk)
         {
-            var controlador = new EventosController();
+            var controlador = new PacienteEventosController();
             return controlador.ConsultaPacienteEventos(pk);
         }
 

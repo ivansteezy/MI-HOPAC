@@ -8,10 +8,13 @@ namespace WebService.Models
     public class PacienteEventosModel
     {
         #region Propiedades
-        public int m_IdPacienteEventos { set; get; }
-        public int m_FkPaciente { set; get; }
-        public int m_FkEvento          { set; get; }
-        public int m_Asistencia        { set; get; }
+        public int m_IdEventos { get; set; }
+        public string m_Nombre { get; set; }
+        public DateTime m_Fecha { get; set; }
+        public string m_Ubicacion { get; set; }
+        public string m_Guia { get; set; }
+        public int m_Asistencia { get; set; }
+
         #endregion
     }
 }

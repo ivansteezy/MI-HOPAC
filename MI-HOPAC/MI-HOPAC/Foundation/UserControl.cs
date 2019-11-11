@@ -11,5 +11,7 @@ namespace MI_HOPAC
         public static int Pk       = 0;
         public static int Fk       = 0;
         public static int Medicina = 0;
+
+
     }
 }

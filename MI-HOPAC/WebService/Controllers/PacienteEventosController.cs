@@ -37,5 +37,14 @@ namespace WebService.Controllers
             Update(cmd);
         }
 
+        public List<PacienteEventosModel> ConsultaPacienteEventos(int pk)
+        {
+            return Select(@"SELECT eventos.*, pacienteeventos.Asistencia
+                            FROM eventos
+                            LEFT JOIN pacienteeventos
+                            ON eventos.idEventos = pacienteeventos.fkEvento
+                            WHERE pacienteeventos.fkPaciente = " + pk.ToString());
+        }
+
     }
 }

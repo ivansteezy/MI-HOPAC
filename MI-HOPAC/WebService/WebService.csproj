@@ -94,6 +94,7 @@
     <Compile Include="Controllers\CitasMovilController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
     <Compile Include="Controllers\CitasPacientesController.cs" />
+    <Compile Include="Controllers\CodigosController.cs" />
     <Compile Include="Controllers\ComentariosPrivadoController.cs" />
     <Compile Include="Controllers\ComentariosPublicoController.cs" />
     <Compile Include="Controllers\CuentaDoctoresController.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Models\CitasMovilModel.cs" />
     <Compile Include="Models\CitasModel.cs" />
     <Compile Include="Models\CitasPacientesModel.cs" />
+    <Compile Include="Models\CodigosModel.cs" />
     <Compile Include="Models\ComentariosPrivadoModel.cs" />
     <Compile Include="Models\ComentariosPublicoModel.cs" />
     <Compile Include="Models\CuentaDoctoresModel.cs" />
