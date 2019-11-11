@@ -110,6 +110,7 @@
     <Compile Include="Foundation\ComentarioPrivado.cs" />
     <Compile Include="Foundation\ExpedienteHom.cs" />
     <Compile Include="Foundation\Foro.cs" />
+    <Compile Include="Foundation\InventarioHomeopatica.cs" />
     <Compile Include="Foundation\NotaInfo.cs" />
     <Compile Include="Foundation\CitaSection.cs" />
     <Compile Include="Views\Agenda.xaml.cs">
@@ -203,6 +204,9 @@
     </Compile>
     <Compile Include="Views\MainExpedientes.xaml.cs">
       <DependentUpon>MainExpedientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Receta.xaml.cs">
+      <DependentUpon>Receta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
@@ -331,6 +335,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainExpedientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Receta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -561,6 +569,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paginas.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\helper.png" />
