@@ -36,7 +36,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBox Margin="5" x:Name="txtNombre" Grid.Row="0" materialDesign:HintAssist.Hint="Nombre" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
-                <TextBox Margin="5" x:Name="txtFecha" Grid.Row="1" materialDesign:HintAssist.Hint="Fecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <DatePicker Margin="5" x:Name="txtFecha" Grid.Row="1" materialDesign:HintAssist.Hint="Fecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
                 <TextBox Margin="5" x:Name="txtShen" Grid.Row="2" materialDesign:HintAssist.Hint="Shen" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
                 <TextBox Margin="5" x:Name="txtColor" Grid.Row="3" materialDesign:HintAssist.Hint="Color" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
                 <TextBox Margin="5" x:Name="txtTonicidad" Grid.Row="4" materialDesign:HintAssist.Hint="Tonicidad" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
@@ -70,14 +70,35 @@
 
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBox Margin="5" x:Name="txtManoDerecha" Grid.Row="0" materialDesign:HintAssist.Hint="Mano derecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                <TextBox Margin="5" x:Name="txtManoIzquierda" Grid.Row="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                
+                <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                    
+                <TextBox Margin="5" x:Name="txtManoDerecha" Grid.Column="0" materialDesign:HintAssist.Hint="Mano derecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtManoIzquierda" Grid.Column="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                </Grid>
+
+                <RichTextBox Grid.Row="1" x:Name="Sintomas" materialDesign:HintAssist.Hint="Sintomas" FontSize="20"></RichTextBox>
+                
+                
             </Grid>
 
-            <Image Grid.Column="1" Source="../Resources/helper2.png"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Image Grid.Row="0" Source="../Resources/helper2.png"/>
+                <Button x:Name="Boton" Grid.Row="1" Width="150" Click="Button_Click" > Finalizar</Button>
+            </Grid>
+            
         </Grid>
     </Grid>
 </Page>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MI_HOPAC.Foundation
 {
-    class ExpedienteHom
+    public class ExpedienteHom
     {
         public int Id { set; get; }
         public string Nombre { set; get; }

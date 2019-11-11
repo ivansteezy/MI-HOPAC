@@ -63,13 +63,25 @@ namespace MI_HOPAC.Views
 
         }
 
-    
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //Ir a pagina donde se presenta la opcion de crear nuevo expediente
+            var id = ((ExpedienteHom)((System.Windows.FrameworkElement)sender).DataContext).Id;
 
+            var vista = new CitasHomeopatia(id);
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var vista = new FormularioExpedienteHomeopatico();
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
+        }
     }
 }

@@ -373,7 +373,7 @@ namespace WebService
         public List<CitasAcupunturaModel> GetCitasAcupunturabyID(int id)
         {
             var controlador = new CitasAcupunturaController();
-            return controlador.ConsultaCitasAcupuntura(id);
+            return controlador.ConsultaCitasAcupunturabyId(id);
         }
 
         #endregion
@@ -420,10 +420,10 @@ namespace WebService
         #region Recetas
 
         [WebMethod]
-        public void InsertRecetas(string Nombre, string FechaCreacion, int fkDoctor)
+        public int InsertRecetas(string Nombre, DateTime FechaCreacion, int fkDoctor)
         {
             var controlador = new RecetasController();
-            controlador.InsertarRecetas(Nombre, FechaCreacion, fkDoctor);
+            return controlador.InsertarRecetas(Nombre, FechaCreacion, fkDoctor);
         }
 
 

@@ -15,9 +15,9 @@ namespace WebService.Controllers
         public void InsertarExpedientesAcu(CitasAcupunturaModel cita)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"insert into Exphomeopatia()  
+            cmd.CommandText = @"insert into citasacupuntura()  
                                 values(Null, @Nombre, @Fecha, @Shen, @Color, @Tonicidad, @Longitud, @Grietas, @Saburra, 
-                                        @Humectacion, @PulsoD, @PulsoI, @m_Sintomas, @fkPaciente)";
+                                        @Humectacion, @PulsoD, @PulsoI, @Sintomas, @fkPaciente)";
 
             cmd.Parameters.Add(new MySqlParameter("@Nombre", cita.m_Nombre));
             cmd.Parameters.Add(new MySqlParameter("@Fecha", cita.m_Fecha));
