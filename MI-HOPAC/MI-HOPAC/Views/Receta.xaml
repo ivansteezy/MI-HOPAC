@@ -3,20 +3,19 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:MI_HOPAC.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Receta" Background="White">
 
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -25,11 +24,42 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" x:Name="Nombre" MaxHeight="50" Background="AliceBlue" FontSize="15"></TextBlock>
+            <TextBlock Grid.Row="0" x:Name="Nombre" MaxHeight="50" FontSize="30" Text="Content" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox Grid.Row="1" FontSize="20" Margin="10 0 10 0" x:Name="Medicina"/>
 
-            <ComboBox Grid.Row="1" x:Name="Medicina" Background="AliceBlue"    > </ComboBox>
-            
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="txtGotas" Grid.Column="0" FontSize="20" Margin="10 0 10 0" materialDesign:HintAssist.Hint="Gotas" materialDesign:HintAssist.IsFloating="True" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtMinuto" Grid.Column="1" FontSize="20" Margin="10 0 10 0" materialDesign:HintAssist.Hint="Frecuencia (Min.)" materialDesign:HintAssist.IsFloating="True" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <DatePicker x:Name="FechaInicio" Grid.Column="0" FontSize="20" Margin="10 0 10 0" materialDesign:HintAssist.Hint="Fecha inicio" materialDesign:HintAssist.IsFloating="True" VerticalAlignment="Center"/>
+                <DatePicker x:Name="FechaFinal" Grid.Column="1" FontSize="20" Margin="10 0 10 0" materialDesign:HintAssist.Hint="Fecha Final" materialDesign:HintAssist.IsFloating="True" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Button Grid.Row="4" Content="Agregar" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Grid>
-        
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Text="Fecha test"/>
+            <ListView Grid.Row="1"></ListView>
+            <Button Grid.Row="2" HorizontalAlignment="Center" Content="Finalizar"/>
+        </Grid>
     </Grid>
 </Page>
