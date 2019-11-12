@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-321179975043
+35548830494
 
-52-1291108962
+56-1538550834
 271454023034
-Views\Agenda.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedienteAcupunturas.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioAcupuntura.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Receta.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+Views\Agenda.xaml;Views\CitasAcupuntura.xaml;Views\CitasHomeopatia.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedienteAcupunturas.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioAcupuntura.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\MiCuenta.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Receta.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 True
 
