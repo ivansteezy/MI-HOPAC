@@ -430,6 +430,14 @@ namespace WebService
             return controlador.ConsultaCitasHomeopatica(fkPaciente);
         }
 
+
+        [WebMethod]
+        public List<CitasHomeopaticoModel> GetCitasHomeopaticabyID(int id)
+        {
+            var controlador = new CitasHomeopaticoController();
+            return controlador.ConsultaCitasHomeopaticaID(id);
+        }
+
         #endregion
 
         #region Recetas
@@ -655,6 +663,27 @@ namespace WebService
         {
             var controlador = new CitasMovilController();
             controlador.EliminarCitaPaciente(idCita);
+        }
+
+        [WebMethod]
+        public void InsertCitaMovil(string fecha, int fkPaciente, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            controlador.InsertarCitaMovil(fecha, fkPaciente, fkDoctor);
+        }
+
+        [WebMethod]
+        public List<HorariosModel> DoctorDisponibleMovil(int fkDoctor, string fecha, int dia)
+        {
+            var controlador = new HorariosController();
+            return controlador.HorarioDisponibleMovil(fkDoctor, fecha, dia);
+        }
+
+        [WebMethod]
+        public List<CitasModel> CitasDisponibilidadMovil(string fechaCita, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            return controlador.CitasDisponiblesMovil(fechaCita, fkDoctor);
         }
 
 

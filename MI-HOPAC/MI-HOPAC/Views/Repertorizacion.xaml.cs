@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing.Imaging;
+using MI_HOPAC.MiHomeacupService;
+using MI_HOPAC.Foundation;
 
 namespace MI_HOPAC.Views
 {
@@ -23,11 +25,42 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class Repertorizacion : Page
     {
+        public int fkPaciente = 0;
+
         public string ImagePath { get; set; }
         public Repertorizacion()
         {
             InitializeComponent();
         }
+
+        public Repertorizacion(ExpedienteHom expediente)
+        {
+            InitializeComponent();
+
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+            var res = client.GetCitasHomeopaticabyID(expediente.Id);
+            var exp = res[0];
+
+            txtSintomas.Document.Blocks.Clear();
+            txtSintomas.Document.Blocks.Add(new Paragraph(new Run(exp.m_Sintomas)));
+
+            Uri uri = new Uri(exp.m_Repertorizacion, UriKind.Relative);
+
+            RepertorizacionImg.Source = new BitmapImage(uri);
+
+
+            Pedro.Visibility = Visibility.Collapsed;
+            Juan.Visibility = Visibility.Collapsed;
+
+        }
+
+        public Repertorizacion(int pk)
+        {
+            InitializeComponent();
+            fkPaciente = pk;
+        }
+
 
         //Agregar imagen
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
@@ -60,6 +93,22 @@ namespace MI_HOPAC.Views
             var bitmap = new Bitmap(ImagePath);
             System.Drawing.Image img = bitmap; 
             img.Save(imageSavePath, ImageFormat.Jpeg);
+
+
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+            string richText = new TextRange(txtSintomas.Document.ContentStart, txtSintomas.Document.ContentEnd).Text;
+
+            client.InsertCitaHomeopactica(richText, imageSavePath, DateTime.Now.ToString(), fkPaciente);
+
+            UserControl.fkReceta = client.InsertRecetas("HOLDER", DateTime.Now, UserControl.Pk);
+
+            var vista = new Receta();
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
+
         }
     }
 }

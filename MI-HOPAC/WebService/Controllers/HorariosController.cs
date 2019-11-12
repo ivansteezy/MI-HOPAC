@@ -28,6 +28,14 @@ namespace WebService.Controllers
                    " and ('" + fecha.ToString("HH:mm:ss") + "' between horai and SUBTIME(horaf, '1:00')) and (fkDia = "+ (int)fecha.DayOfWeek +")");
         }
 
+        public List<HorariosModel> HorarioDisponibleMovil (int fkDoctor, string fecha, int dia)
+        {
+
+            return Select("select * from horario where  fkDoctor = " + fkDoctor.ToString() +
+                   " and ('" + fecha + "' between horai and SUBTIME(horaf, '1:00')) and (fkDia = " + dia.ToString() + ")");
+        }
+
+
         public void EliminarHorarios(int fkDoctor)
         {
             Delete("delete from Horario where fkDoctor = " + fkDoctor.ToString());

@@ -30,6 +30,10 @@ namespace WebService.Controllers
             return Select("select * from citashomeopatia where FkPaciente = " + pk.ToString());
         }
 
+        public List<CitasHomeopaticoModel> ConsultaCitasHomeopaticaID(int pk)
+        {
+            return Select("select * from citashomeopatia where idcitasahomeopatia = " + pk.ToString());
+        }
 
     }
 }

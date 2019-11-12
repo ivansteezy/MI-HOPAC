@@ -32,6 +32,8 @@ namespace MI_HOPAC.Views
             Imprimir();
         }
 
+
+
         private void Imprimir()
         {
             List<ExpedienteHom> Expediente = GetExpedientes();
@@ -56,7 +58,7 @@ namespace MI_HOPAC.Views
             foreach (MiHomeacupService.CitasAcupunturaModel i in result)
             {
 
-                var nombre = new ExpedienteHom(i.m_IdCitasAcupunturaModel, i.m_Fecha.ToString());
+                var nombre = new ExpedienteHom(i.m_IdCitasAcupunturaModel, i.m_Fecha.Date.ToLongDateString());
                 //Lo aniadimos a la lista
                 expedientes.Add(nombre);
             }
@@ -82,7 +84,8 @@ namespace MI_HOPAC.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var vista = new FormularioAcupuntura();
+
+            var vista = new FormularioAcupuntura(pkPaciente);
 
             MainMenu main = (MainMenu)Window.GetWindow(this);
 

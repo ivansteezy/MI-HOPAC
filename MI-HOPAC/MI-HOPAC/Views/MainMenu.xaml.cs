@@ -38,9 +38,16 @@ namespace MI_HOPAC.Views
         private void DoctorMode()
         {
             if (UserControl.Medicina == 0)
+            {
                 InventarioAcupuntura.Visibility = Visibility.Collapsed;
+                ExpediendesAcupuntura.Visibility = Visibility.Collapsed;
+            }
             else if (UserControl.Medicina == 1)
+            {
                 InventarioHomeopatia.Visibility = Visibility.Collapsed;
+                ExpediendesHomeopatia.Visibility = Visibility.Collapsed;
+            }
+        
         }
 
         private void LogOut(object sender, RoutedEventArgs e)

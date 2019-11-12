@@ -72,26 +72,24 @@ namespace MI_HOPAC.Views
 
             //LA PESTAÑA CON SOLO LOS SINTOMAS Y DONDE SE SUBE LA IMAGEN CON INFORAMCION YA LLENA
 
-           /* 
-            var vista = new FormularioAcupuntura(exp);
+            var vista = new Repertorizacion(exp);
 
             MainMenu main = (MainMenu)Window.GetWindow(this);
 
             main.main_Frame.Navigate(vista);
-            */
+           
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //LA PESTAÑA CON SOLO LOS SINTOMAS Y DONDE SE SUBE LA IMAGEN
-            /*
-            var vista = new FormularioAcupuntura();
+
+            var vista = new Repertorizacion(pkPaciente);
 
             MainMenu main = (MainMenu)Window.GetWindow(this);
 
             main.main_Frame.Navigate(vista);
-            */
         }
     }
 }

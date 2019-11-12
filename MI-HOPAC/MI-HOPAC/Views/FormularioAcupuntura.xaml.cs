@@ -32,6 +32,12 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             fkPaciente = Paciente;
+
+            MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
+
+            var res = client.GetCitasAcupunturabyPaciente(Paciente);
+            var exp = res[0];
+            txtNombre.Text = exp.m_Nombre;
         }
 
         public FormularioAcupuntura(ExpedienteHom cita)
