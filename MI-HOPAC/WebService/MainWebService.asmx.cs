@@ -462,8 +462,6 @@ namespace WebService
 
         #endregion
 
-
-
         //---------------- Movil -------------------------
 
         #region CuentaPacientes
@@ -634,8 +632,5 @@ namespace WebService
 
 
         #endregion
-
-
-
     }
 }

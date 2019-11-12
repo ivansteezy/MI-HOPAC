@@ -23,6 +23,7 @@ namespace MI_HOPAC.Views
     public partial class Receta : Page
     {
         public List<Foundation.RecetaInfoSection> DataRecetaInfo { get; set; }
+        public List<int> Ids;
         public Receta()
         {
             InitializeComponent();
@@ -58,14 +59,21 @@ namespace MI_HOPAC.Views
         {
             if(ValidarDatos())
             {
-                ConstruirReceta();  //Agrega un RecetaInfo model a una List<RecetaInfoModel>
                 var client = new MiHomeacupService.MainWebServiceSoapClient();
-                UserControl.fkReceta = client.InsertRecetas(Nombre.Text, DateTime.Now, UserControl.Pk);
+                UserControl.fkReceta = client.InsertRecetas(Nombre.Text, DateTime.Now, UserControl.Pk);//en el bton de los cuadros blancos
                 client.InsertRecetasInfo(ConstruirReceta());
             
                 GridReceta.ItemsSource = null;
+                AccumulateItems();
                 Consolidate();
             }
+        }
+
+        private void AccumulateItems()
+        {
+            var obj = Medicina.Items[Medicina.SelectedIndex];
+            var casting = (InventarioHomeopatica)obj;
+            Ids.Add(casting.Id);
         }
 
         private RecetaInfoModel ConstruirReceta()
@@ -89,6 +97,7 @@ namespace MI_HOPAC.Views
             int rng = getRNG();
             var client = new MiHomeacupService.MainWebServiceSoapClient();
             client.InsertCodigos(rng, UserControl.Fk, UserControl.fkReceta);
+            //client.SubstractItemsHomeopatia(Ids);
 
             MessageBox.Show("Su codigo de receta es: " + rng);
         }
