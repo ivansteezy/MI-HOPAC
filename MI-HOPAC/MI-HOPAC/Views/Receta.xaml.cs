@@ -23,7 +23,7 @@ namespace MI_HOPAC.Views
     public partial class Receta : Page
     {
         public List<Foundation.RecetaInfoSection> DataRecetaInfo { get; set; }
-        public List<int> Ids;
+        public ArrayOfInt Ids;
         public Receta()
         {
             InitializeComponent();
@@ -96,8 +96,9 @@ namespace MI_HOPAC.Views
         {
             int rng = getRNG();
             var client = new MiHomeacupService.MainWebServiceSoapClient();
+
             client.InsertCodigos(rng, UserControl.Fk, UserControl.fkReceta);
-            //client.SubstractItemsHomeopatia(Ids);
+            client.SubstractItemsHomeopatia(Ids);
 
             MessageBox.Show("Su codigo de receta es: " + rng);
         }
