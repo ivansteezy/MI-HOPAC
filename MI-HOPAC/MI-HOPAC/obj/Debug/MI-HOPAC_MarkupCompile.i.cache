@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
 MI_HOPAC
 none
 false
 DEBUG;TRACE
-C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
-341336985266
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
+35548830494
 
-54-1906548835
-271454023034
-Views\Agenda.xaml;Views\CitasAcupuntura.xaml;Views\CitasHomeopatia.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedienteAcupunturas.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioAcupuntura.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Receta.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
+561033256625
+27-1016937511
+Views\Agenda.xaml;Views\CitasAcupuntura.xaml;Views\CitasHomeopatia.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\ExpedienteAcupunturas.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioAcupuntura.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\MiCuenta.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Receta.xaml;Views\Registro.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 True
 

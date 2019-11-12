@@ -282,7 +282,7 @@ namespace WebService
         }
 
         [WebMethod]
-        public List<CitasModel>CitasDisponibilidad(DateTime fechaCita, int fkDoctor)
+        public List<CitasModel> CitasDisponibilidad(DateTime fechaCita, int fkDoctor)
         {
             var controlador = new CitasController();
             return controlador.CitasDisponibles(fechaCita, fkDoctor);
@@ -434,12 +434,19 @@ namespace WebService
             return controlador.ConsultaReceta(FkDoctor);
         }
 
+        [WebMethod]
+        public void InsertCodigos(int codigo, int fkDoctor, int fkReceta)
+        {
+            var controlador = new CodigosController();
+            controlador.InsertarCodigo(codigo, fkDoctor, fkReceta);
+        }
+
         #endregion
 
         #region RecetasInfo
 
         [WebMethod]
-        public void InsertRecetasInfo(List<RecetaInfoModel> receta)
+        public void InsertRecetasInfo(RecetaInfoModel receta)
         {
             var controlador = new RecetaInfoController();
             controlador.InsertarRecetaInfo(receta);

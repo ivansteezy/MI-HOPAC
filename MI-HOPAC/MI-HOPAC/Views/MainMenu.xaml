@@ -50,7 +50,7 @@
                     <materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignCentres" StaysOpen="False" >
                         <StackPanel Width="150">
                             <Button Content="Cuenta" Click="Boton_Cuenta_Click"></Button>
-                            <Button Content="Configuraciones"></Button>
+                            <Button Content="Configuraciones" Click="Button_Click"></Button>
                             <Button Content="Ayuda"></Button>
                             <Separator/>
                             <Button Content="Cerrar Sesión" Click="LogOut"></Button>

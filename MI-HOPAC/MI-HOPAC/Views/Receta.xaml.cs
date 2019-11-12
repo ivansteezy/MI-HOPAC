@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MI_HOPAC.Foundation;
 
 namespace MI_HOPAC.Views
 {
@@ -21,10 +22,12 @@ namespace MI_HOPAC.Views
     /// </summary>
     public partial class Receta : Page
     {
+        public List<Foundation.RecetaInfoSection> DataRecetaInfo { get; set; }
         public Receta()
         {
             InitializeComponent();
             LlenarCaja();
+            Consolidate();
         }
 
         public void LlenarCaja()
@@ -32,7 +35,7 @@ namespace MI_HOPAC.Views
 
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
-            //Consultamos las publicaciones
+            //Consultamos los articulos del inventario
             var result = client.GetInventarioHomeopatia(UserControl.Pk);
             List<Foundation.InventarioHomeopatica> medicinas = new List<Foundation.InventarioHomeopatica>();
 
@@ -48,6 +51,89 @@ namespace MI_HOPAC.Views
             Medicina.ItemsSource = medicinas;
             Medicina.DisplayMemberPath = "Nombre";
             Medicina.SelectedValuePath = "IdInventarioHomeopatia";
+        }
+
+        //Agregar
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(ValidarDatos())
+            {
+                ConstruirReceta();  //Agrega un RecetaInfo model a una List<RecetaInfoModel>
+                var client = new MiHomeacupService.MainWebServiceSoapClient();
+                UserControl.fkReceta = client.InsertRecetas(Nombre.Text, DateTime.Now, UserControl.Pk);
+                client.InsertRecetasInfo(ConstruirReceta());
+            
+                GridReceta.ItemsSource = null;
+                Consolidate();
+            }
+        }
+
+        private RecetaInfoModel ConstruirReceta()
+        {
+            var receta = new RecetaInfoModel();
+
+            receta.m_IdRecetaInfo = 0;
+            receta.m_FkReceta = UserControl.fkReceta;
+            receta.m_Frencuencia = txtMinuto.Text;
+            receta.m_Gotas = Int32.Parse(txtGotas.Text);
+            receta.m_FechaI = (DateTime)FechaInicio.SelectedDate;
+            receta.m_FechaF = (DateTime)FechaFinal.SelectedDate;
+            receta.m_Medicamento = Medicina.Text;
+
+            return receta;
+        }
+
+        //Finalizar
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int rng = getRNG();
+            var client = new MiHomeacupService.MainWebServiceSoapClient();
+            client.InsertCodigos(rng, UserControl.Fk, UserControl.fkReceta);
+
+            MessageBox.Show("Su codigo de receta es: " + rng);
+        }
+
+        int getRNG()
+        {
+            Random rng = new Random();
+            return rng.Next(1000, 9999);
+        }
+
+        bool ValidarDatos()
+        {
+            if (string.IsNullOrEmpty(FechaFinal.SelectedDate.ToString()) || string.IsNullOrEmpty(FechaInicio.SelectedDate.ToString()) ||
+               string.IsNullOrEmpty(txtMinuto.Text) || string.IsNullOrEmpty(txtGotas.Text) ||
+               string.IsNullOrEmpty(Medicina.SelectedItem.ToString()))
+            {
+                MessageBox.Show("Debes completar todos los campos!");
+                return false;
+            }
+            else
+                return true;
+        }
+
+        //Show data
+        private void Consolidate()
+        {
+            DataRecetaInfo = new List<RecetaInfoSection>();
+
+            var client = new MainWebServiceSoapClient();
+            var result = client.GetRecetasInfo(3).ToList<RecetaInfoModel>();//Ojo con el parametro
+
+            foreach (var item in result)
+            {
+                var recetaRow = new RecetaInfoSection();
+                recetaRow.FechaFinal = item.m_FechaF.Date;
+                recetaRow.FechaInicio = item.m_FechaI.Date;
+                recetaRow.FkReceta = item.m_FkReceta;
+                recetaRow.Frecuencia = Int32.Parse(item.m_Frencuencia);
+                recetaRow.Id = item.m_IdRecetaInfo;
+                recetaRow.Medicamento = item.m_Medicamento;
+                recetaRow.Gotas = item.m_Gotas;
+                DataRecetaInfo.Add(recetaRow);
+            }
+            DataContext = this;
+            GridReceta.ItemsSource = DataRecetaInfo;
         }
     }
 }

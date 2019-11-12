@@ -47,7 +47,7 @@
                 <DatePicker x:Name="FechaFinal" Grid.Column="1" FontSize="20" Margin="10 0 10 0" materialDesign:HintAssist.Hint="Fecha Final" materialDesign:HintAssist.IsFloating="True" VerticalAlignment="Center"/>
             </Grid>
 
-            <Button Grid.Row="4" Content="Agregar" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Button Grid.Row="4" Content="Agregar" Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Grid>
 
         <Grid Grid.Column="1">
@@ -58,8 +58,20 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Text="Fecha test"/>
-            <ListView Grid.Row="1"></ListView>
-            <Button Grid.Row="2" HorizontalAlignment="Center" Content="Finalizar"/>
+            
+            <DataGrid Grid.Row="1" x:Name="GridReceta" Focusable="True" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                  ItemsSource="{Binding DataRecetaInfo}" ColumnWidth="*" FontSize="20"
+                  Background="Transparent" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Medicamento" Binding="{Binding Medicamento}"/>
+                    <DataGridTextColumn Header="Gotas" Binding="{Binding Gotas}"/>
+                    <DataGridTextColumn Header="Frecuencia" Binding="{Binding Frecuencia}"/>
+                    <DataGridTextColumn Header="Fecha Inicio" Binding="{Binding FechaInicio}"/>
+                    <DataGridTextColumn Header="Fecha Final" Binding="{Binding FechaFinal}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <Button Grid.Row="2" Click="Button_Click_1" HorizontalAlignment="Center" Content="Finalizar"/>
         </Grid>
     </Grid>
 </Page>

@@ -105,13 +105,20 @@ namespace MI_HOPAC.Views
                     title.Text = "Expediendes Homeopaticos";
                     break;
                 case (int)Pagina.ExpedientesAcu:
-                    main_Frame.Content = new ExpedienteAcupunturas(); 
+                    main_Frame.Content = new Receta(); 
                     title.Text = "Expediendes Acupuntura";
                     break;
             }
         }
 
         private void Boton_Cuenta_Click(object sender, RoutedEventArgs e)
+        {
+            //Cargar la pagina de mi cuenta
+            main_Frame.Content = new MiCuenta();
+            title.Text = "Mi Cuenta";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Cargar la pagina de configuracion de perfil
             main_Frame.Content = new InformacionPerfil();
@@ -131,5 +138,7 @@ namespace MI_HOPAC.Views
             ExpedientesHom        = 0x0008,
             ExpedientesAcu        = 0x0009,
         }
+
+        
     }
 }
