@@ -44,14 +44,14 @@ namespace WebService.Controllers
             Update(cmd);
         }
 
-        public void RestarInventario(List<int> pks)
+        public void RestarInventario(List<AcupunturaPair> pks)
         {
-            foreach (int i in pks)
+            foreach (var i in pks)
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = @"UPDATE invAcupuntura
-                                SET Cantidad = (Cantidad - 1) 
-                                WHERE IdInvAcu = " + i.ToString();
+                                SET Cantidad = (Cantidad - "+ i.Cantidad.ToString() +")"+ 
+                                "WHERE IdInvAcu = " + i.Id.ToString();
                 Update(cmd);
             }
         }

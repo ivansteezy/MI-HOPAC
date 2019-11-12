@@ -96,7 +96,7 @@ namespace MI_HOPAC.Views
         {
             int rng = getRNG();
             var client = new MiHomeacupService.MainWebServiceSoapClient();
-            client.InsertCodigos(rng, UserControl.Fk, UserControl.fkReceta);
+            client.InsertCodigos(rng, UserControl.Pk, UserControl.fkReceta);
 
             client.SubstractItemsHomeopatia(Ids);
 

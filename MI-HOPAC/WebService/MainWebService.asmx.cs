@@ -273,7 +273,7 @@ namespace WebService
         }
 
         [WebMethod]
-        public void SubstractItemsAcupuntura(List<int> pks)
+        public void SubstractItemsAcupuntura(List<AcupunturaPair> pks)
         {
             var controlador = new InventarioAcupunturaController();
             controlador.RestarInventario(pks);

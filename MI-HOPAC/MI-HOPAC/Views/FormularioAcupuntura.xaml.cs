@@ -100,7 +100,7 @@ namespace MI_HOPAC.Views
 
                 MessageBox.Show("Informacion Guardada Exitosamente");
 
-                var vista = new ExpedienteAcupunturas();
+                var vista = new RecetaAcupuntura();
 
                 MainMenu main = (MainMenu)Window.GetWindow(this);
 

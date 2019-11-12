@@ -55,7 +55,7 @@ namespace MI_HOPAC.Views
             foreach (MiHomeacupService.CitasHomeopaticoModel i in result)
             {
 
-                var nombre = new ExpedienteHom(i.m_idcitasaHomeopatia, i.m_Fecha);
+                var nombre = new ExpedienteHom(i.m_idcitasaHomeopatia, DateTime.Parse(i.m_Fecha).Date.ToLongDateString());
                 //Lo aniadimos a la lista
                 expedientes.Add(nombre);
             }

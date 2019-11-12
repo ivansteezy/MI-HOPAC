@@ -121,6 +121,7 @@
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\AcupunturaPair.cs" />
     <Compile Include="Models\CitasHomeopaticoModel.cs" />
     <Compile Include="Models\CitasMovilModel.cs" />
     <Compile Include="Models\CitasModel.cs" />

@@ -559,10 +559,21 @@
       <s:element name="SubstractItemsAcupuntura">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="pks" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="pks" type="tns:ArrayOfAcupunturaPair" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfAcupunturaPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AcupunturaPair" nillable="true" type="tns:AcupunturaPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AcupunturaPair">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="SubstractItemsAcupunturaResponse">
         <s:complexType />
       </s:element>

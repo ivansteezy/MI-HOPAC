@@ -13,7 +13,7 @@ namespace MI_HOPAC.Foundation
         public string Nombre { get; set; }
         public double Potencia { get; set; }
         public int Cantidad { get; set; }
-        public int fkDoctor { get; set; }
+        public int FkDoctor { get; set; }
 
         public InventarioHomeopatica(int id, string nombre, double potencia, int cantidad, int fkDoctor)
         {
@@ -21,7 +21,7 @@ namespace MI_HOPAC.Foundation
             Nombre = nombre;
             Potencia = potencia;
             Cantidad = cantidad;
-            fkDoctor = fkDoctor;
+            FkDoctor = fkDoctor;
         }
 
 
