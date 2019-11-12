@@ -44,5 +44,17 @@ namespace WebService.Controllers
             Update(cmd);
         }
 
+        public void RestarInventario(List<int> pks)
+        {
+            foreach (int i in pks)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = @"UPDATE invAcupuntura
+                                SET Cantidad = (Cantidad - 1) 
+                                WHERE IdInvAcu = " + i.ToString();
+                Update(cmd);
+            }
+        }
+
     }
 }

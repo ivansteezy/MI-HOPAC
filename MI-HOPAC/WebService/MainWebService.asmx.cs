@@ -233,6 +233,13 @@ namespace WebService
             var controlador = new InventarioHomeopatiaController();
             controlador.ActualizarInventarioHomeopatia(nombre, potencia, cantidad, pk);
         }
+
+        [WebMethod]
+        public void SubstractItemsHomeopatia(List<int> pks)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            controlador.RestarInventario(pks);
+        }
         #endregion
 
         #region Inventario Acupuntura
@@ -264,6 +271,14 @@ namespace WebService
             var controlador = new InventarioAcupunturaController();
             controlador.ActualizarInventarioAcupuntura(nombre, cantidad, pk);
         }
+
+        [WebMethod]
+        public void SubstractItemsAcupuntura(List<int> pks)
+        {
+            var controlador = new InventarioAcupunturaController();
+            controlador.RestarInventario(pks);
+        }
+
         #endregion
 
         #region Citas
@@ -434,13 +449,6 @@ namespace WebService
             return controlador.ConsultaReceta(FkDoctor);
         }
 
-        [WebMethod]
-        public void InsertCodigos(int codigo, int fkDoctor, int fkReceta)
-        {
-            var controlador = new CodigosController();
-            controlador.InsertarCodigo(codigo, fkDoctor, fkReceta);
-        }
-
         #endregion
 
         #region RecetasInfo
@@ -462,6 +470,23 @@ namespace WebService
 
         #endregion
 
+        #region Codigo
+
+        [WebMethod]
+        public void InsertCodigos(int codigo, int fkDoctor, int fkReceta)
+        {
+            var controlador = new CodigosController();
+            controlador.InsertarCodigo(codigo, fkDoctor, fkReceta);
+        }
+
+        [WebMethod]
+        public List<CodigosModel> GetCodigoInformacion (double Codigo)
+        {
+            var controlador = new CodigosController();
+            return controlador.ConsultaCodigos(Codigo);
+        }
+
+        #endregion
 
 
         //---------------- Movil -------------------------
@@ -625,6 +650,7 @@ namespace WebService
             return controlador.ConsultaCitasPaciente(fkPaciente);
         }
 
+        [WebMethod]
         public void CancelarCitasPaciente(int idCita)
         {
             var controlador = new CitasMovilController();
