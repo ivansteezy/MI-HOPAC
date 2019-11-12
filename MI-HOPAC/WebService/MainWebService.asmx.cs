@@ -530,6 +530,24 @@ namespace WebService
 
         }
 
+        [WebMethod]
+        public void UpdatePacienteHom(int fkPaciente, int fkDoctor, int fkReceta)
+        {
+            var controlador = new PacienteController();
+            controlador.ActualizarDocHom(fkPaciente, fkDoctor, fkReceta);
+
+        }
+
+
+        [WebMethod]
+        public void UpdatePacienteAcu(int fkPaciente, int fkDoctor)
+        {
+            var controlador = new PacienteController();
+            controlador.ActualizarDocAcu(fkPaciente, fkDoctor);
+
+        }
+
+
 
         #endregion
 

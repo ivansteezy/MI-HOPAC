@@ -21,6 +21,36 @@ namespace WebService.Controllers
             return res.First();
         }
 
+        public void ActualizarDocHom(int fkPaciente, int fkDoctor, int fkReceta)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            cmd.CommandText = @"UPDATE Paciente
+                                SET fkDoctorH = @fkDoctor, fkReceta = @fkReceta 
+                                WHERE idPaciente = @fkPaciente;";
+
+            cmd.Parameters.Add(new MySqlParameter("@fkDoctor", fkDoctor));
+            cmd.Parameters.Add(new MySqlParameter("@fkReceta", fkReceta));
+            cmd.Parameters.Add(new MySqlParameter("@fkPaciente", fkPaciente));
+
+            Update(cmd);
+        }
+
+        public void ActualizarDocAcu(int fkPaciente, int fkDoctor)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            cmd.CommandText = @"UPDATE Paciente
+                                SET fkDoctorA = @fkDoctor 
+                                WHERE idPaciente = @fkPaciente;";
+
+            cmd.Parameters.Add(new MySqlParameter("@fkDoctor", fkDoctor));
+            cmd.Parameters.Add(new MySqlParameter("@fkPaciente", fkPaciente));
+
+            Update(cmd);
+        }
+
+
 
     }
 
