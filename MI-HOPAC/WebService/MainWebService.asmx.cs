@@ -476,6 +476,13 @@ namespace WebService
             return controlador.ConsultaReceta(FKReceta);
         }
 
+        [WebMethod]
+        public void UpdateAlarmas(int FkRecetaInfo, int Alarma)
+        {
+            var controlador = new RecetaInfoController();
+            controlador.UpdateReceta(FkRecetaInfo, Alarma);
+        }
+
         #endregion
 
         #region Codigo

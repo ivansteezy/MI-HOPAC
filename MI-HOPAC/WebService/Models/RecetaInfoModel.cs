@@ -14,6 +14,7 @@ namespace WebService.Models
         public string m_Frencuencia  { set; get; }
         public DateTime m_FechaI       { set; get; }
         public DateTime m_FechaF       { set; get; }
+        public int m_Alarmas { set; get; }
         public int m_FkReceta     { set; get; }
         #endregion
     }
