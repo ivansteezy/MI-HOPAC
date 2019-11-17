@@ -14,7 +14,7 @@ namespace WebService.Controllers
             string query = @"SELECT Citas.IDCitas, Citas.Fecha, Doctores2.Nombre, Doctores2.Apellidos, Doctores2.idCuenta_Doctores
                             FROM Citas, (select cuenta_doctores.idCuenta_Doctores, Doctores.Nombre, Doctores.Apellidos from Doctores, cuenta_doctores where cuenta_doctores.fkDoctor = Doctores.idDoctores) as Doctores2
                             WHERE Citas.fkPaciente = " + fkPaciente.ToString() + @" AND Citas.fkDoctor = Doctores2.idCuenta_Doctores
-                            ORDER BY Citas.Fecha DESC";
+                            ORDER BY Citas.Fecha ASC";
 
             return Select(query);
         }
