@@ -123,3 +123,4 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebServ
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.csproj.CopyComplete
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.dll
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.pdb
+C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.csprojAssemblyReference.cache

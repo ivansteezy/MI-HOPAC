@@ -45,14 +45,21 @@ namespace MI_HOPAC.Views
             txtSintomas.Document.Blocks.Clear();
             txtSintomas.Document.Blocks.Add(new Paragraph(new Run(exp.m_Sintomas)));
 
-            Uri uri = new Uri(exp.m_Repertorizacion, UriKind.Relative);
-
-            RepertorizacionImg.Source = new BitmapImage(uri);
-
+            //Show image
+            RepertorizacionImg.ImageSource = GetImage(exp.m_Repertorizacion);
 
             Pedro.Visibility = Visibility.Collapsed;
             Juan.Visibility = Visibility.Collapsed;
 
+        }
+
+        public BitmapImage GetImage(string path)
+        {
+            var bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(path, UriKind.RelativeOrAbsolute);
+            bitmapImage.EndInit();
+            return bitmapImage;
         }
 
         public Repertorizacion(int pk)
@@ -71,7 +78,7 @@ namespace MI_HOPAC.Views
             {
                 string path = dialog.FileName;
                 ImagePath = path;
-                RepertorizacionImg.Source = new BitmapImage(new Uri(ImagePath));
+                RepertorizacionImg.ImageSource = new BitmapImage(new Uri(ImagePath));
             }
         }
 

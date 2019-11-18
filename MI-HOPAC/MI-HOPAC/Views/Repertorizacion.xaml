@@ -29,8 +29,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Hoja de síntomas" FontSize="18"/>
-
-                <RichTextBox Margin="10" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="txtSintomas"/>
+                <RichTextBox Margin="10" FontSize="20" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="txtSintomas"/>
             </Grid>
 
             <Grid Grid.Column="1">
@@ -39,7 +38,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Image x:Name="RepertorizacionImg" Grid.Row="0" Margin="25"/>
+                <Rectangle Grid.Row="0" Margin="25">
+                    <Rectangle.Fill>
+                        <ImageBrush x:Name="RepertorizacionImg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
                 <TextBlock x:Name="Juan" TextAlignment="Right" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"><Hyperlink Click="Hyperlink_Click" FontSize="18" Foreground="Gray" Style="{DynamicResource MaterialDesignSubheadingHyperlink}">Añade una repertorización</Hyperlink></TextBlock>
             </Grid>
         </Grid>

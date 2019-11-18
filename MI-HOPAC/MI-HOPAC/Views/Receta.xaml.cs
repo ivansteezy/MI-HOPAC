@@ -33,7 +33,6 @@ namespace MI_HOPAC.Views
 
         public void LlenarCaja()
         {
-
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
             //Consultamos los articulos del inventario
@@ -59,7 +58,7 @@ namespace MI_HOPAC.Views
         {
             if(ValidarDatos())
             {
-                var client = new MiHomeacupService.MainWebServiceSoapClient();
+                var client = new MainWebServiceSoapClient();
                 
                 client.InsertRecetasInfo(ConstruirReceta());
             

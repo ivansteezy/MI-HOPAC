@@ -25,9 +25,6 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             Consolidate();
-            //Para cargar
-            //string hola = "hola, hola1, hola2, hola3";
-            //ListaAntecedentesFamiliares.ItemsSource = hola.Split(',').ToList<string>();
         }
 
         private void Consolidate()
