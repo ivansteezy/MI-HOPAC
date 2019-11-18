@@ -57,7 +57,7 @@ namespace MI_HOPAC.Views
             if (resp.Count() > 0)
             {
 
-                foreach (var i in Res)
+                foreach (var i in resp)
                 {
                     var nuevo = new Foundation.InventarioAcupuntura();
 
@@ -70,9 +70,24 @@ namespace MI_HOPAC.Views
             }
 
 
+            var citas = client.GetCitas(UserControl.Pk);
+
+            if(citas.Count() > UserControl.Citas)
+            {
+                for(int i = citas.Count(); i > UserControl.Citas; i++)
+                {
+                    var nuevo = new Foundation.InventarioAcupuntura();
+
+                    nuevo.Nombre = "Usted tiene una nueva Cita";
+
+                    Lista.Add(nuevo);
+                }
+
+                UserControl.Citas = citas.Count();
+
+            }
+
             ListaNotifiaciones.ItemsSource = Lista;
-
-
 
 
         }

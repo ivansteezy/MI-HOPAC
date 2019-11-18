@@ -36,7 +36,7 @@ namespace MI_HOPAC.Views
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
             //Consultamos los articulos del inventario
-            var result = client.GetInventarioHomeopatia(UserControl.Pk);
+            var result = client.GetMayoresInventarioHomeopatia(UserControl.Pk);
             List<Foundation.InventarioHomeopatica> medicinas = new List<Foundation.InventarioHomeopatica>();
 
             //Para cada publicacione de la base de datos, lo pasasmos a una lista para imprimr.

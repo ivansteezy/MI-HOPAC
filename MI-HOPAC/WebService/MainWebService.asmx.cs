@@ -214,6 +214,13 @@ namespace WebService
         }
 
         [WebMethod]
+        public List<InventarioHomeopatiaModel> GetMayoresInventarioHomeopatia(int pk)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            return controlador.ConsultaMayorInventarioHomeopatia(pk);
+        }
+
+        [WebMethod]
         public void DeleteInventarioHomeopatia(int pk)
         {
             var controlador = new InventarioHomeopatiaController();
@@ -259,6 +266,14 @@ namespace WebService
             return controlador.ConsultaInventarioAcupuntura(pk);
         }
 
+
+        [WebMethod]
+        public List<InventarioAcupunturaModel> GetMayoresInventarioAcupuntura(int pk)
+        {
+            var controlador = new InventarioAcupunturaController();
+            return controlador.ConsultaMayorInventarioAcupuntura(pk);
+        }
+    
         [WebMethod]
         public void DeleteInventarioAcupuntura(int pk)
         {
@@ -531,6 +546,47 @@ namespace WebService
         }
 
         #endregion
+
+        #region Tratamiento
+
+        [WebMethod]
+        public void InsertTratamiento(DateTime fecha, int Calificacion, int FkPregunta, int fkDoctor, int FkPaciente, int fkReceta)
+        {
+            var controlador = new TratamientoController();
+            controlador.InsertarTratamiento(fecha, Calificacion, FkPregunta, fkDoctor, FkPaciente, fkReceta);
+        }
+
+        [WebMethod]
+        public List<TratamientoModel> GetTratamientosbyPregunta(int FkPregunta)
+        {
+            var controlador = new TratamientoController();
+            return controlador.ConsultaByPregunta(FkPregunta);
+        }
+
+        [WebMethod]
+        public List<TratamientoModel> GetTratamientosbyDoctor(int FkDoctor)
+        {
+            var controlador = new TratamientoController();
+            return controlador.ConsultaByDoctor(FkDoctor);
+        }
+
+        [WebMethod]
+        public List<TratamientoModel> GetTratamientosbyPaciente(int FkPaciente)
+        {
+            var controlador = new TratamientoController();
+            return controlador.ConsultaByPaciente(FkPaciente);
+        }
+
+        [WebMethod]
+        public List<TratamientoModel> GetTratamientosbyReceta(int FkReceta)
+        {
+            var controlador = new TratamientoController();
+            return controlador.ConsultaByReceta(FkReceta);
+        }
+
+        #endregion
+
+
 
 
         //---------------- Movil -------------------------

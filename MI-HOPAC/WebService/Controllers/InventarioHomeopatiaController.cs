@@ -10,9 +10,15 @@ namespace WebService.Controllers
 {
     public class InventarioHomeopatiaController : DatabaseOperation<InventarioHomeopatiaModel>
     {
+        
         public List<InventarioHomeopatiaModel> ConsultaInventarioHomeopatia(int pk)
         {
             return Select("select * from invhomeopatia where fkDoctor = " + pk.ToString());
+        }
+
+        public List<InventarioHomeopatiaModel> ConsultaMayorInventarioHomeopatia(int pk)
+        {
+            return Select("select * from invhomeopatia where Cantidad > 0 AND fkDoctor = " + pk.ToString());
         }
 
         public void EliminarInventarioHomeopatia(int pk)
