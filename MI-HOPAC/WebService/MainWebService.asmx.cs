@@ -386,6 +386,13 @@ namespace WebService
             controlador.InsertarExpedienteHom(Expediente);
         }
 
+        [WebMethod]
+        public List<ExpedienteHomeopatiaModel> GetExpedienteHomByID(int idExpediente)
+        {
+            var controlador = new ExpedienteHomeopatiaController();
+            return controlador.ConsultaCitasHomeopaticasbyId(idExpediente);
+        }
+
         #endregion
 
         #region Citas Acupuntura

@@ -91,5 +91,16 @@ namespace MI_HOPAC.Views
 
             main.main_Frame.Navigate(vista);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            var vista = new FormularioExpedienteHomeopatico(pkPaciente);
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            main.main_Frame.Navigate(vista);
+
+        }
     }
 }

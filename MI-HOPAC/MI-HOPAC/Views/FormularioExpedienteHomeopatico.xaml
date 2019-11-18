@@ -362,7 +362,7 @@
                         <RichTextBox Grid.Column="1" x:Name="MotivoConsulta" FontSize="15" VerticalAlignment="Center" Margin="6 0 6 0"/>
                     </Grid>
                 </Grid>
-                <Button Grid.Row="3" HorizontalAlignment="Right" Click="Button_Click" Margin="0 0 30 0" VerticalAlignment="Center">Guardar expediente</Button>
+                <Button Grid.Row="3" x:Name="BotonGuardar" HorizontalAlignment="Right" Click="Button_Click" Margin="0 0 30 0" VerticalAlignment="Center">Guardar expediente</Button>
             </Grid>
         </ScrollViewer>
     </Grid>

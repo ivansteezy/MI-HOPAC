@@ -25,9 +25,15 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             Consolidate();
-            //Para cargar
-            //string hola = "hola, hola1, hola2, hola3";
-            //ListaAntecedentesFamiliares.ItemsSource = hola.Split(',').ToList<string>();
+        }
+
+        public FormularioExpedienteHomeopatico(int Id)
+        {
+            InitializeComponent();
+
+            //IMPRIMIR TODO
+            Rellenar(Id);
+
         }
 
         private void Consolidate()
@@ -71,7 +77,7 @@ namespace MI_HOPAC.Views
         private string GetAntecedentesFamiliares()
         {
             StringBuilder strbld = new StringBuilder();
-            foreach(var item in ListaAntecedentesFamiliares.Items)
+            foreach (var item in ListaAntecedentesFamiliares.Items)
             {
                 strbld.Append(item.ToString());
                 strbld.Append(", ");
@@ -96,11 +102,14 @@ namespace MI_HOPAC.Views
             {
                 InsertarFormulario();
                 MessageBox.Show("Datos insertados correctamente");
-                MainExpedientes obj = new MainExpedientes();
-                obj.expedientes_Frame.Content = new ExpedientesHomeopaticos();
-                this.NavigationService.Navigate(obj);
+
+                var vista = new ExpedientesHomeopaticos();
+
+                MainMenu main = (MainMenu)Window.GetWindow(this);
+
+                main.main_Frame.Navigate(vista);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -164,10 +173,11 @@ namespace MI_HOPAC.Views
 
         public int getSexo()
         {
+
             if ((bool)rdHombre.IsChecked)
-                return 0;
-            else if ((bool)rdMujer.IsChecked)
                 return 1;
+            else if ((bool)rdMujer.IsChecked)
+                return 0;
             else
                 return 0;
         }
@@ -195,5 +205,103 @@ namespace MI_HOPAC.Views
         {
             ListaAntecedentesPersonales.Items.Add(AntecedentesPersonales.Text);
         }
+
+
+        public void Rellenar(int Pk)
+        {
+
+            var client = new MainWebServiceSoapClient();
+            var res = client.GetExpedienteHomByID(Pk);
+            var i = res[0];
+
+            var listaReligion = new List<string>()
+            {
+                "Judía", "Católica", "Cristiana", "Ortodoxa",
+                "Testigos de Jehová", "Islámica", "Mormona",
+                "Budistas", "Krishnas", "Ateísta", "Otra"
+            };
+            txtReligion.ItemsSource = listaReligion;
+
+            var listaEscolaridad = new List<string>()
+            {
+                "Preescolar", "Primaria", "Secundaria",
+                "Preparatoria o bachillerato", "Licienciatura",
+                "Maestría", "Doctorado"
+            };
+            txtEscolaridad.ItemsSource = listaEscolaridad;
+
+            txtNombre.Text = i.m_Nombre;
+            txtEdad.SelectedDate = i.m_Edad;
+
+
+            if (i.m_Sexo == 0)
+                rdMujer.IsChecked = true;
+            else
+                rdHombre.IsChecked = true;
+
+
+            if (i.m_EstadoCivil == 1)
+                chkCasado.IsChecked = true;
+            else if (i.m_EstadoCivil == 2)
+                chkSoltero.IsChecked = true;
+            else if (i.m_EstadoCivil == 3)
+                chkViudo.IsChecked = true;
+            else
+                chkDivorciado.IsChecked = true;
+
+            txtOcupacion.Text = i.m_Ocupacion;
+            txtDomicilio.Text = i.m_Domicilio;
+            txtCorreo.Text = i.m_Correo;
+
+            txtFijo.Text = i.m_Telefono;
+            txtMovil.Text = i.m_Movil;
+
+            txtCiudadDeOrigen.Text = i.m_CiudadOrigen;
+            txtCiudadReside.Text = i.m_CiudadReside;
+            txtReligion.Text = i.m_Religion;
+            txtEscolaridad.Text = i.m_Escolaridad;
+
+            ListaAntecedentesFamiliares.ItemsSource = i.m_AntHeredo.Split(',').ToList<string>();
+            ListaAntecedentesPersonales.ItemsSource = i.m_AntPersonales.Split(',').ToList<string>();
+
+            txtTA.Text = i.m_TA;
+            txtFC.Text = i.m_FC;
+            txtFR.Text = i.m_FR;
+            txtTemperatura.Text = i.m_Temp;
+            txtPeso.Text = i.m_Peso;
+            txtTalla.Text = i.m_Talla;
+
+            txtMenarca.Text = i.m_Menarca;
+            txtRitmo.Text = i.m_Ritmo;
+
+            if (i.m_Dismenorrea == 1)
+                chkDisminorrea.IsChecked = true;
+
+            txtRitmoF.Text = i.m_F;
+            txtRitmoD.Text = i.m_D;
+            txtRitmoC.Text = i.m_C;
+            txtFUM.Text = i.m_FUM;
+            txtIVSA.Text = i.m_IVSA;
+            txtG.Text = i.m_G;
+            txtA.Text = i.m_A;
+            txtP.Text = i.m_P;
+            txtC.Text = i.m_C2;
+            txtFPP.Text = i.m_FPP;
+            txtFUP.Text = i.m_FUP;
+            txtMenopausia.Text = i.m_Menopausia;
+            txtPlanificacion.Text = i.m_Metodo;
+            txtEstudiosLab.Text = i.m_Estudios;
+
+            MotivoConsulta.Document.Blocks.Clear();
+            MotivoConsulta.Document.Blocks.Add(new Paragraph(new Run(i.m_Motivo)));
+
+            BotonGuardar.Visibility = Visibility.Collapsed;
+            AgregarAntecedentesFamiliares.Visibility = Visibility.Hidden;
+            AgregarAntecedentesPersonales.Visibility = Visibility.Hidden;
+
+
+        }
+
+
     }
 }

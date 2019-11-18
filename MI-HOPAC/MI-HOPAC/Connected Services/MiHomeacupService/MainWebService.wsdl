@@ -848,6 +848,20 @@
       <s:element name="InsertExpedientesHomResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetExpedienteHomByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idExpediente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpedienteHomByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpedienteHomByIDResult" type="tns:ArrayOfExpedienteHomeopatiaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InsertarCitaAcupuntura">
         <s:complexType>
           <s:sequence>
@@ -1790,6 +1804,12 @@
   <wsdl:message name="InsertExpedientesHomSoapOut">
     <wsdl:part name="parameters" element="tns:InsertExpedientesHomResponse" />
   </wsdl:message>
+  <wsdl:message name="GetExpedienteHomByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpedienteHomByID" />
+  </wsdl:message>
+  <wsdl:message name="GetExpedienteHomByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpedienteHomByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertarCitaAcupunturaSoapIn">
     <wsdl:part name="parameters" element="tns:InsertarCitaAcupuntura" />
   </wsdl:message>
@@ -2200,6 +2220,10 @@
     <wsdl:operation name="InsertExpedientesHom">
       <wsdl:input message="tns:InsertExpedientesHomSoapIn" />
       <wsdl:output message="tns:InsertExpedientesHomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpedienteHomByID">
+      <wsdl:input message="tns:GetExpedienteHomByIDSoapIn" />
+      <wsdl:output message="tns:GetExpedienteHomByIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertarCitaAcupuntura">
       <wsdl:input message="tns:InsertarCitaAcupunturaSoapIn" />
@@ -2768,6 +2792,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertExpedientesHom">
       <soap:operation soapAction="http://tempuri.org/InsertExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpedienteHomByID">
+      <soap:operation soapAction="http://tempuri.org/GetExpedienteHomByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3527,6 +3560,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertExpedientesHom">
       <soap12:operation soapAction="http://tempuri.org/InsertExpedientesHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpedienteHomByID">
+      <soap12:operation soapAction="http://tempuri.org/GetExpedienteHomByID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

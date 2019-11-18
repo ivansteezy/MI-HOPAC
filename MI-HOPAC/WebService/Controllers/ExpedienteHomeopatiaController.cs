@@ -70,5 +70,11 @@ namespace WebService.Controllers
         }
 
 
+        public List<ExpedienteHomeopatiaModel> ConsultaCitasHomeopaticasbyId(int pk)
+        {
+            return Select("select * from Exphomeopatia where IdExpHom = " + pk.ToString());
+        }
+
+
     }
 }
