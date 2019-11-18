@@ -76,7 +76,7 @@ namespace MI_HOPAC.Views
             var obj = Inventario.Items[Inventario.SelectedIndex];
             var casting = (Foundation.InventarioAcupuntura)obj;
             AcupunturaPair pair = new AcupunturaPair();
-            pair.Cantidad = casting.Cantidad;
+            pair.Cantidad = int.Parse(txtCantidad.Text);
             pair.Id = casting.Id;
             Ids.Add(pair);
         }

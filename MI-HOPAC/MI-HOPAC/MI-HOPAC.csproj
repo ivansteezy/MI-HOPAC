@@ -125,6 +125,7 @@
     <Compile Include="Foundation\ComentarioPrivado.cs" />
     <Compile Include="Foundation\ExpedienteHom.cs" />
     <Compile Include="Foundation\Foro.cs" />
+    <Compile Include="Foundation\Horario.cs" />
     <Compile Include="Foundation\InventarioAcupuntura.cs" />
     <Compile Include="Foundation\InventarioHomeopatica.cs" />
     <Compile Include="Foundation\NotaInfo.cs" />

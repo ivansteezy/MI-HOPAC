@@ -210,6 +210,7 @@ C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.pdb
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\MI-HOPAC.csprojAssemblyReference.cache
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\RecetaAcupuntura.g.cs
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\RecetaAcupuntura.baml
+<<<<<<< HEAD
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
@@ -225,3 +226,7 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\ro\Xceed.
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+=======
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\RecetaAcupuntura.g.cs
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\RecetaAcupuntura.baml
+>>>>>>> FuncionUpdatePaciente
