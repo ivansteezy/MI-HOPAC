@@ -25,6 +25,7 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             Consolidate();
+            ImpHorario();
         }
 
         private void Consolidate()
@@ -44,6 +45,45 @@ namespace MI_HOPAC.Views
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        private void ImpHorario()
+        {
+
+            var client = new MainWebServiceSoapClient();
+            var Res = client.GetHorario(UserControl.Pk);
+            var Hours = new List<Foundation.Horario>();
+
+            foreach(var i in Res)
+            {
+                var Hor = new Foundation.Horario();
+
+                if (i.m_FkDia == 1)
+                    Hor.Dia = "Lunes";
+                else if (i.m_FkDia == 2)
+                    Hor.Dia = "Martes";
+                else if (i.m_FkDia == 3)
+                    Hor.Dia = "Miercoles";
+                else if (i.m_FkDia == 4)
+                    Hor.Dia = "Jueves";
+                else if (i.m_FkDia == 5)
+                    Hor.Dia = "Viernes";
+                else if (i.m_FkDia == 6)
+                    Hor.Dia = "Sabado";
+                else if (i.m_FkDia == 7)
+                    Hor.Dia = "Domingo";
+
+                Hor.HoraI = i.m_HoraI.TimeOfDay.ToString();
+                Hor.HoraF = i.m_HoraF.TimeOfDay.ToString();
+
+                Hours.Add(Hor);
+            }
+            
+
+            Horario.ItemsSource = Hours;
+
+
+
         }
     }
 }

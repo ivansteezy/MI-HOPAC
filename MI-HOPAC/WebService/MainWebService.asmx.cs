@@ -240,6 +240,14 @@ namespace WebService
             var controlador = new InventarioHomeopatiaController();
             controlador.RestarInventario(pks);
         }
+
+        [WebMethod]
+        public List<InventarioHomeopatiaModel> CheckInventarioHomeopatico(int fkDoctor)
+        {
+            var controlador = new InventarioHomeopatiaController();
+            return controlador.CheckInventarioHomeopatico(fkDoctor);
+        }
+
         #endregion
 
         #region Inventario Acupuntura
@@ -277,6 +285,13 @@ namespace WebService
         {
             var controlador = new InventarioAcupunturaController();
             controlador.RestarInventario(pks);
+        }
+
+        [WebMethod]
+        public List<InventarioAcupunturaModel> CheckInventarioAcupuntura (int fkDoctor)
+        {
+            var controlador = new InventarioAcupunturaController();
+            return controlador.ChecInventarioAcupuntura(fkDoctor);
         }
 
         #endregion
@@ -325,6 +340,13 @@ namespace WebService
         {
             var controlador = new HorariosController();
             return controlador.HorarioDisponible(fkDoctor, fecha);
+        }
+
+        [WebMethod]
+        public List<HorariosModel> GetHorario(int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            return controlador.GetHorario(fkDoctor);
         }
         #endregion
 

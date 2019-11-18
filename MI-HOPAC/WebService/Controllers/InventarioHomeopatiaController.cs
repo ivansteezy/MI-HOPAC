@@ -58,5 +58,14 @@ namespace WebService.Controllers
                 Update(cmd);
             }
         }
+
+
+        public List<InventarioHomeopatiaModel> CheckInventarioHomeopatico(int pk)
+        {
+            return Select("select * from invHomeopatia where fkDoctor = " + pk.ToString() + " AND Cantidad < 9 ");
+        }
+
+
+
     }
 }

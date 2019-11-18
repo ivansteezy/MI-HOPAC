@@ -43,6 +43,32 @@
                     <TextBlock Grid.Row="1" x:Name="Cedula" Text="Cedula" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15"/>
                 </Grid>
             </Grid>
+
+
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="6*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">Horario</TextBlock>
+
+                <DataGrid Grid.Row="1" x:Name="Horario" Focusable="True" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                  ItemsSource="{Binding Horario}" ColumnWidth="*" FontSize="20"
+                  Background="Transparent" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        
+                        <DataGridTextColumn Header="Dia" Binding="{Binding Dia}"/>
+                        <DataGridTextColumn Header="Hora de Inicio" Binding="{Binding HoraI}"/>
+                        <DataGridTextColumn Header="Hora de Salida" Binding="{Binding HoraF}"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+
+
         </Grid>
 
         <Grid Grid.Column="1">

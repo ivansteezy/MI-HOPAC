@@ -40,5 +40,12 @@ namespace WebService.Controllers
         {
             Delete("delete from Horario where fkDoctor = " + fkDoctor.ToString());
         }
+
+        public List<HorariosModel> GetHorario(int fkDoctor)
+        {
+
+            return Select("select * from horario where fkDoctor = " + fkDoctor.ToString());
+
+        }
     }
 }

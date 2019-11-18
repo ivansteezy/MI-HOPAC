@@ -50,11 +50,19 @@ namespace WebService.Controllers
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = @"UPDATE invAcupuntura
-                                SET Cantidad = (Cantidad - "+ i.Cantidad.ToString() +")"+ 
+                                SET Cantidad = (Cantidad - " + i.Cantidad.ToString() +")"+ 
                                 "WHERE IdInvAcu = " + i.Id.ToString();
                 Update(cmd);
             }
         }
+
+        public List<InventarioAcupunturaModel> ChecInventarioAcupuntura(int pk)
+        {
+            return Select("select * from InvAcupuntura where fkDoctor = " + pk.ToString() + " AND Cantidad < 16 ");
+        }
+
+
+        
 
     }
 }

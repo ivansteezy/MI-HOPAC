@@ -15,6 +15,13 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="ListaNotifiaciones" Grid.Row="0" ItemsSource="{Binding Notificacion}" />
+        <DataGrid Grid.Row="0" x:Name="ListaNotifiaciones" Focusable="True" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" 
+                  ItemsSource="{Binding Notificacion}" ColumnWidth="*" FontSize="20"
+                  Background="Transparent" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mensaje" Binding="{Binding Nombre}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>
