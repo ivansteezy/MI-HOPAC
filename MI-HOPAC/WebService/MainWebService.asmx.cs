@@ -300,10 +300,10 @@ namespace WebService
         {
             var controlador = new InventarioAcupunturaController();
             controlador.RestarInventario(pks);
-        }
+        }   
 
         [WebMethod]
-        public List<InventarioAcupunturaModel> CheckInventarioAcupuntura (int fkDoctor)
+        public List<InventarioAcupunturaModel> CheckInventarioAcupuntura(int fkDoctor)
         {
             var controlador = new InventarioAcupunturaController();
             return controlador.ChecInventarioAcupuntura(fkDoctor);
