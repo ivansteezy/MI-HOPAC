@@ -38,7 +38,7 @@ namespace MI_HOPAC.Views
             MiHomeacupService.MainWebServiceSoapClient client = new MainWebServiceSoapClient();
 
             //Consultamos los articulos del inventario
-            var result = client.GetInventarioAcupuntura(UserControl.Pk);
+            var result = client.GetMayoresInventarioAcupuntura(UserControl.Pk);
             
 
             //Para cada publicacione de la base de datos, lo pasasmos a una lista para imprimr.
@@ -91,6 +91,10 @@ namespace MI_HOPAC.Views
             client.SubstractItemsAcupuntura(Ids.ToArray());
 
             MessageBox.Show("Su codigo de paciente es: " + rng);
+
+            var vista = new Dashboard();
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+            main.main_Frame.Navigate(vista);
         }
 
         int getRNG()

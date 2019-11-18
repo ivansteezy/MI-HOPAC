@@ -37,6 +37,11 @@ namespace MI_HOPAC.Views
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility    = Visibility.Collapsed;
             main_Frame.Content         = new NotasBoton();
+
+            var citas = client.GetCitas(UserControl.Pk);
+
+            UserControl.Citas = citas.Count();
+
         }
 
         private void DoctorMode()

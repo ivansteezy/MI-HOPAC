@@ -15,6 +15,12 @@ namespace WebService.Controllers
             return Select("select * from invacupuntura where fkDoctor = " + pk.ToString());
         }
 
+        public List<InventarioAcupunturaModel> ConsultaMayorInventarioAcupuntura(int pk)
+        {
+            return Select("select * from invacupuntura where Cantidad > 0 AND fkDoctor = " + pk.ToString());
+        }
+
+
         public void EliminarInventarioAcupuntura(int pk)
         {
             Delete("delete from invacupuntura where idInvAcu = " + pk.ToString());

@@ -12,5 +12,6 @@ namespace MI_HOPAC
         public static int Fk       = 0;
         public static int Medicina = 0;
         public static int fkReceta = 0;
+        public static int Citas = 0;
     }
 }

@@ -117,6 +117,7 @@
     <Compile Include="Controllers\PacienteEventosController.cs" />
     <Compile Include="Controllers\RecetaInfoController.cs" />
     <Compile Include="Controllers\RecetasController.cs" />
+    <Compile Include="Controllers\TratamientoController.cs" />
     <Compile Include="MainWebService.asmx.cs">
       <DependentUpon>MainWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -149,6 +150,7 @@
     <Compile Include="Models\PacienteModel.cs" />
     <Compile Include="Models\RecetaInfoModel.cs" />
     <Compile Include="Models\RecetasModel.cs" />
+    <Compile Include="Models\TratamientoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
