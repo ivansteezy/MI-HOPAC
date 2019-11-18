@@ -12,6 +12,8 @@ namespace WebService.Controllers
     {
         public void InsertarRecetaInfo(RecetaInfoModel receta)
         {
+            int alarma = 0;
+
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = @"insert into recetainfo() 
                             values(Null, @Medicamento, @Gotas, @Frecuencia, @FechaI, @FechaF, @Alarmas, @fkReceta)";
@@ -21,7 +23,7 @@ namespace WebService.Controllers
             cmd.Parameters.Add(new MySqlParameter("@Frecuencia", receta.m_Frencuencia));
             cmd.Parameters.Add(new MySqlParameter("@FechaI", receta.m_FechaI));
             cmd.Parameters.Add(new MySqlParameter("@FechaF", receta.m_FechaF));
-            cmd.Parameters.Add(new MySqlParameter("@Alarmas", 0));
+            cmd.Parameters.Add(new MySqlParameter("@Alarmas", alarma));
             cmd.Parameters.Add(new MySqlParameter("@fkReceta", receta.m_FkReceta));
 
             Insert(cmd);
