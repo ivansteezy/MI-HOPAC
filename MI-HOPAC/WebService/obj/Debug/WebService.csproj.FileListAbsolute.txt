@@ -119,7 +119,6 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\bin\Google.Protob
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\bin\MySql.Data.xml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\bin\Renci.SshNet.xml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.csprojAssemblyReference.cache
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.csproj.CoreCompileInputs.cache
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.csproj.CopyComplete
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\WebService\obj\Debug\WebService.dll
