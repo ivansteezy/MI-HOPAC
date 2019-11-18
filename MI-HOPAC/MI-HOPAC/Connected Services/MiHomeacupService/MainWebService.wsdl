@@ -1021,6 +1021,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="m_Frencuencia" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="m_FechaI" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="m_FechaF" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Alarmas" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
         </s:sequence>
       </s:complexType>
@@ -1046,6 +1047,17 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="RecetaInfoModel" nillable="true" type="tns:RecetaInfoModel" />
         </s:sequence>
       </s:complexType>
+      <s:element name="UpdateAlarmas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkRecetaInfo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Alarma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAlarmasResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="InsertCodigos">
         <s:complexType>
           <s:sequence>
@@ -1130,6 +1142,29 @@
             <s:element minOccurs="0" maxOccurs="1" name="GetPacienteResult" type="tns:PacienteModel" />
           </s:sequence>
         </s:complexType>
+      </s:element>
+      <s:element name="UpdatePacienteHom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkReceta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePacienteHomResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdatePacienteAcu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePacienteAcuResponse">
+        <s:complexType />
       </s:element>
       <s:element name="MovilGetDoctores">
         <s:complexType>
@@ -1767,6 +1802,12 @@
   <wsdl:message name="GetRecetasInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetRecetasInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateAlarmasSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAlarmas" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAlarmasSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAlarmasResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertCodigosSoapIn">
     <wsdl:part name="parameters" element="tns:InsertCodigos" />
   </wsdl:message>
@@ -1796,6 +1837,18 @@
   </wsdl:message>
   <wsdl:message name="GetPacienteSoapOut">
     <wsdl:part name="parameters" element="tns:GetPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteHomSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteHom" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteHomSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteHomResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteAcuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteAcu" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteAcuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteAcuResponse" />
   </wsdl:message>
   <wsdl:message name="MovilGetDoctoresSoapIn">
     <wsdl:part name="parameters" element="tns:MovilGetDoctores" />
@@ -2124,6 +2177,10 @@
       <wsdl:input message="tns:GetRecetasInfoSoapIn" />
       <wsdl:output message="tns:GetRecetasInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateAlarmas">
+      <wsdl:input message="tns:UpdateAlarmasSoapIn" />
+      <wsdl:output message="tns:UpdateAlarmasSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertCodigos">
       <wsdl:input message="tns:InsertCodigosSoapIn" />
       <wsdl:output message="tns:InsertCodigosSoapOut" />
@@ -2143,6 +2200,14 @@
     <wsdl:operation name="GetPaciente">
       <wsdl:input message="tns:GetPacienteSoapIn" />
       <wsdl:output message="tns:GetPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <wsdl:input message="tns:UpdatePacienteHomSoapIn" />
+      <wsdl:output message="tns:UpdatePacienteHomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <wsdl:input message="tns:UpdatePacienteAcuSoapIn" />
+      <wsdl:output message="tns:UpdatePacienteAcuSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="MovilGetDoctores">
       <wsdl:input message="tns:MovilGetDoctoresSoapIn" />
@@ -2719,6 +2784,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateAlarmas">
+      <soap:operation soapAction="http://tempuri.org/UpdateAlarmas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCodigos">
       <soap:operation soapAction="http://tempuri.org/InsertCodigos" style="document" />
       <wsdl:input>
@@ -2757,6 +2831,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPaciente">
       <soap:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <soap:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <soap:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3424,6 +3516,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateAlarmas">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAlarmas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertCodigos">
       <soap12:operation soapAction="http://tempuri.org/InsertCodigos" style="document" />
       <wsdl:input>
@@ -3462,6 +3563,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPaciente">
       <soap12:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

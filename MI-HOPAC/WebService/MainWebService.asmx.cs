@@ -100,7 +100,7 @@ namespace WebService
         }
 
         [WebMethod]
-        public void UpdateDoctres(int pk, string ubicacion = "", long cedula = 0)
+        public void UpdateDoctres(int pk, string ubicacion, long cedula)
         {
             var controlador = new DoctoresControllers();
             controlador.ActualizarDoctores(pk, ubicacion, cedula);

@@ -15,5 +15,6 @@ namespace MI_HOPAC.Foundation
         public int Frecuencia { set; get; }
         public string Medicamento { set; get; }
         public int Gotas { set; get; }
+        public int Alarmas { set; get; }
     }
 }

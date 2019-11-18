@@ -4,14 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:local="clr-namespace:MI_HOPAC"
       mc:Ignorable="d" 
-      d:DesignHeight="2050" d:DesignWidth="800"
+      d:DesignHeight="2250" d:DesignWidth="800"
       Title="Eventos"
       Background="White">
     <Grid>
         <ScrollViewer>
-            <Grid>
+            <Grid Height="2250">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15*"/>
                     <RowDefinition Height="15*"/>
@@ -101,7 +102,7 @@
 
                             <TextBox x:Name="txtCiudadDeOrigen" Margin="10" Grid.Row="0" materialDesign:HintAssist.Hint="Ciudad de origen" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                             <TextBox x:Name="txtCiudadReside" Margin="10" Grid.Row="1" materialDesign:HintAssist.Hint="Ciudad en que reside" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <TextBox x:Name="txtEscolaridad" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Escolaridad" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                            <ComboBox x:Name="txtEscolaridad" ItemsSource="{Binding listaReligion}" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Escolaridad" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                         </Grid>
 
                         <Grid Grid.Column="0">
@@ -121,8 +122,8 @@
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <TextBox x:Name="txtFijo" Margin="5" Grid.Row="0" materialDesign:HintAssist.Hint="Fijo" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                                    <TextBox x:Name="txtMovil" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Movil" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                                    <xctk:MaskedTextBox Mask="(00) 00-00-00-00" x:Name="txtFijo" Margin="5" Grid.Row="0" materialDesign:HintAssist.Hint="Fijo" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                                    <xctk:MaskedTextBox Mask="(00) 00-00-00-00" x:Name="txtMovil" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Movil" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                                 </Grid>
 
                                 <Grid Grid.Column="0">
@@ -130,7 +131,7 @@
                                 </Grid>
                             </Grid>
 
-                            <TextBox x:Name="txtReligion" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Religión" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                            <ComboBox x:Name="txtReligion" ItemsSource="{Binding listaEscolaridad}" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Religión" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -156,14 +157,13 @@
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="3*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" TextWrapping="Wrap" FontSize="15" Margin="4" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
-                   Tuberculosis, Diabetes Mellitus, Hipertensión, Carcinomas, Cardiopatías, Hepatopatías, Nefropatías, Enfermedades Endocrinas, Enfermedades Mentales, Epilepsia, Asma, Enfermedades Hematológicas
-                            </TextBlock>
-
-                            <RichTextBox x:Name="AntecedentesFamiliares" Grid.Column="1" FontSize="15" VerticalAlignment="Center" Margin="6 0 6 0"/>
+                            <ComboBox x:Name="AntecedentesFamiliares" ItemsSource="{Binding listaAntecedentes}" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Antecedentes Familiares" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="18" materialDesign:HintAssist.IsFloating="True" />
+                            <Button Grid.Column="1" x:Name="AgregarAntecedentesFamiliares" Click="AgregarAntecedentesFamiliares_Click" Content="Agregar" VerticalAlignment="Center" Margin="20"/>
+                            <ListView Grid.Column="2" Margin="15" x:Name="ListaAntecedentesFamiliares"/>
                         </Grid>
                     </Grid>
 
@@ -181,13 +181,13 @@
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" TextWrapping="Wrap" FontSize="13" Margin="4" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                     Text="Enfermedades Infecciosas de la infancia, Tuberculosis, Enfermedades Venéreas, Fiebre Tifoidea,  Salmonelosis, neumonías, Paludismo, Parasitosis, Alergias, Padecimientos Articulares, Intervenciones Quirúrgicas, Hospitalizaciones, Traumatismos/Accidentes, Perdida del conocimiento, Intolerancia a medicamentos de cualquier tipo, Transfusiones">
-                                </TextBlock>
-                                <RichTextBox x:Name="AntecedentesPersonales" Grid.Column="1" FontSize="15" VerticalAlignment="Center" Margin="6 0 6 0"/>
+                                <ComboBox x:Name="AntecedentesPersonales" ItemsSource="{Binding listaAntecedentesPersonales}" Margin="5" Grid.Row="1" materialDesign:HintAssist.Hint="Antecedentes Personales" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="18" materialDesign:HintAssist.IsFloating="True" />
+                                <Button Grid.Column="1" x:Name="AgregarAntecedentesPersonales" Click="AgregarAntecedentesPersonales_Click" Content="Agregar" VerticalAlignment="Center" Margin="20"/>
+                                <ListView Grid.Column="2" Margin="15" x:Name="ListaAntecedentesPersonales"/>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -219,33 +219,33 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
-                            <TextBox x:Name="txtTA" Width=" 70" materialDesign:HintAssist.Hint="TA" VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="mmhg"/>
+                            <xctk:DecimalUpDown Maximum="120" Minimum="60" x:Name="txtTA" Width=" 70" ToolTip="Tension arterial" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" FontSize="17" Content="Mmhg"/>
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
-                            <TextBox x:Name="txtFC" Width=" 70" materialDesign:HintAssist.Hint="FC" VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="lpm"/>
+                            <xctk:DecimalUpDown Maximum="100" Minimum="60" x:Name="txtFC" Width=" 70" ToolTip="Frecuencia Cardiaca" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Content="Lpm" FontSize="18"/>
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Orientation="Horizontal">
-                            <TextBox x:Name="txtFR" Width=" 70" materialDesign:HintAssist.Hint="FR" VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="Rpm"/>
+                            <xctk:DecimalUpDown Maximum="18" Minimum="12" x:Name="txtFR" Width=" 70" ToolTip="Frecuencia Respiratoria" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Content="Rpm" FontSize="18"/>
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Orientation="Horizontal">
-                            <TextBox x:Name="txtTemperatura" Width=" 70" materialDesign:HintAssist.Hint="Temp." VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="°C"/>
+                            <xctk:DecimalUpDown Maximum="40" Minimum="36" x:Name="txtTemperatura" Width=" 70" ToolTip="Temperatura" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Content="°C" FontSize="18"/>
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4" Orientation="Horizontal">
-                            <TextBox x:Name="txtPeso" Width=" 70" materialDesign:HintAssist.Hint="Peso" VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="Kg"/>
+                            <xctk:DecimalUpDown Maximum="200" Minimum="0" x:Name="txtPeso" Width=" 70" ToolTip="Peso" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Content="Kg" FontSize="18"/>
                         </StackPanel>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5" Orientation="Horizontal">
-                            <TextBox x:Name="txtTalla" Width=" 70" materialDesign:HintAssist.Hint="Talla" VerticalAlignment="Center" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                            <Label VerticalAlignment="Center" FontWeight="Bold" Margin="0 15 0 0" Content="Cm"/>
+                            <xctk:DecimalUpDown Maximum="200" Minimum="0" x:Name="txtTalla" Width=" 70" ToolTip="Talla" VerticalAlignment="Center" FontSize="20"/>
+                            <Label VerticalAlignment="Center" FontWeight="Bold" Content="Cm" FontSize="18"/>
                         </StackPanel>
                     </Grid>
 

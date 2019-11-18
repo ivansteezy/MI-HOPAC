@@ -80,7 +80,7 @@
                             <ImageBrush ImageSource="../Resources/ProfilePhoto.png" Stretch="Uniform"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" x:Name="profile_Name">Natalia Yañez</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" x:Name="profile_Name"></TextBlock>
                     <Button Width="60" x:Name="ButtonCloseMenu" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF1B3861" Width="25" Height="25"/>
                     </Button>
@@ -127,14 +127,14 @@
                     <ListViewItem Height="60" x:Name="InventarioHomeopatia">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="MedicalBag" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Margin="20 0 0 0" Text="Foro privado" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Inventario homeopatia" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 
                     <ListViewItem Height="60" x:Name="InventarioAcupuntura">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="Injection" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Margin="20 0 0 0" Text="Inventario" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Inventario acupuntura" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 

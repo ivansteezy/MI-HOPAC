@@ -22,7 +22,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Background="SkyBlue" Click="Button_Guardar" Grid.Row="1" Margin="20">Guardar</Button>
+            <Button Click="Button_Guardar" Grid.Row="1" Margin="20">Guardar</Button>
 
         </Grid>
 

@@ -2650,6 +2650,8 @@ namespace MI_HOPAC.MiHomeacupService {
         
         private System.DateTime m_FechaFField;
         
+        private int m_AlarmasField;
+        
         private int m_FkRecetaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2741,6 +2743,19 @@ namespace MI_HOPAC.MiHomeacupService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int m_Alarmas {
+            get {
+                return this.m_AlarmasField;
+            }
+            set {
+                if ((this.m_AlarmasField.Equals(value) != true)) {
+                    this.m_AlarmasField = value;
+                    this.RaisePropertyChanged("m_Alarmas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int m_FkReceta {
             get {
                 return this.m_FkRecetaField;
@@ -3800,6 +3815,12 @@ namespace MI_HOPAC.MiHomeacupService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRecetasInfo", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetRecetasInfoResponse> GetRecetasInfoAsync(MI_HOPAC.MiHomeacupService.GetRecetasInfoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateAlarmas", ReplyAction="*")]
+        void UpdateAlarmas(int FkRecetaInfo, int Alarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateAlarmas", ReplyAction="*")]
+        System.Threading.Tasks.Task UpdateAlarmasAsync(int FkRecetaInfo, int Alarma);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertCodigos", ReplyAction="*")]
         void InsertCodigos(int codigo, int fkDoctor, int fkReceta);
         
@@ -3833,6 +3854,18 @@ namespace MI_HOPAC.MiHomeacupService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPaciente", ReplyAction="*")]
         System.Threading.Tasks.Task<MI_HOPAC.MiHomeacupService.GetPacienteResponse> GetPacienteAsync(MI_HOPAC.MiHomeacupService.GetPacienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePacienteHom", ReplyAction="*")]
+        void UpdatePacienteHom(int fkPaciente, int fkDoctor, int fkReceta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePacienteHom", ReplyAction="*")]
+        System.Threading.Tasks.Task UpdatePacienteHomAsync(int fkPaciente, int fkDoctor, int fkReceta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePacienteAcu", ReplyAction="*")]
+        void UpdatePacienteAcu(int fkPaciente, int fkDoctor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePacienteAcu", ReplyAction="*")]
+        System.Threading.Tasks.Task UpdatePacienteAcuAsync(int fkPaciente, int fkDoctor);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento MovilGetDoctoresResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MovilGetDoctores", ReplyAction="*")]
@@ -9638,6 +9671,14 @@ namespace MI_HOPAC.MiHomeacupService {
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetRecetasInfoAsync(inValue);
         }
         
+        public void UpdateAlarmas(int FkRecetaInfo, int Alarma) {
+            base.Channel.UpdateAlarmas(FkRecetaInfo, Alarma);
+        }
+        
+        public System.Threading.Tasks.Task UpdateAlarmasAsync(int FkRecetaInfo, int Alarma) {
+            return base.Channel.UpdateAlarmasAsync(FkRecetaInfo, Alarma);
+        }
+        
         public void InsertCodigos(int codigo, int fkDoctor, int fkReceta) {
             base.Channel.InsertCodigos(codigo, fkDoctor, fkReceta);
         }
@@ -9752,6 +9793,22 @@ namespace MI_HOPAC.MiHomeacupService {
             inValue.Body = new MI_HOPAC.MiHomeacupService.GetPacienteRequestBody();
             inValue.Body.pk = pk;
             return ((MI_HOPAC.MiHomeacupService.MainWebServiceSoap)(this)).GetPacienteAsync(inValue);
+        }
+        
+        public void UpdatePacienteHom(int fkPaciente, int fkDoctor, int fkReceta) {
+            base.Channel.UpdatePacienteHom(fkPaciente, fkDoctor, fkReceta);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePacienteHomAsync(int fkPaciente, int fkDoctor, int fkReceta) {
+            return base.Channel.UpdatePacienteHomAsync(fkPaciente, fkDoctor, fkReceta);
+        }
+        
+        public void UpdatePacienteAcu(int fkPaciente, int fkDoctor) {
+            base.Channel.UpdatePacienteAcu(fkPaciente, fkDoctor);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePacienteAcuAsync(int fkPaciente, int fkDoctor) {
+            return base.Channel.UpdatePacienteAcuAsync(fkPaciente, fkDoctor);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

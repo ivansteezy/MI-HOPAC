@@ -31,7 +31,7 @@ namespace WebService.Controllers
             Delete("delete from doctores where idDoctores = " + primaryKey.ToString());
         }
 
-        public void ActualizarDoctores(int primaryKey, string ubicacion = "", long cedula = 0)
+        public void ActualizarDoctores(int primaryKey, string ubicacion, long cedula)
         {
             MySqlCommand cmd = new MySqlCommand();
 

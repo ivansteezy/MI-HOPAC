@@ -140,6 +140,7 @@ namespace MI_HOPAC.Views
                 recetaRow.Id = item.m_IdRecetaInfo;
                 recetaRow.Medicamento = item.m_Medicamento;
                 recetaRow.Gotas = item.m_Gotas;
+                recetaRow.Alarmas = item.m_Alarmas;
                 DataRecetaInfo.Add(recetaRow);
             }
             DataContext = this;

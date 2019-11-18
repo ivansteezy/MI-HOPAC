@@ -29,6 +29,10 @@ namespace MI_HOPAC.Views
 
         private void Consolidate()
         {
+            var client = new MainWebServiceSoapClient();
+            var list = client.GetDoctores(UserControl.Fk).ToList();
+            profile_Name.Text = list.ElementAt(0).m_Nombre + " " + list.ElementAt(0).m_Apellidos;
+
             ButtonOpenMenu.Visibility  = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             profile_Name.Visibility    = Visibility.Collapsed;
@@ -47,6 +51,15 @@ namespace MI_HOPAC.Views
                 InventarioHomeopatia.Visibility = Visibility.Collapsed;
                 ExpediendesHomeopatia.Visibility = Visibility.Collapsed;
             }
+            else
+            {
+                InventarioAcupuntura.Visibility = Visibility.Visible;
+                ExpediendesAcupuntura.Visibility = Visibility.Visible;
+
+                InventarioHomeopatia.Visibility = Visibility.Visible;
+                ExpediendesHomeopatia.Visibility = Visibility.Visible;
+            }
+            
         
         }
 

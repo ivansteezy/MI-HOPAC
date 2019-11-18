@@ -17,7 +17,7 @@
 
         <Frame x:Name="Frame" Grid.Row="0" NavigationUIVisibility="Hidden" ></Frame>
 
-        <Button Grid.Row="1"  Width="100" HorizontalAlignment="Center" Click="Button_Click" Background="BurlyWood" BorderBrush="Black" >Agregar</Button>
+        <Button Grid.Row="1"  Width="100" HorizontalAlignment="Center" Click="Button_Click" BorderBrush="Black" >Agregar</Button>
 
     </Grid>
     
