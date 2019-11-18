@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MI_HOPAC.Foundation;
+using System.Text.RegularExpressions;
 
 namespace MI_HOPAC.Views
 {
@@ -112,6 +113,12 @@ namespace MI_HOPAC.Views
                 MessageBox.Show("Llene todos los datos");
             }
             
+        }
+
+        private void TxtManoDerecha_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

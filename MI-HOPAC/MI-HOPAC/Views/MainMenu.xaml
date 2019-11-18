@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Background="{StaticResource Fondo}"
         mc:Ignorable="d"
-        Title="MainMenu" Height="780" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="MainMenu" Height="880" Width="1059.5" WindowStartupLocation="CenterScreen" WindowState="Normal">
 
     <!--Minimizar y maximizar el menu-->
     <Window.Resources>
@@ -66,7 +66,6 @@
 
                 <!--Frame-->
                 <Frame x:Name="main_Frame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Background="Transparent" Margin="10"/>
-                
             </Grid>
         </Grid>
 
@@ -88,7 +87,7 @@
                         <materialDesign:PackIcon Kind="Menu" Foreground="#FF1B3861" Width="25" Height="25"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="side_Menu" SelectionChanged="Side_Menu_SelectionChanged">
+                <ListView x:Name="side_Menu" ScrollViewer.HorizontalScrollBarVisibility="Hidden" SelectionChanged="Side_Menu_SelectionChanged">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="MonitorDashboard" Width="25" Height="25" VerticalAlignment="Center"/>
@@ -152,12 +151,17 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    
-
                     <ListViewItem Height="60" x:Name="ExpediendesAcupuntura">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="Assignment" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Expediendes Acupuntura" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60" x:Name="Estadisticas">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="5" Kind="ChartBar" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Estadisticas" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

@@ -10,7 +10,6 @@
       Title="ExpedientesHomeopaticos">
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>

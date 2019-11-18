@@ -54,8 +54,8 @@
 
                     <StackPanel Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 50 0">
                         <TextBox Width="300" x:Name="txtNombre" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True"></TextBox>
-                        <TextBox Width="300" x:Name="txtPotencia" materialDesign:HintAssist.Hint="Potencia" materialDesign:HintAssist.IsFloating="True"></TextBox>
-                        <TextBox Width="300" x:Name="txtCantidad" materialDesign:HintAssist.Hint="Cantidad" materialDesign:HintAssist.IsFloating="True"></TextBox>
+                        <TextBox Width="300" PreviewTextInput="TxtPotencia_PreviewTextInput" x:Name="txtPotencia" materialDesign:HintAssist.Hint="Potencia" materialDesign:HintAssist.IsFloating="True"></TextBox>
+                        <TextBox Width="300" PreviewTextInput="TxtPotencia_PreviewTextInput" x:Name="txtCantidad" materialDesign:HintAssist.Hint="Cantidad" materialDesign:HintAssist.IsFloating="True"></TextBox>
                     </StackPanel>
 
                     <Image Grid.Column="0" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" Source="../Resources/add.png"/>

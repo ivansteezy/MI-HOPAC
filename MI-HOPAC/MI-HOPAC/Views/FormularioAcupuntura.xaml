@@ -80,8 +80,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                     
-                <TextBox Margin="5" x:Name="txtManoDerecha" Grid.Column="0" materialDesign:HintAssist.Hint="Mano derecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
-                <TextBox Margin="5" x:Name="txtManoIzquierda" Grid.Column="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" PreviewTextInput="TxtManoDerecha_PreviewTextInput" x:Name="txtManoDerecha" Grid.Column="0" materialDesign:HintAssist.Hint="Mano derecha" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" PreviewTextInput="TxtManoDerecha_PreviewTextInput" x:Name="txtManoIzquierda" Grid.Column="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                 </Grid>
 
                 <RichTextBox Grid.Row="1" x:Name="Sintomas" materialDesign:HintAssist.Hint="Sintomas" FontSize="20"></RichTextBox>
