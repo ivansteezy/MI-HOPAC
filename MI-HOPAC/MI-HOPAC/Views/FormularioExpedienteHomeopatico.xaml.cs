@@ -209,7 +209,6 @@ namespace MI_HOPAC.Views
 
         public void Rellenar(int Pk)
         {
-
             var client = new MainWebServiceSoapClient();
             var res = client.GetExpedienteHomByID(Pk);
             var i = res[0];

@@ -100,6 +100,10 @@ namespace MI_HOPAC.Views
             client.SubstractItemsHomeopatia(Ids);
 
             MessageBox.Show("Su codigo de receta es: " + rng);
+
+            var vista = new Dashboard();
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+            main.main_Frame.Navigate(vista);
         }
 
         int getRNG()
