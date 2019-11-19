@@ -158,12 +158,6 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="60" x:Name="Estadisticas">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="5" Kind="ChartBar" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Margin="20 0 0 0" Text="Estadisticas" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>

@@ -168,9 +168,6 @@
     <Compile Include="Views\FormularioExpedienteHomeopatico.xaml.cs">
       <DependentUpon>FormularioExpedienteHomeopatico.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Graficas.xaml.cs">
-      <DependentUpon>Graficas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\HorarioDialog.xaml.cs">
       <DependentUpon>HorarioDialog.xaml</DependentUpon>
     </Compile>
@@ -294,10 +291,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FormularioExpedienteHomeopatico.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Graficas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

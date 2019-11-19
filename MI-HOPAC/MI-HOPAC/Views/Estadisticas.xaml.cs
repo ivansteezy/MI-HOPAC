@@ -27,9 +27,11 @@ namespace MI_HOPAC.Views
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            /*
             var vista = new Graficas();
             MainMenu main = (MainMenu)Window.GetWindow(this);
             main.main_Frame.Navigate(vista);
+            */
         }
     }
 }

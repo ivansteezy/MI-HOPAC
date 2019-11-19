@@ -133,10 +133,6 @@ namespace MI_HOPAC.Views
                     main_Frame.Content = new ExpedienteAcupunturas(); 
                     title.Text = "Expediendes Acupuntura";
                     break;
-                case (int)Pagina.Estadisticas:
-                    main_Frame.Content = new Estadisticas();
-                    title.Text = "Estadisticas";
-                    break;
             }
         }
 
@@ -166,7 +162,6 @@ namespace MI_HOPAC.Views
             Notificacion          = 0x0007,
             ExpedientesHom        = 0x0008,
             ExpedientesAcu        = 0x0009,
-            Estadisticas          = 0x000A,
         }
 
         
