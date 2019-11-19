@@ -12,6 +12,7 @@ namespace WebService.Models
         public DateTime m_Fecha  { set; get; }
         public int m_FkPaciente  { set; get; }
         public int m_FkDoctor    { set; get; }
+        public int m_Calificado { set; get; }
         #endregion
     }
 }

@@ -97,14 +97,14 @@
 
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="5" Kind="Class" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Event" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0" Text="Agenda" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Margin="5" Kind="Event" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Margin="5" Kind="Class" Width="25" Height="25" VerticalAlignment="Center"/>
                             <TextBlock Margin="20 0 0 0"  Text="Eventos" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>

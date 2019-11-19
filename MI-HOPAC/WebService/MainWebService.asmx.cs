@@ -550,7 +550,7 @@ namespace WebService
         #region Tratamiento
 
         [WebMethod]
-        public void InsertTratamiento(DateTime fecha, int Calificacion, int FkPregunta, int fkDoctor, int FkPaciente, int fkReceta)
+        public void InsertTratamiento(string fecha, int Calificacion, int FkPregunta, int fkDoctor, int FkPaciente, int fkReceta)
         {
             var controlador = new TratamientoController();
             controlador.InsertarTratamiento(fecha, Calificacion, FkPregunta, fkDoctor, FkPaciente, fkReceta);
@@ -795,8 +795,21 @@ namespace WebService
             var controlador = new CitasController();
             return controlador.CitasDisponiblesMovil(fechaCita, fkDoctor);
         }
+        
+        [WebMethod]
+        public void UpdateCalificacionCita(int IdCita, int Calificado)
+        {
+            var controlador = new CitasController();
+            controlador.UpdateCalificacionCita(IdCita, Calificado);
+        }
 
 
+        [WebMethod]
+        public void DeleteCitasDelDia(DateTime Fecha, int fkDoctor)
+        {
+            var controlador = new CitasController();
+            controlador.DeleteCitasDelDia(Fecha, fkDoctor);
+        }
 
         #endregion
     }

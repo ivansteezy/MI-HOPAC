@@ -246,3 +246,7 @@ C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Est
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Estadisticas.baml
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Graficas.g.cs
 C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Graficas.baml
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Estadisticas.g.cs
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Graficas.g.cs
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Estadisticas.baml
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\Views\Graficas.baml

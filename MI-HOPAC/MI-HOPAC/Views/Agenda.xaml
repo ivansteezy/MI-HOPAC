@@ -33,7 +33,17 @@
                 </ListView.View>
             </ListView>
 
-            <Button Grid.Row="1" HorizontalAlignment="Center" Click="Button_Click" Content="Agregar una cita" />
+            <Grid Grid.Row="1">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0" HorizontalAlignment="Center" Click="Button_Click_1" Background="Red" Content="Eliminar Citas del Dia" />
+                <Button Grid.Column="1" HorizontalAlignment="Center" Click="Button_Click" Content="Agregar una cita" />
+            </Grid>
+           
         </Grid>
     </Grid>
 </Page>

@@ -14,6 +14,7 @@ namespace WebService.Models
         public string m_Nombre { get; set; }
         public string m_Apellido { get; set; }
         public int m_fkDoctor { get; set; }
+        public int m_Calificado { set; get; }
 
         #endregion
 

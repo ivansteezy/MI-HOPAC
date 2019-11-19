@@ -11,7 +11,7 @@ namespace WebService.Controllers
     {
         public List<CitasMovilModel> ConsultaCitasPaciente(int fkPaciente)
         {
-            string query = @"SELECT Citas.IDCitas, Citas.Fecha, Doctores2.Nombre, Doctores2.Apellidos, Doctores2.idCuenta_Doctores
+            string query = @"SELECT Citas.IDCitas, Citas.Fecha, Doctores2.Nombre, Doctores2.Apellidos, Doctores2.idCuenta_Doctores, Citas.Calificado
                             FROM Citas, (select cuenta_doctores.idCuenta_Doctores, Doctores.Nombre, Doctores.Apellidos from Doctores, cuenta_doctores where cuenta_doctores.fkDoctor = Doctores.idDoctores) as Doctores2
                             WHERE Citas.fkPaciente = " + fkPaciente.ToString() + @" AND Citas.fkDoctor = Doctores2.idCuenta_Doctores
                             ORDER BY Citas.Fecha ASC";

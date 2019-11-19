@@ -11,7 +11,7 @@ namespace WebService.Controllers
     public class TratamientoController : DatabaseOperation<TratamientoModel>
     {
 
-        public void InsertarTratamiento(DateTime fecha, int Calificacion, int FkPregunta, int fkDoctor, int FkPaciente, int fkReceta)
+        public void InsertarTratamiento(string fecha, int Calificacion, int FkPregunta, int fkDoctor, int FkPaciente, int fkReceta)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = @"insert into tratamiento()  

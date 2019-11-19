@@ -40,26 +40,57 @@ namespace WebService.Controllers
 
         public void InsertarCita(DateTime fecha, int fkPaciente, int fkDoctor)
         {
+            int Cal = 0;
+
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"insert into citas(Fecha, fkPaciente, fkDoctor) values (@fecha, @fkPaciente, @fkDoctor)";
+            cmd.CommandText = @"insert into citas(Fecha, fkPaciente, fkDoctor, Calificado) values (@fecha, @fkPaciente, @fkDoctor, @Calificado)";
 
             cmd.Parameters.Add(new MySqlParameter("@fecha", fecha));
             cmd.Parameters.Add(new MySqlParameter("@fkPaciente", fkPaciente));
             cmd.Parameters.Add(new MySqlParameter("@fkDoctor", fkDoctor));
-            
+            cmd.Parameters.Add(new MySqlParameter("@Calificado", Cal));
+
             Insert(cmd);
         }
 
         public void InsertarCitaMovil(string fecha, int fkPaciente, int fkDoctor)
         {
+            int Cal = 0;
+
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = @"insert into citas(Fecha, fkPaciente, fkDoctor) values (@fecha, @fkPaciente, @fkDoctor)";
+            cmd.CommandText = @"insert into citas(Fecha, fkPaciente, fkDoctor, Calificado) values (@fecha, @fkPaciente, @fkDoctor, @Calificado)";
 
             cmd.Parameters.Add(new MySqlParameter("@fecha", fecha));
             cmd.Parameters.Add(new MySqlParameter("@fkPaciente", fkPaciente));
             cmd.Parameters.Add(new MySqlParameter("@fkDoctor", fkDoctor));
+            cmd.Parameters.Add(new MySqlParameter("@Calificado", Cal));
 
             Insert(cmd);
         }
+
+
+        public void UpdateCalificacionCita(int IdCita, int Calificado)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = @"update citas set Calificado = @Calificado 
+                                where idCitas = @idCitas";
+
+            cmd.Parameters.Add(new MySqlParameter("@idCitas", IdCita));
+            cmd.Parameters.Add(new MySqlParameter("@Calificado", Calificado));
+
+            Update(cmd);
+        }
+
+
+        public void DeleteCitasDelDia(DateTime fechaCita, int fkDoctor)
+        {
+            Delete(@"Delete from citas where (fecha between '" + fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + "' AND " +
+                   "(SELECT ADDTIME( '" + fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + "', '23:59:59.00' ))) AND fkDoctor = " + fkDoctor.ToString());
+
+        }
+
+
+
+
     }
 }

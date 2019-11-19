@@ -84,5 +84,25 @@ namespace MI_HOPAC.Views
 
             return !(list.Count == 0);  //Si la lista no esta vacia el doctor esta disponible    
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            var Res = Calendario.SelectedDate;
+
+            var Dia = new DateTime(Calendario.SelectedDate.Value.Year, Calendario.SelectedDate.Value.Month,
+                                    Calendario.SelectedDate.Value.Day);
+
+            var client = new MainWebServiceSoapClient();
+            client.DeleteCitasDelDia(Dia, UserControl.Pk);
+
+            MessageBox.Show("Citas ELminadas");
+
+            Consolidate();
+
+
+
+
+        }
     }
 }
