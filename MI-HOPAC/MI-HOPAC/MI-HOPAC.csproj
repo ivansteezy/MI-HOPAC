@@ -638,8 +638,8 @@
     <Folder Include="Resources\Repertorizaciones\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\fileAcupuntura.png" />
     <Resource Include="Resources\fileHomeopatia.png" />
+    <Resource Include="Resources\fileAcupuntura.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\graph.png" />

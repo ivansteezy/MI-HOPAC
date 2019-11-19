@@ -16,7 +16,7 @@ namespace WebService.Controllers
             return Select("select * from citas where (fecha between DATE_SUB('" + fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
                           @"', INTERVAL 60 MINUTE) and '"+fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"') or (fecha between '" + 
                           fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"' and DATE_ADD('"+ fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
-                          "', INTERVAL 60 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
+                          "', INTERVAL 59 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
         }
 
         public List<CitasModel> CitasDisponiblesMovil(string fechaCita, int fkDoctor)
