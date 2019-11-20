@@ -390,7 +390,7 @@ namespace WebService
         public List<ExpedienteHomeopatiaModel> GetExpedientesHom(int fkDoctor)
         {
             var controlador = new ExpedienteHomeopatiaController();
-            return controlador.ConsultaExpedienteHomeopatia(fkDoctor);
+            return controlador.DecryptConsultaExpedienteHomeopatia(fkDoctor);
         }
 
 
@@ -405,7 +405,7 @@ namespace WebService
         public List<ExpedienteHomeopatiaModel> GetExpedienteHomByID(int idExpediente)
         {
             var controlador = new ExpedienteHomeopatiaController();
-            return controlador.ConsultaCitasHomeopaticasbyId(idExpediente);
+            return controlador.DecryptCitasHomeopaticasbyId(idExpediente);
         }
 
         #endregion
@@ -583,9 +583,6 @@ namespace WebService
         }
 
         #endregion
-
-
-
 
         //---------------- Movil -------------------------
 
