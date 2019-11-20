@@ -812,5 +812,18 @@ namespace WebService
         }
 
         #endregion
+
+
+        #region Tratamiento
+
+        [WebMethod]
+        public GraficaModel GetPreguntaUnoAcu(int FkPaciente, int FkDoctor)
+        {
+            var controlador = new TratamientoController();
+            return controlador.GetPreguntaUnoAcu(FkPaciente, FkDoctor);
+        }
+
+
+        #endregion
     }
 }

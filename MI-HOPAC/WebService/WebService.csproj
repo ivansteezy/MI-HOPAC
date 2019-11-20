@@ -141,6 +141,7 @@
     <Compile Include="Models\ForoPrivadoModel.cs" />
     <Compile Include="Models\ForoPrivadoPacienteModel.cs" />
     <Compile Include="Models\ForoPublicoModel.cs" />
+    <Compile Include="Models\GraficaModel.cs" />
     <Compile Include="Models\HorariosModel.cs" />
     <Compile Include="Models\InventarioAcupunturaModel.cs" />
     <Compile Include="Models\InventarioHomeopatiaModel.cs" />
