@@ -43,7 +43,7 @@
                 <TextBox Margin="5" x:Name="txtLongitud" Grid.Row="5" materialDesign:HintAssist.Hint="Longitud" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
                 <TextBox Margin="5" x:Name="txtGrietas" Grid.Row="6" materialDesign:HintAssist.Hint="Grietas" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
                 <TextBox Margin="5" x:Name="txtSaburra" Grid.Row="7" materialDesign:HintAssist.Hint="Saburra" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
-                <TextBox Margin="5" x:Name="txtHumectacion" Grid.Row="8" materialDesign:HintAssist.Hint="Humectacion de la lengua" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Margin="5" x:Name="txtHumectacion" Grid.Row="8" materialDesign:HintAssist.Hint="Humectación de la lengua" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="12" materialDesign:HintAssist.IsFloating="True" />
             </Grid>
 
             <Grid Grid.Column="1">
@@ -84,9 +84,7 @@
                 <TextBox Margin="5" PreviewTextInput="TxtManoDerecha_PreviewTextInput" x:Name="txtManoIzquierda" Grid.Column="1" materialDesign:HintAssist.Hint="Mano izquierda" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                 </Grid>
 
-                <RichTextBox Grid.Row="1" x:Name="Sintomas" materialDesign:HintAssist.Hint="Sintomas" FontSize="20"></RichTextBox>
-                
-                
+                <RichTextBox Grid.Row="1" x:Name="Sintomas" materialDesign:HintAssist.Hint="Síntomas" FontSize="20"></RichTextBox>
             </Grid>
 
             <Grid Grid.Column="1">

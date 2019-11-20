@@ -47,7 +47,7 @@ namespace MI_HOPAC.Views
                 else
                     MessageBox.Show("Codigo incorrecto!");
             else
-                MessageBox.Show("Ingresa tu codigo de verificacion!");
+                MessageBox.Show("Ingresa tu código de verificación!");
         }
 
         public string Nombre { get { return txtCode.Text; } }

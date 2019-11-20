@@ -99,7 +99,7 @@ namespace MI_HOPAC.Views
 
                 client.InsertarCitaAcupuntura(expediente);
 
-                MessageBox.Show("Informacion Guardada Exitosamente");
+                MessageBox.Show("Información guardada exitosamente");
 
                 var vista = new RecetaAcupuntura();
 

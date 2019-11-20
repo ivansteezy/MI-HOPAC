@@ -115,7 +115,7 @@ namespace MI_HOPAC.Views
                     break;
                 case (int)Pagina.InventarioHomeopatico:
                     main_Frame.Content = new Inventario();
-                    title.Text = "Inventario Homeopatico";
+                    title.Text = "Inventario Homeopatía";
                     break;
                 case (int)Pagina.InventarioAcupuntura:
                     main_Frame.Content = new InventarioA();
@@ -127,7 +127,7 @@ namespace MI_HOPAC.Views
                     break;
                 case (int)Pagina.ExpedientesHom:
                     main_Frame.Content = new ExpedientesHomeopaticos();
-                    title.Text = "Expediendes Homeopaticos";
+                    title.Text = "Expediendes Homeopatía";
                     break;
                 case (int)Pagina.ExpedientesAcu:
                     main_Frame.Content = new ExpedienteAcupunturas(); 

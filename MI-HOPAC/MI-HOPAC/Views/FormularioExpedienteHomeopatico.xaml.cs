@@ -101,7 +101,7 @@ namespace MI_HOPAC.Views
             try
             {
                 InsertarFormulario();
-                MessageBox.Show("Datos insertados correctamente");
+                MessageBox.Show("Expediente creado correctamente");
 
                 var vista = new ExpedientesHomeopaticos();
 

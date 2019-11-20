@@ -83,7 +83,7 @@
                                 </Grid>
                             </Grid>
 
-                            <TextBox x:Name="txtOcupacion" Margin="10" Grid.Row="1" materialDesign:HintAssist.Hint="Ocupacion" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
+                            <TextBox x:Name="txtOcupacion" Margin="10" Grid.Row="1" materialDesign:HintAssist.Hint="Ocupación" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                             <TextBox x:Name="txtCorreo" Margin="10" Grid.Row="2" materialDesign:HintAssist.Hint="Correo-e" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" materialDesign:HintAssist.IsFloating="True" />
                         </Grid>
                     </Grid>
@@ -127,7 +127,7 @@
                                 </Grid>
 
                                 <Grid Grid.Column="0">
-                                    <TextBlock Text="Telefono" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+                                    <TextBlock Text="Teléfono" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
                                 </Grid>
                             </Grid>
 

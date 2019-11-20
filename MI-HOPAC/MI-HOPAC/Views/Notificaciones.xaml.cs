@@ -39,7 +39,7 @@ namespace MI_HOPAC.Views
                 foreach (var i in Res)
                 {
                     var nuevo = new Foundation.InventarioAcupuntura();
-                    nuevo.Nombre = i.m_Nombre + " Esta terminandose";
+                    nuevo.Nombre = i.m_Nombre + " está terminandose";
                     Lista.Add(nuevo);
                 }
             }
@@ -51,7 +51,7 @@ namespace MI_HOPAC.Views
                 foreach (var i in resp)
                 {
                     var nuevo = new Foundation.InventarioAcupuntura();
-                    nuevo.Nombre = i.m_Nombre + " Esta terminandose";
+                    nuevo.Nombre = i.m_Nombre + " está terminandose";
                     Lista.Add(nuevo);
                 }
             }
@@ -63,7 +63,7 @@ namespace MI_HOPAC.Views
                 for(int i = citas.Count(); i > UserControl.Citas; i--)
                 {
                     var nuevo = new Foundation.InventarioAcupuntura();
-                    nuevo.Nombre = "Usted tiene una nueva Cita";
+                    nuevo.Nombre = "Usted tiene una nueva cita!";
                     Lista.Add(nuevo);
                 }
                 UserControl.Citas = citas.Count();

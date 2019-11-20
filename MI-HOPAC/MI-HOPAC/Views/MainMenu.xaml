@@ -126,7 +126,7 @@
                     <ListViewItem Height="60" x:Name="InventarioHomeopatia">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Margin="5" Kind="MedicalBag" Width="25" Height="25" VerticalAlignment="Center"/>
-                            <TextBlock Margin="20 0 0 0" Text="Inventario homeopatia" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Margin="20 0 0 0" Text="Inventario Homeopatía" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
 

@@ -39,7 +39,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Text="Marque los dias y horas que trabaja a la semana" />
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" Text="Marque los días y horas que trabaja a la semana" />
 
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -64,7 +64,7 @@
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="Miércoles" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="Jueves" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="Viernes" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Sabado" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Sábado" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="Domingo" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                     <CheckBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="lunes"/>

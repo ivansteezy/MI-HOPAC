@@ -20,8 +20,8 @@
                 <TextBox x:Name="txt_Nombre" FontSize="20" materialDesign:HintAssist.Hint="Nombre del evento" materialDesign:HintAssist.IsFloating="True"></TextBox>
                 <materialDesign:TimePicker x:Name="txt_HoraEvento" Margin="0 40 0 0" FontSize="20" materialDesign:HintAssist.Hint="Hora del evento" materialDesign:HintAssist.IsFloating="True"></materialDesign:TimePicker>
                 <DatePicker x:Name="txt_FechaEvento" Margin="0 30 0 0" Height="40" FontSize="20" materialDesign:HintAssist.Hint="Fecha del evento"></DatePicker>
-                <TextBox x:Name="txt_GuiaEvento" Margin="0 40 0 0" FontSize="20" materialDesign:HintAssist.Hint="Guia del evento" materialDesign:HintAssist.IsFloating="True"></TextBox>
-                <TextBox x:Name="txt_Ubicacion" Margin="0 40 0 0" FontSize="20" materialDesign:HintAssist.Hint="Ubicacion" materialDesign:HintAssist.IsFloating="True"></TextBox>
+                <TextBox x:Name="txt_GuiaEvento" Margin="0 40 0 0" FontSize="20" materialDesign:HintAssist.Hint="Guía del evento" materialDesign:HintAssist.IsFloating="True"></TextBox>
+                <TextBox x:Name="txt_Ubicacion" Margin="0 40 0 0" FontSize="20" materialDesign:HintAssist.Hint="Ubicación" materialDesign:HintAssist.IsFloating="True"></TextBox>
             </StackPanel>
         </Grid>
 

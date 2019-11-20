@@ -22,8 +22,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Grid.Row="0">Elige la ubicacion de tu consultorio</TextBlock>
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Grid.Row="0">Elige la ubicación de tu consultorio</TextBlock>
         <WebBrowser Grid.Column="1"  x:Name="mapsBrowser" Grid.Row="1"></WebBrowser>
-        <Button Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Click="Button_Click">Agregar ubicacion</Button>
+        <Button Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Click="Button_Click">Agregar ubicación</Button>
     </Grid>
 </Page>
