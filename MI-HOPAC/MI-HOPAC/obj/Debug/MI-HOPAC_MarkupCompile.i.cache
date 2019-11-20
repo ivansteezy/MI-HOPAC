@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\obj\Debug\
 MI_HOPAC
 none
 false
 DEBUG;TRACE
-C:\Users\Iván\Documents\Mi-Hopac\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
+C:\Users\LD\Documents\Natisoft\Mi-Hopac\MI-HOPAC\MI-HOPAC\App.xaml
 38589344011
 
-61823688896
-32-1500430846
+61-1748118563
+32-1432731046
 Views\Agenda.xaml;Views\CitasAcupuntura.xaml;Views\CitasHomeopatia.xaml;Views\ComentariosPrivado.xaml;Views\Dashboard.xaml;Views\Estadisticas.xaml;Views\ExpedienteAcupunturas.xaml;Views\ExpedientesHomeopaticos.xaml;Views\FormularioAcupuntura.xaml;Views\FormularioExpedienteHomeopatico.xaml;Views\HorarioDialog.xaml;Views\InformacionPerfil.xaml;Views\Eventos.xaml;Views\EventosViewer.xaml;Views\ForoPrivado.xaml;Views\IniciaSesion.xaml;Views\Inventario.xaml;Views\InventarioA.xaml;Views\InventarioAcupunturaDialog.xaml;Views\InventarioHomeopatiaDialog.xaml;Views\MainMenu.xaml;Views\MiCuenta.xaml;Views\NotasBoton.xaml;Views\NotasDigNueva.xaml;Views\NotasInfoBoton.xaml;Views\NotasInfoDialog.xaml;Views\NotasInfoNueva.xaml;Views\NotasInformativas.xaml;Views\Notificaciones.xaml;Views\NuevaCitaDialog.xaml;Views\NuevoEvento.xaml;Views\MainExpedientes.xaml;Views\Receta.xaml;Views\RecetaAcupuntura.xaml;Views\Registro.xaml;Views\Repertorizacion.xaml;Views\Ubicacion.xaml;Views\VerificacionDialog.xaml;
 
 False

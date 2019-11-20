@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://natiservice.gear.host/MainWebService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44336/MainWebService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MainWebService1.disco" MetadataType="Disco" ID="c42d0f44-8e7e-4c23-821c-72641aa1afba" SourceId="1" SourceUrl="http://natiservice.gear.host/MainWebService.asmx?disco" />
-    <MetadataFile FileName="MainWebService1.wsdl" MetadataType="Wsdl" ID="5de914a0-0e1a-4c34-aeb8-a050e530481c" SourceId="1" SourceUrl="http://natiservice.gear.host/MainWebService.asmx?wsdl" />
+    <MetadataFile FileName="MainWebService.wsdl" MetadataType="Wsdl" ID="01fcfe99-cd4f-4829-ac82-19d746d2ca84" SourceId="1" SourceUrl="https://localhost:44336/MainWebService.asmx?wsdl" />
+    <MetadataFile FileName="MainWebService.disco" MetadataType="Disco" ID="1cfa39c7-7015-4237-a9a5-e56d49a5f97e" SourceId="1" SourceUrl="https://localhost:44336/MainWebService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

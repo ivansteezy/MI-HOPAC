@@ -78,6 +78,7 @@ namespace WebService.Controllers
                 result.m_Sintomas = DataEncryptor.Decrypt(item.m_Sintomas);
                 result.m_Fecha = item.m_Fecha;
                 result.m_fkPaciente = item.m_fkPaciente;
+                result.m_IdCitasAcupunturaModel = item.m_IdCitasAcupunturaModel;
                 resultLista.Add(result);
             }
             return resultLista;
@@ -93,6 +94,33 @@ namespace WebService.Controllers
             return Select("select * from citasacupuntura where idcitasacupuntura = " + pk.ToString());
         }
 
+
+        public List<CitasAcupunturaModel> ConsultaDecryptById(int pk)
+        {
+            List<CitasAcupunturaModel> resultLista = new List<CitasAcupunturaModel>();
+            var lista = ConsultaCitasAcupunturabyId(pk);
+
+            foreach (var item in lista)
+            {
+                var result = new CitasAcupunturaModel();
+                result.m_Nombre = DataEncryptor.Decrypt(item.m_Nombre);
+                result.m_Shen = DataEncryptor.Decrypt(item.m_Shen);
+                result.m_Color = DataEncryptor.Decrypt(item.m_Color);
+                result.m_Tonicidad = DataEncryptor.Decrypt(item.m_Tonicidad);
+                result.m_Longitud = DataEncryptor.Decrypt(item.m_Longitud);
+                result.m_Grietas = DataEncryptor.Decrypt(item.m_Grietas);
+                result.m_Saburra = DataEncryptor.Decrypt(item.m_Saburra);
+                result.m_Humectacion = DataEncryptor.Decrypt(item.m_Humectacion);
+                result.m_PulsoD = DataEncryptor.Decrypt(item.m_PulsoD);
+                result.m_PulsoI = DataEncryptor.Decrypt(item.m_PulsoI);
+                result.m_Sintomas = DataEncryptor.Decrypt(item.m_Sintomas);
+                result.m_Fecha = item.m_Fecha;
+                result.m_fkPaciente = item.m_fkPaciente;
+                result.m_IdCitasAcupunturaModel = item.m_IdCitasAcupunturaModel;
+                resultLista.Add(result);
+            }
+            return resultLista;
+        }
 
     }
 }

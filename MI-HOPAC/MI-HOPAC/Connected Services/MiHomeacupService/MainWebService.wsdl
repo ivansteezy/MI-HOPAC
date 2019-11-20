@@ -2,17 +2,377 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="GetComentariosPublico">
+      <s:element name="GetCodigoInformacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCodigoInformacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCodigoInformacionResult" type="tns:ArrayOfCodigosModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCodigosModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CodigosModel" nillable="true" type="tns:CodigosModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CodigosModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_idCodigos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Codigo" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_fkDoctor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_fkReceta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertTratamiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Calificacion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkPregunta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkReceta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTratamientoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTratamientosbyPregunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPregunta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyPreguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyPreguntaResult" type="tns:ArrayOfTratamientoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTratamientoModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TratamientoModel" nillable="true" type="tns:TratamientoModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TratamientoModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdTratamiento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Fecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Calificaion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkPregunta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkPaciente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTratamientosbyDoctor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyDoctorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyDoctorResult" type="tns:ArrayOfTratamientoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyPacienteResult" type="tns:ArrayOfTratamientoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyReceta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkReceta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTratamientosbyRecetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyRecetaResult" type="tns:ArrayOfTratamientoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaPacientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaPacientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCuentaPacientesResult" type="tns:CuentaPacientesModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CuentaPacientesModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdCuenta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Correo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkPaciente" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCuentaPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentaPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCuentaPacienteResult" type="tns:CuentaPacientesModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPacienteResult" type="tns:PacienteModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PacienteModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdPaciente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorHomeopatia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorAcupuntura" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePacienteHom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkReceta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePacienteHomResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdatePacienteAcu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePacienteAcuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MovilGetDoctores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovilGetDoctoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovilGetDoctoresResult" type="tns:DoctoresModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DoctoresModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_Pk" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Cedula" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Ubicacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetForoPrivadoPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pkPac" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetForoPrivadoPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetForoPrivadoPacienteResult" type="tns:ArrayOfForoPrivadoPacienteModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfForoPrivadoPacienteModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ForoPrivadoPacienteModel" nillable="true" type="tns:ForoPrivadoPacienteModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ForoPrivadoPacienteModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdCForoPrivado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Fecha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertForoPrivado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertForoPrivadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetComentariosPrivado">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="fkForo" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetComentariosPublicoResponse">
+      <s:element name="GetComentariosPrivadoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetComentariosPublicoResult" type="tns:ArrayOfForoPublicoModel" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetComentariosPrivadoResult" type="tns:ArrayOfComentariosPrivadoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfComentariosPrivadoModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ComentariosPrivadoModel" nillable="true" type="tns:ComentariosPrivadoModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ComentariosPrivadoModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdComentariosPrivado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Fecha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_TipoDeCuenta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_FkForo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertComentariosPrivado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipodeCuenta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkForo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComentariosPrivadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPacienteEventos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPacienteEventosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPacienteEventosResult" type="tns:ArrayOfPacienteEventosModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPacienteEventosModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PacienteEventosModel" nillable="true" type="tns:PacienteEventosModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PacienteEventosModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_IdEventos" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Ubicacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_Guia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_fkDoctor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_Asistencia" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertPacienteEventos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkEvento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPacienteEventosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AsistenciaPacienteEventos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkEvento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="asistencia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsistenciaPacienteEventosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetForoPublico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetForoPublicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetForoPublicoResult" type="tns:ArrayOfForoPublicoModel" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -30,6 +390,32 @@
           <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="InsertForoPublico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertForoPublicoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetComentariosPublico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fkForo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComentariosPublicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetComentariosPublicoResult" type="tns:ArrayOfForoPublicoModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InsertComentariosPublico">
         <s:complexType>
           <s:sequence>
@@ -265,14 +651,6 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="CuentaPacientesModel" nillable="true" type="tns:CuentaPacientesModel" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="CuentaPacientesModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdCuenta" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Correo" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Password" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkPaciente" type="s:int" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="DeleteCuentaPacientes">
         <s:complexType>
           <s:sequence>
@@ -300,16 +678,6 @@
       <s:complexType name="ArrayOfPacienteModel">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="PacienteModel" nillable="true" type="tns:PacienteModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PacienteModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdPaciente" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorHomeopatia" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctorAcupuntura" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetDias">
@@ -354,15 +722,6 @@
       <s:complexType name="ArrayOfDoctoresModel">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="DoctoresModel" nillable="true" type="tns:DoctoresModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="DoctoresModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_Pk" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Apellidos" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Cedula" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Ubicacion" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="DeleteDoctores">
@@ -1300,367 +1659,134 @@
       <s:element name="InsertCodigosResponse">
         <s:complexType />
       </s:element>
-      <s:element name="GetCodigoInformacion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:double" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCodigoInformacionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCodigoInformacionResult" type="tns:ArrayOfCodigosModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCodigosModel">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CodigosModel" nillable="true" type="tns:CodigosModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CodigosModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_idCodigos" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Codigo" type="s:double" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_fkDoctor" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_fkReceta" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="InsertTratamiento">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="Calificacion" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="FkPregunta" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkReceta" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertTratamientoResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetTratamientosbyPregunta">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="FkPregunta" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyPreguntaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyPreguntaResult" type="tns:ArrayOfTratamientoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfTratamientoModel">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="TratamientoModel" nillable="true" type="tns:TratamientoModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="TratamientoModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdTratamiento" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Fecha" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Calificaion" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkPregunta" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkDoctor" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkPaciente" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkReceta" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="GetTratamientosbyDoctor">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyDoctorResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyDoctorResult" type="tns:ArrayOfTratamientoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyPaciente">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyPacienteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyPacienteResult" type="tns:ArrayOfTratamientoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyReceta">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="FkReceta" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTratamientosbyRecetaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTratamientosbyRecetaResult" type="tns:ArrayOfTratamientoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertCuentaPacientes">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="appellidos" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertCuentaPacientesResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="InsertCuentaPacientesResult" type="tns:CuentaPacientesModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCuentaPaciente">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCuentaPacienteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCuentaPacienteResult" type="tns:CuentaPacientesModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetPaciente">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetPacienteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetPacienteResult" type="tns:PacienteModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="UpdatePacienteHom">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkReceta" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="UpdatePacienteHomResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="UpdatePacienteAcu">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="UpdatePacienteAcuResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="MovilGetDoctores">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MovilGetDoctoresResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="MovilGetDoctoresResult" type="tns:DoctoresModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetForoPrivadoPaciente">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="pkPac" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="pkDoc" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetForoPrivadoPacienteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetForoPrivadoPacienteResult" type="tns:ArrayOfForoPrivadoPacienteModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfForoPrivadoPacienteModel">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ForoPrivadoPacienteModel" nillable="true" type="tns:ForoPrivadoPacienteModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ForoPrivadoPacienteModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdCForoPrivado" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Fecha" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="InsertForoPrivado">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkDoctor" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertForoPrivadoResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetComentariosPrivado">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="fkForo" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetComentariosPrivadoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetComentariosPrivadoResult" type="tns:ArrayOfComentariosPrivadoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfComentariosPrivadoModel">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ComentariosPrivadoModel" nillable="true" type="tns:ComentariosPrivadoModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ComentariosPrivadoModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdComentariosPrivado" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Texto" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Fecha" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_TipoDeCuenta" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_FkForo" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="InsertComentariosPrivado">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="TipodeCuenta" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkForo" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertComentariosPrivadoResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetPacienteEventos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="pk" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetPacienteEventosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetPacienteEventosResult" type="tns:ArrayOfPacienteEventosModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfPacienteEventosModel">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="PacienteEventosModel" nillable="true" type="tns:PacienteEventosModel" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PacienteEventosModel">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="m_IdEventos" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Nombre" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Fecha" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Ubicacion" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="m_Guia" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_fkDoctor" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="m_Asistencia" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="InsertPacienteEventos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkEvento" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertPacienteEventosResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="AsistenciaPacienteEventos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkEvento" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="asistencia" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AsistenciaPacienteEventosResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetForoPublico">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetForoPublicoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetForoPublicoResult" type="tns:ArrayOfForoPublicoModel" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertForoPublico">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="fkPaciente" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="InsertForoPublicoResponse">
-        <s:complexType />
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetCodigoInformacionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCodigoInformacion" />
+  </wsdl:message>
+  <wsdl:message name="GetCodigoInformacionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCodigoInformacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTratamientoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTratamiento" />
+  </wsdl:message>
+  <wsdl:message name="InsertTratamientoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTratamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyPreguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyPregunta" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyPreguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyPreguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyDoctorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyDoctor" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyDoctorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyPaciente" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyRecetaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyReceta" />
+  </wsdl:message>
+  <wsdl:message name="GetTratamientosbyRecetaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTratamientosbyRecetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaPacientesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCuentaPacientes" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaPacientesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCuentaPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentaPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCuentaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentaPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCuentaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaciente" />
+  </wsdl:message>
+  <wsdl:message name="GetPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteHomSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteHom" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteHomSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteHomResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteAcuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteAcu" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePacienteAcuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePacienteAcuResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovilGetDoctoresSoapIn">
+    <wsdl:part name="parameters" element="tns:MovilGetDoctores" />
+  </wsdl:message>
+  <wsdl:message name="MovilGetDoctoresSoapOut">
+    <wsdl:part name="parameters" element="tns:MovilGetDoctoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPrivadoPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetForoPrivadoPaciente" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPrivadoPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetForoPrivadoPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertForoPrivado" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertForoPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetComentariosPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComentariosPrivado" />
+  </wsdl:message>
+  <wsdl:message name="GetComentariosPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComentariosPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComentariosPrivadoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComentariosPrivado" />
+  </wsdl:message>
+  <wsdl:message name="InsertComentariosPrivadoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComentariosPrivadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPacienteEventosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPacienteEventos" />
+  </wsdl:message>
+  <wsdl:message name="GetPacienteEventosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPacienteEventosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPacienteEventosSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPacienteEventos" />
+  </wsdl:message>
+  <wsdl:message name="InsertPacienteEventosSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPacienteEventosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AsistenciaPacienteEventosSoapIn">
+    <wsdl:part name="parameters" element="tns:AsistenciaPacienteEventos" />
+  </wsdl:message>
+  <wsdl:message name="AsistenciaPacienteEventosSoapOut">
+    <wsdl:part name="parameters" element="tns:AsistenciaPacienteEventosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPublicoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetForoPublico" />
+  </wsdl:message>
+  <wsdl:message name="GetForoPublicoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetForoPublicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPublicoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertForoPublico" />
+  </wsdl:message>
+  <wsdl:message name="InsertForoPublicoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertForoPublicoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetComentariosPublicoSoapIn">
     <wsdl:part name="parameters" element="tns:GetComentariosPublico" />
   </wsdl:message>
@@ -2099,133 +2225,91 @@
   <wsdl:message name="InsertCodigosSoapOut">
     <wsdl:part name="parameters" element="tns:InsertCodigosResponse" />
   </wsdl:message>
-  <wsdl:message name="GetCodigoInformacionSoapIn">
-    <wsdl:part name="parameters" element="tns:GetCodigoInformacion" />
-  </wsdl:message>
-  <wsdl:message name="GetCodigoInformacionSoapOut">
-    <wsdl:part name="parameters" element="tns:GetCodigoInformacionResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertTratamientoSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertTratamiento" />
-  </wsdl:message>
-  <wsdl:message name="InsertTratamientoSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertTratamientoResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyPreguntaSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyPregunta" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyPreguntaSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyPreguntaResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyDoctorSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyDoctor" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyDoctorSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyDoctorResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyPacienteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyPaciente" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyPacienteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyPacienteResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyRecetaSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyReceta" />
-  </wsdl:message>
-  <wsdl:message name="GetTratamientosbyRecetaSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTratamientosbyRecetaResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertCuentaPacientesSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertCuentaPacientes" />
-  </wsdl:message>
-  <wsdl:message name="InsertCuentaPacientesSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertCuentaPacientesResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetCuentaPacienteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetCuentaPaciente" />
-  </wsdl:message>
-  <wsdl:message name="GetCuentaPacienteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetCuentaPacienteResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetPacienteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetPaciente" />
-  </wsdl:message>
-  <wsdl:message name="GetPacienteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetPacienteResponse" />
-  </wsdl:message>
-  <wsdl:message name="UpdatePacienteHomSoapIn">
-    <wsdl:part name="parameters" element="tns:UpdatePacienteHom" />
-  </wsdl:message>
-  <wsdl:message name="UpdatePacienteHomSoapOut">
-    <wsdl:part name="parameters" element="tns:UpdatePacienteHomResponse" />
-  </wsdl:message>
-  <wsdl:message name="UpdatePacienteAcuSoapIn">
-    <wsdl:part name="parameters" element="tns:UpdatePacienteAcu" />
-  </wsdl:message>
-  <wsdl:message name="UpdatePacienteAcuSoapOut">
-    <wsdl:part name="parameters" element="tns:UpdatePacienteAcuResponse" />
-  </wsdl:message>
-  <wsdl:message name="MovilGetDoctoresSoapIn">
-    <wsdl:part name="parameters" element="tns:MovilGetDoctores" />
-  </wsdl:message>
-  <wsdl:message name="MovilGetDoctoresSoapOut">
-    <wsdl:part name="parameters" element="tns:MovilGetDoctoresResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetForoPrivadoPacienteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetForoPrivadoPaciente" />
-  </wsdl:message>
-  <wsdl:message name="GetForoPrivadoPacienteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetForoPrivadoPacienteResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertForoPrivadoSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertForoPrivado" />
-  </wsdl:message>
-  <wsdl:message name="InsertForoPrivadoSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertForoPrivadoResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetComentariosPrivadoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetComentariosPrivado" />
-  </wsdl:message>
-  <wsdl:message name="GetComentariosPrivadoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetComentariosPrivadoResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertComentariosPrivadoSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertComentariosPrivado" />
-  </wsdl:message>
-  <wsdl:message name="InsertComentariosPrivadoSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertComentariosPrivadoResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetPacienteEventosSoapIn">
-    <wsdl:part name="parameters" element="tns:GetPacienteEventos" />
-  </wsdl:message>
-  <wsdl:message name="GetPacienteEventosSoapOut">
-    <wsdl:part name="parameters" element="tns:GetPacienteEventosResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertPacienteEventosSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertPacienteEventos" />
-  </wsdl:message>
-  <wsdl:message name="InsertPacienteEventosSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertPacienteEventosResponse" />
-  </wsdl:message>
-  <wsdl:message name="AsistenciaPacienteEventosSoapIn">
-    <wsdl:part name="parameters" element="tns:AsistenciaPacienteEventos" />
-  </wsdl:message>
-  <wsdl:message name="AsistenciaPacienteEventosSoapOut">
-    <wsdl:part name="parameters" element="tns:AsistenciaPacienteEventosResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetForoPublicoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetForoPublico" />
-  </wsdl:message>
-  <wsdl:message name="GetForoPublicoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetForoPublicoResponse" />
-  </wsdl:message>
-  <wsdl:message name="InsertForoPublicoSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertForoPublico" />
-  </wsdl:message>
-  <wsdl:message name="InsertForoPublicoSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertForoPublicoResponse" />
-  </wsdl:message>
   <wsdl:portType name="MainWebServiceSoap">
+    <wsdl:operation name="GetCodigoInformacion">
+      <wsdl:input message="tns:GetCodigoInformacionSoapIn" />
+      <wsdl:output message="tns:GetCodigoInformacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTratamiento">
+      <wsdl:input message="tns:InsertTratamientoSoapIn" />
+      <wsdl:output message="tns:InsertTratamientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPregunta">
+      <wsdl:input message="tns:GetTratamientosbyPreguntaSoapIn" />
+      <wsdl:output message="tns:GetTratamientosbyPreguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyDoctor">
+      <wsdl:input message="tns:GetTratamientosbyDoctorSoapIn" />
+      <wsdl:output message="tns:GetTratamientosbyDoctorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPaciente">
+      <wsdl:input message="tns:GetTratamientosbyPacienteSoapIn" />
+      <wsdl:output message="tns:GetTratamientosbyPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyReceta">
+      <wsdl:input message="tns:GetTratamientosbyRecetaSoapIn" />
+      <wsdl:output message="tns:GetTratamientosbyRecetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaPacientes">
+      <wsdl:input message="tns:InsertCuentaPacientesSoapIn" />
+      <wsdl:output message="tns:InsertCuentaPacientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaPaciente">
+      <wsdl:input message="tns:GetCuentaPacienteSoapIn" />
+      <wsdl:output message="tns:GetCuentaPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaciente">
+      <wsdl:input message="tns:GetPacienteSoapIn" />
+      <wsdl:output message="tns:GetPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <wsdl:input message="tns:UpdatePacienteHomSoapIn" />
+      <wsdl:output message="tns:UpdatePacienteHomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <wsdl:input message="tns:UpdatePacienteAcuSoapIn" />
+      <wsdl:output message="tns:UpdatePacienteAcuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovilGetDoctores">
+      <wsdl:input message="tns:MovilGetDoctoresSoapIn" />
+      <wsdl:output message="tns:MovilGetDoctoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivadoPaciente">
+      <wsdl:input message="tns:GetForoPrivadoPacienteSoapIn" />
+      <wsdl:output message="tns:GetForoPrivadoPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <wsdl:input message="tns:InsertForoPrivadoSoapIn" />
+      <wsdl:output message="tns:InsertForoPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComentariosPrivado">
+      <wsdl:input message="tns:GetComentariosPrivadoSoapIn" />
+      <wsdl:output message="tns:GetComentariosPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComentariosPrivado">
+      <wsdl:input message="tns:InsertComentariosPrivadoSoapIn" />
+      <wsdl:output message="tns:InsertComentariosPrivadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPacienteEventos">
+      <wsdl:input message="tns:GetPacienteEventosSoapIn" />
+      <wsdl:output message="tns:GetPacienteEventosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPacienteEventos">
+      <wsdl:input message="tns:InsertPacienteEventosSoapIn" />
+      <wsdl:output message="tns:InsertPacienteEventosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AsistenciaPacienteEventos">
+      <wsdl:input message="tns:AsistenciaPacienteEventosSoapIn" />
+      <wsdl:output message="tns:AsistenciaPacienteEventosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPublico">
+      <wsdl:input message="tns:GetForoPublicoSoapIn" />
+      <wsdl:output message="tns:GetForoPublicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPublico">
+      <wsdl:input message="tns:InsertForoPublicoSoapIn" />
+      <wsdl:output message="tns:InsertForoPublicoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetComentariosPublico">
       <wsdl:input message="tns:GetComentariosPublicoSoapIn" />
       <wsdl:output message="tns:GetComentariosPublicoSoapOut" />
@@ -2518,93 +2602,198 @@
       <wsdl:input message="tns:InsertCodigosSoapIn" />
       <wsdl:output message="tns:InsertCodigosSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetCodigoInformacion">
-      <wsdl:input message="tns:GetCodigoInformacionSoapIn" />
-      <wsdl:output message="tns:GetCodigoInformacionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertTratamiento">
-      <wsdl:input message="tns:InsertTratamientoSoapIn" />
-      <wsdl:output message="tns:InsertTratamientoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPregunta">
-      <wsdl:input message="tns:GetTratamientosbyPreguntaSoapIn" />
-      <wsdl:output message="tns:GetTratamientosbyPreguntaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyDoctor">
-      <wsdl:input message="tns:GetTratamientosbyDoctorSoapIn" />
-      <wsdl:output message="tns:GetTratamientosbyDoctorSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPaciente">
-      <wsdl:input message="tns:GetTratamientosbyPacienteSoapIn" />
-      <wsdl:output message="tns:GetTratamientosbyPacienteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyReceta">
-      <wsdl:input message="tns:GetTratamientosbyRecetaSoapIn" />
-      <wsdl:output message="tns:GetTratamientosbyRecetaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertCuentaPacientes">
-      <wsdl:input message="tns:InsertCuentaPacientesSoapIn" />
-      <wsdl:output message="tns:InsertCuentaPacientesSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCuentaPaciente">
-      <wsdl:input message="tns:GetCuentaPacienteSoapIn" />
-      <wsdl:output message="tns:GetCuentaPacienteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPaciente">
-      <wsdl:input message="tns:GetPacienteSoapIn" />
-      <wsdl:output message="tns:GetPacienteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteHom">
-      <wsdl:input message="tns:UpdatePacienteHomSoapIn" />
-      <wsdl:output message="tns:UpdatePacienteHomSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteAcu">
-      <wsdl:input message="tns:UpdatePacienteAcuSoapIn" />
-      <wsdl:output message="tns:UpdatePacienteAcuSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MovilGetDoctores">
-      <wsdl:input message="tns:MovilGetDoctoresSoapIn" />
-      <wsdl:output message="tns:MovilGetDoctoresSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPrivadoPaciente">
-      <wsdl:input message="tns:GetForoPrivadoPacienteSoapIn" />
-      <wsdl:output message="tns:GetForoPrivadoPacienteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPrivado">
-      <wsdl:input message="tns:InsertForoPrivadoSoapIn" />
-      <wsdl:output message="tns:InsertForoPrivadoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetComentariosPrivado">
-      <wsdl:input message="tns:GetComentariosPrivadoSoapIn" />
-      <wsdl:output message="tns:GetComentariosPrivadoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertComentariosPrivado">
-      <wsdl:input message="tns:InsertComentariosPrivadoSoapIn" />
-      <wsdl:output message="tns:InsertComentariosPrivadoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPacienteEventos">
-      <wsdl:input message="tns:GetPacienteEventosSoapIn" />
-      <wsdl:output message="tns:GetPacienteEventosSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertPacienteEventos">
-      <wsdl:input message="tns:InsertPacienteEventosSoapIn" />
-      <wsdl:output message="tns:InsertPacienteEventosSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="AsistenciaPacienteEventos">
-      <wsdl:input message="tns:AsistenciaPacienteEventosSoapIn" />
-      <wsdl:output message="tns:AsistenciaPacienteEventosSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPublico">
-      <wsdl:input message="tns:GetForoPublicoSoapIn" />
-      <wsdl:output message="tns:GetForoPublicoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPublico">
-      <wsdl:input message="tns:InsertForoPublicoSoapIn" />
-      <wsdl:output message="tns:InsertForoPublicoSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MainWebServiceSoap" type="tns:MainWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCodigoInformacion">
+      <soap:operation soapAction="http://tempuri.org/GetCodigoInformacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTratamiento">
+      <soap:operation soapAction="http://tempuri.org/InsertTratamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPregunta">
+      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyPregunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyDoctor">
+      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPaciente">
+      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyReceta">
+      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyReceta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaPacientes">
+      <soap:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaPaciente">
+      <soap:operation soapAction="http://tempuri.org/GetCuentaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaciente">
+      <soap:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <soap:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <soap:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovilGetDoctores">
+      <soap:operation soapAction="http://tempuri.org/MovilGetDoctores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivadoPaciente">
+      <soap:operation soapAction="http://tempuri.org/GetForoPrivadoPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <soap:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComentariosPrivado">
+      <soap:operation soapAction="http://tempuri.org/GetComentariosPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComentariosPrivado">
+      <soap:operation soapAction="http://tempuri.org/InsertComentariosPrivado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPacienteEventos">
+      <soap:operation soapAction="http://tempuri.org/GetPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPacienteEventos">
+      <soap:operation soapAction="http://tempuri.org/InsertPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsistenciaPacienteEventos">
+      <soap:operation soapAction="http://tempuri.org/AsistenciaPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPublico">
+      <soap:operation soapAction="http://tempuri.org/GetForoPublico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPublico">
+      <soap:operation soapAction="http://tempuri.org/InsertForoPublico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetComentariosPublico">
       <soap:operation soapAction="http://tempuri.org/GetComentariosPublico" style="document" />
       <wsdl:input>
@@ -3262,198 +3451,198 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetCodigoInformacion">
-      <soap:operation soapAction="http://tempuri.org/GetCodigoInformacion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertTratamiento">
-      <soap:operation soapAction="http://tempuri.org/InsertTratamiento" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPregunta">
-      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyPregunta" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyDoctor">
-      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyDoctor" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPaciente">
-      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyPaciente" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyReceta">
-      <soap:operation soapAction="http://tempuri.org/GetTratamientosbyReceta" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertCuentaPacientes">
-      <soap:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCuentaPaciente">
-      <soap:operation soapAction="http://tempuri.org/GetCuentaPaciente" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPaciente">
-      <soap:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteHom">
-      <soap:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteAcu">
-      <soap:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MovilGetDoctores">
-      <soap:operation soapAction="http://tempuri.org/MovilGetDoctores" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPrivadoPaciente">
-      <soap:operation soapAction="http://tempuri.org/GetForoPrivadoPaciente" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPrivado">
-      <soap:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetComentariosPrivado">
-      <soap:operation soapAction="http://tempuri.org/GetComentariosPrivado" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertComentariosPrivado">
-      <soap:operation soapAction="http://tempuri.org/InsertComentariosPrivado" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPacienteEventos">
-      <soap:operation soapAction="http://tempuri.org/GetPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertPacienteEventos">
-      <soap:operation soapAction="http://tempuri.org/InsertPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AsistenciaPacienteEventos">
-      <soap:operation soapAction="http://tempuri.org/AsistenciaPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPublico">
-      <soap:operation soapAction="http://tempuri.org/GetForoPublico" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPublico">
-      <soap:operation soapAction="http://tempuri.org/InsertForoPublico" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MainWebServiceSoap12" type="tns:MainWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCodigoInformacion">
+      <soap12:operation soapAction="http://tempuri.org/GetCodigoInformacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTratamiento">
+      <soap12:operation soapAction="http://tempuri.org/InsertTratamiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPregunta">
+      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyPregunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyDoctor">
+      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyDoctor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyPaciente">
+      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTratamientosbyReceta">
+      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyReceta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaPacientes">
+      <soap12:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaPaciente">
+      <soap12:operation soapAction="http://tempuri.org/GetCuentaPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaciente">
+      <soap12:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteHom">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePacienteAcu">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovilGetDoctores">
+      <soap12:operation soapAction="http://tempuri.org/MovilGetDoctores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPrivadoPaciente">
+      <soap12:operation soapAction="http://tempuri.org/GetForoPrivadoPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPrivado">
+      <soap12:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComentariosPrivado">
+      <soap12:operation soapAction="http://tempuri.org/GetComentariosPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComentariosPrivado">
+      <soap12:operation soapAction="http://tempuri.org/InsertComentariosPrivado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPacienteEventos">
+      <soap12:operation soapAction="http://tempuri.org/GetPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPacienteEventos">
+      <soap12:operation soapAction="http://tempuri.org/InsertPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsistenciaPacienteEventos">
+      <soap12:operation soapAction="http://tempuri.org/AsistenciaPacienteEventos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForoPublico">
+      <soap12:operation soapAction="http://tempuri.org/GetForoPublico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertForoPublico">
+      <soap12:operation soapAction="http://tempuri.org/InsertForoPublico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetComentariosPublico">
       <soap12:operation soapAction="http://tempuri.org/GetComentariosPublico" style="document" />
       <wsdl:input>
@@ -4111,202 +4300,13 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetCodigoInformacion">
-      <soap12:operation soapAction="http://tempuri.org/GetCodigoInformacion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertTratamiento">
-      <soap12:operation soapAction="http://tempuri.org/InsertTratamiento" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPregunta">
-      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyPregunta" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyDoctor">
-      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyDoctor" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyPaciente">
-      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyPaciente" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTratamientosbyReceta">
-      <soap12:operation soapAction="http://tempuri.org/GetTratamientosbyReceta" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertCuentaPacientes">
-      <soap12:operation soapAction="http://tempuri.org/InsertCuentaPacientes" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCuentaPaciente">
-      <soap12:operation soapAction="http://tempuri.org/GetCuentaPaciente" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPaciente">
-      <soap12:operation soapAction="http://tempuri.org/GetPaciente" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteHom">
-      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteHom" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePacienteAcu">
-      <soap12:operation soapAction="http://tempuri.org/UpdatePacienteAcu" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MovilGetDoctores">
-      <soap12:operation soapAction="http://tempuri.org/MovilGetDoctores" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPrivadoPaciente">
-      <soap12:operation soapAction="http://tempuri.org/GetForoPrivadoPaciente" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPrivado">
-      <soap12:operation soapAction="http://tempuri.org/InsertForoPrivado" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetComentariosPrivado">
-      <soap12:operation soapAction="http://tempuri.org/GetComentariosPrivado" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertComentariosPrivado">
-      <soap12:operation soapAction="http://tempuri.org/InsertComentariosPrivado" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPacienteEventos">
-      <soap12:operation soapAction="http://tempuri.org/GetPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertPacienteEventos">
-      <soap12:operation soapAction="http://tempuri.org/InsertPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AsistenciaPacienteEventos">
-      <soap12:operation soapAction="http://tempuri.org/AsistenciaPacienteEventos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetForoPublico">
-      <soap12:operation soapAction="http://tempuri.org/GetForoPublico" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="InsertForoPublico">
-      <soap12:operation soapAction="http://tempuri.org/InsertForoPublico" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MainWebService">
     <wsdl:port name="MainWebServiceSoap" binding="tns:MainWebServiceSoap">
-      <soap:address location="http://natiservice.gear.host/MainWebService.asmx" />
+      <soap:address location="https://localhost:44336/MainWebService.asmx" />
     </wsdl:port>
     <wsdl:port name="MainWebServiceSoap12" binding="tns:MainWebServiceSoap12">
-      <soap12:address location="http://natiservice.gear.host/MainWebService.asmx" />
+      <soap12:address location="https://localhost:44336/MainWebService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

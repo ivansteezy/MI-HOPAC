@@ -432,7 +432,7 @@ namespace WebService
         public List<CitasAcupunturaModel> GetCitasAcupunturabyID(int id)
         {
             var controlador = new CitasAcupunturaController();
-            return controlador.ConsultaCitasAcupunturabyId(id);
+            return controlador.ConsultaDecryptById(id);
         }
 
         #endregion
