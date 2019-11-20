@@ -424,7 +424,7 @@ namespace WebService
         public List<CitasAcupunturaModel> GetCitasAcupunturabyPaciente(int fkPaciente)
         {
             var controlador = new CitasAcupunturaController();
-            return controlador.ConsultaCitasAcupuntura(fkPaciente);
+            return controlador.ConsultaDecrypt(fkPaciente);
         }
 
 
@@ -453,8 +453,6 @@ namespace WebService
             var controlador = new ExpedienteAcupunturaController();
             return controlador.ConsultaExpedienteAcupuntura(fkDoctor);
         }
-
-
         #endregion
 
         #region Citas Hemeopaticos

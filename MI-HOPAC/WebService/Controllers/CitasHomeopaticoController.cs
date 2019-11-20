@@ -10,7 +10,7 @@ namespace WebService.Controllers
 {
     public class CitasHomeopaticoController : DatabaseOperation<CitasHomeopaticoModel>
     {
-
+        //TODO encriptar strings
         public void InsertCitaHomeopactica(string sintomas, string reper, string fecha, int fkPaciente)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -24,12 +24,13 @@ namespace WebService.Controllers
 
             Insert(cmd);
         }
-
+        //Desencriptar esto
         public List<CitasHomeopaticoModel> ConsultaCitasHomeopatica(int pk)
         {
             return Select("select * from citashomeopatia where FkPaciente = " + pk.ToString());
         }
 
+        //Desencriptar esto
         public List<CitasHomeopaticoModel> ConsultaCitasHomeopaticaID(int pk)
         {
             return Select("select * from citashomeopatia where idcitasahomeopatia = " + pk.ToString());

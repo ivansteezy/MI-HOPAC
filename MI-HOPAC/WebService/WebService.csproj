@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Configurations\Conexion.cs" />
     <Compile Include="Configurations\DatabaseOperation.cs" />
+    <Compile Include="Configurations\DataEncryptor.cs" />
     <Compile Include="Controllers\CitasHomeopaticoController.cs" />
     <Compile Include="Controllers\CitasMovilController.cs" />
     <Compile Include="Controllers\CitasController.cs" />
