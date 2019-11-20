@@ -175,6 +175,73 @@
       <s:element name="DeleteCitasDelDiaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetPreguntaUnoAcu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaUnoAcuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreguntaUnoAcuResult" type="tns:GraficaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GraficaModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Promedio" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPreguntaUnoHom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaUnoHomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreguntaUnoHomResult" type="tns:GraficaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaDos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaDosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreguntaDosResult" type="tns:GraficaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaTres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FkPaciente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FkDoctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreguntaTresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreguntaTresResult" type="tns:GraficaModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetCuentaDoctores">
         <s:complexType>
           <s:sequence>
@@ -1715,6 +1782,30 @@
   <wsdl:message name="DeleteCitasDelDiaSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteCitasDelDiaResponse" />
   </wsdl:message>
+  <wsdl:message name="GetPreguntaUnoAcuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreguntaUnoAcu" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaUnoAcuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreguntaUnoAcuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaUnoHomSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreguntaUnoHom" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaUnoHomSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreguntaUnoHomResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaDosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreguntaDos" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaDosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreguntaDosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaTresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreguntaTres" />
+  </wsdl:message>
+  <wsdl:message name="GetPreguntaTresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreguntaTresResponse" />
+  </wsdl:message>
   <wsdl:message name="GetCuentaDoctoresSoapIn">
     <wsdl:part name="parameters" element="tns:GetCuentaDoctores" />
   </wsdl:message>
@@ -2262,6 +2353,22 @@
       <wsdl:input message="tns:DeleteCitasDelDiaSoapIn" />
       <wsdl:output message="tns:DeleteCitasDelDiaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoAcu">
+      <wsdl:input message="tns:GetPreguntaUnoAcuSoapIn" />
+      <wsdl:output message="tns:GetPreguntaUnoAcuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoHom">
+      <wsdl:input message="tns:GetPreguntaUnoHomSoapIn" />
+      <wsdl:output message="tns:GetPreguntaUnoHomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaDos">
+      <wsdl:input message="tns:GetPreguntaDosSoapIn" />
+      <wsdl:output message="tns:GetPreguntaDosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaTres">
+      <wsdl:input message="tns:GetPreguntaTresSoapIn" />
+      <wsdl:output message="tns:GetPreguntaTresSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetCuentaDoctores">
       <wsdl:input message="tns:GetCuentaDoctoresSoapIn" />
       <wsdl:output message="tns:GetCuentaDoctoresSoapOut" />
@@ -2679,6 +2786,42 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteCitasDelDia">
       <soap:operation soapAction="http://tempuri.org/DeleteCitasDelDia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoAcu">
+      <soap:operation soapAction="http://tempuri.org/GetPreguntaUnoAcu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoHom">
+      <soap:operation soapAction="http://tempuri.org/GetPreguntaUnoHom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaDos">
+      <soap:operation soapAction="http://tempuri.org/GetPreguntaDos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaTres">
+      <soap:operation soapAction="http://tempuri.org/GetPreguntaTres" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3528,6 +3671,42 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteCitasDelDia">
       <soap12:operation soapAction="http://tempuri.org/DeleteCitasDelDia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoAcu">
+      <soap12:operation soapAction="http://tempuri.org/GetPreguntaUnoAcu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaUnoHom">
+      <soap12:operation soapAction="http://tempuri.org/GetPreguntaUnoHom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaDos">
+      <soap12:operation soapAction="http://tempuri.org/GetPreguntaDos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreguntaTres">
+      <soap12:operation soapAction="http://tempuri.org/GetPreguntaTres" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
