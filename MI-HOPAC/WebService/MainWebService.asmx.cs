@@ -823,6 +823,26 @@ namespace WebService
             return controlador.GetPreguntaUnoAcu(FkPaciente, FkDoctor);
         }
 
+        [WebMethod]
+        public GraficaModel GetPreguntaUnoHom(int FkPaciente, int FkDoctor)
+        {
+            var controlador = new TratamientoController();
+            return controlador.GetPreguntaUnoHom(FkPaciente, FkDoctor);
+        }
+
+        [WebMethod]
+        public GraficaModel GetPreguntaDos(int FkPaciente, int FkDoctor)
+        {
+            var controlador = new TratamientoController();
+            return controlador.GetPreguntaDos(FkPaciente, FkDoctor);
+        }
+
+        [WebMethod]
+        public GraficaModel GetPreguntaTres(int FkPaciente, int FkDoctor)
+        {
+            var controlador = new TratamientoController();
+            return controlador.GetPreguntaTres(FkPaciente, FkDoctor);
+        }
 
         #endregion
     }

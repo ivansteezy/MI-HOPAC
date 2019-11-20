@@ -53,10 +53,12 @@ namespace WebService.Controllers
 
         public GraficaModel GetPreguntaUnoAcu(int FkPaciente, int FkDoctor)
         {
-            
 
             var dia = new DateTime();
-            dia = DateTime.Today;
+            dia = DateTime.Now;
+
+            TimeSpan ts = new TimeSpan(00, 00, 0);
+            dia = dia.Date + ts;
 
             var oftheweek = (int)(dia.DayOfWeek);
 
@@ -73,13 +75,154 @@ namespace WebService.Controllers
 
             var Salida = new GraficaModel();
             Salida.Promedio = 0;
-            Salida.FechaF = fin.ToString();
-            Salida.FechaI = inicio.ToString();
+            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
+            Salida.FechaI = inicio.Date.ToLongDateString();
 
 
             if (Res.Count > 0)
             {
                 foreach(var i in Res)
+                {
+                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                }
+
+                Salida.Promedio = Salida.Promedio / Res.Count();
+
+                return Salida;
+            }
+            else
+            {
+                return Salida;
+            }
+
+
+        }
+
+        public GraficaModel GetPreguntaUnoHom(int FkPaciente, int FkDoctor)
+        {
+
+            var dia = new DateTime();
+            dia = DateTime.Now;
+
+            TimeSpan ts = new TimeSpan(00, 00, 0);
+            dia = dia.Date + ts;
+
+            var oftheweek = (int)(dia.DayOfWeek);
+
+            oftheweek = (oftheweek - 1) * -1;
+            var inicio = dia.AddDays(oftheweek);
+
+            var fin = inicio.AddDays(7);
+
+            var Res = Select(@"Select * from tratamiento where fkPregunta = 1 AND fkReceta > 0 
+                            AND fkPaciente = " + FkPaciente.ToString() + " AND FkDoctor = " + FkDoctor.ToString() +
+                            " AND ( Fecha between '" + inicio.ToString("yyyy-MM-dd HH:mm:ss") + "' AND " +
+                                  " '" + fin.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+
+            var Salida = new GraficaModel();
+            Salida.Promedio = 0;
+            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
+            Salida.FechaI = inicio.Date.ToLongDateString();
+
+
+            if (Res.Count > 0)
+            {
+                foreach (var i in Res)
+                {
+                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                }
+
+                Salida.Promedio = Salida.Promedio / Res.Count();
+
+                return Salida;
+            }
+            else
+            {
+                return Salida;
+            }
+
+
+        }
+
+        public GraficaModel GetPreguntaDos(int FkPaciente, int FkDoctor)
+        {
+
+            var dia = new DateTime();
+            dia = DateTime.Now;
+
+            TimeSpan ts = new TimeSpan(00, 00, 0);
+            dia = dia.Date + ts;
+
+            var oftheweek = (int)(dia.DayOfWeek);
+
+            oftheweek = (oftheweek - 1) * -1;
+            var inicio = dia.AddDays(oftheweek);
+
+            var fin = inicio.AddDays(7);
+
+            var Res = Select(@"Select * from tratamiento where fkPregunta = 2 
+                            AND fkPaciente = " + FkPaciente.ToString() + " AND FkDoctor = " + FkDoctor.ToString() +
+                            " AND ( Fecha between '" + inicio.ToString("yyyy-MM-dd HH:mm:ss") + "' AND " +
+                                  " '" + fin.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+
+            var Salida = new GraficaModel();
+            Salida.Promedio = 0;
+            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
+            Salida.FechaI = inicio.Date.ToLongDateString();
+
+
+            if (Res.Count > 0)
+            {
+                foreach (var i in Res)
+                {
+                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                }
+
+                Salida.Promedio = Salida.Promedio / Res.Count();
+
+                return Salida;
+            }
+            else
+            {
+                return Salida;
+            }
+
+
+        }
+
+        public GraficaModel GetPreguntaTres(int FkPaciente, int FkDoctor)
+        {
+
+            var dia = new DateTime();
+            dia = DateTime.Now;
+
+            TimeSpan ts = new TimeSpan(00, 00, 0);
+            dia = dia.Date + ts;
+
+            var oftheweek = (int)(dia.DayOfWeek);
+
+            oftheweek = (oftheweek - 1) * -1;
+            var inicio = dia.AddDays(oftheweek);
+
+            var fin = inicio.AddDays(7);
+
+            var Res = Select(@"Select * from tratamiento where fkPregunta = 3 
+                            AND fkPaciente = " + FkPaciente.ToString() + " AND FkDoctor = " + FkDoctor.ToString() +
+                            " AND ( Fecha between '" + inicio.ToString("yyyy-MM-dd HH:mm:ss") + "' AND " +
+                                  " '" + fin.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+
+            var Salida = new GraficaModel();
+            Salida.Promedio = 0;
+            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
+            Salida.FechaI = inicio.Date.ToLongDateString();
+
+
+            if (Res.Count > 0)
+            {
+                foreach (var i in Res)
                 {
                     Salida.Promedio = Salida.Promedio + i.m_Calificaion;
                 }
