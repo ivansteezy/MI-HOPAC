@@ -10,7 +10,7 @@ namespace WebService.Models
         #region Propiedades
         public string FechaI { set; get; }
         public string FechaF { set; get; }
-        public double Promedio { set; get; }
+        public string Promedio { set; get; }
         #endregion
     }
 }

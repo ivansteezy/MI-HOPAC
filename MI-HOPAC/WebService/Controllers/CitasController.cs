@@ -14,7 +14,7 @@ namespace WebService.Controllers
         public List<CitasModel> CitasDisponibles(DateTime fechaCita, int fkDoctor)
         {
             return Select("select * from citas where (fecha between DATE_SUB('" + fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
-                          @"', INTERVAL 60 MINUTE) and '"+fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"') or (fecha between '" + 
+                          @"', INTERVAL 59 MINUTE) and '"+fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"') or (fecha between '" + 
                           fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + @"' and DATE_ADD('"+ fechaCita.ToString("yyyy-MM-dd HH:mm:ss") + 
                           "', INTERVAL 59 MINUTE)) and fkDoctor = " + fkDoctor.ToString());
         }

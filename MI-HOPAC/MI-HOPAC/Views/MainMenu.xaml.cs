@@ -96,42 +96,53 @@ namespace MI_HOPAC.Views
                 case (int)Pagina.Inicio:
                     main_Frame.Content = new NotasBoton();
                     title.Text = "Inicio";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.Calendario:
                     main_Frame.Content = new Agenda();
                     title.Text = "Calendario";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.Eventos:
                     main_Frame.Content = new Eventos();
                     title.Text = "Eventos";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.NotasInformativas:
                     main_Frame.Content = new NotasInfoBoton();
                     title.Text = "Notas informativas";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.ForoPrivado:
                     main_Frame.Content = new ForoPrivado();
                     title.Text = "Foro privado";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.InventarioHomeopatico:
                     main_Frame.Content = new Inventario();
                     title.Text = "Inventario Homeopatía";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.InventarioAcupuntura:
                     main_Frame.Content = new InventarioA();
                     title.Text = "Inventario Acupuntura";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.Notificacion:
                     main_Frame.Content = new Notificaciones();
                     title.Text = "Notificaciones";
+                    var SpeedColor = new System.Windows.Media.SolidColorBrush(Colors.Transparent);
+                    Notificaciones.Background = SpeedColor;
                     break;
                 case (int)Pagina.ExpedientesHom:
                     main_Frame.Content = new ExpedientesHomeopaticos();
                     title.Text = "Expediendes Homeopatía";
+                    ChecarNoti();
                     break;
                 case (int)Pagina.ExpedientesAcu:
                     main_Frame.Content = new ExpedienteAcupunturas(); 
                     title.Text = "Expediendes Acupuntura";
+                    ChecarNoti();
                     break;
             }
         }
@@ -148,6 +159,39 @@ namespace MI_HOPAC.Views
             //Cargar la pagina de configuracion de perfil
             main_Frame.Content = new InformacionPerfil();
             title.Text = "Editar perfil";
+        }
+
+
+        private void ChecarNoti()
+        {
+            var client = new MainWebServiceSoapClient();
+            var Res = client.CheckInventarioAcupuntura(UserControl.Pk);
+
+            var SpeedColor = new System.Windows.Media.SolidColorBrush(Colors.Transparent);
+            Notificaciones.Background = SpeedColor;
+
+            SpeedColor = new System.Windows.Media.SolidColorBrush(Colors.OrangeRed);
+
+            if (Res.Count() > 0)
+            {
+                Notificaciones.Background = SpeedColor;
+            }
+
+            var resp = client.CheckInventarioHomeopatico(UserControl.Pk);
+
+            if (resp.Count() > 0)
+            {
+                Notificaciones.Background = SpeedColor;
+            }
+
+            var citas = client.GetCitas(UserControl.Pk);
+
+            if (citas.Count() > UserControl.Citas)
+            {
+                Notificaciones.Background = SpeedColor;
+            }
+
+
         }
 
         enum Pagina

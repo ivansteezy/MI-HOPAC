@@ -4482,10 +4482,10 @@
   </wsdl:binding>
   <wsdl:service name="MainWebService">
     <wsdl:port name="MainWebServiceSoap" binding="tns:MainWebServiceSoap">
-      <soap:address location="https://localhost:44336/MainWebService.asmx" />
+      <soap:address location="http://natiservice.gear.host/MainWebService.asmx" />
     </wsdl:port>
     <wsdl:port name="MainWebServiceSoap12" binding="tns:MainWebServiceSoap12">
-      <soap12:address location="https://localhost:44336/MainWebService.asmx" />
+      <soap12:address location="http://natiservice.gear.host/MainWebService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

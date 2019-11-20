@@ -69,6 +69,12 @@ namespace MI_HOPAC.Views
                 UserControl.Citas = citas.Count();
             }
             ListaNotifiaciones.ItemsSource = Lista;
+
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+            //main.Notificaciones.Background = "Red";
+
         }
     }
 }

@@ -67,26 +67,29 @@ namespace WebService.Controllers
 
             var fin = inicio.AddDays(7);
 
-            var Res = Select(@"Select * from tratamiento where fkPregunta = 1 AND fkReceta = -1 
-                            AND fkPaciente = " + FkPaciente.ToString() + " AND FkDoctor = " + FkDoctor.ToString() +
+            var Res = Select(@"Select * from tratamiento where fkPregunta = 1  AND fkReceta = -1 
+                       AND fkPaciente = " + FkPaciente.ToString() + " AND FkDoctor = " + FkDoctor.ToString() +
                             " AND ( Fecha between '" + inicio.ToString("yyyy-MM-dd HH:mm:ss") + "' AND " +
                                   " '" + fin.ToString("yyyy-MM-dd HH:mm:ss") + "')");
 
 
             var Salida = new GraficaModel();
-            Salida.Promedio = 0;
-            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
-            Salida.FechaI = inicio.Date.ToLongDateString();
+            Salida.FechaF = fin.ToString("dd/MM/yyyy");
+            Salida.FechaI = inicio.ToString("dd/MM/yyyy");
+            Salida.Promedio = "0";
+            double prom = 0;
 
 
             if (Res.Count > 0)
             {
                 foreach(var i in Res)
                 {
-                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                    prom = prom + i.m_Calificaion;
                 }
 
-                Salida.Promedio = Salida.Promedio / Res.Count();
+                prom = prom / Res.Count();
+
+                Salida.Promedio = prom.ToString();
 
                 return Salida;
             }
@@ -121,19 +124,22 @@ namespace WebService.Controllers
 
 
             var Salida = new GraficaModel();
-            Salida.Promedio = 0;
-            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
-            Salida.FechaI = inicio.Date.ToLongDateString();
+            double prom = 0;
+            Salida.FechaF = fin.ToString("dd/MM/yyyy"); 
+            Salida.FechaI = inicio.ToString("dd/MM/yyyy");
+            Salida.Promedio = "0";
 
 
             if (Res.Count > 0)
             {
                 foreach (var i in Res)
                 {
-                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                    prom = prom + i.m_Calificaion;
                 }
 
-                Salida.Promedio = Salida.Promedio / Res.Count();
+                prom = prom / Res.Count();
+
+                Salida.Promedio = prom.ToString();
 
                 return Salida;
             }
@@ -168,19 +174,22 @@ namespace WebService.Controllers
 
 
             var Salida = new GraficaModel();
-            Salida.Promedio = 0;
-            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
-            Salida.FechaI = inicio.Date.ToLongDateString();
+            double prom = 0;
+            Salida.FechaF = fin.ToString("dd/MM/yyyy");
+            Salida.FechaI = inicio.ToString("dd/MM/yyyy");
+            Salida.Promedio = "0";
 
 
             if (Res.Count > 0)
             {
                 foreach (var i in Res)
                 {
-                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                    prom = prom + i.m_Calificaion;
                 }
 
-                Salida.Promedio = Salida.Promedio / Res.Count();
+                prom = prom / Res.Count();
+
+                Salida.Promedio = prom.ToString();
 
                 return Salida;
             }
@@ -215,19 +224,22 @@ namespace WebService.Controllers
 
 
             var Salida = new GraficaModel();
-            Salida.Promedio = 0;
-            Salida.FechaF = (fin.AddDays(-1)).Date.ToLongDateString();
-            Salida.FechaI = inicio.Date.ToLongDateString();
+            double prom = 0;
+            Salida.FechaF = fin.ToString("dd/MM/yyyy");
+            Salida.FechaI = inicio.ToString("dd/MM/yyyy");
+            Salida.Promedio = "0";
 
 
             if (Res.Count > 0)
             {
                 foreach (var i in Res)
                 {
-                    Salida.Promedio = Salida.Promedio + i.m_Calificaion;
+                    prom = prom + i.m_Calificaion;
                 }
 
-                Salida.Promedio = Salida.Promedio / Res.Count();
+                prom = prom / Res.Count();
+
+                Salida.Promedio = prom.ToString();
 
                 return Salida;
             }

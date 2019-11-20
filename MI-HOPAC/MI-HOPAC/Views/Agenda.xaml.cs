@@ -27,6 +27,17 @@ namespace MI_HOPAC.Views
         {
             InitializeComponent();
             Consolidate();
+            //ChecarNotificacion();
+
+            /*MainMenu main = (MainMenu)Window.GetWindow(this);
+            var SpeedColor = new System.Windows.Media.SolidColorBrush(Colors.OrangeRed);
+
+            main.Notificaciones.Background = SpeedColor;
+
+           // ((MainWindow)System.Windows.Application.Current.MainWindow).Me
+
+            */
+
         }
 
         public void Consolidate()
@@ -87,7 +98,8 @@ namespace MI_HOPAC.Views
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
             var Res = Calendario.SelectedDate;
 
             var Dia = new DateTime(Calendario.SelectedDate.Value.Year, Calendario.SelectedDate.Value.Month,
@@ -99,10 +111,70 @@ namespace MI_HOPAC.Views
             MessageBox.Show("Citas ELminadas");
 
             Consolidate();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una Fecha");
+            }
 
+
+        }
+
+        /*
+        public static void ChecarNotificacion()
+        {
+            var client = new MainWebServiceSoapClient();
+            var Res = client.CheckInventarioAcupuntura(UserControl.Pk);
+            var Lista = new List<Foundation.InventarioAcupuntura>();
+
+            var converter = new System.Windows.Media.BrushConverter();
+
+            var brush1 = (Brush)converter.ConvertFromString("#ff9aa2");
+
+            MainMenu main = (MainMenu)Window.GetWindow(this);
+
+
+
+            if (Res.Count() > 0)
+            {
+                foreach (var i in Res)
+                {
+                    var nuevo = new Foundation.InventarioAcupuntura();
+                    nuevo.Nombre = i.m_Nombre + " está terminandose";
+                    Lista.Add(nuevo);
+                }
+            }
+
+            var resp = client.CheckInventarioHomeopatico(UserControl.Pk);
+
+            if (resp.Count() > 0)
+            {
+                foreach (var i in resp)
+                {
+                    var nuevo = new Foundation.InventarioAcupuntura();
+                    nuevo.Nombre = i.m_Nombre + " está terminandose";
+                    Lista.Add(nuevo);
+                }
+            }
+
+            var citas = client.GetCitas(UserControl.Pk);
+
+            if (citas.Count() > UserControl.Citas)
+            {
+                for (int i = citas.Count(); i > UserControl.Citas; i--)
+                {
+                    var nuevo = new Foundation.InventarioAcupuntura();
+                    nuevo.Nombre = "Usted tiene una nueva cita!";
+                    Lista.Add(nuevo);
+                }
+                UserControl.Citas = citas.Count();
+            }
+            ListaNotifiaciones.ItemsSource = Lista;
 
 
 
         }
+
+    */
     }
 }

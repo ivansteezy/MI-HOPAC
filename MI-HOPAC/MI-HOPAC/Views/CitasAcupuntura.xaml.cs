@@ -30,6 +30,8 @@ namespace MI_HOPAC.Views
             InitializeComponent();
             pkPaciente = PkPaciente;
             Imprimir();
+
+
         }
 
 
