@@ -116,20 +116,20 @@ namespace MI_HOPAC.Foundation
 
                         //Los no disponibles
 
-                        if (grayoutweekends != "" && (firstdate.DayOfWeek == DayOfWeek.Saturday || firstdate.DayOfWeek == DayOfWeek.Sunday))
-                        {
-                            Overlays overlays = overlaylist.Where(c => c.id == grayoutweekends).FirstOrDefault();
-
-                            try
-                            {
-                                dc.DrawRectangle(overlays.Brush, null /* no pen */,
-                                                 new Rect(xpos, ypos, overlays.BitMap.Width, overlays.BitMap.Height));
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
-                        }
+                        //if (grayoutweekends != "" && (firstdate.DayOfWeek == DayOfWeek.Saturday || firstdate.DayOfWeek == DayOfWeek.Sunday))
+                        //{
+                        //    Overlays overlays = overlaylist.Where(c => c.id == grayoutweekends).FirstOrDefault();
+                        //
+                        //    try
+                        //    {
+                        //        dc.DrawRectangle(overlays.Brush, null /* no pen */,
+                        //                         new Rect(xpos, ypos, overlays.BitMap.Width, overlays.BitMap.Height));
+                        //    }
+                        //    catch (Exception ex)
+                        //    {
+                        //        Console.WriteLine(ex.Message);
+                        //    }
+                        //}
 
                         firstdate = firstdate.AddDays(1);
                     }

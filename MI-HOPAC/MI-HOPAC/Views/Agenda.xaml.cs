@@ -36,7 +36,7 @@ namespace MI_HOPAC.Views
             background = new CalenderBackground(Calendario);
 
             background.AddOverlay("libre", "../../Resources/libre.png");
-            background.AddOverlay("lleno", "../../Resources/circle.png");
+            background.AddOverlay("lleno", "../../Resources/lleno.png");
             background.AddOverlay("nodisponible", "../../Resources/nodisponible.png");
 
             //Dias no disponibles
@@ -68,7 +68,7 @@ namespace MI_HOPAC.Views
             for(var i = 0; i < listaCitas.Count; i++)
             {
                 background.AddDate(new DateTime(listaCitas.ElementAt(i).m_Fecha.Year, 
-                    listaCitas.ElementAt(i).m_Fecha.Month, listaCitas.ElementAt(i).m_Fecha.Day), "nodisponible");
+                    listaCitas.ElementAt(i).m_Fecha.Month, listaCitas.ElementAt(i).m_Fecha.Day), "lleno");
             }
 
             Calendario.Background = background.GetBackground();
