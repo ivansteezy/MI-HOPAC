@@ -147,7 +147,7 @@ namespace WebService.Controllers
 
             bool Checar = false;
 
-            for (int sum = 1; sum < 32; sum++)
+            for (int sum = 0; sum < 32; sum++)
             {
                 Hoy = Guardar;
 
