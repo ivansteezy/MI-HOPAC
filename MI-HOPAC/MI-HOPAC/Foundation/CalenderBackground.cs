@@ -76,11 +76,10 @@ namespace MI_HOPAC.Foundation
                 var backGroundBrush = new LinearGradientBrush();
                 backGroundBrush.StartPoint = new Point(0.5, 0);
                 backGroundBrush.EndPoint = new Point(0.5, 1);
-                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFE4EAF0"), 0.0));
-                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFECF0F4"), 0.16));
-                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFFCFCFD"), 0.16));
+                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFE4EAF0"), 1));
+                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFECF0F4"), 1));
+                backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFFCFCFD"), 1));
                 backGroundBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FFFFFFFF"), 1));
-
                 dc.DrawRectangle(backGroundBrush, null, new Rect(0, 0, rtBitmap.Width, rtBitmap.Height));
             }
             rtBitmap.Render(drawVisual);
@@ -115,6 +114,8 @@ namespace MI_HOPAC.Foundation
                             }
                         }
 
+                        //Los no disponibles
+
                         if (grayoutweekends != "" && (firstdate.DayOfWeek == DayOfWeek.Saturday || firstdate.DayOfWeek == DayOfWeek.Sunday))
                         {
                             Overlays overlays = overlaylist.Where(c => c.id == grayoutweekends).FirstOrDefault();
@@ -126,7 +127,7 @@ namespace MI_HOPAC.Foundation
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.Message);
+                                Console.WriteLine(ex.Message);
                             }
                         }
 

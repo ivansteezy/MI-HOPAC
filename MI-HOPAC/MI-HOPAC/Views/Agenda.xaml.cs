@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MI_HOPAC.MiHomeacupService;
 using MI_HOPAC.Foundation;
+using System.Globalization;
 
 namespace MI_HOPAC.Views
 {
@@ -35,15 +36,40 @@ namespace MI_HOPAC.Views
             background = new CalenderBackground(Calendario);
 
             background.AddOverlay("libre", "../../Resources/libre.png");
-            background.AddOverlay("lleno", "../../Resources/lleno.png");
+            background.AddOverlay("lleno", "../../Resources/circle.png");
             background.AddOverlay("nodisponible", "../../Resources/nodisponible.png");
 
-
-            background.AddDate(new DateTime(2019, 11, 25), "libre");
-            background.AddDate(new DateTime(2019, 11, 26), "lleno");
-            background.AddDate(new DateTime(2019, 11, 27), "nodisponible");
-
+            //Dias no disponibles
             background.grayoutweekends = "nodisponible";
+
+            //Llenar primero los libres
+
+            var client = new MainWebServiceSoapClient();
+            var diasAzules = client.GetColores(UserControl.Pk).ToList(); //dias disponibles
+            var diasRojos = client.GetDiasDelMes(UserControl.Pk).ToList(); //Dias no disponibles
+
+            var listaCitas = client.GetCitas(UserControl.Pk).ToList();  //Dias con cita
+
+            //Dias libres (azules)
+            foreach (var item in diasAzules)
+            {
+                DateTime miFecha = DateTime.ParseExact(item, "MM/d/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                background.AddDate(new DateTime(miFecha.Date.Year, miFecha.Date.Month, miFecha.Date.Day), "libre");
+            }
+
+            //Dias no disponibles(rojos)
+            foreach (var item in diasRojos)
+            {
+                DateTime miFecha = DateTime.ParseExact(item, "MM/d/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                background.AddDate(new DateTime(miFecha.Date.Year, miFecha.Date.Month, miFecha.Date.Day), "nodisponible");
+            }
+
+            //Dias llenos (verdes) TODO
+            for(var i = 0; i < listaCitas.Count; i++)
+            {
+                background.AddDate(new DateTime(listaCitas.ElementAt(i).m_Fecha.Year, 
+                    listaCitas.ElementAt(i).m_Fecha.Month, listaCitas.ElementAt(i).m_Fecha.Day), "nodisponible");
+            }
 
             Calendario.Background = background.GetBackground();
 
