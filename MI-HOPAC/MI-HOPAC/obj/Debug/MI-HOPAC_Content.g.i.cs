@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/graph.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/libre.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/lleno.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/nodisponible.png")]
 
 

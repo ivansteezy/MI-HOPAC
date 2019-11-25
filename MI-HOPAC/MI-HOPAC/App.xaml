@@ -24,6 +24,7 @@
                 <Setter Property="TextElement.FontFamily" Value="Fonts\fuente.ttf"></Setter>
             </Style>
 
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

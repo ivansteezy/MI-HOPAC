@@ -23,21 +23,37 @@ namespace MI_HOPAC.Views
     public partial class Agenda : Page
     {
         public List<CitaSection> DataCitas { get; set; }
+        private readonly CalenderBackground background;
         public Agenda()
         {
             InitializeComponent();
             Consolidate();
-            //ChecarNotificacion();
+            this.Style = null;
 
-            /*MainMenu main = (MainMenu)Window.GetWindow(this);
-            var SpeedColor = new System.Windows.Media.SolidColorBrush(Colors.OrangeRed);
+            Calendario.IsTodayHighlighted = false;
 
-            main.Notificaciones.Background = SpeedColor;
+            background = new CalenderBackground(Calendario);
 
-           // ((MainWindow)System.Windows.Application.Current.MainWindow).Me
+            background.AddOverlay("libre", "../../Resources/libre.png");
+            background.AddOverlay("lleno", "../../Resources/lleno.png");
+            background.AddOverlay("nodisponible", "../../Resources/nodisponible.png");
 
-            */
 
+            background.AddDate(new DateTime(2019, 11, 25), "libre");
+            background.AddDate(new DateTime(2019, 11, 26), "lleno");
+            background.AddDate(new DateTime(2019, 11, 27), "nodisponible");
+
+            background.grayoutweekends = "nodisponible";
+
+            Calendario.Background = background.GetBackground();
+
+            // Update background when changing the displayed month
+            Calendario.DisplayDateChanged += KalenderOnDisplayDateChanged;
+        }
+
+        private void KalenderOnDisplayDateChanged(object sender, CalendarDateChangedEventArgs calendarDateChangedEventArgs)
+        {
+            Calendario.Background = background.GetBackground();
         }
 
         public void Consolidate()
