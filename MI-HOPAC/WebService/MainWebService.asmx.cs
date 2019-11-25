@@ -363,6 +363,21 @@ namespace WebService
             var controlador = new HorariosController();
             return controlador.GetHorario(fkDoctor);
         }
+
+        [WebMethod]
+        public List<string> GetColores(int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            return controlador.GetColores(fkDoctor);
+        }
+
+        [WebMethod]
+        public List<string> GetDiasDelMes(int fkDoctor)
+        {
+            var controlador = new HorariosController();
+            return controlador.GetDiasDelMes(fkDoctor);
+        }
+
         #endregion
 
         #region ForoPrivado
@@ -754,6 +769,7 @@ namespace WebService
 
         #endregion
 
+        
         #region Citas
 
         [WebMethod]

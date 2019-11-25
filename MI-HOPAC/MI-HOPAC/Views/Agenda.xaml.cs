@@ -58,6 +58,9 @@ namespace MI_HOPAC.Views
 
             DataContext = this;
             ListaCitas.ItemsSource = DataCitas;
+
+            //Calendario.Background.
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -111,13 +114,16 @@ namespace MI_HOPAC.Views
             MessageBox.Show("Citas ELminadas");
 
             Consolidate();
+
+                var Hola = new DateTime();
+                Hola = DateTime.Now;
+
+                
             }
             catch
             {
                 MessageBox.Show("Seleccione una Fecha");
             }
-
-
         }
 
         /*

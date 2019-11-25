@@ -9,14 +9,20 @@
       Title="Agenda"
       Background="White">
 
+    
+
+
     <Grid>
+        
+        
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <Viewbox HorizontalAlignment="Left" Margin="0 0 0 0" Grid.Column="0">
-            <Calendar x:Name="Calendario" VerticalAlignment="Center" HorizontalAlignment="Left"></Calendar>
+            <Calendar x:Name="Calendario" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FF645656"></Calendar>
         </Viewbox>
 
         <Grid Grid.Column="1">
