@@ -84,9 +84,11 @@ namespace MI_HOPAC.Views
                 return false;
             }
             //Que la contraseña sea valida
-            else if (!Regex.IsMatch(txtContrasena.Password, "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?!.*?[¿+_;,.~:´)(}{[|°¬/'#?!@$%^&*-]).{8,}$"))
+            else if (!Regex.IsMatch(txtContrasena.Password, 
+                    "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?!.*?[¿+_;,.~:´)(}{[|°¬/'#?!@$%^&*-]).{8,}$"))
             {
-                MessageBox.Show("La contraseña deberá contener al menos una mayúscula, una minúscula y un número, deberá contar con al menos 8 caracteres sin hacer uso de caracteres especiales.");
+                MessageBox.Show("La contraseña deberá contener al menos una mayúscula, una minúscula y un número, " +
+                                "deberá contar con al menos 8 caracteres sin hacer uso de caracteres especiales.");
                 return false;
             }
             //Que las contrsaeñas coincidan
